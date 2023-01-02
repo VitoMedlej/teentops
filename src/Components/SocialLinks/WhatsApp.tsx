@@ -1,0 +1,40 @@
+import { Box, IconButton } from "@mui/material"
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+
+const WhatsApp = () => {
+    return (
+        <Box
+            sx={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '1em',
+            zIndex: 125125,
+            top: '88%',
+            right: '2%',
+            position: 'fixed'
+        }}>
+
+            <Box
+                className='shadow pointer'
+                sx={{
+                py: '.75em',
+                px: '1em',
+                borderRadius: '6px'
+            }}>
+                +961 81826445
+            </Box>
+            <IconButton
+                sx={{
+                ':hover': {
+                    background: 'green'
+                },
+                background: 'green',
+                color: 'white'
+            }}>
+                <WhatsAppIcon fontSize='large'/>
+            </IconButton>
+        </Box>
+    )
+}
+
+export default WhatsApp

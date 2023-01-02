@@ -9,11 +9,10 @@ const MainCarousel = () => {
     return (
         <Box
             sx={{
-            mt: {
-                xs: '2em',
-                lg: 0
-            },
+            py: {xs:'.5em',sm:'2em'},
             width: '100%',
+            maxWidth: 'lg',
+            margin: '0 auto',
             display: {
                 xs: 'flex'
             },
@@ -22,7 +21,7 @@ const MainCarousel = () => {
             <Swiper
                 navigation={true}
                 slidesPerView={1}
-                spaceBetween={5}
+                spaceBetween={0}
                 loop={true}
                 autoplay={{
                 delay: 2000,
@@ -31,12 +30,18 @@ const MainCarousel = () => {
                 modules={[Autoplay, Navigation]}
                 className="mySwiper swiper">
 
-                {[1, 2, 3, 4].map((item) => {
+                {[{img:'https://cdn.shopify.com/s/files/1/0549/1385/9821/files/New_Year_2023_Banner_1.jpg?v=1672500537'},{img:'https://cdn.shopify.com/s/files/1/0549/1385/9821/files/Christmas_2022_Banner_1.jpg?v=1671886210'}].map((item) => {
 
-                    return <SwiperSlide className='ztop cursor' key={item}>
+                    return <SwiperSlide className='ztop cursor' key={item.img}>
+                        <Box
+                            sx={{
+                            height: '100%'
+                        }}>
 
-                        <Box>
-                            Hello world
+                            <img
+                                className='img'
+                                src={`${item.img}`}
+                                alt=""/>
                         </Box>
                     </SwiperSlide>
                 })

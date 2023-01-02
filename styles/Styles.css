@@ -2,11 +2,24 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", sans-serif !important;
+}
+
+h1, h2, h3, h4, p {
+  font-family: "Montserrat", sans-serif !important;
 }
 
 .bb {
   border-bottom: 1px solid rgba(128, 128, 128, 0.168627451);
+}
+
+.link {
+  color: rgb(46, 46, 46);
+  transition: 0.2s ease;
+  text-decoration: none;
+}
+.link:hover {
+  text-decoration: underline;
 }
 
 .CategoryMenu div {
@@ -22,4 +35,19 @@ body {
 .CategoryMenu div:hover a {
   color: rgb(86, 86, 86);
   transition: 0.2s ease;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.shadow {
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.215);
 }/*# sourceMappingURL=Styles.css.map */

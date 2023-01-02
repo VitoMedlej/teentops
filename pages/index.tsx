@@ -2,8 +2,10 @@ import Head from 'next/head'
 import Navbar from '../src/Components/Navbar/Navbar'
 import TopAd from '../src/Components/TopAd/TopAd'
 import CategoryMenu from '../src/Components/CategoryMenu/CategoryMenu'
-import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import { Box, IconButton } from '@mui/material';
+import MainCarousel from '../src/Components/MainCarousel/MainCarousel';
+import WhatsApp from '../src/Components/SocialLinks/WhatsApp';
+import ProductCollection from '../src/Components/ProductCollection/ProductCollection';
 
 export default function Home() {
   return (
@@ -15,28 +17,13 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
 
       </Head>
-      <TopAd></TopAd>
-      <Navbar></Navbar>
+      <TopAd/>
+      <Navbar/>
       <CategoryMenu/>
       <main>
-            Hello World
-            
-            <Box>
-
-            <Box>
-              +961 81826445
-            </Box>
-      <IconButton sx={{
-        ':hover':{background:'green'},
-            zIndex: 125125,
-            top: '88%',
-            position: 'fixed',
-            right: '2%',
-            
-            background:'green',color:'white'}}>
-          <WhatsAppIcon fontSize='large'/>
-      </IconButton>
-          </Box>
+      <MainCarousel/>
+      <WhatsApp/>
+      <ProductCollection title='Christmas Sale'/>      
       </main>
     </>
   )
