@@ -1,0 +1,25 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+.bb {
+  border-bottom: 1px solid rgba(128, 128, 128, 0.168627451);
+}
+
+.CategoryMenu div {
+  margin: 0.65em;
+}
+.CategoryMenu div a {
+  text-decoration: none;
+  font-size: 0.85em;
+}
+.CategoryMenu div:hover {
+  text-decoration: underline;
+}
+.CategoryMenu div:hover a {
+  color: rgb(86, 86, 86);
+  transition: 0.2s ease;
+}/*# sourceMappingURL=Styles.css.map */
