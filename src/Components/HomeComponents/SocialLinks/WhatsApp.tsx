@@ -17,6 +17,7 @@ const WhatsApp = () => {
             <Box
                 className='shadow pointer'
                 sx={{
+                    background:'white',
                 py: '.75em',
                 px: '1em',
                 borderRadius: '6px'

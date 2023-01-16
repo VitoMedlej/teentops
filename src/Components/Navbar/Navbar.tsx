@@ -7,8 +7,12 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import LocalMallOutlinedIcon from '@mui/icons-material/LocalMallOutlined';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
+import { useContext } from 'react';
+import { DrawerContext } from '../../../pages/_app';
 
 export default function Navbar() {
+    const [open, setOpen] = useContext(DrawerContext);
+    
     return (
         <Box sx={{
             flexGrow: 1
@@ -26,6 +30,7 @@ export default function Navbar() {
                     position: 'relative'
                 }}>
                     <IconButton
+                        onClick={()=>setOpen(!open)}
                         size="large"
                         edge="start"
                         color="inherit"

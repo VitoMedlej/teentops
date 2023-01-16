@@ -32,10 +32,11 @@ const MainCarousel = () => {
 
                 {[{img:'https://cdn.shopify.com/s/files/1/0549/1385/9821/files/New_Year_2023_Banner_1.jpg?v=1672500537'},{img:'https://cdn.shopify.com/s/files/1/0549/1385/9821/files/Christmas_2022_Banner_1.jpg?v=1671886210'}].map((item) => {
 
-                    return <SwiperSlide className='ztop cursor' key={item.img}>
+                    return <SwiperSlide className='ztop cursor ' key={item.img}>
                         <Box
                             sx={{
-                            height: '100%'
+                            height: '100%',
+                            width:'100%'
                         }}>
 
                             <img

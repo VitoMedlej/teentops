@@ -50,4 +50,25 @@ h1, h2, h3, h4, p {
 
 .shadow {
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.215);
+}
+
+.swiper-wrapper1 {
+  margin: 0 1em !important;
+}
+
+.scale img {
+  transition: 0.2s ease;
+}
+.scale:hover img {
+  transform: scale(1.05);
+}
+
+.img2 img {
+  max-height: 500px;
+}
+
+@media (max-width: 700px) {
+  .img2 img {
+    max-height: 250px !important;
+  }
 }/*# sourceMappingURL=Styles.css.map */

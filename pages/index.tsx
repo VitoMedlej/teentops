@@ -1,13 +1,17 @@
 import Head from 'next/head'
-import Navbar from '../src/Components/Navbar/Navbar'
-import TopAd from '../src/Components/TopAd/TopAd'
-import CategoryMenu from '../src/Components/CategoryMenu/CategoryMenu'
-import { Box, IconButton } from '@mui/material';
-import MainCarousel from '../src/Components/MainCarousel/MainCarousel';
-import WhatsApp from '../src/Components/SocialLinks/WhatsApp';
-import ProductCollection from '../src/Components/ProductCollection/ProductCollection';
+import CategoryMenu from '../src/Components/HomeComponents/CategoryMenu/CategoryMenu'
+import MainCarousel from '../src/Components/HomeComponents/MainCarousel/MainCarousel';
+import WhatsApp from '../src/Components/HomeComponents/SocialLinks/WhatsApp';
+import ProductCollection from '../src/Components/HomeComponents/ProductCollection/ProductCollection';
+import FullscreenPoster from '../src/Components/HomeComponents/FullscreenPoster/FullscreenPoster';
+import CategoryList from '../src/Components/HomeComponents/CategoryList/CategoryList';
+import Perks from '../src/Components/HomeComponents/Perks/Perks';
+import TopAd from '../src/Components/HomeComponents/TopAd/TopAd';
+import Navbar from '../src/Components/Navbar/Navbar';
+import SideBar from '../src/Components/Drawer/SideBar';
 
 export default function Home() {
+  
   return (
     <>
       <Head>
@@ -24,7 +28,15 @@ export default function Home() {
       <MainCarousel/>
       <WhatsApp/>
       <ProductCollection title='Christmas Sale'/>      
+      <ProductCollection title='Christmas Sale'/>      
+      <CategoryList/>
+      <ProductCollection title='Christmas Sale'/>      
+      
+      <FullscreenPoster/>
+      <FullscreenPoster reversed={true}/>
+
       </main>
+      <Perks/>
     </>
   )
 }

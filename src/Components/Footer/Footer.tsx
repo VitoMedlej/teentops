@@ -35,7 +35,7 @@ const styles = {
 
 function Footer() {
     return (
-        <Box sx={{mt: '6em '}}>
+        <Box >
             <Divider/>
             <Box
                 sx={{
