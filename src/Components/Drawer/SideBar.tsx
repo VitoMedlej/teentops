@@ -59,7 +59,7 @@ const [open, setOpen] = useContext(DrawerContext);
           <Drawer
             anchor={'left'}
             open={open}
-            onClose={toggleDrawer( false)}
+            onClose={toggleDrawer(false)}
           >
       <List>
 

@@ -10,11 +10,11 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
-import { DrawerContext } from '../../../pages/_app';
+import { CartContext } from '../../../pages/_app';
 
 // {setOpen,open} : {open: boolean, setOpen: any}
 export default function TemporaryDrawer() {
-const [open, setOpen] = useContext(DrawerContext);
+const [cartOpen, setCartOpen] = useContext(CartContext);
 
   const toggleDrawer =
     ( open: boolean) =>
@@ -27,7 +27,7 @@ const [open, setOpen] = useContext(DrawerContext);
         return;
       }
 
-      setOpen(open);
+      setCartOpen(cartOpen);
     };
 
   const list = () => (
@@ -58,8 +58,8 @@ const [open, setOpen] = useContext(DrawerContext);
     <div>
           <Drawer
             anchor={'top'}
-            open={true}
-            onClose={toggleDrawer( false)}
+            open={cartOpen}
+            onClose={toggleDrawer(false)}
           >
       <List>
 

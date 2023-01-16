@@ -8,10 +8,12 @@ import MenuIcon from '@mui/icons-material/Menu';
 import LocalMallOutlinedIcon from '@mui/icons-material/LocalMallOutlined';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import { useContext } from 'react';
-import { DrawerContext } from '../../../pages/_app';
+import { CartContext, DrawerContext } from '../../../pages/_app';
 
 export default function Navbar() {
     const [open, setOpen] = useContext(DrawerContext);
+const [cartOpen, setCartOpen] = useContext(CartContext);
+    
     
     return (
         <Box sx={{
@@ -64,7 +66,10 @@ export default function Navbar() {
                             <SearchOutlinedIcon/>
 
                         </IconButton>
-                        <IconButton color='inherit'>
+                        <IconButton 
+                        onClick={()=>setCartOpen(!cartOpen)}
+
+                        color='inherit'>
 
                             <LocalMallOutlinedIcon/>
 
