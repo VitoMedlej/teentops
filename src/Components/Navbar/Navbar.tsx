@@ -12,7 +12,7 @@ import { CartContext, DrawerContext } from '../../../pages/_app';
 
 export default function Navbar() {
     const [open, setOpen] = useContext(DrawerContext);
-const [cartOpen, setCartOpen] = useContext(CartContext);
+    const [cartOpen, setCartOpen] = useContext(CartContext);
     
     
     return (

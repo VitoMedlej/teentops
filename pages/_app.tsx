@@ -17,10 +17,9 @@ export default function App({Component, pageProps} : AppProps) {
 
     return <DrawerContext.Provider value={[open, setOpen]}>
         <CartContext.Provider value={[cartOpen, setCartOpen]}>
-
             <SideBar/>
             <QuickCart/>
-        </CartContext.Provider>
         <Component {...pageProps}/>
+        </CartContext.Provider>
     </DrawerContext.Provider>
 }
