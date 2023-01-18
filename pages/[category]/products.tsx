@@ -3,6 +3,7 @@ import React from 'react'
 import TopAd from '../../src/Components/HomeComponents/TopAd/TopAd'
 import Navbar from '../../src/Components/Navbar/Navbar'
 import FilterSection from '../../src/Components/ProductsComponents/Filter/FilterSection'
+import ProductSection from '../../src/Components/ProductsComponents/ProductSection/ProductSection'
 
 const Products = () => {
   return (
@@ -18,6 +19,7 @@ const Products = () => {
     <Navbar/>
     <main>
     <FilterSection/>
+    <ProductSection/>
     </main>
   </>
   )

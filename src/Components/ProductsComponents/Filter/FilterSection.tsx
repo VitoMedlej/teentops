@@ -2,6 +2,8 @@ import {Box} from '@mui/material'
 import React from 'react'
 import CheckMarkForm from './Forms/CheckMarkForm'
 import SelectOneForm from './Forms/SelectOneForm'
+import CheckboxForm from './Forms/CheckboxForm'
+import SliderForm from './Forms/SliderForm'
 
 const FilterSection = () => {
     return (
@@ -9,12 +11,18 @@ const FilterSection = () => {
             sx={{
             width: '100%',
             background: 'white',
-            borderBottom: '1px solid gray',
-            display: 'flex',
-            maxWidth: 'lg'
+                justifyContent:'space-evenly',
+            display: 'flex',pb:'.25em',
+            maxWidth: 'lg',margin: '0 auto',
         }}>
             <SelectOneForm/>
-            <CheckMarkForm/>
+            <SelectOneForm/>
+            <SelectOneForm/>
+            <SelectOneForm/>
+            <SelectOneForm/>
+            {/* <CheckMarkForm/> */}
+            {/* <SliderForm/> */}
+            {/* <CheckboxForm/> */}
         </Box>
     )
 }
