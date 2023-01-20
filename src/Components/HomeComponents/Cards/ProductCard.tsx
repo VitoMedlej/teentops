@@ -87,7 +87,9 @@ const ProductCard = ({sx, className} : {
                                 display: {
                                     xs: 'none',
                                     sm: 'flex'
-                                }
+                                },
+                                boxShadow: '1px 1px 3px grey'
+
                             }}>
                                 <RemoveRedEyeIcon fontSize={'small'}/>
                             </IconButton>
@@ -100,7 +102,8 @@ const ProductCard = ({sx, className} : {
                                     background: 'white'
                                 },
                                 background: 'white',
-                                color: '#333'
+                                color: '#333',
+                                boxShadow: '1px 1px 3px grey'
                             }}>
                                 <FavoriteBorderIcon fontSize={'small'}/>
                             </IconButton>

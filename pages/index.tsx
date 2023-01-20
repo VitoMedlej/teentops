@@ -9,6 +9,8 @@ import Perks from '../src/Components/HomeComponents/Perks/Perks';
 import TopAd from '../src/Components/HomeComponents/TopAd/TopAd';
 import Navbar from '../src/Components/Navbar/Navbar';
 import SideBar from '../src/Components/Drawer/SideBar';
+import { Dialog } from '@mui/material';
+import QuickView from '../src/Components/Dialog/QuickView';
 
 export default function Home() {
   
@@ -31,10 +33,9 @@ export default function Home() {
       <ProductCollection title='Christmas Sale'/>      
       <CategoryList/>
       <ProductCollection title='Christmas Sale'/>      
-      
       <FullscreenPoster/>
       <FullscreenPoster reversed={true}/>
-
+      <QuickView/>
       </main>
       <Perks/>
     </>
