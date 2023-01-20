@@ -4,7 +4,8 @@ import {useState} from 'react'
 import {useRef} from 'react'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
-import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 const imgs = [`https://piecesnmore.com/wp-content/uploads/2023/01/Backstage-Angel.png`, `https://cdn.shopify.com/s/files/1/0549/1385/9821/products/ChristmasOffer11.jpg?v=1671539939&width=360`]
 
@@ -37,7 +38,12 @@ const ProductCard = ({sx, className} : {
             maxHeight: '600px',
             width: '100%',
             overflow: 'hidden',
-            ...sx
+            ...sx,
+            ':hover': {
+                '& .productOptions': {
+                    display: 'flex'
+                }
+            }
         }}>
             <Link
                 style={{
@@ -48,11 +54,7 @@ const ProductCard = ({sx, className} : {
                 <Box
                     sx={{
                     position: 'relative',
-                    ':hover': {
-                        '& .productOptions': {
-                            display: 'flex'
-                        }
-                    }
+                   
                 }}>
                     <img ref={ref} src={currentImg} className='img' alt="Product Image"/>
                     <Box
@@ -115,15 +117,18 @@ const ProductCard = ({sx, className} : {
                 }}>Some scam probably 100g</Typography>
 
             </Link>
-            <Box sx={{justifyContent:'space-between'}} className='flexed'>
+            <Box sx={{mx:'.15em',justifyContent:'space-between'}} className='flexed'>
                 <Typography
                     className='clr'
                     sx={{
                     fontSize: '1em'
                 }}>299.000 LBP</Typography>
-                <IconButton>
-                    <AddShoppingCartIcon/>
+                <Tooltip title='Add To Cart' placement='left'>
+
+                <IconButton sx={{boxShadow:'1px 1px 3px #0000005e',':hover':{background:'#eaeaea'}}}>
+                    <ShoppingCartIcon/>
                 </IconButton>
+                </Tooltip>
             </Box>
 
         </Box>
