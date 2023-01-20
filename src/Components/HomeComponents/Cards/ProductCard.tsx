@@ -1,14 +1,17 @@
-import { Box, Typography } from '@mui/material'
+import {Box, IconButton, Tooltip, Typography} from '@mui/material'
 import Link from 'next/link'
 import {useState} from 'react'
 import {useRef} from 'react'
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 
+const imgs = [`https://piecesnmore.com/wp-content/uploads/2023/01/Backstage-Angel.png`, `https://cdn.shopify.com/s/files/1/0549/1385/9821/products/ChristmasOffer11.jpg?v=1671539939&width=360`]
 
-
-
-const imgs = [`https://cdn.shopify.com/s/files/1/0549/1385/9821/products/ChristmasOffer8_a1d3ad3d-5aed-4ba0-9135-73c040341c7f.jpg?v=1671539980&width=360`, `https://cdn.shopify.com/s/files/1/0549/1385/9821/products/ChristmasOffer11.jpg?v=1671539939&width=360`]
-
-const ProductCard = ({sx,className}:{className?:string,sx?:any}) => {
+const ProductCard = ({sx, className} : {
+    className?: string,
+    sx?: any
+}) => {
 
     const ref : any = useRef()
     const [currentImg,
@@ -25,34 +28,106 @@ const ProductCard = ({sx,className}:{className?:string,sx?:any}) => {
             setCurrentImg(imgs[0]);
         }
     }
-  return (
-    <Box
-    onMouseOver={() => handleonMouseIn()}
-    onMouseOut={() => handleonMouseOut()}
-    
-    sx={{
-        maxHeight: '600px',
-        textAlign: 'center',
-        width: '100%',
-        overflow: 'hidden',
-        ...sx,
-}}>
-    <Link className='link scale' href='/'>
-        <img ref={ref} src={currentImg} className='img' alt="Product Image"/>
-        <Typography
+    return (
+        <Box
+            onMouseOver={() => handleonMouseIn()}
+            onMouseOut={() => handleonMouseOut()}
             sx={{
-            py: '.25em',
-            fontSize: '1.2em'
-        }}>Some scam probably 100g</Typography>
-    </Link>
-    <Typography
-        sx={{
-        color: 'black',
-        fontSize: '1.2em',
-        fontWeight: '300'
-    }}>$2.99</Typography>
-</Box>
-  )
+            position: 'relative',
+            maxHeight: '600px',
+            width: '100%',
+            overflow: 'hidden',
+            ...sx
+        }}>
+            <Link
+                style={{
+                position: 'relative'
+            }}
+                className='link scale'
+                href='/'>
+                <Box
+                    sx={{
+                    position: 'relative',
+                    ':hover': {
+                        '& .productOptions': {
+                            display: 'flex'
+                        }
+                    }
+                }}>
+                    <img ref={ref} src={currentImg} className='img' alt="Product Image"/>
+                    <Box
+                        className='productOptions'
+                        sx={{
+                        bottom: {
+                            xs: '85%',
+                            sm: '50%'
+                        },
+                        right: '2%',
+                        transform: {
+                            sm: 'translateY(50%)'
+                        },
+                        display: {
+                            xs: 'flex',
+                            sm: ' none'
+                        },
+                        flexDirection: 'column',
+                        position: 'absolute',
+                        gap: '.15em'
+                    }}>
+                        <Tooltip placement='left' title={'Quick View'}>
+                            <IconButton
+                                sx={{
+                                ':hover': {
+                                    background: 'white'
+                                },
+                                background: 'white',
+                                color: '#333',
+                                display: {
+                                    xs: 'none',
+                                    sm: 'flex'
+                                }
+                            }}>
+                                <RemoveRedEyeIcon fontSize={'small'}/>
+                            </IconButton>
+                        </Tooltip>
+
+                        <Tooltip placement='left' title={'Add To Favourites'}>
+                            <IconButton
+                                sx={{
+                                ':hover': {
+                                    background: 'white'
+                                },
+                                background: 'white',
+                                color: '#333'
+                            }}>
+                                <FavoriteBorderIcon fontSize={'small'}/>
+                            </IconButton>
+                        </Tooltip>
+
+                    </Box>
+                </Box>
+
+                <Typography
+                    sx={{
+                    py: '.25em',
+                    mt: '.25em',
+                    fontSize: '1.1em'
+                }}>Some scam probably 100g</Typography>
+
+            </Link>
+            <Box sx={{justifyContent:'space-between'}} className='flexed'>
+                <Typography
+                    className='clr'
+                    sx={{
+                    fontSize: '1em'
+                }}>299.000 LBP</Typography>
+                <IconButton>
+                    <AddShoppingCartIcon/>
+                </IconButton>
+            </Box>
+
+        </Box>
+    )
 }
 
 export default ProductCard

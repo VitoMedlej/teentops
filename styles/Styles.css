@@ -9,6 +9,10 @@ h1, h2, h3, h4, p {
   font-family: "Montserrat", sans-serif !important;
 }
 
+.clr {
+  color: red;
+}
+
 .bb {
   border-bottom: 1px solid rgba(128, 128, 128, 0.168627451);
 }
@@ -45,6 +49,11 @@ h1, h2, h3, h4, p {
   cursor: pointer;
 }
 
+.flexed {
+  display: flex;
+  align-items: center;
+}
+
 .productHolder {
   display: flex;
   margin: 2em auto;
@@ -53,6 +62,7 @@ h1, h2, h3, h4, p {
   justify-content: center;
   gap: 1em;
 }
+
 .img {
   -o-object-fit: cover;
      object-fit: cover;

@@ -11,7 +11,7 @@ const FilterSection = () => {
             sx={{
             width: '100%',
             background: 'white',
-                justifyContent:'space-evenly',
+            justifyContent:'space-evenly',
             display: 'flex',pb:'.25em',
             maxWidth: 'lg',margin: '0 auto',
         }}>
