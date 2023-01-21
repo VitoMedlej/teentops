@@ -33,7 +33,7 @@ const ProductCard = ({sx, handleQuickView,className} : {
     const router = useRouter()
     return (
         <Box
-        onClick={()=>router.push('/product/product-name')}
+        // onClick={()=>router.push('/product/product-name')}
             onMouseOver={() => handleonMouseIn()}
             onMouseOut={() => handleonMouseOut()}
             sx={{

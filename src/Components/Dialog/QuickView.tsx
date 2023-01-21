@@ -10,6 +10,7 @@ import ProductCarousel from '../ProductCarousel/ProductCarousel';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import CloseIcon from '@mui/icons-material/Close';
 
+
 export interface DialogTitleProps {
     id : string;
     children?: React.ReactNode;
@@ -38,7 +39,6 @@ export default function CustomizedDialogs({isOpen, setQuickView} : {
 
         <Dialog
             maxWidth='lg'
-         
             onClose={handleClose}
             aria-labelledby="customized-dialog-title"
             open={open}>
@@ -48,16 +48,30 @@ export default function CustomizedDialogs({isOpen, setQuickView} : {
                 sx={{
                 maxWidth: '900px !important',
                 display: 'flex',
-                padding:'3em',
+                padding: {
+                    xs: '1em',
+                    sm: '3em'
+                },
+                flexWrap: 'wrap',
                 justifyContent: 'space-between'
             }}>
-                <Box sx={{
-                    width: '45%'
+
+                <>
+                    <Box
+                    sx={{
+                    width: {
+                        xs: '100%',
+                        sm: '45%'
+                    }
                 }}>
                     <ProductCarousel/>
                 </Box>
-                <Box sx={{
-                    width: '50%'
+                <Box
+                    sx={{
+                    width: {
+                        xs: '100%',
+                        sm: '50%'
+                    }
                 }}>
                     <Typography
                         sx={{
@@ -119,19 +133,19 @@ export default function CustomizedDialogs({isOpen, setQuickView} : {
                     </Box>
 
                 </Box>
-
-            </DialogContent>
-            <IconButton
-            onClick={()=>handleClose()}
-                sx={{
-                position: 'absolute',
-                top: 0,
-                right: 0,
-                color: 'red'
-            }}>
-                <CloseIcon/>
-            </IconButton>
-        </Dialog>
+            </>
+        </DialogContent>
+        <IconButton
+            onClick={() => handleClose()}
+            sx={{
+            position: 'absolute',
+            top: 0,
+            right: 0,
+            color: 'red'
+        }}>
+            <CloseIcon/>
+        </IconButton>
+    </Dialog>
 
     );
 }
