@@ -17,25 +17,16 @@ const ProductCarousel = () => {
               }}
               navigation={true}
             spaceBetween={10}
+            slidesPerView={1}
             modules={[FreeMode,Autoplay, Pagination]}
-            breakpoints={{
-                
-                200: {
-                    width: 310,
-                    slidesPerView: 1
-                },
-                768: {
-                    width: 768,
-                    slidesPerView: 2
-                },
-             
-               
-        }}>
+         >
 
             {[1,2,3,4].map(product => {
 
                 return <SwiperSlide key={product}>
-                            <Box>foo bar baz</Box>
+                            <Box sx={{display:'flex',margin:'0 auto',maxWidth:'300px'}}>
+                                <img className='img' src="https://cdn.shopify.com/s/files/1/0549/1385/9821/products/ChristmasOffer11.jpg?v=1671539939" alt="" />
+                            </Box>
                 </SwiperSlide>
 
             })

@@ -1,11 +1,11 @@
 import {Box, IconButton, Tooltip, Typography} from '@mui/material'
-import Link from 'next/link'
 import {useState} from 'react'
 import {useRef} from 'react'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
-
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import { Router } from '@mui/icons-material';
+import { useRouter } from 'next/router';
 
 const imgs = [`https://piecesnmore.com/wp-content/uploads/2023/01/Backstage-Angel.png`, `https://cdn.shopify.com/s/files/1/0549/1385/9821/products/ChristmasOffer11.jpg?v=1671539939&width=360`]
 
@@ -30,8 +30,10 @@ const ProductCard = ({sx, handleQuickView,className} : {
             setCurrentImg(imgs[0]);
         }
     }
+    const router = useRouter()
     return (
         <Box
+        onClick={()=>router.push('/product/product-name')}
             onMouseOver={() => handleonMouseIn()}
             onMouseOut={() => handleonMouseOut()}
             sx={{
