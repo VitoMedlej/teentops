@@ -9,8 +9,9 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 const imgs = [`https://piecesnmore.com/wp-content/uploads/2023/01/Backstage-Angel.png`, `https://cdn.shopify.com/s/files/1/0549/1385/9821/products/ChristmasOffer11.jpg?v=1671539939&width=360`]
 
-const ProductCard = ({sx, className} : {
+const ProductCard = ({sx, handleQuickView,className} : {
     className?: string,
+    handleQuickView : (id: string)=> void;
     sx?: any
 }) => {
 
@@ -45,12 +46,12 @@ const ProductCard = ({sx, className} : {
                 }
             }
         }}>
-            <Link
+            {/* <Link
                 style={{
                 position: 'relative'
             }}
                 className='link scale'
-                href='/'>
+                href='/'> */}
                 <Box
                     sx={{
                     position: 'relative',
@@ -78,6 +79,7 @@ const ProductCard = ({sx, className} : {
                     }}>
                         <Tooltip placement='left' title={'Quick View'}>
                             <IconButton
+                                onClick={()=>handleQuickView('someId')}
                                 sx={{
                                 ':hover': {
                                     background: 'white'
@@ -119,7 +121,7 @@ const ProductCard = ({sx, className} : {
                     fontSize: '1.1em'
                 }}>Some scam probably 100g</Typography>
 
-            </Link>
+            {/* </Link> */}
             <Box sx={{mx:'.15em',justifyContent:'space-between'}} className='flexed'>
                 <Typography
                     className='clr'

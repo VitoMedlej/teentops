@@ -11,9 +11,10 @@ import Navbar from '../src/Components/Navbar/Navbar';
 import SideBar from '../src/Components/Drawer/SideBar';
 import { Dialog } from '@mui/material';
 import QuickView from '../src/Components/Dialog/QuickView';
+import { useState } from 'react';
 
 export default function Home() {
-  
+    const [quickView, setQuickView] = useState<{isOpen:boolean,productId:null | string}>({isOpen:false,productId:null})
   return (
     <>
       <Head>
@@ -29,13 +30,13 @@ export default function Home() {
       <main>
       <MainCarousel/>
       <WhatsApp/>
-      <ProductCollection title='Christmas Sale'/>      
-      <ProductCollection title='Christmas Sale'/>      
+      <ProductCollection setQuickView={setQuickView} title='Christmas Sale'/>      
+      <ProductCollection setQuickView={setQuickView} title='Christmas Sale'/>      
       <CategoryList/>
-      <ProductCollection title='Christmas Sale'/>      
+      <ProductCollection setQuickView={setQuickView} title='Christmas Sale'/>      
       <FullscreenPoster/>
       <FullscreenPoster reversed={true}/>
-      <QuickView/>
+      <QuickView setQuickView={setQuickView} isOpen={quickView.isOpen}/>
       </main>
       <Perks/>
     </>
