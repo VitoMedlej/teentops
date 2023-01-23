@@ -9,11 +9,15 @@ const FilterSection = () => {
     return (
         <Box
             sx={{
-            width: '100%',
+            width: {xs:'100%',md:'20%'},
             background: 'white',
-            justifyContent:'space-evenly',
-            display: 'flex',pb:'.25em',
-            maxWidth: 'lg',margin: '0 auto',
+            maxWidth:{md:'200px'},
+            flexDirection:'column',
+        height:{md:'100vh'},
+            // justifyContent:'space-evenly',
+            display: 'flex',
+            pr:'.15em',
+            borderRight:{md:'1px solid #00000036'},
         }}>
             <SelectOneForm/>
             <SelectOneForm/>

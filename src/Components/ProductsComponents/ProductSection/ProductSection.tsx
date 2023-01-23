@@ -4,7 +4,7 @@ import ProductCard from '../../HomeComponents/Cards/ProductCard'
 
 const ProductSection = () => {
     return (
-        <Box>
+        <Box sx={{width:{xs:'100%',md:'80%'}}}> 
             <Box sx={{maxWidth:'lg'}} className='productHolder'>
                       {[1,2,3,4,5].map(i=>{
 

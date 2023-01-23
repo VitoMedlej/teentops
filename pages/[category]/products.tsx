@@ -4,6 +4,7 @@ import TopAd from '../../src/Components/HomeComponents/TopAd/TopAd'
 import Navbar from '../../src/Components/Navbar/Navbar'
 import FilterSection from '../../src/Components/ProductsComponents/Filter/FilterSection'
 import ProductSection from '../../src/Components/ProductsComponents/ProductSection/ProductSection'
+import { Box } from '@mui/material'
 
 const Products = () => {
   return (
@@ -17,10 +18,10 @@ const Products = () => {
     </Head>
     <TopAd/>
     <Navbar/>
-    <main>
+    <Box className='flexed' sx={{flexWrap:'wrap',mx:'1em',mt:'2em',alignItems:'flex-start',flexDirection:'row'}}>
     <FilterSection/>
     <ProductSection/>
-    </main>
+    </Box>
   </>
   )
 }
