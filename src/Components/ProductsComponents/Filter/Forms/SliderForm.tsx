@@ -1,12 +1,13 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Slider from '@mui/material/Slider';
+import { Typography } from '@mui/material';
 
 function valuetext(value: number) {
   return `${value}°C`;
 }
 
-const minDistance = 2;
+const minDistance = 0;
 
 export default function MinimumDistanceSlider() {
   const [value1, setValue1] = React.useState<number[]>([20, 37]);
@@ -31,7 +32,7 @@ export default function MinimumDistanceSlider() {
  
 
   return (
-    <Box sx={{ width: 300 }}>
+    <Box>
       <Slider
       min={1}
         getAriaLabel={() => 'Minimum distance'}
@@ -41,7 +42,15 @@ export default function MinimumDistanceSlider() {
         getAriaValueText={valuetext}
         disableSwap
       />
-    
+       <span className='gray'> 
+        Range :{' '}
+       </span>
+       <span style={{fontWeight:'600'}}>
+        
+        {value1[0]}$
+        {' - '}
+        {value1[1]}$
+       </span>
     </Box>
   );
 }

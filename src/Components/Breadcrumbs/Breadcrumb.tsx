@@ -11,7 +11,7 @@ function handleClick(event: React.MouseEvent<HTMLDivElement, MouseEvent>) {
 export default function ActiveLastBreadcrumb() {
   return (
     <div role="presentation" onClick={handleClick}>
-      <Breadcrumbs sx={{mx:'1em',pt:'3em',pb:'.5em'}} aria-label="breadcrumb">
+      <Breadcrumbs sx={{mx:'1em',pb:'.5em'}} aria-label="breadcrumb">
         <Link underline="hover" color="inherit" href="/">
           MUI
         </Link>

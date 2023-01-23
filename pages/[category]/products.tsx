@@ -4,7 +4,9 @@ import TopAd from '../../src/Components/HomeComponents/TopAd/TopAd'
 import Navbar from '../../src/Components/Navbar/Navbar'
 import FilterSection from '../../src/Components/ProductsComponents/Filter/FilterSection'
 import ProductSection from '../../src/Components/ProductsComponents/ProductSection/ProductSection'
-import { Box } from '@mui/material'
+import { Box, Divider, Typography } from '@mui/material'
+import CategoryMenu from '../../src/Components/HomeComponents/CategoryMenu/CategoryMenu'
+import Breadcrumb from '../../src/Components/Breadcrumbs/Breadcrumb'
 
 const Products = () => {
   return (
@@ -18,7 +20,15 @@ const Products = () => {
     </Head>
     <TopAd/>
     <Navbar/>
-    <Box className='flexed' sx={{flexWrap:'wrap',mx:'1em',mt:'2em',alignItems:'flex-start',flexDirection:'row'}}>
+    <CategoryMenu/>
+
+    <Box className='flexed' sx={{pt:'3em',mx:'1em',justifyContent:'space-between'}}>
+
+    <Breadcrumb/>
+    <Typography className='gray'>Showing 19 out of 40</Typography>
+    </Box>
+    <Divider></Divider>
+    <Box  sx={{display:'flex',flexWrap:'wrap',mx:'1em',justifyContent:'space-between',mt:'2em',alignItems:'flex-start',flexDirection:'row'}}>
     <FilterSection/>
     <ProductSection/>
     </Box>

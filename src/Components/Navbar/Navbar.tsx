@@ -48,11 +48,11 @@ export default function Navbar() {
                         right: '50%',
                         transform: 'translateX(50%)'
                     }}>
-                        <Button color='inherit'>
+                        <a href='/' color='inherit'>
                             <img
                                 src="https://cdn.shopify.com/s/files/1/0549/1385/9821/files/65935021_2033944956913929_6548784430054375424_n-removebg-preview_fa7b73d7-3d6e-49e0-a024-66f13e0dac24_250x.png?v=1632751657"
                                 alt=""/>
-                        </Button>
+                        </a>
                     </Box>
                     <Box
                         sx={{

@@ -62,7 +62,9 @@ const ProductCard = ({sx, handleQuickView,className} : {
                     position: 'relative',
                    
                 }}>
-                    <img ref={ref} src={currentImg} className='img' alt="Product Image"/>
+                    <img
+                    onClick={handleClick}
+                    ref={ref} src={currentImg} className='img pointer' alt="Product Image"/>
                     <Box
                         className='productOptions'
                         sx={{
