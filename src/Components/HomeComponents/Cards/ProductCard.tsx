@@ -11,13 +11,14 @@ const imgs = [`https://piecesnmore.com/wp-content/uploads/2023/01/Backstage-Ange
 
 const ProductCard = ({sx, handleQuickView,className} : {
     className?: string,
-    handleQuickView : (id: string)=> void;
+    handleQuickView ?: (id: string)=> void;
     sx?: any
 }) => {
 
     const ref : any = useRef()
     const [currentImg,
         setCurrentImg] = useState(imgs[0])
+        const router = useRouter()
     const handleonMouseIn = () => {
         if (ref
             ?.current && imgs.length > 1) {
@@ -30,7 +31,9 @@ const ProductCard = ({sx, handleQuickView,className} : {
             setCurrentImg(imgs[0]);
         }
     }
-    const router = useRouter()
+    const handleClick = () => {
+        router.push('/product/foo-bname')
+    }
     return (
         <Box
         // onClick={()=>router.push('/product/product-name')}
@@ -81,7 +84,7 @@ const ProductCard = ({sx, handleQuickView,className} : {
                     }}>
                         <Tooltip placement='left' title={'Quick View'}>
                             <IconButton
-                                onClick={()=>handleQuickView('someId')}
+                                onClick={()=>handleQuickView ? handleQuickView('someId') : ''}
                                 sx={{
                                 ':hover': {
                                     background: 'white'
@@ -117,8 +120,11 @@ const ProductCard = ({sx, handleQuickView,className} : {
                 </Box>
 
                 <Typography
+                onClick={()=>handleClick()}
                     sx={{
                     py: '.25em',
+                    cursor:'pointer',
+                    width:'max-content',
                     mt: '.25em',
                     fontSize: '1.1em'
                 }}>Some scam probably 100g</Typography>
@@ -131,8 +137,8 @@ const ProductCard = ({sx, handleQuickView,className} : {
                     fontSize: '1em'
                 }}>299.000 LBP</Typography>
                 <Tooltip title='Add To Cart' placement='left'>
-
-                <IconButton sx={{boxShadow:'1px 1px 3px #0000005e',':hover':{background:'#eaeaea'}}}>
+                {/* boxShadow:'1px 1px 3px #0000005e', */}
+                <IconButton sx={{':hover':{background:'#eaeaea'}}}>
                     <ShoppingCartIcon/>
                 </IconButton>
                 </Tooltip>

@@ -4,7 +4,7 @@ import 'swiper/css';
 import { Box } from '@mui/material';
 
 
-const ProductCarousel = () => {
+const ProductCarousel = ({mw} : {mw ?: string}) => {
    
     return (
         <Swiper
@@ -13,7 +13,7 @@ const ProductCarousel = () => {
               }}
               autoplay={{
                 delay:  3000,
-                disableOnInteraction: false,
+                disableOnInteraction: true,
               }}
               navigation={true}
             spaceBetween={10}
@@ -24,8 +24,8 @@ const ProductCarousel = () => {
             {[1,2,3,4].map(product => {
 
                 return <SwiperSlide key={product}>
-                            <Box sx={{display:'flex',margin:'0 auto',maxWidth:'300px'}}>
-                                <img className='img' src="https://cdn.shopify.com/s/files/1/0549/1385/9821/products/ChristmasOffer11.jpg?v=1671539939" alt="" />
+                            <Box sx={{display:'flex',margin:'0 auto',maxWidth:`${mw || '300px'}`}}>
+                                <img className='img' src="https://piecesnmore.com/wp-content/uploads/2023/01/Wild-Primrose.png" alt="" />
                             </Box>
                 </SwiperSlide>
 

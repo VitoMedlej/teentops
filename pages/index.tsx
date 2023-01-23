@@ -36,8 +36,8 @@ export default function Home() {
       <ProductCollection setQuickView={setQuickView} title='Christmas Sale'/>      
       <FullscreenPoster/>
       <FullscreenPoster reversed={true}/>
-      <QuickView setQuickView={setQuickView} isOpen={quickView.isOpen}/>
-      </main>
+        <QuickView setQuickView={setQuickView} isOpen={quickView.isOpen}/>
+        </main>
       <Perks/>
     </>
   )

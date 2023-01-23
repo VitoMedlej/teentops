@@ -54,6 +54,23 @@ h1, h2 , h3 , h4,p {
     display : flex;
     align-items: center;
 }
+.quantity-picker {
+    display : flex; 
+    position : relative;
+    .quantity-modifier {
+        height: 100%;
+        width: 40px;
+        position: absolute;
+    }
+    .modifier-right {
+        right : 0;
+    }
+    input {
+        width: 100px  !important;
+        color : #5c5c5c;
+        font-size:1em;
+    }
+}
 .productHolder {
     display: flex;
     margin:2em auto;
