@@ -21,16 +21,19 @@ const Products = () => {
     <TopAd/>
     <Navbar/>
     <CategoryMenu/>
+  <Box sx={{margin:'0 auto',maxWidth:'xl'}}>
 
     <Box className='flexed' sx={{pt:'3em',mx:'1em',justifyContent:'space-between'}}>
 
     <Breadcrumb/>
-    <Typography className='gray'>Showing 19 out of 40</Typography>
+    <Typography className=''>Showing 19 out of 40</Typography>
     </Box>
     <Divider></Divider>
     <Box  sx={{display:'flex',flexWrap:'wrap',mx:'1em',justifyContent:'space-between',mt:'2em',alignItems:'flex-start',flexDirection:'row'}}>
     <FilterSection/>
     <ProductSection/>
+    
+  </Box>
     </Box>
   </>
   )

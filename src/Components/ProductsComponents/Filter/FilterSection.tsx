@@ -1,8 +1,5 @@
-import {Box, Divider, Typography} from '@mui/material'
+import {Box, Divider, TextField, Typography} from '@mui/material'
 import React from 'react'
-import CheckMarkForm from './Forms/CheckMarkForm'
-import SelectOneForm from './Forms/SelectOneForm'
-import CheckboxForm from './Forms/CheckboxForm'
 import SliderForm from './Forms/SliderForm'
 import RadioGroupForm from './Forms/RadioGroupForm'
 
@@ -16,7 +13,7 @@ const FilterSection = () => {
             },
             background: 'white',
             maxWidth: {
-                md: '200px'
+                md: '300px'
             },
             pr: {
                 md: '1.5em'
@@ -38,7 +35,7 @@ const FilterSection = () => {
             }}>
                 Filter Options
             </Typography>
-            <Divider></Divider>
+            {/* <Divider></Divider> */}
             <Box
                 sx={{
                 pt: '2em',
@@ -46,6 +43,10 @@ const FilterSection = () => {
                 flexDirection: 'column',
                 gap: '2em'
             }}>
+                <Box>
+                    Search
+                    <TextField/>
+                </Box>
                 <Box>
                     Price:
                     <SliderForm/>
