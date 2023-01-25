@@ -124,11 +124,11 @@ const ProductCard = ({sx, handleQuickView,className} : {
                 <Typography
                 onClick={()=>handleClick()}
                     sx={{
-                    py: '.25em',
+                    pt: '.25em',
                     cursor:'pointer',
                     width:'max-content',
                     mt: '.25em',
-                    fontSize: '1.1em'
+                    fontSize: '1em'
                 }}>Some scam probably 100g</Typography>
 
             {/* </Link> */}

@@ -31,11 +31,14 @@ export default function Home() {
       <MainCarousel/>
       <WhatsApp/>
       <ProductCollection setQuickView={setQuickView} title='Christmas Sale'/>      
+      <FullscreenPoster img='https://www.ishtari.com/image/data/system_banner/10000/1800/1676/trendyol-brand-slider-web.png'/>
       <ProductCollection setQuickView={setQuickView} title='Christmas Sale'/>      
       <CategoryList/>
       <ProductCollection setQuickView={setQuickView} title='Christmas Sale'/>      
-      <FullscreenPoster/>
-      <FullscreenPoster reversed={true}/>
+      <FullscreenPoster img=' https://www.ishtari.com/image/data/system_banner/10000/1800/1681/FASHION.png'/>
+
+     
+      {/* <FullscreenPoster reversed={true}/> */}
         <QuickView setQuickView={setQuickView} isOpen={quickView.isOpen}/>
         </main>
       <Perks/>

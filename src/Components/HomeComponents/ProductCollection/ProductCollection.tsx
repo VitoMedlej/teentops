@@ -61,18 +61,22 @@ const ProductCollection = ({sx,title,setQuickView} : {
             </Box>
             <Button
                 sx={{
-                ':hover': {
                     border: '1px solid black',
-                    color: 'black'
+                ':hover': {
+                    border: '1px solid red',
+                background: 'red',
+                color: 'white',
+
+
                 },
                 margin: '0 auto',
                 display: 'flex',
-                mt: '3em',
+                mt: '2em',
                 justifyContent: 'center',
-                border: '1px solid',
-                background: 'red',
-                color: 'white',
-                padding: '.75em 2.75em',
+                // border: '1px solid',
+                background: 'white',
+                color: 'black',
+                padding: '.45em 1.75em',
                 borderRadius: 0
             }}>View All</Button>
         </Box>

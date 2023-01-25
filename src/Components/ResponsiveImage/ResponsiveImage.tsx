@@ -4,7 +4,7 @@ import React from 'react'
 const ResponsiveImage = ({handleClick,defaultImg,img2}:any) => {
     return (
         <>
-           <Box
+           {/* <Box
             onClick={handleClick}
            sx={{display:{xs:'none',sm:'block'}}}>
             <img className='img' src={defaultImg} alt="" />
@@ -14,7 +14,11 @@ const ResponsiveImage = ({handleClick,defaultImg,img2}:any) => {
            
            sx={{display:{sm:'none'}}}>
             <img src={img2} className='img' alt="" />
-           </Box>
+           </Box> */}
+           <picture className='img'>
+  <source media="(min-width:600px)" srcSet={defaultImg}/>
+  <img className='img' src={img2} />
+</picture>
         </>
 
     )
