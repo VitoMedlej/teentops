@@ -9,7 +9,7 @@ const FilterSection = () => {
             sx={{
             width: {
                 xs: '100%',
-                md: '25%'
+                md: '22%'
             },
             background: 'white',
             maxWidth: {

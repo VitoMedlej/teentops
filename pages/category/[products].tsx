@@ -8,7 +8,7 @@ import { Box, Divider, Typography } from '@mui/material'
 import CategoryMenu from '../../src/Components/HomeComponents/CategoryMenu/CategoryMenu'
 import Breadcrumb from '../../src/Components/Breadcrumbs/Breadcrumb'
 
-const Products = () => {
+const Index = () => {
   return (
     <>
     <Head>
@@ -29,7 +29,9 @@ const Products = () => {
     <Typography className=''>Showing 19 out of 40</Typography>
     </Box>
     <Divider></Divider>
-    <Box  sx={{display:'flex',flexWrap:'wrap',mx:'1em',justifyContent:'space-between',mt:'2em',alignItems:'flex-start',flexDirection:'row'}}>
+    <Box  
+    
+    sx={{display:'flex',flexWrap:'wrap',mx:'1em',justifyContent:'space-between',mt:'2em',alignItems:'flex-start',flexDirection:'row'}}>
     <FilterSection/>
     <ProductSection/>
     
@@ -39,4 +41,4 @@ const Products = () => {
   )
 }
 
-export default Products
+export default Index
