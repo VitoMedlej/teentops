@@ -1,63 +1,41 @@
-import {Box, Divider, TextField, Typography} from '@mui/material'
+import {Box, Button, Divider, TextField, Typography} from '@mui/material'
 import React from 'react'
 import SliderForm from './Forms/SliderForm'
 import RadioGroupForm from './Forms/RadioGroupForm'
+import FilterAccordion from '../FilterAccordion'
 
-const FilterSection = () => {
+const FilterSection = ({sx}:any) => {
     return (
         <Box
             sx={{
             width: {
                 xs: '100%',
-                md: '22%'
+                md: '20%'
             },
             background: 'white',
             maxWidth: {
                 md: '300px'
-            },
-            pr: {
-                md: '1.5em'
             },
             flexDirection: 'column',
             height: {
                 md: '100vh'
             },
             display: 'flex',
-            borderRight: {
-                md: '1px solid #00000036'
-            }
+            ...sx,
+            // borderRight: {
+            //     md: '1px solid #00000036'
+            // }
         }}>
-            <Typography
-                sx={{
-                pt: '.5em',
-                fontSize: '1.5em',
-                fontWeight: '500'
-            }}>
-                Filter Options
-            </Typography>
-            {/* <Divider></Divider> */}
-            <Box
-                sx={{
-                pt: '2em',
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '2em'
-            }}>
-                <Box>
-                    Search
-                    <TextField/>
+           <Typography sx={{py:'.5em',fontWeight:'600',fontSize:'1.2em'}}>Filter By</Typography>
+         
+          
+                <TextField sx={{my:'.5em'}} variant='standard' size='small' placeholder='Search Products'/>
+                <FilterAccordion/>
+                <Box sx={{pt:'1.5em'}}>
+                {/* <Divider/> */}
+                <Button sx={{color:'black'}}>Confirm</Button>
+                <Button sx={{color:'red'}}>Reset</Button>
                 </Box>
-                <Box>
-                    Price:
-                    <SliderForm/>
-                </Box>
-                <Divider/>
-                <Box  sx={{display:'flex',flexDirection:'column'}}>
-                    Status:
-                    <RadioGroupForm/>
-                </Box>
-            </Box>
-
         </Box>
     )
 }

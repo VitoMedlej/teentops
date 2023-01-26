@@ -36,9 +36,7 @@ export default function Home() {
       <CategoryList/>
       <ProductCollection setQuickView={setQuickView} title='Christmas Sale'/>      
       <FullscreenPoster img=' https://www.ishtari.com/image/data/system_banner/10000/1800/1681/FASHION.png'/>
-
      
-      {/* <FullscreenPoster reversed={true}/> */}
         <QuickView setQuickView={setQuickView} isOpen={quickView.isOpen}/>
         </main>
       <Perks/>

@@ -9,7 +9,7 @@ function valuetext(value: number) {
 
 const minDistance = 0;
 
-export default function MinimumDistanceSlider() {
+export default function MinimumDistanceSlider({sx}:{sx?:any}) {
   const [value1, setValue1] = React.useState<number[]>([20, 37]);
 
   const handleChange1 = (
@@ -32,7 +32,7 @@ export default function MinimumDistanceSlider() {
  
 
   return (
-    <Box>
+    <Box sx={{...sx}}>
       <Slider
       min={1}
         getAriaLabel={() => 'Minimum distance'}

@@ -6,8 +6,9 @@ import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { Router } from '@mui/icons-material';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 
-const imgs = [`https://piecesnmore.com/wp-content/uploads/2023/01/Backstage-Angel.png`, `https://cdn.shopify.com/s/files/1/0549/1385/9821/products/ChristmasOffer11.jpg?v=1671539939&width=360`]
+const imgs = [`https://www.ishtari.com/image/cache/data/system_product/80000/72400/72369/01-192x264.jpg?207`, `https://cdn.shopify.com/s/files/1/0549/1385/9821/products/ChristmasOffer11.jpg?v=1671539939&width=360`]
 
 const ProductCard = ({sx, handleQuickView,className} : {
     className?: string,
@@ -62,9 +63,12 @@ const ProductCard = ({sx, handleQuickView,className} : {
                     position: 'relative',
                    
                 }}>
+                <Box sx={{height:'350px'}}>
                     <img
                     onClick={handleClick}
+                    style={{maxHeight:'400px'}}
                     ref={ref} src={currentImg} className='img pointer' alt="Product Image"/>
+                    </Box>
                     <Box
                         className='productOptions'
                         sx={{
@@ -120,7 +124,7 @@ const ProductCard = ({sx, handleQuickView,className} : {
 
                     </Box>
                 </Box>
-
+                
                 <Typography
                 onClick={()=>handleClick()}
                     sx={{
@@ -131,7 +135,9 @@ const ProductCard = ({sx, handleQuickView,className} : {
                     fontSize: '1em'
                 }}>Some scam probably 100g</Typography>
 
-            {/* </Link> */}
+                <span className='gray' style={{fontSize:'.76em'}}>
+                    Addidas
+                    </span>
             <Box sx={{mx:'.15em',justifyContent:'space-between'}} className='flexed'>
                 <Typography
                     className='clr'

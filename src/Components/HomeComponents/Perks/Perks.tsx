@@ -8,7 +8,8 @@ const Perks = () => {
         sx={{
             my:'3em',
             flexWrap:'wrap',
-
+            background:'#f0f0f0',
+            py:'1em',
             justifyContent: 'space-evenly',
             width: '100%',
         }}>

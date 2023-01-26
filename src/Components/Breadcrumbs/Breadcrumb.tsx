@@ -8,10 +8,10 @@ function handleClick(event: React.MouseEvent<HTMLDivElement, MouseEvent>) {
   console.info('You clicked a breadcrumb.');
 }
 
-export default function ActiveLastBreadcrumb() {
+export default function ActiveLastBreadcrumb({sx}:{sx?:any}) {
   return (
     <div role="presentation" onClick={handleClick}>
-      <Breadcrumbs sx={{mx:'1em',pb:'.5em'}} aria-label="breadcrumb">
+      <Breadcrumbs sx={{mx:'1em',pb:'.5em',...sx}} aria-label="breadcrumb">
         <Link underline="hover" color="inherit" href="/">
           MUI
         </Link>
