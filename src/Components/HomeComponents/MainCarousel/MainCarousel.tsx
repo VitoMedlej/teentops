@@ -12,6 +12,7 @@ const MainCarousel = () => {
             py: {xs:'.5em',sm:'2em'},
             width: '100%',
             maxWidth: 'lg',
+            borderRadius:'6px',
             margin: '0 auto',
             display: {
                 xs: 'flex'
@@ -34,12 +35,17 @@ const MainCarousel = () => {
 
                     return <SwiperSlide className='ztop cursor ' key={item.img}>
                         <Box
+                        
                             sx={{
-                            height: '100%',
+            borderRadius:'6px',
+                        
+                                height: '100%',
                             width:'100%'
                         }}>
 
                             <img
+            
+            style={{borderRadius:'9px'}}
                                 className='img'
                                 src={`${item.img}`}
                                 alt=""/>

@@ -7,11 +7,13 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import LocalMallOutlinedIcon from '@mui/icons-material/LocalMallOutlined';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { CartContext, DrawerContext } from '../../../pages/_app';
+import SearchModal from './SearchModal';
 
 export default function Navbar() {
     const [open, setOpen] = useContext(DrawerContext);
+    const [openModal, setOpenModal] = useState(false);
     const [cartOpen, setCartOpen] = useContext(CartContext);
     
     
@@ -61,7 +63,9 @@ export default function Navbar() {
                         display: 'flex'
                     }}>
 
-                        <IconButton color='inherit'>
+                        <IconButton
+                           onClick={()=>setOpenModal(!openModal)}
+                        color='inherit'>
 
                             <SearchOutlinedIcon/>
 
@@ -78,6 +82,7 @@ export default function Navbar() {
                     </Box>
                 </Toolbar>
             </AppBar>
+            <SearchModal openModal={openModal} setOpenModal={setOpenModal}/>
         </Box>
     );
 }

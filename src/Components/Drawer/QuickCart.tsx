@@ -14,6 +14,7 @@ import {CartContext} from '../../../pages/_app';
 import {IconButton} from '@mui/material';
 import CancelPresentationIcon from '@mui/icons-material/CancelPresentation';
 import CartProduct from '../Products/CartProduct';
+import Link from 'next/link';
 
 
 export default function TemporaryDrawer() {
@@ -59,12 +60,16 @@ export default function TemporaryDrawer() {
                             }}/>
                         </IconButton>
                     </Box>
-                    <Box sx={{maxHeight:'400px',overflowY:'scroll'}} >
+                    <Box sx={{maxHeight:'350px',overflowY:'scroll'}} >
                             <CartProduct/>
                             <CartProduct/>
                             <CartProduct/>
                             <CartProduct/>
                             <CartProduct/>
+                    </Box>
+                    <Box sx={{my:1}}>
+                       <Button sx={{color:'white',background:'red',borderRadius:'6px',p:1,px:2,fontSize:'10px'}}>Checkout</Button>
+                       <Button sx={{color:''}}>Continue Shopping</Button>
                     </Box>
  
                 </Box>

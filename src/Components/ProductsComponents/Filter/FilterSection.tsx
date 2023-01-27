@@ -1,7 +1,6 @@
-import {Box, Button, Divider, TextField, Typography} from '@mui/material'
+import {Box, Button,  TextField, Typography} from '@mui/material'
 import React from 'react'
-import SliderForm from './Forms/SliderForm'
-import RadioGroupForm from './Forms/RadioGroupForm'
+import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import FilterAccordion from '../FilterAccordion'
 
 const FilterSection = ({sx}:any) => {
@@ -22,17 +21,22 @@ const FilterSection = ({sx}:any) => {
             },
             display: 'flex',
             ...sx,
-            // borderRight: {
-            //     md: '1px solid #00000036'
-            // }
+           
         }}>
            <Typography sx={{py:'.5em',fontWeight:'600',fontSize:'1.2em'}}>Filter By</Typography>
          
           
-                <TextField sx={{my:'.5em'}} variant='standard' size='small' placeholder='Search Products'/>
+           <Box className="flexed" sx={{position:'relative',mt:1,width:'100%'}}>
+
+<TextField size='small' placeholder='Search By Name' sx={{width:'100%'}}/>
+<SearchOutlinedIcon sx={{
+
+position: 'absolute',
+right: '2%',
+}}/>
+</Box>
                 <FilterAccordion/>
                 <Box sx={{pt:'1.5em'}}>
-                {/* <Divider/> */}
                 <Button sx={{color:'black'}}>Confirm</Button>
                 <Button sx={{color:'red'}}>Reset</Button>
                 </Box>
