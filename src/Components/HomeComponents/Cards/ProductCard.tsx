@@ -126,11 +126,14 @@ const ProductCard = ({sx, handleQuickView,className} : {
                 </Box>
                 
                 <Typography
+                className='titleMax'
                 onClick={()=>handleClick()}
                     sx={{
+                    
                     pt: '.25em',
                     cursor:'pointer',
-                    width:'max-content',
+                    width:'100%',
+                    // wordBreak:'break-all',
                     mt: '.25em',
                     fontSize: '1em'
                 }}>Some scam probably 100g</Typography>

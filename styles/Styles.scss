@@ -116,6 +116,17 @@ h1, h2 , h3 , h4,p {
         max-height:500px
     }
 }
+.titleMax {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
 @media (max-width:700px) {
     .img2 {
         img {

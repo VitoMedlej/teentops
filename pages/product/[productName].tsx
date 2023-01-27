@@ -10,6 +10,28 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import ProductCollection from '../../src/Components/HomeComponents/ProductCollection/ProductCollection'
 import CategoryMenu from '../../src/Components/HomeComponents/CategoryMenu/CategoryMenu'
 import Perks from '../../src/Components/HomeComponents/Perks/Perks'
+import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+
+
+
+
+const btnStyle = {
+  ':hover': {
+      border: '1px solid black',
+      color: 'black'
+  },
+  gap:'.5em',
+  fontSize:'.9em',
+  display: 'flex',
+  ml: '1em',
+  justifyContent: 'center',
+  border: '1px solid',
+  background: 'red',
+  color: 'white',
+  padding: '.65em 2.63em',
+  borderRadius: 0
+}
 
 
 const Index = () => {
@@ -40,36 +62,14 @@ const Index = () => {
         <SelectOneForm/>
       <Box className='flexed' sx={{my:'2em'}}>
         <QuantityPicker min={1} max={10} value={1}/>
-        <Button
-                            sx={{
-                            ':hover': {
-                                border: '1px solid black',
-                                color: 'black'
-                            },
-                            display: 'flex',
-                            ml: '1em',
-                            justifyContent: 'center',
-                            border: '1px solid',
-                            background: 'red',
-                            color: 'white',
-                            padding: '.65em 2.63em',
-                            borderRadius: 0
-                        }}>Add To Cart</Button>  
-                              <Button
-                        sx={{
-                        ':hover': {
-                            border: '1px solid black',
-                            color: 'black'
-                        },
-                        display: 'flex',
-                        ml: '1em',
-                        justifyContent: 'center',
-                        border: '1px solid',
-                        background: 'green',
-                        color: 'white',
-                        padding: '.65em 1.63em',
-                        borderRadius: 0
-                    }}>Order On WhatsApp</Button>
+      <IconButton
+
+   
+     
+                            sx={btnStyle}>Add To Cart
+                        <ShoppingCartOutlinedIcon/>
+                           </IconButton>
+                              
                         <Tooltip title='Add to favourites'>
 
                         <IconButton
@@ -88,6 +88,11 @@ const Index = () => {
                         </Tooltip>
 
       </Box>
+      {/* <IconButton
+                        sx={{ ...btnStyle,padding: '.65em 1.63em', background: 'green',
+                        color: 'white',}}>Order On WhatsApp
+                    <WhatsAppIcon/>
+                    </IconButton> */}
       <>
       <Typography color='gray' sx={{pt:'1em'}}>Description:</Typography>
       <Typography className='gray2' sx={{fontSize:'1em',pt:'.5em',pb:"1.5em",color:'#5c5c5c',fontWeight:'500'}}>
