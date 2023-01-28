@@ -39,7 +39,8 @@ const CartProduct = () => {
                     <h2
                         style={{
                         margin: 0,
-                        fontWeight: '600'
+                        fontWeight: '600',
+                        fontSize:'1.3em'
                     }}>
                         Addidas shoes 40e
                     </h2>

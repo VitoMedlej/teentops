@@ -2,6 +2,7 @@ import {Box, Button, Typography} from '@mui/material'
 import ProductCard from '../Cards/ProductCard'
 import SwiperCarousel from '../../SwiperCarousel/SwiperCarousel'
 import { Dispatch, SetStateAction } from 'react'
+import Btn from '../../Btn/Btn'
 
 const ProductCollection = ({sx,title,setQuickView} : {
     title: string,
@@ -59,26 +60,8 @@ const ProductCollection = ({sx,title,setQuickView} : {
             }}>
                 <SwiperCarousel/>
             </Box>
-            <Button
-                sx={{
-                    border: '1px solid black',
-                ':hover': {
-                    border: '1px solid red',
-                background: 'red',
-                color: 'white',
-
-
-                },
-                margin: '0 auto',
-                display: 'flex',
-                mt: '2em',
-                justifyContent: 'center',
-                // border: '1px solid',
-                background: 'white',
-                color: 'black',
-                padding: '.45em 1.75em',
-                borderRadius: 0
-            }}>View All</Button>
+            <Btn v2={true}
+                sx={{fontSize:'11px',margin:'1em auto'}}>View All</Btn>
         </Box>
     )
 }
