@@ -1,10 +1,13 @@
-import { Box, IconButton } from '@mui/material'
+import { Box, IconButton, Typography } from '@mui/material'
 import {RemoveRedEye,DeleteForever} from '@mui/icons-material';
+import { QuantityPicker } from 'react-qty-picker';
+import Btn from '../Btn/Btn';
+
+
 
 const CartProduct = () => {
     return (
-    <Box sx={{flex:1}}>
-
+    <Box sx={{borderTop:'1px solid #0000001a',flex:1}}>
         <Box
             className="trans"
             sx={{
@@ -36,15 +39,25 @@ const CartProduct = () => {
 
                 <Box>
 
-                    <h2
-                        style={{
+                    <Typography
+                        sx={{
                         margin: 0,
+                        cursor:'pointer',
                         fontWeight: '600',
                         fontSize:'1.3em'
                     }}>
                         Addidas shoes 40e
-                    </h2>
+                    </Typography>
                     <h2
+                        style={{
+                        fontSize: '1em',
+                        fontWeight: '500',
+                        // color: 'green',
+                        margin: ' .35em 0 0 0'
+                    }}>
+                        $200
+                    </h2>
+                    {/* <h2
                         style={{
                         fontSize: '1.2em',
                         color: 'gray',
@@ -52,17 +65,17 @@ const CartProduct = () => {
                         margin: ' .25em 0 0 0'
                     }}>
                         Qty: 1
-                    </h2>
-                    <h2
-                        style={{
-                        fontSize: '1em',
-                        fontWeight: '500',
-                        color: 'green',
-                        margin: ' .35em 0 0 0'
-                    }}>
-                        $200
-                    </h2>
-
+                    </h2> */}
+                  
+                   
+                    <Btn v2={true} sx={{border:'none',padding:0,mx:0,mt:1,':hover':{background:'white'},fontSize:'.6em'}}>
+                        <Typography sx={{pt:'.1em',fontWeight:'600',fontSize:'1em'}}>
+                            
+                        Remove
+                        </Typography>
+                        <DeleteForever sx={{fontSize:'1.5em'}}/> 
+                    </Btn>
+                    
                 </Box>
                 <Box
                     sx={{
@@ -74,7 +87,7 @@ const CartProduct = () => {
                     flexDirection: 'column',
                     alignItems: 'end'
                 }}>
-                    <IconButton>
+                    {/* <IconButton>
                         <DeleteForever
                             fontSize='medium'
                             sx={{
@@ -88,7 +101,8 @@ const CartProduct = () => {
                             color: '#373737'
                         }}/>
 
-                    </IconButton>
+                    </IconButton> */}
+                    <QuantityPicker min={1} max={10} value={1}/>
                 </Box>
             </Box>
         </Box>

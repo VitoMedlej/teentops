@@ -39,7 +39,7 @@ const CategoryList = () => {
 {/* https://www.ishtari.com/image/data/system_banner/10000/1800/1675/shoes-web.png */}
                 {[1, 2, 3,4].map(i => {
             
-                    return  <Box className='pointer' sx={{height:'100%',maxHeight:'300px',width:{xs:'49%'}}}>
+                    return  <Box key={i} className='pointer' sx={{height:'100%',maxHeight:'300px',width:{xs:'49%'}}}>
                                 <>
                                     {/* <img className='img' src="" alt="" /> */}
                                     <ResponsiveImage
