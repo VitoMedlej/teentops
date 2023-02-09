@@ -1,24 +1,19 @@
 import {useContext, useState} from 'react';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
-import Button from '@mui/material/Button';
-import List from '@mui/material/List';
+
 import Divider from '@mui/material/Divider';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
+
 import {CartContext} from '../../../pages/_app';
 import {IconButton} from '@mui/material';
 import CancelPresentationIcon from '@mui/icons-material/CancelPresentation';
 import CartProduct from '../Products/CartProduct';
-import Link from 'next/link';
 
+import Btn from '../Btn/Btn';
+import { useRouter } from 'next/router';
 
 export default function TemporaryDrawer() {
-
+    const router = useRouter()
     const [cartOpen,
         setCartOpen] = useContext(CartContext);
 
@@ -44,14 +39,17 @@ export default function TemporaryDrawer() {
                         display: 'flex',
                         flexDirection: 'row',
                         mx: '1em',
-                        borderBottom : '1px solid #00000014',
+                        borderBottom: '1px solid #00000014',
                         justifyContent: 'space-between'
                     }}>
-                        <h2
+                        <h2 
+                        onClick={()=>router.push('/cart')}
                             style={{
+                            cursor:'pointer',
                             fontWeight: '500',
+                            textDecoration: 'underline'
                         }}>
-                            Your Cart
+                            View Cart
                         </h2>
                         <IconButton onClick={toggleDrawer(false)}>
                             <CancelPresentationIcon
@@ -60,18 +58,32 @@ export default function TemporaryDrawer() {
                             }}/>
                         </IconButton>
                     </Box>
-                    <Box sx={{maxHeight:'350px',overflowY:'scroll'}} >
-                            <CartProduct/>
-                            <CartProduct/>
-                            <CartProduct/>
-                            <CartProduct/>
-                            <CartProduct/>
+                    <Box
+                        sx={{
+                        maxHeight: '350px',
+                        overflowY: 'scroll'
+                    }}>
+                        <CartProduct/>
+                        <CartProduct/>
+                        <CartProduct/>
+                        <CartProduct/>
+                        <CartProduct/>
                     </Box>
-                    <Box sx={{my:1}}>
-                       <Button sx={{color:'white',background:'red',borderRadius:'6px',p:1,px:2,fontSize:'10px'}}>Checkout</Button>
-                       <Button sx={{color:''}}>Continue Shopping</Button>
+                    <Divider></Divider>
+                    <Box
+                        sx={{
+                        my: 2,
+                        mx: 1,
+                        display:'flex'
+                    }}>
+                       <Btn>
+                            Checkout
+                       </Btn>
+                        <Btn v2={true}>
+                        Continue Shopping
+                        </Btn>
                     </Box>
- 
+
                 </Box>
             </Drawer>
         </div>

@@ -14,25 +14,13 @@ import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import ItemTabs from '../../src/Components/ItemComponents/ItemTabs'
 import Link from 'next/link'
+import Btn from '../../src/Components/Btn/Btn'
 
 
 
 
 const btnStyle = {
-  ':hover': {
-      border: '1px solid black',
-      color: 'black'
-  },
-  gap:'.5em',
-  fontSize:'.9em',
-  display: 'flex',
-  ml: '1em',
-  justifyContent: 'center',
-  border: '1px solid',
-  background: 'red',
-  color: 'white',
-  padding: '.65em 2.63em',
-  borderRadius: 0
+  gap:'1em',fontSize:'12px',py:'.75em',display:'flex'
 }
 
 
@@ -64,10 +52,10 @@ const Index = () => {
         <SelectOneForm/>
       <Box className='flexed' sx={{my:'2em'}}>
         <QuantityPicker min={1} max={10} value={1}/>
-      <IconButton
+      <Btn
                             sx={btnStyle}>Add To Cart
                         <ShoppingCartOutlinedIcon/>
-                           </IconButton>
+                           </Btn>
                               
                         <Tooltip title='Add to favourites'>
 
