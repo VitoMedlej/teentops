@@ -8,7 +8,7 @@ import { Router } from '@mui/icons-material';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 
-const imgs = [`https://www.ishtari.com/image/cache/data/system_product/80000/72400/72369/01-192x264.jpg?207`, `https://cdn.shopify.com/s/files/1/0549/1385/9821/products/ChristmasOffer11.jpg?v=1671539939&width=360`]
+const imgs = [`https://instagram.fbey22-1.fna.fbcdn.net/v/t39.30808-6/318294245_876818139983894_753731711699002273_n.jpg?stp=c2.0.1196.1020a_dst-jpg_e35_s1080x1080_sh0.08&_nc_ht=instagram.fbey22-1.fna.fbcdn.net&_nc_cat=102&_nc_ohc=-ZGFQyCq7RgAX8SeuBT&edm=ABmJApAAAAAA&ccb=7-5&ig_cache_key=Mjk4NTA5Mzk3NTA2MDM4MTEzNQ%3D%3D.2-ccb7-5&oh=00_AfDBbidoFjer7cuMW7wU3JulYMhkYmW-oCThp_W2YV34Xw&oe=640A1CFD&_nc_sid=6136e7`, `https://instagram.fbey22-1.fna.fbcdn.net/v/t39.30808-6/317994094_876128623386179_5518313291654859852_n.jpg?stp=c1.0.798.800a_dst-jpg_e15&_nc_ht=instagram.fbey22-1.fna.fbcdn.net&_nc_cat=111&_nc_ohc=VXmIdPnKDnYAX_xeCPf&edm=ABmJApAAAAAA&ccb=7-5&ig_cache_key=Mjk4NDQ2OTg2NzA3MjUyNDE2OA%3D%3D.2-ccb7-5&oh=00_AfCPlvkaNuURKMX-TOi3UnZpYw5HJ69a9lX76u35d8wJ2w&oe=6409E10A&_nc_sid=6136e7`]
 
 const ProductCard = ({sx, handleQuickView,className} : {
     className?: string,
@@ -67,7 +67,7 @@ const ProductCard = ({sx, handleQuickView,className} : {
                     <img
                     onClick={handleClick}
                     style={{maxHeight:'400px'}}
-                    ref={ref} src={currentImg} className='img pointer' alt="Product Image"/>
+                    ref={ref} src={currentImg} className='img contain pointer' alt="Product Image"/>
                     </Box>
                     <Box
                         className='productOptions'

@@ -9,10 +9,10 @@ const MainCarousel = () => {
     return (
         <Box
             sx={{
-            py: {xs:'.5em',sm:'2em'},
+            py: {xs:'.75em',sm:'2em',md:'3em'},
             width: '100%',
             maxWidth: 'lg',
-            borderRadius:'6px',
+            borderRadius:{sm:'6px'},
             margin: '0 auto',
             display: {
                 xs: 'flex'
@@ -31,13 +31,15 @@ const MainCarousel = () => {
                 modules={[Autoplay, Navigation]}
                 className="mySwiper swiper">
 
-                {[{img:'https://cdn.shopify.com/s/files/1/0549/1385/9821/files/New_Year_2023_Banner_1.jpg?v=1672500537'},{img:'https://cdn.shopify.com/s/files/1/0549/1385/9821/files/Christmas_2022_Banner_1.jpg?v=1671886210'}].map((item) => {
+                {[{img:'http://hamdanelectronics.com/modules/dor_imageslider/images/49da7d1c9283e95770851ecada351a029f037a57_HMD%20Website%20Banner-01.png',className:'contain'},
+                // {img:'https://cdn.shopify.com/s/files/1/0549/1385/9821/files/Christmas_2022_Banner_1.jpg?v=1671886210'}
+            ].map((item) => {
 
                     return <SwiperSlide className='ztop cursor ' key={item.img}>
                         <Box
                         
                             sx={{
-            borderRadius:'6px',
+            borderRadius:{sm:'6px'},
                         
                                 height: '100%',
                             width:'100%'
@@ -45,8 +47,7 @@ const MainCarousel = () => {
 
                             <img
             
-            style={{borderRadius:'9px'}}
-                                className='img'
+                                className={`img ${item?.className}`}
                                 src={`${item.img}`}
                                 alt=""/>
                         </Box>

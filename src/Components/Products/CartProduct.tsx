@@ -40,10 +40,11 @@ const CartProduct = () => {
                 <Box>
 
                     <Typography
+                    component='h4'
                         sx={{
                         margin: 0,
                         cursor:'pointer',
-                        fontWeight: '600',
+                        fontWeight: '400',
                         fontSize:'1.3em'
                     }}>
                         Addidas shoes 40e
@@ -52,7 +53,7 @@ const CartProduct = () => {
                         style={{
                         fontSize: '1em',
                         fontWeight: '500',
-                        // color: 'green',
+                        color: 'green',
                         margin: ' .35em 0 0 0'
                     }}>
                         $200

@@ -12,6 +12,7 @@ import SideBar from '../src/Components/Drawer/SideBar';
 import { Dialog } from '@mui/material';
 import QuickView from '../src/Components/Dialog/QuickView';
 import { useState } from 'react';
+import CategoryImages from '../src/Components/HomeComponents/CategoryImages/CategoryImages';
 
 export default function Home() {
     const [quickView, setQuickView] = useState<{isOpen:boolean,productId:null | string}>({isOpen:false,productId:null})
@@ -28,6 +29,7 @@ export default function Home() {
       <CategoryMenu/>
       <main>
       <MainCarousel/>
+      <CategoryImages/>
       <WhatsApp/>
       <ProductCollection setQuickView={setQuickView} title='Christmas Sale'/>      
       <FullscreenPoster img='https://www.ishtari.com/image/data/system_banner/10000/1800/1676/trendyol-brand-slider-web.png'/>

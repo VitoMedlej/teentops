@@ -47,9 +47,7 @@ h1, h2 , h3 , h4,p {
     transition: 0.2s ease;
 
 }
-.pointer {
-    cursor : pointer;
-}
+
 .gray {
     color : #54595F;
 }
@@ -191,6 +189,24 @@ footer {
 }
 .logos {
     max-width: 60px;
+}
+.auto {
+    margin: 0 auto  !important;
+}
+.flex{
+    display: flex !important;
+}
+.wrap {
+    flex-wrap: wrap !important;
+}
+.pointer {
+    cursor: pointer !important;
+}
+.between {
+    justify-content: space-around !important;
+}
+.contain {
+    object-fit: contain !important;
 }
 @media (max-width: 768px) {
     .site-footer__links {

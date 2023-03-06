@@ -89,7 +89,7 @@ const Cart = () => {
                         xs: '100%',
                         md: '25%'
                     },
-                    boxShadow:'1px 1px 3px #0000002b'
+                    // boxShadow:'1px 1px 3px #0000002b'
                 }}>
                   
                     <Typography sx={{
@@ -155,7 +155,7 @@ const Index = () => {
 
     } 
     
-    <Divider></Divider>
+    {/* <Divider></Divider> */}
     <Perks/>
     </>
   )
