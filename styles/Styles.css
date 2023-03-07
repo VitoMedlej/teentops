@@ -212,6 +212,11 @@ footer .site-footer__bottom div p {
   flex-direction: column !important;
 }
 
+button:disabled,
+button[disabled] {
+  overflow: 0.88;
+}
+
 .row {
   flex-direction: row !important;
 }

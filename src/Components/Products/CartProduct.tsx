@@ -4,10 +4,24 @@ import {RemoveRedEye,DeleteForever} from '@mui/icons-material';
 // import { QuantityPicker } from '';
 import Btn from '../Btn/Btn';
 import { QuantityPicker } from '../QuantityPicker/QuantityPicker';
+import { loadState, saveState } from '../../Utils/LocalstorageFn';
 
 
 
-const CartProduct = ({price,name,qty,img}:ICartItem) => {
+const CartProduct = ({id,price,name,remove,qty,img}:ICartItem) => {
+    // const deleteItem = () => {
+    //     let state = loadState('usercart');
+    //     for (let i = 0; i <state.length; i++) {
+    //         let toDelete = state[i].id === id
+    //         console.log('toDelete: ', toDelete);
+    //         if (toDelete) {
+    //             // console.log('state: ', state);
+    //             state.splice(i,1)
+    //             // console.log('state: ', state);
+    //             saveState('usercart',state)
+    //         }
+    //     }
+    // }
     return (
     <Box sx={{borderTop:'1px solid #0000001a',flex:1}}>
         <Box
@@ -71,7 +85,9 @@ const CartProduct = ({price,name,qty,img}:ICartItem) => {
                     </h2> */}
                   
                    
-                    <Btn v2={true} sx={{border:'none',padding:0,mx:0,mt:1,':hover':{background:'white'},fontSize:'.6em'}}>
+                    <Btn 
+                    onClick={()=>remove(id)}
+                    v2={true} sx={{border:'none',padding:0,mx:0,mt:1,':hover':{background:'white'},fontSize:'.6em'}}>
                         <Typography sx={{pt:'.1em',fontWeight:'600',fontSize:'1em'}}>
                             
                         Remove
