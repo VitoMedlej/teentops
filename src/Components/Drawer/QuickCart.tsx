@@ -11,6 +11,7 @@ import CartProduct from '../Products/CartProduct';
 
 import Btn from '../Btn/Btn';
 import { useRouter } from 'next/router';
+import { loadState } from '../../Utils/LocalstorageFn';
 
 export default function TemporaryDrawer() {
     const router = useRouter()
@@ -24,7 +25,7 @@ export default function TemporaryDrawer() {
 
         setCartOpen(open);
     };
-
+    const cartItems : ICartItem[] = loadState('usercart') || []
     return (
         <div>
             <Drawer anchor={'top'} open={cartOpen} onClose={toggleDrawer(false)}>
@@ -63,11 +64,13 @@ export default function TemporaryDrawer() {
                         maxHeight: '350px',
                         overflowY: 'scroll'
                     }}>
-                        <CartProduct/>
-                        <CartProduct/>
-                        <CartProduct/>
-                        <CartProduct/>
-                        <CartProduct/>
+                        {
+                           cartItems&& cartItems.map((item:ICartItem, index) =>{
+
+                        return <CartProduct id={item.id} qty={item.qty} price={item.price} img={item.img} name={item.name} key={item.name}/>
+                            })
+                        }
+                        
                     </Box>
                     <Divider></Divider>
                     <Box

@@ -1,6 +1,7 @@
 import {useState} from 'react';
 import SideBar from '../src/Components/Drawer/SideBar'
 import '../styles/Styles.css'
+import '../styles/qty.css'
 import type {AppProps}
 from 'next/app'
 import {createContext} from "react";

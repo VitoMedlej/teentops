@@ -1,11 +1,13 @@
 import { Box, IconButton, Typography } from '@mui/material'
 import {RemoveRedEye,DeleteForever} from '@mui/icons-material';
-import { QuantityPicker } from 'react-qty-picker';
+// import { QuantityPicker } from 'react-qty-picker';
+// import { QuantityPicker } from '';
 import Btn from '../Btn/Btn';
+import { QuantityPicker } from '../QuantityPicker/QuantityPicker';
 
 
 
-const CartProduct = () => {
+const CartProduct = ({price,name,qty,img}:ICartItem) => {
     return (
     <Box sx={{borderTop:'1px solid #0000001a',flex:1}}>
         <Box
@@ -31,9 +33,9 @@ const CartProduct = () => {
                     style={{
                     borderRadius: '6px'
                 }}
-                    src="https://ucarecdn.com/7749acdb-9ab3-4411-8a1d-c0c0b5749a2f/"
-                    className='img'
-                    alt=""/>
+                    src={img}
+                    className='img contain'
+                    alt="Cart Product Img"/>
             </Box>
             <Box sx={{display:'flex',width:'100%'}}>
 
@@ -47,7 +49,7 @@ const CartProduct = () => {
                         fontWeight: '400',
                         fontSize:'1.3em'
                     }}>
-                        Addidas shoes 40e
+                       {name}
                     </Typography>
                     <h2
                         style={{
@@ -56,7 +58,7 @@ const CartProduct = () => {
                         color: 'green',
                         margin: ' .35em 0 0 0'
                     }}>
-                        $200
+                        ${price}
                     </h2>
                     {/* <h2
                         style={{
@@ -101,9 +103,9 @@ const CartProduct = () => {
                             sx={{
                             color: '#373737'
                         }}/>
-
+                        
                     </IconButton> */}
-                    <QuantityPicker min={1} max={10} value={1}/>
+                    <QuantityPicker min={1} max={10} value={qty}/>
                 </Box>
             </Box>
         </Box>

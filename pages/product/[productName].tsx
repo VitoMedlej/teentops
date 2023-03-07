@@ -5,7 +5,7 @@ import Breadcrumb from '../../src/Components/Breadcrumbs/Breadcrumb'
 import { Box, Button, Divider, IconButton, Tooltip, Typography } from '@mui/material'
 import ProductCarousel from '../../src/Components/ProductCarousel/ProductCarousel'
 import SelectOneForm from '../../src/Components/ProductsComponents/Filter/Forms/SelectOneForm'
-import { QuantityPicker } from 'react-qty-picker';
+// import { QuantityPicker } from 'react-qty-picker';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import ProductCollection from '../../src/Components/HomeComponents/ProductCollection/ProductCollection'
 import CategoryMenu from '../../src/Components/HomeComponents/CategoryMenu/CategoryMenu'
@@ -15,6 +15,7 @@ import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import ItemTabs from '../../src/Components/ItemComponents/ItemTabs'
 import Link from 'next/link'
 import Btn from '../../src/Components/Btn/Btn'
+import { QuantityPicker } from '../../src/Components/QuantityPicker/QuantityPicker'
 
 
 
@@ -50,10 +51,10 @@ const Index = () => {
         <Typography sx={{fontSize:'1.25em',py:'.25em',fontWeight:'600'}} className='clr'>LBP 900,000</Typography>
         {/* <SelectOneForm/> */}
         <SelectOneForm/>
-      <Box className='flexed' sx={{my:'2em'}}>
+      <Box className='flexed wrap' sx={{my:'2em'}}>
         <QuantityPicker min={1} max={10} value={1}/>
       <Btn
-                            sx={btnStyle}>Add To Cart
+                            sx={{...btnStyle,mx:'.25em',minWidth:'150px'}}>Add To Cart
                         <ShoppingCartOutlinedIcon/>
                            </Btn>
                               
