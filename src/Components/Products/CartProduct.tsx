@@ -1,11 +1,27 @@
 import { Box, IconButton, Typography } from '@mui/material'
 import {RemoveRedEye,DeleteForever} from '@mui/icons-material';
-import { QuantityPicker } from 'react-qty-picker';
+// import { QuantityPicker } from 'react-qty-picker';
+// import { QuantityPicker } from '';
 import Btn from '../Btn/Btn';
+import { QuantityPicker } from '../QuantityPicker/QuantityPicker';
+import { loadState, saveState } from '../../Utils/LocalstorageFn';
 
 
 
-const CartProduct = () => {
+const CartProduct = ({id,price,name,remove,qty,img}:ICartItem) => {
+    // const deleteItem = () => {
+    //     let state = loadState('usercart');
+    //     for (let i = 0; i <state.length; i++) {
+    //         let toDelete = state[i].id === id
+    //         console.log('toDelete: ', toDelete);
+    //         if (toDelete) {
+    //             // console.log('state: ', state);
+    //             state.splice(i,1)
+    //             // console.log('state: ', state);
+    //             saveState('usercart',state)
+    //         }
+    //     }
+    // }
     return (
     <Box sx={{borderTop:'1px solid #0000001a',flex:1}}>
         <Box
@@ -31,9 +47,9 @@ const CartProduct = () => {
                     style={{
                     borderRadius: '6px'
                 }}
-                    src="https://ucarecdn.com/7749acdb-9ab3-4411-8a1d-c0c0b5749a2f/"
-                    className='img'
-                    alt=""/>
+                    src={img}
+                    className='img contain'
+                    alt="Cart Product Img"/>
             </Box>
             <Box sx={{display:'flex',width:'100%'}}>
 
@@ -47,7 +63,7 @@ const CartProduct = () => {
                         fontWeight: '400',
                         fontSize:'1.3em'
                     }}>
-                        Addidas shoes 40e
+                       {name}
                     </Typography>
                     <h2
                         style={{
@@ -56,7 +72,7 @@ const CartProduct = () => {
                         color: 'green',
                         margin: ' .35em 0 0 0'
                     }}>
-                        $200
+                        ${price}
                     </h2>
                     {/* <h2
                         style={{
@@ -69,7 +85,9 @@ const CartProduct = () => {
                     </h2> */}
                   
                    
-                    <Btn v2={true} sx={{border:'none',padding:0,mx:0,mt:1,':hover':{background:'white'},fontSize:'.6em'}}>
+                    <Btn 
+                    onClick={()=>remove(id)}
+                    v2={true} sx={{border:'none',padding:0,mx:0,mt:1,':hover':{background:'white'},fontSize:'.6em'}}>
                         <Typography sx={{pt:'.1em',fontWeight:'600',fontSize:'1em'}}>
                             
                         Remove
@@ -101,9 +119,9 @@ const CartProduct = () => {
                             sx={{
                             color: '#373737'
                         }}/>
-
+                        
                     </IconButton> */}
-                    <QuantityPicker min={1} max={10} value={1}/>
+                    <QuantityPicker min={1} max={10} value={qty}/>
                 </Box>
             </Box>
         </Box>

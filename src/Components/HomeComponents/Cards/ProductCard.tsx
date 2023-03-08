@@ -1,23 +1,28 @@
 import {Box, IconButton, Tooltip, Typography} from '@mui/material'
-import {useState} from 'react'
+import {useContext, useState} from 'react'
 import {useRef} from 'react'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import { Router } from '@mui/icons-material';
+// import { Router } from '@mui/icons-material';
 import { useRouter } from 'next/router';
-import Link from 'next/link';
-
+// import Link from 'next/link';
+import {loadState, pushState, saveState} from '../../../Utils/LocalstorageFn';
+import { CartContext } from '../../../../pages/_app';
 const imgs = [`https://instagram.fbey22-1.fna.fbcdn.net/v/t39.30808-6/318294245_876818139983894_753731711699002273_n.jpg?stp=c2.0.1196.1020a_dst-jpg_e35_s1080x1080_sh0.08&_nc_ht=instagram.fbey22-1.fna.fbcdn.net&_nc_cat=102&_nc_ohc=-ZGFQyCq7RgAX8SeuBT&edm=ABmJApAAAAAA&ccb=7-5&ig_cache_key=Mjk4NTA5Mzk3NTA2MDM4MTEzNQ%3D%3D.2-ccb7-5&oh=00_AfDBbidoFjer7cuMW7wU3JulYMhkYmW-oCThp_W2YV34Xw&oe=640A1CFD&_nc_sid=6136e7`, `https://instagram.fbey22-1.fna.fbcdn.net/v/t39.30808-6/317994094_876128623386179_5518313291654859852_n.jpg?stp=c1.0.798.800a_dst-jpg_e15&_nc_ht=instagram.fbey22-1.fna.fbcdn.net&_nc_cat=111&_nc_ohc=VXmIdPnKDnYAX_xeCPf&edm=ABmJApAAAAAA&ccb=7-5&ig_cache_key=Mjk4NDQ2OTg2NzA3MjUyNDE2OA%3D%3D.2-ccb7-5&oh=00_AfCPlvkaNuURKMX-TOi3UnZpYw5HJ69a9lX76u35d8wJ2w&oe=6409E10A&_nc_sid=6136e7`]
 
-const ProductCard = ({sx, handleQuickView,className} : {
+const ProductCard = ({itemId,sx, handleQuickView,className} : {
     className?: string,
     handleQuickView ?: (id: string)=> void;
-    sx?: any
+    sx?: any,
+    itemId?:string,
 }) => {
 
     const ref : any = useRef()
+    
+    const [cartOpen, setCartOpen] = useContext(CartContext);
     const [currentImg,
+        
         setCurrentImg] = useState(imgs[0])
         const router = useRouter()
     const handleonMouseIn = () => {
@@ -34,6 +39,27 @@ const ProductCard = ({sx, handleQuickView,className} : {
     }
     const handleClick = () => {
         router.push('/product/foo-bname')
+    }
+    const addToCart = () => {
+        const state = loadState('usercart') || [];
+        //1- get the cart from localstorage
+        let foundIndex = state.findIndex((value:ICartItem) => value.id === 'myobjectid');
+        // if we already have the item in the cart, just increase the qty    
+        if (foundIndex !== -1 && state[foundIndex]) {
+                 let selectedItem = state[foundIndex];
+                 selectedItem.qty = selectedItem.qty + 1;
+                 state[foundIndex] = selectedItem
+                 
+                saveState('usercart', state)
+        setCartOpen(true)
+                
+                return
+            }
+            //if we do not have the item in cart, insert it
+        pushState('usercart',
+        {qty:1,img:'https://burst.shopifycdn.com/photos/modern-time-pieces.jpg?width=1200&format=pjpg&exif=1&iptc=1'
+        ,id:'myobjectid',name:'My Object Name',price:100,shortDesc:'foobarbaz'})
+        setCartOpen(true)
     }
     return (
         <Box
@@ -149,8 +175,10 @@ const ProductCard = ({sx, handleQuickView,className} : {
                 }}>299.000 LBP</Typography>
                 <Tooltip title='Add To Cart' placement='left'>
                 {/* boxShadow:'1px 1px 3px #0000005e', */}
-                <IconButton sx={{':hover':{background:'#eaeaea'}}}>
-                    <ShoppingCartIcon/>
+                <IconButton
+                onClick={()=>addToCart()}
+                sx={{':hover':{background:'#eaeaea'}}}>
+                    <ShoppingCartIcon />
                 </IconButton>
                 </Tooltip>
             </Box>

@@ -8,10 +8,11 @@ import CategoryList from '../src/Components/HomeComponents/CategoryList/Category
 import Perks from '../src/Components/HomeComponents/Perks/Perks';
 import TopAd from '../src/Components/HomeComponents/TopAd/TopAd';
 import Navbar from '../src/Components/Navbar/Navbar';
-import SideBar from '../src/Components/Drawer/SideBar';
-import { Dialog } from '@mui/material';
+// import SideBar from '../src/Components/Drawer/SideBar';
+// import { Dialog } from '@mui/material';
 import QuickView from '../src/Components/Dialog/QuickView';
 import { useState } from 'react';
+
 import CategoryImages from '../src/Components/HomeComponents/CategoryImages/CategoryImages';
 
 export default function Home() {

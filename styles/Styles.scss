@@ -202,11 +202,25 @@ footer {
 .pointer {
     cursor: pointer !important;
 }
+.center {
+    justify-content: center !important;
+}
 .between {
     justify-content: space-around !important;
 }
 .contain {
     object-fit: contain !important;
+}
+.col{
+    flex-direction: column !important;
+}
+button:disabled,
+button[disabled]{
+    overflow: 0.88;
+}
+
+.row {
+    flex-direction: row !important;
 }
 @media (max-width: 768px) {
     .site-footer__links {

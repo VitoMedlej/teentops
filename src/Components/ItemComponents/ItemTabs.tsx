@@ -51,18 +51,18 @@ export default function BasicTabs() {
          
         value={value} onChange={handleChange} aria-label="basic tabs example">
           <Tab label="Description" {...a11yProps(0)} />
-          <Tab label="Additional Information" {...a11yProps(1)} />
-          <Tab label="Reviews" {...a11yProps(2)} />
+          {/* <Tab label="Additional Information" {...a11yProps(1)} /> */}
+          <Tab label="Reviews" {...a11yProps(1)} />
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
         foobar fooo
       </TabPanel>
-      <TabPanel value={value} index={1}>
+      {/* <TabPanel value={value} index={1}>
         Item Two
-      </TabPanel>
-      <TabPanel value={value} index={2}>
-        Item Three
+      </TabPanel> */}
+      <TabPanel value={value} index={1}>
+        No Reviews Yet
       </TabPanel>
     </Box>
   );

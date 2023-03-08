@@ -5,12 +5,13 @@ import Drawer from '@mui/material/Drawer';
 import Divider from '@mui/material/Divider';
 
 import {CartContext} from '../../../pages/_app';
-import {IconButton} from '@mui/material';
+import {IconButton, Typography} from '@mui/material';
 import CancelPresentationIcon from '@mui/icons-material/CancelPresentation';
 import CartProduct from '../Products/CartProduct';
 
 import Btn from '../Btn/Btn';
 import { useRouter } from 'next/router';
+import { loadState, saveState } from '../../Utils/LocalstorageFn';
 
 export default function TemporaryDrawer() {
     const router = useRouter()
@@ -24,7 +25,12 @@ export default function TemporaryDrawer() {
 
         setCartOpen(open);
     };
-
+    let cartItems : ICartItem[] = loadState('usercart') || []
+    const remove = (id:string) => {
+       let state = cartItems.filter(x => `${x.id}` !== id);
+        saveState('usercart', state);
+        cartItems = state
+    }
     return (
         <div>
             <Drawer anchor={'top'} open={cartOpen} onClose={toggleDrawer(false)}>
@@ -63,11 +69,16 @@ export default function TemporaryDrawer() {
                         maxHeight: '350px',
                         overflowY: 'scroll'
                     }}>
-                        <CartProduct/>
-                        <CartProduct/>
-                        <CartProduct/>
-                        <CartProduct/>
-                        <CartProduct/>
+                        {
+                           cartItems && cartItems.length > 0 ? cartItems.map((item:ICartItem, index) =>{
+
+                        return <CartProduct id={item.id} qty={item.qty} price={item.price} img={item.img}
+                        remove={remove}
+                        name={item.name} key={index}/>
+                            })
+                            : <Typography sx={{fontSize:'1.5em',textAlign:'center',py:5}}> Your Cart Is Empty!</Typography>
+                        }
+                        
                     </Box>
                     <Divider></Divider>
                     <Box
@@ -76,7 +87,7 @@ export default function TemporaryDrawer() {
                         mx: 1,
                         display:'flex'
                     }}>
-                       <Btn>
+                       <Btn disabled={cartItems.length < 1}>
                             Checkout
                        </Btn>
                         <Btn v2={true}>

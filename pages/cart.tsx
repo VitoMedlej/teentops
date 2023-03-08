@@ -75,9 +75,9 @@ const Cart = () => {
                         md: '70%'
                     }
                 }}>
-                    <CartProduct/>
-                    <CartProduct/>
-                    <CartProduct/>
+                    {/* <CartProduct/> */}
+                    {/* <CartProduct/> */}
+                    {/* <CartProduct/> */}
                 </Box>
                
                 <Box

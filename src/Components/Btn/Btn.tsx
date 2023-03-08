@@ -26,9 +26,11 @@ let style2 = {
     border:'1px solid #cf3030'
 }
 
-const Btn = ({v2,children,sx}:{sx?:any,v2?:boolean,children?:any}) => {
+const Btn = ({v2,disabled,onClick,children,sx}:{disabled?:boolean,onClick?:()=>void,sx?:any,v2?:boolean,children?:any}) => {
   return (
     <Button
+    disabled={disabled || false}
+    onClick={onClick &&onClick}
     sx={v2 ? {...style2 , ...sx} : {...style1 , ...sx} }>{children}</Button>
   )
 }
