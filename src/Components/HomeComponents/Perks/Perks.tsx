@@ -34,11 +34,12 @@ const Perks = () => {
             </Box>
             <Box sx={{display:'flex',flexWrap:'wrap',justifyContent: 'center',gap:'1em'}}>
                 {[1, 2, 3].map(i => {
-                    return <Box
+                    return <Box 
+                    key={i}
                         sx={{
                         display: 'flex',
                         gap:'.5em',
-                        flexDirection: 'row'
+                        flexDirection: 'row' 
                     }}>
                         <Box className='flexed'>
                             <HeadphonesIcon sx={{color:'#00000073'}}/>

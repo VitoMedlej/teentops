@@ -88,7 +88,7 @@ export default function CustomizedDialogs({isOpen, setQuickView} : {
                         color: 'gray'
                     }}>
                         Body Mists, Fragrances, Body Mists Fragrances Victoria Mists Fragrances Victoria
-                        Mists Fragrances Victoria's Secret Mists, Fragrances, Victoria's Secret
+                        Mists Fragrances Victoria&apos;s Secret Mists, Fragrances, Victoria&apos;s Secret
                     </Typography>
                     <Typography
                         sx={{

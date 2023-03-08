@@ -10,6 +10,7 @@ import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import { useContext, useState } from 'react';
 import { CartContext, DrawerContext } from '../../../pages/_app';
 import SearchModal from './SearchModal';
+import Link from 'next/link';
 
 export default function Navbar() {
     const [open, setOpen] = useContext(DrawerContext);
@@ -51,12 +52,12 @@ export default function Navbar() {
                         transform: 'translateX(50%)'
                         ,width:'75px',height:'40px'
                     }}>
-                        <a href='/' color='inherit'>
+                        <Link href='/' color='inherit'>
                             <img
                             className='img'
                         src="https://ucarecdn.com/eb515ead-7f14-439e-b071-65b98433b4f8/312182473_6421594114522894_2354893828509446990_n.jpg"
                                 alt="Powerhouse electronics eshop logo"/>
-                        </a>
+                        </Link>
                     </Box>
                     <Box
                         sx={{
