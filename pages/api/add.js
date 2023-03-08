@@ -1,13 +1,21 @@
-import main from "../../database/connection";
-import UserModel from "../../database/schema";
+import main from "../../src/database/connection";
+import UserModel from "../../src/database/schema";
 
 
 export default async function get_Users(req, res){
+  if (req.method !== 'POST') {
+    throw 'Error, method not allowed';
+  }
+  main().catch(error => {
+    console.log('error: ', error);
+    
+    return res.status(400).json({message:'Failed to add data'})
 
-  main().catch(error => console.error(error));
+  });
   const create = new UserModel({name: 'Jane Doe', price: 120 });
   create.save().then(() => {
-    res.status(200).json(create)
+    console.log('create: ', create);
+    return    res.status(200).json(create)
   })
 
 // const { method } = req;

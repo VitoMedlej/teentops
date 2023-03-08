@@ -12,12 +12,25 @@ import Navbar from '../src/Components/Navbar/Navbar';
 // import { Dialog } from '@mui/material';
 import QuickView from '../src/Components/Dialog/QuickView';
 import { useState } from 'react';
-
+import {server} from '../src/Utils/Server' 
 import CategoryImages from '../src/Components/HomeComponents/CategoryImages/CategoryImages';
+import Btn from '../src/Components/Btn/Btn';
 
 export default function Home() {
     const [quickView, setQuickView] = useState<{isOpen:boolean,productId:null | string}>({isOpen:false,productId:null})
-  return (
+    const getAll= async () => {
+      try {
+
+        const req = await fetch(`${server}/api/getdata`)
+        const res = await req.json()
+        console.log('res: ', res);
+      }
+      catch(er) {
+        console.log('er: ', er);
+
+      }
+    }
+    return (
     <>
       <Head>
         <title>FAT SALE</title>
@@ -25,13 +38,18 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      
       <TopAd/>
       <Navbar/>
       <CategoryMenu/>
       <main>
+      
       <MainCarousel/>
       <CategoryImages/>
       <WhatsApp/>
+      <Btn onClick={()=>getAll()}>
+        Get data
+      </Btn>
       <ProductCollection setQuickView={setQuickView} title='Christmas Sale'/>      
       <FullscreenPoster img='https://www.ishtari.com/image/data/system_banner/10000/1800/1676/trendyol-brand-slider-web.png'/>
       <ProductCollection setQuickView={setQuickView} title='Christmas Sale'/>      

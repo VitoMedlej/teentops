@@ -121,7 +121,7 @@ const CartProduct = ({id,price,name,remove,qty,img}:ICartItem) => {
                         }}/>
                         
                     </IconButton> */}
-                    <QuantityPicker min={1} max={10} value={qty}/>
+                    <QuantityPicker min={1} max={10} value={qty > 10 ? 10 : qty}/>
                 </Box>
             </Box>
         </Box>

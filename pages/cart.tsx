@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import TopAd from '../src/Components/HomeComponents/TopAd/TopAd'
 import Navbar from '../src/Components/Navbar/Navbar'
 import CategoryMenu from '../src/Components/HomeComponents/CategoryMenu/CategoryMenu'
@@ -10,6 +10,7 @@ import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 import Btn from '../src/Components/Btn/Btn'
 import CartProduct from '../src/Components/Products/CartProduct'
 import Perks from '../src/Components/HomeComponents/Perks/Perks'
+import { loadState, saveState } from '../src/Utils/LocalstorageFn'
 
 const titleStyle = {
     fontSize: '1.3em',
@@ -32,12 +33,12 @@ const EmptyCartAlert = () => {
                 margin: '0 auto'
             }}>
                 <Typography fontSize='2em' fontWeight='bold'>
-                    Your Cart is empty!
+                    Your Cart Is Empty!
                 </Typography>
                 <Typography fontSize='1em' fontWeight='500'>
                     what are you waiting for?
                 </Typography>
-                <Link className='flexed' href='/'>
+                <Link className='flexed decor-none gap' href='/'>
                     <Btn sx={{
                         mt: 3
                     }}>
@@ -51,6 +52,21 @@ const EmptyCartAlert = () => {
 }
 
 const Cart = () => {
+    const [cartItems,setCartItems] = useState<ICartItem[]>([])
+    useEffect(() => {
+        let localCart : ICartItem[] = loadState('usercart') || []
+        if (localCart) {
+            
+            setCartItems(localCart)
+    }
+      
+    }, [])
+    const remove = (id:string) => {
+        let state = cartItems.filter(x => `${x.id}` !== id);
+         saveState('usercart', state);
+         // console.log('state: ', state);
+         setCartItems(state);
+     }
     return (
         <Box sx={{
             py: 5,
@@ -75,8 +91,13 @@ const Cart = () => {
                         md: '70%'
                     }
                 }}>
-                    {/* <CartProduct/> */}
-                    {/* <CartProduct/> */}
+                    {cartItems && cartItems.length > 0 ?
+                    cartItems.map(item=>{
+                        return <CartProduct img={item.img} qty={item.qty} remove={remove} name={item.name} id={item.id} price={item.price}/>
+                    }) :
+                    <EmptyCartAlert/>     
+                }
+                                         {/* <CartProduct/> */}
                     {/* <CartProduct/> */}
                 </Box>
                

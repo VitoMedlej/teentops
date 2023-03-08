@@ -26,6 +26,14 @@ h1, h2, h3, h4, p {
   text-decoration: underline;
 }
 
+.decor-none {
+  text-decoration: none !important;
+}
+
+.gap {
+  gap: 0.15em !important;
+}
+
 .CategoryMenu div {
   margin: 0.65em;
 }
