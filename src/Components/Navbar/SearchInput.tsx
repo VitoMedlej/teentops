@@ -7,9 +7,10 @@ import IconButton from '@mui/material/IconButton';
 import SearchIcon from '@mui/icons-material/Search';
 // import DirectionsIcon from '@mui/icons-material/Directions';
 
-export default function CustomizedInputBase({sx}:{sx?:any}) {
+export default function CustomizedInputBase({sx,onSubmit,value,setValue}:{onSubmit:(e: React.FormEvent<HTMLFormElement> )=>void,value:string,setValue:any,sx?:any}) {
   return (
     <Paper
+    onSubmit={(e)=>onSubmit(e)}
       component="form"
       className='searchinput'
       sx={{
@@ -18,13 +19,17 @@ export default function CustomizedInputBase({sx}:{sx?:any}) {
         border:'1px solid #00000021',
         borderRadius:0,
         
-         display: 'flex', alignItems: 'center', minWidth:200,maxWidth: 600 
+         display: 'flex', alignItems: 'center', minWidth:200,width: {xs:'0',sm:'300px',md:'500px',lg:'600px'} 
          ,...sx
         }}
     >
    
       <InputBase
-        sx={{ ml: 1,w:'100%', flex: 1 }}
+      value={value}
+      onChange={(e)=>setValue(`${e.target.value}`)}
+        sx={{
+          display: 'flex',
+          ml: 1,w:'100%', flex: 1 }}
         placeholder="Search Google Maps"
         inputProps={{ 'aria-label': 'search google maps' }}
       />

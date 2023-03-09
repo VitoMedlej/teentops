@@ -15,6 +15,7 @@ import SearchInput from './SearchInput';
 import { Badge, Typography } from '@mui/material';
 import { loadState } from '../../Utils/LocalstorageFn';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import { useRouter } from 'next/router';
 
 
 export default function Navbar() {
@@ -23,6 +24,8 @@ export default function Navbar() {
     const [cartOpen, setCartOpen] = useContext(CartContext);
     // const localCart = loadState('usercart') || []
     const localCart = [1]
+    const [q,setQ] = useState('')
+   
     
     return (
         <Box sx={{
@@ -65,9 +68,16 @@ export default function Navbar() {
                         display: 'flex',
                     }}>
                         <Box >
-                            <SearchInput sx={{display:{xs:'none',sm:'block'}}}/>
+                            <SearchInput
+                            onSubmit={()=>console.log('hi')}
+                            value={q}
+                            setValue={setQ}
+                            sx={{display:{xs:'none',sm:'flex'}}}/>
                             </Box>
-                            <Box className='flex right'>
+                            <Box 
+                            sx={{    width: '100%',
+                                justifyContent: 'end',}}
+                            className='flex right'>
 
                             <IconButton
                              sx={{display:{xs:'flex',sm:'none'}}}
