@@ -41,6 +41,7 @@ export default function Navbar() {
                         color="inherit"
                         aria-label="menu"
                         sx={{
+                        display:{sm:'none'},
                         mr: 2
                     }}>
                         <MenuIcon/>
