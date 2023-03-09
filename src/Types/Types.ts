@@ -1,4 +1,6 @@
-interface ICartItem {
+import React from 'react'
+
+export interface ICartItem {
     name: string;
     id: string;
     price: number;
@@ -7,3 +9,8 @@ interface ICartItem {
     remove: (id:string) => void;
     shortdesc ?: string;
 }
+export type TSetQuickView = 
+    React.Dispatch<React.SetStateAction<{
+        isOpen: boolean;
+        productId: null | string;
+    }>>

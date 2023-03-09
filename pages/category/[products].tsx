@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import React from 'react'
+import React, { useState } from 'react'
 import TopAd from '../../src/Components/HomeComponents/TopAd/TopAd'
 import Navbar from '../../src/Components/Navbar/Navbar'
 import FilterSection from '../../src/Components/ProductsComponents/Filter/FilterSection'
@@ -7,8 +7,11 @@ import ProductSection from '../../src/Components/ProductsComponents/ProductSecti
 import { Accordion, AccordionDetails, AccordionSummary, Box, Divider, Typography } from '@mui/material'
 import CategoryMenu from '../../src/Components/HomeComponents/CategoryMenu/CategoryMenu'
 import Breadcrumb from '../../src/Components/Breadcrumbs/Breadcrumb'
+import QuickView from '../../src/Components/Dialog/QuickView'
 
 const Index = () => {
+  const [quickView, setQuickView] = useState<{isOpen:boolean,productId:null | string}>({isOpen:false,productId:null})
+
   return (
     <>
     <Head>
@@ -20,7 +23,10 @@ const Index = () => {
     </Head>
     <TopAd/>
     <Navbar/>
+
     <CategoryMenu/>
+    <QuickView setQuickView={setQuickView} isOpen={quickView.isOpen}/>
+
   <Box sx={{margin:'0 auto',pt:'1.5em',maxWidth:'xl',mx:'3vw'}}>
 
 <Box className='flexed' sx={{justifyContent:'space-between'}}>
@@ -46,7 +52,7 @@ const Index = () => {
     <Box sx={{display:{xs:'none',md:'block'},width:'20%'}}>
     <FilterSection sx={{width:'100%'}}/>
     </Box>
-    <ProductSection/>
+    <ProductSection setQuickView={setQuickView}/>
     
   </Box>
     </Box>

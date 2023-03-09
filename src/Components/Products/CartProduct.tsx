@@ -4,7 +4,9 @@ import {RemoveRedEye,DeleteForever} from '@mui/icons-material';
 // import { QuantityPicker } from '';
 import Btn from '../Btn/Btn';
 import { QuantityPicker } from '../QuantityPicker/QuantityPicker';
-import { loadState, saveState } from '../../Utils/LocalstorageFn';
+// import { loadState, saveState } from '../../Utils/LocalstorageFn';
+import { ICartItem } from '../../Types/Types';
+import useCart from '../../Hooks/useCart';
 
 
 
@@ -22,6 +24,7 @@ const CartProduct = ({id,price,name,remove,qty,img}:ICartItem) => {
     //         }
     //     }
     // }
+    const {incrementQty} = useCart()
     return (
     <Box sx={{borderTop:'1px solid #0000001a',flex:1}}>
         <Box
@@ -121,7 +124,9 @@ const CartProduct = ({id,price,name,remove,qty,img}:ICartItem) => {
                         }}/>
                         
                     </IconButton> */}
-                    <QuantityPicker min={1} max={10} value={qty > 10 ? 10 : qty}/>
+                    <QuantityPicker 
+                    onChange={(e:number)=>incrementQty(id)}
+                    min={1} max={10} value={qty > 10 ? 10 : qty}/>
                 </Box>
             </Box>
         </Box>

@@ -12,6 +12,7 @@ import CartProduct from '../Products/CartProduct';
 import Btn from '../Btn/Btn';
 import { useRouter } from 'next/router';
 import { loadState, saveState } from '../../Utils/LocalstorageFn';
+import { ICartItem } from '../../Types/Types';
 
 export default function TemporaryDrawer() {
     const router = useRouter()
@@ -69,7 +70,7 @@ export default function TemporaryDrawer() {
                             fontWeight: '500',
                             color: '#3434ff'
                         }}>
-                            My Cart
+                             My Cart
                         </h2>
                         <IconButton onClick={toggleDrawer(false)}>
                             <CancelPresentationIcon
@@ -104,8 +105,16 @@ export default function TemporaryDrawer() {
                        <Btn disabled={cartItems.length < 1}>
                             Checkout
                        </Btn>
-                        <Btn v2={true}>
+                        <Btn 
+                        onClick={()=>{setCartOpen(false),router.push('/category/products')}}
+                        v2={true} >
                         Continue Shopping
+                        </Btn>
+                        <Btn
+                        sx={{color:'blue',border:'none',':hover':{background:'white',color:'blue'}}} 
+                        onClick={()=>{setCartOpen(false),router.push('/cart')}}
+                        v2={true} >
+                        View all
                         </Btn>
                     </Box>
 

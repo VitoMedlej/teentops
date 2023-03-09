@@ -116,13 +116,15 @@ export default function Navbar() {
                             </Typography>
                         </IconButton>
                         <IconButton
+                        
                         onClick={()=>setOpen(!open)}
                         size="large"
                         edge="start"
                         color="inherit"
                         aria-label="menu"
                         sx={{
-                        display:{sm:'none'},
+                            margin:'0.1em',
+                            display:{sm:'none'},
                     }}>
                         <MenuIcon/>
                     </IconButton>

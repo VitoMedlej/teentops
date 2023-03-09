@@ -11,6 +11,8 @@ import Btn from '../src/Components/Btn/Btn'
 import CartProduct from '../src/Components/Products/CartProduct'
 import Perks from '../src/Components/HomeComponents/Perks/Perks'
 import { loadState, saveState } from '../src/Utils/LocalstorageFn'
+import { ICartItem } from '../src/Types/Types'
+import { useRouter } from 'next/router'
 
 const titleStyle = {
     fontSize: '1.3em',
@@ -53,6 +55,7 @@ const EmptyCartAlert = () => {
 
 const Cart = () => {
     const [cartItems,setCartItems] = useState<ICartItem[]>([])
+    const router= useRouter()
     useEffect(() => {
         let localCart : ICartItem[] = loadState('usercart') || []
         if (localCart) {
@@ -153,8 +156,20 @@ const Cart = () => {
                     }}>450$</Typography>
                     
                     </Box>
-                    <Btn sx={{width:'100%',mt:2.5}}>Checkout Now</Btn>
-                    <Btn v2={true} sx={{mx:0,width:'100%',mt:1}}>Continue Shopping</Btn>
+                    <Link href='/checkout'
+                    
+                    className='decor-none'>
+
+                    <Btn
+                    sx={{width:'100%',mt:2.5}}>Checkout Now</Btn>
+                    </Link>
+
+                    <Link href='/category/products' className='decor-none'>
+
+                    <Btn
+                    
+                    v2={true} sx={{mx:0,width:'100%',mt:1}}>Continue Shopping</Btn>
+                    </Link>
                 </Box>
             </Box>
         </Box>
