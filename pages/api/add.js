@@ -1,11 +1,11 @@
-import main from "../../database/connection";
-import UserModel from "../../database/schema";
+import main from "../database/connection";
+import UserModel from "../database/schema";
 
 
 export default async function get_Users(req, res){
 
   main().catch(error => console.error(error));
-  const create = new UserModel({name: 'Jane Doe', price: 120 });
+  const create = new UserModel({name: 'Item NNNN' ,img:"", desc: "This is desc", price: 120 });
   create.save().then(() => {
     res.status(200).json(create)
   })
