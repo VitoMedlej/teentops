@@ -18,13 +18,13 @@ export default function CustomizedInputBase({sx}:{sx?:any}) {
         border:'1px solid #00000021',
         borderRadius:0,
         
-         display: 'flex', alignItems: 'center', minWidth:200,maxWidth: 400 
+         display: 'flex', alignItems: 'center', minWidth:200,maxWidth: 600 
          ,...sx
         }}
     >
    
       <InputBase
-        sx={{ ml: 1, flex: 1 }}
+        sx={{ ml: 1,w:'100%', flex: 1 }}
         placeholder="Search Google Maps"
         inputProps={{ 'aria-label': 'search google maps' }}
       />

@@ -64,15 +64,13 @@ export default function Navbar() {
                         justifyContent: {xs:'right',sm:'left'},
                         display: 'flex',
                     }}>
-                        <Box sx={{display:{xs:'flex',sm:'none'}}}>
-
-                  
+                        <Box >
                             <SearchInput sx={{display:{xs:'none',sm:'block'}}}/>
                             </Box>
-                            <Box >
+                            <Box className='flex right'>
 
                             <IconButton
-                            
+                             sx={{display:{xs:'flex',sm:'none'}}}
                             onClick={()=>setOpenModal(!openModal)}
                             color='inherit'>
  
