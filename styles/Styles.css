@@ -13,6 +13,23 @@ h1, h2, h3, h4, p {
   color: red;
 }
 
+.bg {
+  background: red;
+}
+
+.trans {
+  transition: 0.2s ease;
+}
+
+.white {
+  color: white !important;
+}
+
+.searchinput .searchIcon:hover {
+  background: red;
+  border-radius: 50%;
+}
+
 .bb {
   border-bottom: 1px solid rgba(128, 128, 128, 0.168627451);
 }
@@ -24,6 +41,14 @@ h1, h2, h3, h4, p {
 }
 .link:hover {
   text-decoration: underline;
+}
+
+.decor-none {
+  text-decoration: none !important;
+}
+
+.gap {
+  gap: 0.15em !important;
 }
 
 .CategoryMenu div {

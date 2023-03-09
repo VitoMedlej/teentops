@@ -16,6 +16,8 @@ import ItemTabs from '../../src/Components/ItemComponents/ItemTabs'
 import Link from 'next/link'
 import Btn from '../../src/Components/Btn/Btn'
 import { QuantityPicker } from '../../src/Components/QuantityPicker/QuantityPicker'
+import useCart from '../../src/Hooks/useCart'
+import { useRouter } from 'next/router'
 
 
 
@@ -26,6 +28,8 @@ const btnStyle = {
 
 
 const Index = () => {
+  const {addToCart} = useCart()
+  const router = useRouter()
   return (
   <>
      <Head>
@@ -54,6 +58,7 @@ const Index = () => {
       <Box className='flexed wrap' sx={{my:'2em'}}>
         <QuantityPicker min={1} max={10} value={1}/>
       <Btn
+      onClick={()=>{addToCart('id',false),router.push('/cart')}}
                             sx={{...btnStyle,mx:'.25em',minWidth:'150px'}}>Add To Cart
                         <ShoppingCartOutlinedIcon/>
                            </Btn>

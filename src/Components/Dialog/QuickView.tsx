@@ -9,6 +9,8 @@ import {Box} from '@mui/material';
 import ProductCarousel from '../ProductCarousel/ProductCarousel';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import CloseIcon from '@mui/icons-material/Close';
+import useCart from '../../Hooks/useCart';
+import Btn from '../Btn/Btn';
 
 
 export interface DialogTitleProps {
@@ -24,9 +26,10 @@ export default function CustomizedDialogs({isOpen, setQuickView} : {
     } >>,
     isOpen: boolean;
 }) {
+    
     const [open,
         setOpen] = React.useState(false);
-
+        const {addToCart}= useCart()    
     const handleClose = () => {
         setOpen(false);
         setQuickView({isOpen: false, productId: null});
@@ -98,7 +101,7 @@ export default function CustomizedDialogs({isOpen, setQuickView} : {
                         LBP 190,000
                     </Typography>
                     <Box>
-                        <Button
+                        {/* <Button
                             sx={{
                             ':hover': {
                                 border: '1px solid black',
@@ -112,7 +115,10 @@ export default function CustomizedDialogs({isOpen, setQuickView} : {
                             color: 'white',
                             padding: '.65em 2.63em',
                             borderRadius: 0
-                        }}>Add To Cart</Button>
+                        }}>Add To Cart</Button> */}
+                        <Btn
+                        onClick={()=>{handleClose(),addToCart('myitemid')}}
+                        >Add To Cart</Btn>
                     </Box>
                     <Box>
 

@@ -1,4 +1,4 @@
-import {useContext, useState} from 'react';
+import {useContext, useEffect, useState} from 'react';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 
@@ -17,7 +17,22 @@ export default function TemporaryDrawer() {
     const router = useRouter()
     const [cartOpen,
         setCartOpen] = useContext(CartContext);
+        const [cartItems,setCartItems] = useState<ICartItem[]>([])
+        useEffect(() =>{
+            let localCart : ICartItem[] = loadState('usercart') || []
+            if (localCart) {
+                
+                setCartItems(localCart)
+        }
+    },[cartOpen])
+    // useEffect(() => {
+    //     if (localCart.length > 0) {
 
+    //         setCartItems(loadState('usercart') || []);        
+    //     }
+    
+    // }, [loadState('usercart')])
+    
     const toggleDrawer = (open : boolean) => (event : React.KeyboardEvent | React.MouseEvent) => {
         if (event.type === 'keydown' && ((event as React.KeyboardEvent).key === 'Tab' || (event as React.KeyboardEvent).key === 'Shift')) {
             return;
@@ -25,11 +40,11 @@ export default function TemporaryDrawer() {
 
         setCartOpen(open);
     };
-    let cartItems : ICartItem[] = loadState('usercart') || []
     const remove = (id:string) => {
        let state = cartItems.filter(x => `${x.id}` !== id);
         saveState('usercart', state);
-        cartItems = state
+        // console.log('state: ', state);
+        setCartItems(state);
     }
     return (
         <div>
@@ -45,17 +60,16 @@ export default function TemporaryDrawer() {
                         display: 'flex',
                         flexDirection: 'row',
                         mx: '1em',
-                        borderBottom: '1px solid #00000014',
                         justifyContent: 'space-between'
                     }}>
                         <h2 
-                        onClick={()=>router.push('/cart')}
+                        onClick={()=>{setCartOpen(false),router.push('/cart')}}
                             style={{
                             cursor:'pointer',
                             fontWeight: '500',
-                            textDecoration: 'underline'
+                            color: '#3434ff'
                         }}>
-                            View Cart
+                            My Cart
                         </h2>
                         <IconButton onClick={toggleDrawer(false)}>
                             <CancelPresentationIcon
@@ -76,7 +90,7 @@ export default function TemporaryDrawer() {
                         remove={remove}
                         name={item.name} key={index}/>
                             })
-                            : <Typography sx={{fontSize:'1.5em',textAlign:'center',py:5}}> Your Cart Is Empty!</Typography>
+                        : <Typography sx={{fontSize:'1.5em',textAlign:'center',py:5}}> Your Cart Is Empty!</Typography>
                         }
                         
                     </Box>

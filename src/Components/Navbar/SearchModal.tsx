@@ -3,8 +3,10 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
-import { TextField } from '@mui/material';
+import { IconButton, TextField } from '@mui/material';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
+import SearchInput from './SearchInput';
+import { useRouter } from 'next/router';
 
 
 
@@ -27,7 +29,14 @@ interface IModal {
 export default function BasicModal({openModal,setOpenModal}:IModal) {
   const handleOpen = () => setOpenModal(true);
   const handleClose = () => setOpenModal(false);
-
+  const [q,setQ] = React.useState('')
+  const router = useRouter()
+  const handleSearch = (e: React.FormEvent<HTMLFormElement> ) => {
+    e.preventDefault()
+    if (q.length > 2) {
+      router.push(`/category/products?q=${q}`)
+    }
+  }
   return (
     <div>
       <Modal
@@ -37,19 +46,33 @@ export default function BasicModal({openModal,setOpenModal}:IModal) {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
+        <SearchInput
+        onSubmit={handleSearch}
+        value={q}
+        setValue={setQ}
+        sx={{width:'100%'}} />
+
+
+
+        </Box>
+        {/* 
           <Typography id="modal-modal-title" variant="h6" component="h2">
            Search Products
           </Typography>
 <Box className="flexed" sx={{position:'relative',mt:1,width:'100%'}}>
 
          <TextField size='small' placeholder='What are you looking for?' sx={{width:'100%'}}/>
-         <SearchOutlinedIcon sx={{
+         <IconButton className='cursor' sx={{}}>
 
-position: 'absolute',
-right: '2%',
-         }}/>
+         <SearchOutlinedIcon 
+         sx={{
+           
+           position: 'absolute',
+           right: '2%',
+          }}/>
+          </IconButton>
 </Box>
-        </Box>
+        </Box> */}
       </Modal>
     </div>
   );
