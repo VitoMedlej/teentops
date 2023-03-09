@@ -8,8 +8,28 @@ h1, h2 , h3 , h4,p {
     font-family: 'Montserrat', sans-serif !important;
 
 }
+$clr : red;
 .clr {
-    color :red;
+    color :$clr
+}
+.bg {
+    background: $clr;
+}
+.trans {
+    transition: 0.2s ease;
+
+}
+.white {
+    color:white !important;
+}
+.searchinput {
+    .searchIcon {
+
+        &:hover {
+            background: $clr;
+            border-radius: 50%;
+        }
+    }
 }
 .bb {
     border-bottom: 1px solid #8080802b;
