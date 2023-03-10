@@ -1,10 +1,13 @@
 import mongoose from "mongoose";
 
 const itemsDb = new mongoose.Schema({
-name: String,
-img: String,
+title: String, 
+array_of_img: [String], 
 desc: String,
-price: Number
+category: String,
+price: Number,
+weight: String,
+isFeatured: Boolean
 });
 
 // const itemsDbs = mongoose.model('itemsDb', itemsDb)
