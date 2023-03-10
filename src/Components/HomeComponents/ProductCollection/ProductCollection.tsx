@@ -3,6 +3,7 @@ import ProductCard from '../Cards/ProductCard'
 import SwiperCarousel from '../../SwiperCarousel/SwiperCarousel'
 import { Dispatch, SetStateAction } from 'react'
 import Btn from '../../Btn/Btn'
+import Link from 'next/link'
 
 const ProductCollection = ({sx,title,setQuickView} : {
     title: string,
@@ -60,8 +61,11 @@ const ProductCollection = ({sx,title,setQuickView} : {
             }}>
                 <SwiperCarousel/>
             </Box>
+            <Link  href='/category/products' className="decor-none">
+
             <Btn v2={true}
                 sx={{fontSize:'11px',margin:'1em auto'}}>View All</Btn>
+                </Link>
         </Box>
     )
 }

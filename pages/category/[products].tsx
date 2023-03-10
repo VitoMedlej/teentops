@@ -11,7 +11,11 @@ import QuickView from '../../src/Components/Dialog/QuickView'
 
 const Index = () => {
   const [quickView, setQuickView] = useState<{isOpen:boolean,productId:null | string}>({isOpen:false,productId:null})
-
+  const handleQuickView = (id: string) => {
+    if (setQuickView) {
+        setQuickView({isOpen:true,productId: id})
+    } 
+ }
   return (
     <>
     <Head>
@@ -52,7 +56,7 @@ const Index = () => {
     <Box sx={{display:{xs:'none',md:'block'},width:'20%'}}>
     <FilterSection sx={{width:'100%'}}/>
     </Box>
-    <ProductSection setQuickView={setQuickView}/>
+    <ProductSection setQuickView={handleQuickView}/>
     
   </Box>
     </Box>

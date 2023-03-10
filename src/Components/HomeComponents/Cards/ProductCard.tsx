@@ -10,15 +10,13 @@ import { useRouter } from 'next/router';
 // import {loadState, pushState, saveState} from '../../../Utils/LocalstorageFn';
 // import { CartContext } from '../../../../pages/_app';
 import useCart from '../../../Hooks/useCart';
-import { TSetQuickView } from '../../../Types/Types';
 const imgs = [`https://instagram.fbey22-1.fna.fbcdn.net/v/t39.30808-6/318294245_876818139983894_753731711699002273_n.jpg?stp=c2.0.1196.1020a_dst-jpg_e35_s1080x1080_sh0.08&_nc_ht=instagram.fbey22-1.fna.fbcdn.net&_nc_cat=102&_nc_ohc=-ZGFQyCq7RgAX8SeuBT&edm=ABmJApAAAAAA&ccb=7-5&ig_cache_key=Mjk4NTA5Mzk3NTA2MDM4MTEzNQ%3D%3D.2-ccb7-5&oh=00_AfDBbidoFjer7cuMW7wU3JulYMhkYmW-oCThp_W2YV34Xw&oe=640A1CFD&_nc_sid=6136e7`, `https://instagram.fbey22-1.fna.fbcdn.net/v/t39.30808-6/317994094_876128623386179_5518313291654859852_n.jpg?stp=c1.0.798.800a_dst-jpg_e15&_nc_ht=instagram.fbey22-1.fna.fbcdn.net&_nc_cat=111&_nc_ohc=VXmIdPnKDnYAX_xeCPf&edm=ABmJApAAAAAA&ccb=7-5&ig_cache_key=Mjk4NDQ2OTg2NzA3MjUyNDE2OA%3D%3D.2-ccb7-5&oh=00_AfCPlvkaNuURKMX-TOi3UnZpYw5HJ69a9lX76u35d8wJ2w&oe=6409E10A&_nc_sid=6136e7`]
 
-const ProductCard = ({itemId,sx, handleQuickView,className,setQuickView} : {
+const ProductCard = ({itemId,sx, handleQuickView,className} : {
     className?: string,
     handleQuickView ?: (id: string)=> void;
     sx?: any,
     itemId?:string,
-    setQuickView : TSetQuickView
 }) => {
 
     const ref : any = useRef()
