@@ -58,8 +58,8 @@ const Footer = () => (
 
     <div className="site-footer__bottom">
       <div className="container">
-        <p>Website Developed By
-          <a style={{ color: 'blue' }} href={`${process.env.NEXT_PUBLIC_US || 'https://www.onbeirut.com'}`}>{' '}OnBeirut Web Agecy </a></p>
+        <p>Website Developed By{' '}
+          <a style={{ color: 'blue' }} href={`${process.env.NEXT_PUBLIC_US || 'https://www.onbeirut.com'}`}>OnBeirut Web Agency </a></p>
       </div>
     </div>
   </footer>

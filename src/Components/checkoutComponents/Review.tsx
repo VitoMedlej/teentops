@@ -34,17 +34,19 @@ import { Divider } from '@mui/material';
 const addresses = ['1 MUI Drive', 'Reactville', 'Anytown', '99999', 'USA'];
 
 
+export const totalCal = (products:ICartItem[]) => {
+  if (!products) return 0 
+      for (let i = 0; i < products.length; i++) {
+          const total = products[i].price * products[i].qty 
+          // console.log('total: ', total);
+              return total || 0;
+      }
+      return 0
+}  
 export default function Review() {
+  
   const products = loadState('usercart')
-  const totalCal = () => {
-    if (!products) return 0 
-        for (let i = 0; i < products.length; i++) {
-            const total = products[i].price * products[i].qty 
-            // console.log('total: ', total);
-                return total || 0;
-        }
-        return 0
-  }  
+  const total = totalCal(products) 
   return (
     <React.Fragment>
       <Typography variant="h6" gutterBottom>
@@ -69,7 +71,7 @@ export default function Review() {
 
           <ListItemText primary="Total" />
           <Typography variant="subtitle1" sx={{ fontWeight: 700 }}>
-            ${totalCal() + 3}
+            ${total + Number(process?.env?.NEXT_PUBLIC_FEE)}
           </Typography>
         </ListItem>
       </List>

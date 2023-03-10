@@ -13,6 +13,7 @@ import Perks from '../src/Components/HomeComponents/Perks/Perks'
 import { loadState, saveState } from '../src/Utils/LocalstorageFn'
 import { ICartItem } from '../src/Types/Types'
 import { useRouter } from 'next/router'
+import { totalCal } from '../src/Components/checkoutComponents/Review'
 
 const titleStyle = {
     fontSize: '1.3em',
@@ -55,15 +56,21 @@ const EmptyCartAlert = () => {
 
 const Cart = () => {
     const [cartItems,setCartItems] = useState<ICartItem[]>([])
-    const router= useRouter()
+    const total= totalCal(cartItems) || 0; 
+    let localCart : ICartItem[] = loadState('usercart') || []
     useEffect(() => {
-        let localCart : ICartItem[] = loadState('usercart') || []
         if (localCart) {
             
             setCartItems(localCart)
     }
       
     }, [])
+    const refetchState = () => {
+        // let localCart : ICartItem[] = loadState('usercart') || []
+
+        setCartItems(loadState('usercart'))
+        
+    }
     const remove = (id:string) => {
         let state = cartItems.filter(x => `${x.id}` !== id);
          saveState('usercart', state);
@@ -96,12 +103,14 @@ const Cart = () => {
                 }}>
                     {cartItems && cartItems.length > 0 ?
                     cartItems.map(item=>{
-                        return <CartProduct img={item.img} qty={item.qty} remove={remove} name={item.name} id={item.id} price={item.price}/>
+                        return <CartProduct 
+                        
+                        onChange={refetchState}
+                        key={item.id}
+                        img={item.img} qty={item.qty} remove={remove} name={item.name} id={item.id} price={item.price}/>
                     }) :
                     <EmptyCartAlert/>     
                 }
-                                         {/* <CartProduct/> */}
-                    {/* <CartProduct/> */}
                 </Box>
                
                 <Box
@@ -126,8 +135,8 @@ const Cart = () => {
                         justifyContent: 'space-between'
                     }}>
 
-                        <Typography sx={textStyle}>Order Summary</Typography>
-                        <Typography sx={textStyle}>$400</Typography>
+                        <Typography sx={textStyle}>Subtotal</Typography>
+                        <Typography sx={textStyle}>${total}</Typography>
                     </Box>
                     <Box
                         className='flexed'
@@ -137,8 +146,8 @@ const Cart = () => {
                         justifyContent: 'space-between'
                     }}>
 
-                        <Typography sx={textStyle}>Order Summary</Typography>
-                        <Typography sx={textStyle}>$400</Typography>
+                        <Typography sx={textStyle}>Delivery fee</Typography>
+                        <Typography sx={textStyle}>${process.env.NEXT_PUBLIC_FEE || 0}</Typography>
                     </Box>
                     <Divider></Divider>
                     <Box 
@@ -150,10 +159,10 @@ const Cart = () => {
 
                     <Typography sx={{
                       ...titleStyle
-                    }}>Order Totals</Typography>
+                    }}>Order Total</Typography>
                     <Typography sx={{
                       fontWeight: '600'
-                    }}>450$</Typography>
+                    }}>${cartItems?.length > 0 ? total + Number(process.env.NEXT_PUBLIC_FEE) : 0}</Typography>
                     
                     </Box>
                     <Link href='/checkout'

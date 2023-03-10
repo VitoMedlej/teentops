@@ -5,12 +5,17 @@ import { ICartItem } from "../Types/Types";
 
 const useCart = () => {
     const [cartOpen, setCartOpen] = useContext(CartContext);
-    const incrementQty = (id:string) => {
+    const incrementQty = (id:string,newValue ?: number) => {
         const state = loadState('usercart') || [];
         let foundIndex = state.findIndex((value:ICartItem) => value.id === id);
         let selectedItem = state[foundIndex];
         if (foundIndex !== -1 && selectedItem) {
-            selectedItem.qty = selectedItem.qty + 1;
+            if (newValue) {selectedItem.qty = newValue; }
+            else {
+
+                selectedItem.qty = selectedItem.qty + 1;
+            }
+
             state[foundIndex] = selectedItem
 
            saveState('usercart', state)           

@@ -6,6 +6,7 @@ export interface ICartItem {
     price: number;
     img : string;
     qty : number;
+    onChange ?: () => void;
     remove: (id:string) => void;
     shortdesc ?: string;
 }

@@ -4,7 +4,7 @@ import TopAd from '../../src/Components/HomeComponents/TopAd/TopAd'
 import Navbar from '../../src/Components/Navbar/Navbar'
 import FilterSection from '../../src/Components/ProductsComponents/Filter/FilterSection'
 import ProductSection from '../../src/Components/ProductsComponents/ProductSection/ProductSection'
-import { Accordion, AccordionDetails, AccordionSummary, Box, Divider, Typography } from '@mui/material'
+import { Accordion, AccordionDetails, AccordionSummary, Box, Divider, Pagination, Typography } from '@mui/material'
 import CategoryMenu from '../../src/Components/HomeComponents/CategoryMenu/CategoryMenu'
 import Breadcrumb from '../../src/Components/Breadcrumbs/Breadcrumb'
 import QuickView from '../../src/Components/Dialog/QuickView'
@@ -57,7 +57,7 @@ const Index = () => {
     <FilterSection sx={{width:'100%'}}/>
     </Box>
     <ProductSection setQuickView={handleQuickView}/>
-    
+    <Divider/>
   </Box>
     </Box>
   </>

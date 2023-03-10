@@ -10,7 +10,7 @@ import useCart from '../../Hooks/useCart';
 
 
 
-const CartProduct = ({id,price,name,remove,qty,img}:ICartItem) => {
+const CartProduct = ({onChange,id,price,name,remove,qty,img}:ICartItem) => {
     // const deleteItem = () => {
     //     let state = loadState('usercart');
     //     for (let i = 0; i <state.length; i++) {
@@ -125,7 +125,8 @@ const CartProduct = ({id,price,name,remove,qty,img}:ICartItem) => {
                         
                     </IconButton> */}
                     <QuantityPicker 
-                    onChange={(e:number)=>incrementQty(id)}
+                    onChange={(e:number)=>{incrementQty(id,e),onChange && onChange()}}
+                    
                     min={1} max={10} value={qty > 10 ? 10 : qty}/>
                 </Box>
             </Box>
