@@ -21,10 +21,17 @@ import { useRouter } from 'next/router';
 export default function Navbar() {
     const [open, setOpen] = useContext(DrawerContext);
     const [openModal, setOpenModal] = useState(false);
-    const [cartOpen, setCartOpen] = useContext(CartContext);
-    // const localCart = loadState('usercart') || []
-    const localCart = [1]
     const [q,setQ] = useState('')
+    const [cartOpen, setCartOpen] = useContext(CartContext);
+    const localCart = loadState('usercart') || []
+    // const localCart = [1]
+    const router = useRouter()
+    const handleSearch = (e: React.FormEvent<HTMLFormElement> ) => {
+      e.preventDefault()
+      if (q.length > 2) {
+        router.push(`/category/products?q=${q}`)
+      }
+    }
    
     
     return (
@@ -69,7 +76,7 @@ export default function Navbar() {
                     }}>
                         <Box >
                             <SearchInput
-                            onSubmit={()=>console.log('hi')}
+                            onSubmit={handleSearch}
                             value={q}
                             setValue={setQ}
                             sx={{display:{xs:'none',sm:'flex'}}}/>
