@@ -18,12 +18,17 @@ import Btn from '../src/Components/Btn/Btn';
 
 export default function Home() {
     const [quickView, setQuickView] = useState<{isOpen:boolean,productId:null | string}>({isOpen:false,productId:null})
+    const [data,setData] = useState([])
+    console.log('data: ', data);
     const getAll= async () => {
       try {
 
-        const req = await fetch(`${server}/api/getdata`)
+        const req = await fetch(`${server}/api/home`)
         const res = await req.json()
         console.log('res: ', res);
+        if (res?.length > 0) {
+          setData(res)
+        }
       }
       catch(er) {
         console.log('er: ', er);

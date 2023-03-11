@@ -11,5 +11,7 @@ isFeatured: Boolean
 });
 
 // const itemsDbs = mongoose.model('itemsDb', itemsDb)
+// mongoose.model('Power') ||
 const Powers = mongoose.model('Power')  || mongoose.model('Power', Power)
+
 export default Powers;

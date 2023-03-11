@@ -1,10 +1,10 @@
-import main from "../database/connection";
-import UserModel from "../database/schema";
+import main from "../../src/database/connection";
+import UserModel from "../../src/database/schema";
 
 
-export default async function get_Users(req, res){
+export default async function get_Users(req:any, res:any){
 
-  main().catch(error => console.error(error));
+  main().catch((error:any) => console.error(error));
 
   const highest = await UserModel
   .find({})
