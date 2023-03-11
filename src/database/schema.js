@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const itemsDb = new mongoose.Schema({
+const Power = new mongoose.Schema({
 title: String, 
 images: [String], 
 description: String,
@@ -11,5 +11,5 @@ isFeatured: Boolean
 });
 
 // const itemsDbs = mongoose.model('itemsDb', itemsDb)
-const itemsDbs = mongoose.model('itemsDb')  || mongoose.model('itemsDb', itemsDb)
-export default itemsDbs;
+const Powers = mongoose.model('Power')  || mongoose.model('Power', Power)
+export default Powers;
