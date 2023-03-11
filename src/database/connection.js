@@ -1,7 +1,14 @@
 import mongoose from "mongoose";
  
 const main = async() => {
-await mongoose.connect(process.env.MONGO_URI);
-console.log("Database Connected");
+    try {
+
+        await mongoose.connect(process.env.MONGO_URI);
+        console.log("Database Connected");
+    }
+    catch (e){
+        console.log('e: ', e);
+        
+    }
 }
 export default main;

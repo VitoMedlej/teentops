@@ -23,8 +23,8 @@ export default function Navbar() {
     const [openModal, setOpenModal] = useState(false);
     const [q,setQ] = useState('')
     const [cartOpen, setCartOpen] = useContext(CartContext);
-    const localCart = loadState('usercart') || []
-    // const localCart = [1]
+    // const localCart = loadState('usercart') || []
+    const localCart = [1]
     const router = useRouter()
     const handleSearch = (e: React.FormEvent<HTMLFormElement> ) => {
       e.preventDefault()

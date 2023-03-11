@@ -1,10 +1,15 @@
 import mongoose from "mongoose";
 
 const itemsDb = new mongoose.Schema({
-title: String,
-price: Number
+title: String, 
+images: [String], 
+description: String,
+category: String,
+price: Number,
+weight: String,
+isFeatured: Boolean
 });
-//title, id, price, description, category, additionalInfo, img (main) , images (array of images)
-const itemsDbs = mongoose.model('itemsDb', itemsDb)
-// const itemsDbs = mongoose.model('itemsDb') || mongoose.model('itemsDb', itemsDb)
+
+// const itemsDbs = mongoose.model('itemsDb', itemsDb)
+const itemsDbs = mongoose.model('itemsDb')  || mongoose.model('itemsDb', itemsDb)
 export default itemsDbs;
