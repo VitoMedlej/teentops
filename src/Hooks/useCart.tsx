@@ -27,7 +27,7 @@ const useCart = () => {
         //1- get the cart from localstorage
          const increased =        incrementQty(_id)       
         if (increased) {
-            setCartOpen(true)
+            setCartOpen(open ? true : false)
             return
         }
         

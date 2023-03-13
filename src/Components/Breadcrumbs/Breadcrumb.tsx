@@ -25,19 +25,19 @@ const query =  router?.query?.products;
         <Link
           underline="hover"
           color="inherit"
-          href="/material-ui/getting-started/installation/"
+          href={params && params[0] || '/'}
+
         >
           <Typography>
 
-          {params[0]}
+          {params && params[0]}
           </Typography>
         </Link>
    {
+    params &&
           params[1]
    &&
-   <Typography
-        
-        >
+   <Typography>
 
         {!query ?   params[1] : query} 
         </Typography>}
