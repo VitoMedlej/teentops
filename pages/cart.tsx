@@ -72,9 +72,8 @@ const Cart = () => {
         
     }
     const remove = (id:string) => {
-        let state = cartItems.filter(x => `${x.id}` !== id);
+        let state = cartItems.filter(x => `${x._id}` !== id);
          saveState('usercart', state);
-         // console.log('state: ', state);
          setCartItems(state);
      }
     return (
@@ -106,8 +105,8 @@ const Cart = () => {
                         return <CartProduct 
                         
                         onChange={refetchState}
-                        key={item.id}
-                        img={item.img} qty={item.qty} remove={remove} name={item.name} id={item.id} price={item.price}/>
+                        key={item._id}
+                        img={item.img} qty={item.qty} remove={remove} title={item.title} _id={item._id} price={item.price}/>
                     }) :
                     <EmptyCartAlert/>     
                 }

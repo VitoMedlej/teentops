@@ -13,7 +13,6 @@ export default function handler(
 
   // const Person = mongoose.model('Person', yourSchema); 
   // Person.findOne({ 'name': 'Ghost' }, 'name occupation', function (person) {  
-  // console.log('%s %s is a %s.', person.name.first, person.name.last, person.occupation);
   // });
   // res.status(200).json({ name: 'John Doe' })
   

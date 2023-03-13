@@ -22,7 +22,7 @@ const WhatsApp = () => {
                 px: '1em',
                 borderRadius: '6px'
             }}>
-                +961 81826445
+                +961 70873045
             </Box>
             <IconButton
                 sx={{

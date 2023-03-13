@@ -4,15 +4,19 @@ import SwiperCarousel from '../../SwiperCarousel/SwiperCarousel'
 import { Dispatch, SetStateAction } from 'react'
 import Btn from '../../Btn/Btn'
 import Link from 'next/link'
+import { IProduct } from '../../../Types/Types'
 
-const ProductCollection = ({sx,title,setQuickView} : {
-    title: string,
+const ProductCollection = ({sx,Collectiontitle,data,setQuickView} : {
+    Collectiontitle: string,
+    data: IProduct[] | null,
     sx ?: any;
     setQuickView ?: Dispatch<SetStateAction<{
         isOpen: boolean;
         productId: null | string;
     }>>
 }) => {
+    
+    
     const handleQuickView = (id: string) => {
        if (setQuickView) {
            setQuickView({isOpen:true,productId: id})
@@ -31,7 +35,7 @@ const ProductCollection = ({sx,title,setQuickView} : {
                 padding: '.5em',
                 fontSize: '1.75em',
                 fontWeight: '500'
-            }}>{title}</Box>
+            }}>{Collectiontitle}</Box>
             <Box
                 sx={{
                 display: {
@@ -41,15 +45,25 @@ const ProductCollection = ({sx,title,setQuickView} : {
                 gap: '1em',
                 justifyContent: 'space-between'
             }}>
-                {[1, 2, 3, 4].map(item => {
-
+            
+                {data && data.length > 0 ? data.slice(0, 4).map(item => {
+                        if (!item._id) return;
                     return <ProductCard
-                    handleQuickView={handleQuickView}
+                        title={item.title}
+                        images={item.images}
+                        price={item.price}
+                        _id={item._id}
+                        category={item.category}
+                        handleQuickView={handleQuickView}
                         sx={{
                         height: '100%'
                     }}
-                        key={item}/>
+                        key={item._id}/>
                 })
+:
+<Typography>
+    No products found!
+</Typography>
 }
             </Box>
             <Box
@@ -59,12 +73,13 @@ const ProductCollection = ({sx,title,setQuickView} : {
                     md: 'none'
                 }
             }}>
-                <SwiperCarousel/>
+                <SwiperCarousel data={data?.slice(0,4)}/>
             </Box>
             <Link  href='/category/products' className="decor-none">
 
             <Btn v2={true}
-                sx={{fontSize:'11px',margin:'1em auto'}}>View All</Btn>
+
+                sx={{border:'none',fontSize:'11px',margin:'2em auto'}}>View All</Btn>
                 </Link>
         </Box>
     )

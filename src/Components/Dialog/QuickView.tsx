@@ -5,12 +5,13 @@ import DialogContent from '@mui/material/DialogContent';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import {Dispatch, SetStateAction, useEffect} from 'react';
-import {Box} from '@mui/material';
+import {Box,CircularProgress} from '@mui/material';
 import ProductCarousel from '../ProductCarousel/ProductCarousel';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import CloseIcon from '@mui/icons-material/Close';
 import useCart from '../../Hooks/useCart';
 import Btn from '../Btn/Btn';
+import { getById } from '../../../pages/product/[productId]';
 
 
 export interface DialogTitleProps {
@@ -19,24 +20,38 @@ export interface DialogTitleProps {
     onClose : () => void;
 }
 
-export default function CustomizedDialogs({isOpen, setQuickView} : {
+export default function CustomizedDialogs({isOpen,productId, setQuickView} : {
     setQuickView: Dispatch < SetStateAction < {
         isOpen: boolean;
         productId: null | string;
     } >>,
+    productId: string | null,
     isOpen: boolean;
 }) {
     
     const [open,
         setOpen] = React.useState(false);
+            
+    const [item,
+        setItem] = React.useState<any >(null);
         const {addToCart}= useCart()    
     const handleClose = () => {
         setOpen(false);
+        setItem(null)
         setQuickView({isOpen: false, productId: null});
     };
+    const getItem = async () => {
+        if (!productId) return;
+        const prod = await getById(`${productId}`)
+        if (prod) {
+            setItem(prod)
+        }
+        
+    }
     useEffect(() => {
         setOpen(isOpen)
-    }, [isOpen])
+        getItem()
+        }, [isOpen])
 
     return (
 
@@ -45,7 +60,10 @@ export default function CustomizedDialogs({isOpen, setQuickView} : {
             onClose={handleClose}
             aria-labelledby="customized-dialog-title"
             open={open}>
+                {
+productId && <>
 
+                
             <DialogContent
                 dividers
                 sx={{
@@ -59,7 +77,7 @@ export default function CustomizedDialogs({isOpen, setQuickView} : {
                 justifyContent: 'space-between'
             }}>
 
-                <>
+            {item ?    <>
                     <Box
                     sx={{
                     width: {
@@ -67,7 +85,7 @@ export default function CustomizedDialogs({isOpen, setQuickView} : {
                         sm: '45%'
                     }
                 }}>
-                    <ProductCarousel/>
+                    <ProductCarousel images={item?.images}/>
                 </Box>
                 <Box
                     sx={{
@@ -82,7 +100,7 @@ export default function CustomizedDialogs({isOpen, setQuickView} : {
                         fontWeight: '600',
                         pt: '.15em'
                     }}>
-                        Perfume blah of the almighty fart
+                      {item.title}
                     </Typography>
 
                     <Typography
@@ -90,16 +108,15 @@ export default function CustomizedDialogs({isOpen, setQuickView} : {
                         py: '.75em',
                         color: 'gray'
                     }}>
-                        Body Mists, Fragrances, Body Mists Fragrances Victoria Mists Fragrances Victoria
-                        Mists Fragrances Victoria&apos;s Secret Mists, Fragrances, Victoria&apos;s Secret
+                      {item.description}
                     </Typography>
                     <Typography
                         sx={{
                         py: '1em',
                         color: 'green'
                     }}>
-                        LBP 190,000
-                    </Typography>
+                        ${item.price}
+                        </Typography>
                     <Box>
                         {/* <Button
                             sx={{
@@ -117,7 +134,10 @@ export default function CustomizedDialogs({isOpen, setQuickView} : {
                             borderRadius: 0
                         }}>Add To Cart</Button> */}
                         <Btn
-                        onClick={()=>{handleClose(),addToCart('myitemid')}}
+                        onClick={()=>{handleClose(),addToCart(item._id,{
+                            title: item?.title, _id: item?._id, category: item?.category, price: item.price,
+                            img: item?.images && item.images?.length > 0 ? item.images[0] : null
+                        })}}
                         >Add To Cart</Btn>
                     </Box>
                     <Box>
@@ -139,7 +159,9 @@ export default function CustomizedDialogs({isOpen, setQuickView} : {
                     </Box>
 
                 </Box>
-            </>
+            </> :
+            <CircularProgress />
+            }
         </DialogContent>
         <IconButton
             onClick={() => handleClose()}
@@ -151,6 +173,8 @@ export default function CustomizedDialogs({isOpen, setQuickView} : {
         }}>
             <CloseIcon/>
         </IconButton>
+</>
+}
     </Dialog>
 
     );

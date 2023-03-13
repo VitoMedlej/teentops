@@ -18,6 +18,8 @@ import Btn from '../../src/Components/Btn/Btn'
 import { QuantityPicker } from '../../src/Components/QuantityPicker/QuantityPicker'
 import useCart from '../../src/Hooks/useCart'
 import { useRouter } from 'next/router'
+import { server } from '../../src/Utils/Server'
+import { getAll } from '..'
 
 
 
@@ -27,7 +29,7 @@ const btnStyle = {
 }
 
 
-const Index = () => {
+const Index = ({data,collection}:any) => {
   const {addToCart} = useCart()
   const router = useRouter()
   return (
@@ -46,19 +48,19 @@ const Index = () => {
     <Divider/>
     <Box sx={{justifyContent:'space-between',margin:'0 auto',maxWidth:'lg',display:'flex',px:'1em',pt:'1em',gap:'2em',flexWrap:'wrap'}}>
       <Box sx={{width:{xs:'100%',md:'45%'},maxWidth:'600px'}}>
-                <ProductCarousel mw='600px'/>
+                <ProductCarousel images={data?.images} mw='600px'/>
       </Box>
       <Box sx={{width:{xs:'100%',md:'50%'}}}>
-        <Typography sx={{fontSize:{xs:'1.8em',sm:'2.1em'},pb:'.5em',fontWeight:'500'}}>Some BBIBBLE FAITWT TIQWTJ TIQW 02</Typography>
-        <Typography className='gray' sx={{fontSize:'.85em',pb:'.5em',fontWeight:'400'}}>Model Number : tvx5704</Typography>
+        <Typography sx={{fontSize:{xs:'1.8em',sm:'2.1em'},pb:'.5em',fontWeight:'500'}}>{data.title}</Typography>
+        <Typography className='gray' sx={{fontSize:'.85em',pb:'.5em',fontWeight:'400'}}>Model Id : {data._id}</Typography>
         
-        <Typography sx={{fontSize:'1.25em',py:'.25em',fontWeight:'600'}} className='clr'>LBP 900,000</Typography>
+        <Typography sx={{fontSize:'1.25em',py:'.25em',fontWeight:'600'}} className='clr'>${data.price}</Typography>
         {/* <SelectOneForm/> */}
         <SelectOneForm/>
       <Box className='flexed wrap' sx={{my:'2em'}}>
         <QuantityPicker min={1} max={10} value={1}/>
       <Btn
-      onClick={()=>{addToCart('id',false),router.push('/cart')}}
+      onClick={()=>{addToCart(data?._id,{_id:data._id,price:data.price,img:data.img,title:data.title}),router.push('/cart'),false}}
                             sx={{...btnStyle,mx:'.25em',minWidth:'150px'}}>Add To Cart
                         <ShoppingCartOutlinedIcon/>
                            </Btn>
@@ -118,12 +120,57 @@ const Index = () => {
   </Box> */}
       </Box>
       </Box>
-  <ItemTabs/>
+  <ItemTabs description={data?.description?.length> 0 ? data?.title : data?.description}/>
     </Box>
-      <ProductCollection sx={{my:'6em'}}  title={'Shop Similar Products'}/>
+      <ProductCollection data={collection} sx={{my:'6em'}}  Collectiontitle={'Shop Similar Products'}/>
       <Perks/>
   </>
   )
 }
 
 export default Index
+
+export const getById = async (id:string) => {
+  try {
+
+    const req = await fetch(`${server}/api/get-item?pid=${id}`)
+    const res = await req.json()
+    
+    if (res) {
+      return res
+    }
+  }
+  catch(er) { 
+    console.log('er: ', er);
+
+  }
+}
+export async function getServerSideProps(context:any) {
+  try {
+    const id = context.params.productId
+    
+    if (!id ) {
+      throw 'Error'
+    }
+    const data = await getById(`${id}`)
+    const collection = await getAll('getdata',4)
+  if (!data) {
+    throw 'No data'
+  }
+  return {
+    props: {
+      data,
+      collection
+    }, // will be passed to the page component as props
+  }
+}
+catch (e) {
+  console.log('e: ', e);
+  return {
+    redirect: {
+      destination: '/',
+      permanent: false,
+    },
+  } 
+}
+}

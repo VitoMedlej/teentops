@@ -5,9 +5,9 @@ import { ICartItem } from "../Types/Types";
 
 const useCart = () => {
     const [cartOpen, setCartOpen] = useContext(CartContext);
-    const incrementQty = (id:string,newValue ?: number) => {
+    const incrementQty = (_id:string,newValue ?: number) => {
         const state = loadState('usercart') || [];
-        let foundIndex = state.findIndex((value:ICartItem) => value.id === id);
+        let foundIndex = state.findIndex((value:ICartItem) => value._id === _id);
         let selectedItem = state[foundIndex];
         if (foundIndex !== -1 && selectedItem) {
             if (newValue) {selectedItem.qty = newValue; }
@@ -19,19 +19,24 @@ const useCart = () => {
             state[foundIndex] = selectedItem
 
            saveState('usercart', state)           
-           return 
+           return true
        }
+       return false;
     }
-    const addToCart = (id:string,open=true) => {
+    const addToCart = (_id:string,product:{title:string,category?:string,img:string,_id:string,price:number,description?:string},open=true) => {
         //1- get the cart from localstorage
-         incrementQty(id)       
-
-                
+         const increased =        incrementQty(_id)       
+        if (increased) {
+            setCartOpen(true)
+            return
+        }
         
             //if we do not have the item in cart, insert it
         pushState('usercart',
-        {qty:1,img:'https://burst.shopifycdn.com/photos/modern-time-pieces.jpg?width=1200&format=pjpg&exif=1&iptc=1'
-        ,id,name:'My Object Name',price:100,shortDesc:'foobarbaz'})
+        {qty:1,img:product.img,
+            category:product?.category || '',
+            title:product.title
+        ,_id:product._id,price:product.price})
         if(open) {
              
             setCartOpen(true)

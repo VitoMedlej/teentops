@@ -54,8 +54,8 @@ export default function Review() {
       </Typography>
       <List disablePadding>
         {products?.length > 0 && products.map((product:ICartItem) => (
-          <ListItem key={product.name} sx={{ py: 1, px: 0 }}>
-            {`${product.qty}x `} <ListItemText primary={product.name}  />
+          <ListItem key={product.title} sx={{ py: 1, px: 0 }}>
+            {`${product.qty}x `} <ListItemText primary={product.title}  />
             <Typography variant="body2">${product.price}</Typography>
           </ListItem>
         ))}

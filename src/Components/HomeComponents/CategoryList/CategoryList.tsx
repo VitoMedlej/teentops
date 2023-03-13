@@ -9,7 +9,7 @@ import { useRouter } from 'next/router'
 const CategoryList = () => {
     const router = useRouter()
     const handleClick = () => {
-        router.push('/shoes/products')
+        router.push('/category/products')
     }
     return (
         <Box sx={{
@@ -37,15 +37,17 @@ const CategoryList = () => {
                 }
             }}>
 {/* https://www.ishtari.com/image/data/system_banner/10000/1800/1675/shoes-web.png */}
-                {[1, 2].map(i => {
+                {[`https://cf.shopee.sg/file/sg-11134210-23030-py7f1w12t6nv92`, 'https://d1pjg4o0tbonat.cloudfront.net/content/dam/midea-aem/us/holiday-campaign-2022-/Range%20Banner.jpg'].map(i => {
             
-                    return  <Box key={i} className='pointer' sx={{height:'100%',maxHeight:'300px',width:{xs:'49%'}}}>
+                    return  <Box key={i} className='pointer' sx={{height:'300px',width:{xs:'49%'}}}>
                                 <>
                                     {/* <img className='img' src="" alt="" /> */}
-                                    <ResponsiveImage
-                                    handleClick={handleClick}
-                                        defaultImg={'https://www.ishtari.com/image/data/system_banner/10000/1800/1675/tools-wen.png'}
-                                        img2={'https://www.ishtari.com/image/data/system_banner/10000/1800/1699/faucet-tools-app.png'}
+                                    <img
+                                    onClick={()=>handleClick()}
+                                        src={i}
+                                        className='img cover'
+                                        alt='Category Image'
+                                        // img2={'https://www.ishtari.com/image/data/system_banner/10000/1800/1699/faucet-tools-app.png'}
                                     />
                                 </>
                     </Box>

@@ -5,7 +5,7 @@ import { Box } from '@mui/material';
 import ProductCard from '../HomeComponents/Cards/ProductCard';
 
 
-const SwiperCarousel = () => {
+const SwiperCarousel = ({data}:any) => {
    
     return (
         <Box
@@ -45,9 +45,9 @@ const SwiperCarousel = () => {
                
         }}>
 
-            {[1,2,3,4].map(item => {
+            {data && data.length>0 && data.map((item:any) => {
 
-                return <SwiperSlide className='swiper-wrapper1' style={{width:'100%',height:'100%'}} key={item}>
+                return <SwiperSlide className='swiper-wrapper1' style={{width:'100%',height:'100%'}} key={item._id}>
                     {/* <HouseCard
                         img={property.images[0] || property.images[1]}
                         width='95%'
@@ -61,7 +61,14 @@ const SwiperCarousel = () => {
                         price={property.price}
                         title={property.title}
                         location={property.location}/> */}
-                         <ProductCard />
+                         <ProductCard 
+
+                         title={item.title}
+                         images={item.images}
+                         price={item.price}
+                         _id={item._id}
+                         category={item.category}
+                         />
                 </SwiperSlide>
 
             })

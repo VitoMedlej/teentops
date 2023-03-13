@@ -4,14 +4,15 @@ import HeadphonesIcon from '@mui/icons-material/Headphones';
 const Perks = () => {
     return (
         <Box
-        className='flexed'
+        className='flexed bg'
         sx={{
             my:'3em',
             flexWrap:'wrap',
-            background:'#f0f0f0',
+            // background:'#f0f0f0',
             py:'1em',
             justifyContent: 'space-evenly',
             width: '100%',
+            color:'white'
         }}>
             <Box
             className='flexed'
@@ -22,12 +23,13 @@ const Perks = () => {
                 pb:{xs:'1em',sm:0}
             }}>
                 <span style={{
+                    fontWeight:'600',
                     fontSize: '1.1em'
                 }}>
                     We are Always Here To Help
                 </span>
                 <span
-                    className='gray'
+                    className='white'
                     style={{
                     fontSize: '.8em'
                 }}>Reach out to us through any of these support channels</span>

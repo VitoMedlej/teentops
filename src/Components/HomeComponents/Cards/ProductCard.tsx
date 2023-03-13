@@ -10,34 +10,39 @@ import { useRouter } from 'next/router';
 // import {loadState, pushState, saveState} from '../../../Utils/LocalstorageFn';
 // import { CartContext } from '../../../../pages/_app';
 import useCart from '../../../Hooks/useCart';
-const imgs = [`https://instagram.fbey22-1.fna.fbcdn.net/v/t39.30808-6/318294245_876818139983894_753731711699002273_n.jpg?stp=c2.0.1196.1020a_dst-jpg_e35_s1080x1080_sh0.08&_nc_ht=instagram.fbey22-1.fna.fbcdn.net&_nc_cat=102&_nc_ohc=-ZGFQyCq7RgAX8SeuBT&edm=ABmJApAAAAAA&ccb=7-5&ig_cache_key=Mjk4NTA5Mzk3NTA2MDM4MTEzNQ%3D%3D.2-ccb7-5&oh=00_AfDBbidoFjer7cuMW7wU3JulYMhkYmW-oCThp_W2YV34Xw&oe=640A1CFD&_nc_sid=6136e7`, `https://instagram.fbey22-1.fna.fbcdn.net/v/t39.30808-6/317994094_876128623386179_5518313291654859852_n.jpg?stp=c1.0.798.800a_dst-jpg_e15&_nc_ht=instagram.fbey22-1.fna.fbcdn.net&_nc_cat=111&_nc_ohc=VXmIdPnKDnYAX_xeCPf&edm=ABmJApAAAAAA&ccb=7-5&ig_cache_key=Mjk4NDQ2OTg2NzA3MjUyNDE2OA%3D%3D.2-ccb7-5&oh=00_AfCPlvkaNuURKMX-TOi3UnZpYw5HJ69a9lX76u35d8wJ2w&oe=6409E10A&_nc_sid=6136e7`]
-
-const ProductCard = ({itemId,sx, handleQuickView,className} : {
+import Btn from '../../Btn/Btn';
+const defaultImages = ['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQTvTcD234f-GRtvhN-xdfrqckgfNZbgS6fRdIeAQ-vBdHlkvqjmM6MZQfmFBHpjxoc1Q&usqp=CAU']
+const ProductCard = ({title,_id,price,images,category,sx, handleQuickView,className} : {
     className?: string,
     handleQuickView ?: (id: string)=> void;
     sx?: any,
-    itemId?:string,
+    title: string;
+    price: number;
+    _id: string;
+    images: string[] | any[];
+    category: string;
 }) => {
-
+    let img = images?.length > 0 ? images[0] : defaultImages
     const ref : any = useRef()
     const {addToCart}= useCart()    
     const [currentImg,
-        setCurrentImg] = useState(imgs[0])
+        setCurrentImg] = useState(img)
         const router = useRouter()
     const handleonMouseIn = () => {
         if (ref
-            ?.current && imgs.length > 1) {
-            setCurrentImg(imgs[1]);
+            ?.current && images?.length > 1) {
+            setCurrentImg(images[1]);
         }
     }
     const handleonMouseOut = () => {
         if (ref
-            ?.current && imgs.length > 1) {
-            setCurrentImg(imgs[0]);
+            ?.current && images?.length > 1) {
+            setCurrentImg(images[0]);
         }
     }
     const handleClick = () => {
-        router.push('/product/foo-bname')
+        router.push(`/product/${_id}?title=${`${title}`.replace(/\s+/g, '-')}`)
+        
     }
    
     return (
@@ -46,8 +51,10 @@ const ProductCard = ({itemId,sx, handleQuickView,className} : {
             onMouseOver={() => handleonMouseIn()}
             onMouseOut={() => handleonMouseOut()}
             sx={{
+                boxShadow:'1px 1px 3px #eeeeee',
             position: 'relative',
-            maxHeight: '600px',
+            minHeight: '440px',
+            maxHeight: '640px',
             width: '100%',
             overflow: 'hidden',
             ...sx,
@@ -72,7 +79,7 @@ const ProductCard = ({itemId,sx, handleQuickView,className} : {
                     <img
                     onClick={handleClick}
                     style={{maxHeight:'400px'}}
-                    ref={ref} src={currentImg} className='img contain pointer' alt="Product Image"/>
+                    ref={ref} src={ currentImg} className='img contain pointer' alt="Product Image"/>
                     </Box>
                     <Box
                         className='productOptions'
@@ -95,7 +102,7 @@ const ProductCard = ({itemId,sx, handleQuickView,className} : {
                     }}>
                         <Tooltip placement='left' title={'Quick View'}>
                             <IconButton
-                                onClick={()=>handleQuickView ? handleQuickView('someId') : ''}
+                                onClick={()=>handleQuickView && _id ? handleQuickView(`${_id}`) : ''}
                                 sx={{
                                 ':hover': {
                                     background: 'white'
@@ -141,24 +148,35 @@ const ProductCard = ({itemId,sx, handleQuickView,className} : {
                     // wordBreak:'break-all',
                     mt: '.25em',
                     fontSize: '1em'
-                }}>Some scam probably 100g</Typography>
+                }}>{title}</Typography>
 
                 <span className='gray' style={{fontSize:'.76em'}}>
-                    Addidas
+                    {category}
                     </span>
             <Box sx={{mx:'.15em',justifyContent:'space-between'}} className='flexed'>
                 <Typography
                     className='clr'
                     sx={{
                     fontSize: '1em'
-                }}>299.000 LBP</Typography>
-                <Tooltip title='Add To Cart' placement='left'>
+                }}>${price}</Typography>
                 {/* boxShadow:'1px 1px 3px #0000005e', */}
-                <IconButton
-                onClick={()=>addToCart('myobjectid')}
+                {/* <IconButton
+                onClick={()=>addToCart(_id,{price,img,title,_id})}
                 sx={{':hover':{background:'#eaeaea'}}}>
                     <ShoppingCartIcon />
-                </IconButton>
+                </IconButton> */}
+                <Tooltip title='Add To Cart' placement='left'>
+                <Btn
+                v2={true}
+                onClick={()=>addToCart(_id,{price,img,title,_id})}
+                sx={{':hover':{background:'#c57540',color:'white',border:'1px solid #c57540'}}}>
+                       <Typography
+                   className='flex items-center'
+                   sx={{fontSize:'.75em',gap:'.3em'}}>
+
+                   add to cart <ShoppingCartIcon fontSize='small' />
+                   </Typography>
+                </Btn>
                 </Tooltip>
             </Box>
 

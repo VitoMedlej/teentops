@@ -30,8 +30,8 @@ export default function CustomizedInputBase({sx,onSubmit,value,setValue}:{onSubm
         sx={{
           display: 'flex',
           ml: 1,w:'100%', flex: 1 }}
-        placeholder="Search Google Maps"
-        inputProps={{ 'aria-label': 'search google maps' }}
+        placeholder="Search Products"
+        inputProps={{ 'aria-label': 'search products' }}
       />
       <IconButton
       

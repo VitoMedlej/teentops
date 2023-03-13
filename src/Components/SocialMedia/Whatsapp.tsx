@@ -23,9 +23,9 @@ const WhatsApp = () => {
                 padding: '1em.75em',
                 borderRadius: '6px'
             }}>
-                +961 71283853
+                +961 70873045
             </div>
-            <a href='https://wa.me/+96171283853' target='_blank'   rel="noreferrer">
+            <a href='https://wa.me/+96170873045' target='_blank'   rel="noreferrer">
 
 
             <IconButton
