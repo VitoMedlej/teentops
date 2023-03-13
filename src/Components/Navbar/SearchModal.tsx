@@ -34,7 +34,7 @@ export default function BasicModal({openModal,setOpenModal}:IModal) {
   const handleSearch = (e: React.FormEvent<HTMLFormElement> ) => {
     e.preventDefault()
     if (q.length > 2) {
-      router.push(`/category/products?q=${q}`)
+      router.push(`/category/products?search=${q}`)
     }
   }
   return (

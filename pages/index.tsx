@@ -63,10 +63,10 @@ export default function Home({data :staticData,category}:{category:any,data:any}
     </>
   )
 }
-export const getAll = async (endpoint?:string,limit?:number) => {
+export const getAll = async (endpoint?:string,limit?:number,category?:string) => {
   try {
 
-    const req = await fetch(`${server}/api/${endpoint ? endpoint : 'home' }?limit=${limit || 100}`)
+    const req = await fetch(`${server}/api/${endpoint ? endpoint : 'home' }?limit=${limit || 100}&category=${category ? category : ''}`)
     const res = await req.json()
   
     if (res) {

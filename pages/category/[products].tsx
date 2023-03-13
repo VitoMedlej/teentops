@@ -9,6 +9,7 @@ import CategoryMenu from '../../src/Components/HomeComponents/CategoryMenu/Categ
 import Breadcrumb from '../../src/Components/Breadcrumbs/Breadcrumb'
 import QuickView from '../../src/Components/Dialog/QuickView'
 import { getAll } from '..'
+import { useRouter } from 'next/router'
 
 const Index = ({data}:any) => {
   const [quickView, setQuickView] = useState<{isOpen:boolean,productId:null | string}>({isOpen:false,productId:null})
@@ -17,6 +18,7 @@ const Index = ({data}:any) => {
         setQuickView({isOpen:true,productId: id})
     } 
  }
+ const  router= useRouter() 
   return (
     <>
     <Head>
@@ -29,15 +31,15 @@ const Index = ({data}:any) => {
     <TopAd/>
     <Navbar/>
 
-    <CategoryMenu/>
+    <CategoryMenu category={undefined}/>
     <QuickView productId={quickView.productId} setQuickView={setQuickView} isOpen={quickView.isOpen}/>
 
   <Box sx={{margin:'0 auto',pt:'1.5em',maxWidth:'xl',mx:'3vw'}}>
 
 <Box className='flexed' sx={{justifyContent:'space-between'}}>
-<Breadcrumb sx={{margin:0,px:0,py:'1em'}}/>
+<Breadcrumb params={[`${router.query?.products || 'products'}`]} sx={{margin:0,px:0,py:'1em'}}/>
 
-    <Typography className=''>Showing {data?.length} products</Typography>
+    <Typography className=''>Showing {data?.length || '0'} products</Typography>
     </Box> 
     <Divider></Divider>
     <Box  sx={{display:'flex',flexWrap:'wrap'
@@ -67,13 +69,15 @@ const Index = ({data}:any) => {
 
 export default Index
 
-export async function  getServerSideProps() {
+export async function  getServerSideProps(context:any) {
+  // console.log('context: ', );
+  let category = context.query?.products || 'products'
   // const res = await fetch('https://.../posts')
   // const posts = await res.json()
   try {
 
  
-  const data = await getAll('getdata',12)
+  const data =  await getAll('getdata',12,category)
 
   if (!data) {
     return {

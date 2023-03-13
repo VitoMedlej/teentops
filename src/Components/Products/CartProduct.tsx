@@ -7,6 +7,7 @@ import { QuantityPicker } from '../QuantityPicker/QuantityPicker';
 // import { loadState, saveState } from '../../Utils/LocalstorageFn';
 import { ICartItem } from '../../Types/Types';
 import useCart from '../../Hooks/useCart';
+import Link from 'next/link';
 
 
 
@@ -58,10 +59,11 @@ const CartProduct = ({onChange,_id,price,category,title,remove,qty,img}:ICartIte
             <Box sx={{display:'flex',width:'100%'}}>
 
                 <Box>
+                    <Link href={`/product/${_id}`} >
 
                     <Typography
                     component='h4'
-                        sx={{
+                    sx={{
                         margin: 0,
                         cursor:'pointer',
                         fontWeight: '400',
@@ -69,6 +71,7 @@ const CartProduct = ({onChange,_id,price,category,title,remove,qty,img}:ICartIte
                     }}>
                        {title}
                     </Typography>
+                        </Link>
                     <Typography
                     component='h4'
                         sx={{

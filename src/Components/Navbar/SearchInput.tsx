@@ -34,8 +34,8 @@ export default function CustomizedInputBase({sx,onSubmit,value,setValue}:{onSubm
         inputProps={{ 'aria-label': 'search products' }}
       />
       <IconButton
-      
-      type="button" className='searchIcon bg white trans' sx={{borderRadius:0,p: '10px' }} aria-label="search">
+        // onClick={()=>handleSearch()}
+      type="submit" className='searchIcon bg white trans' sx={{borderRadius:0,p: '10px' }} aria-label="search">
         <SearchIcon />
       </IconButton>
      
