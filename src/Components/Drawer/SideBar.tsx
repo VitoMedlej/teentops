@@ -10,11 +10,14 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
-import { DrawerContext } from '../../../pages/_app';
+import { Categories, DrawerContext } from '../../../pages/_app';
+import CancelPresentationIcon from '@mui/icons-material/CancelPresentation';
+import CoffeeMakerIcon from '@mui/icons-material/CoffeeMaker';
+import { IconButton } from '@mui/material';import BlenderIcon from '@mui/icons-material/Blender';
 
 // {setOpen,open} : {open: boolean, setOpen: any}
-export default function TemporaryDrawer() {
-const [open, setOpen] = useContext(DrawerContext);
+export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
+  const [open, setOpen] = useContext(DrawerContext);
 
   const toggleDrawer =
     ( open: boolean) =>
@@ -30,19 +33,35 @@ const [open, setOpen] = useContext(DrawerContext);
       setOpen(open);
     };
 
-  const list = () => (
+  const Lista = () => (
     <Box
       sx={{ width:  'auto' }}
       role="presentation"
       onClick={toggleDrawer( false)}
       onKeyDown={toggleDrawer( false)}
     >
+      <Box className='flex'
+      sx={{margin:'0 .5em',borderBottom:'1px solid #00000040',    justifyContent: 'flex-end'}}
+      
+      >
+
+              <IconButton 
+        
+        onClick={toggleDrawer(false)}>
+                            <CancelPresentationIcon
+                                sx={{
+                                  color: 'red'
+                                }}/>
+                        </IconButton>
+                     
+
+                                </Box>
       <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+        {cates&&cates.map((text, index) => (
           <ListItem key={text} disablePadding>
             <ListItemButton>
               <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                {index % 2 === 0 ? <CoffeeMakerIcon /> : <BlenderIcon />}
               </ListItemIcon>
               <ListItemText primary={text} />
             </ListItemButton>
@@ -56,25 +75,18 @@ const [open, setOpen] = useContext(DrawerContext);
 
   return (
     <div>
+
           <Drawer
-            anchor={'left'}
+            anchor={'right'}
             open={open}
             onClose={toggleDrawer(false)}
           >
-      <List>
 
-             <ListItem  disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                foobaricon
-                {/* {index % 2 === 0 ? <InboxIcon /> : <MailIcon />} */}
-              </ListItemIcon>
-              <ListItemText>
-                hello world
-              </ListItemText>
-            </ListItemButton>
-          </ListItem>
-          </List>
+  <Lista/>
+
+      
+      
+          {/* <CategoryMenu category={cates}/> */}
 
           </Drawer>
     </div>

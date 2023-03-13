@@ -11,16 +11,22 @@ import Navbar from '../src/Components/Navbar/Navbar';
 // import SideBar from '../src/Components/Drawer/SideBar';
 // import { Dialog } from '@mui/material';
 import QuickView from '../src/Components/Dialog/QuickView';
-import { useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import {server} from '../src/Utils/Server' 
 import CategoryImages from '../src/Components/HomeComponents/CategoryImages/CategoryImages';
 import Btn from '../src/Components/Btn/Btn';
 import { IProduct } from '../src/Types/Types';
 import { Typography } from '@mui/material';
+import { Categories } from './_app';
 
-export default function Home({data :staticData}:{data:any}) {
-    const [quickView, setQuickView] = useState<{isOpen:boolean,productId:null | string}>({isOpen:false,productId:null})
-    const [data,setData] = useState<IProduct[]>(staticData)
+export default function Home({data :staticData,category}:{category:any,data:any}) {
+  
+  const [quickView, setQuickView] = useState<{isOpen:boolean,productId:null | string}>({isOpen:false,productId:null})
+  const [data,setData] = useState<IProduct[]>(staticData)
+  const [cates,setCates] = useContext(Categories);
+  useEffect(() => {
+    setCates(category);
+  }, [])
 
  
     return (
@@ -34,8 +40,8 @@ export default function Home({data :staticData}:{data:any}) {
       </Head>
       
       <TopAd/>
-      <Navbar/>
-      <CategoryMenu/>
+      <Navbar />
+      <CategoryMenu category={category}/>
       <main>
       
       <MainCarousel/>
@@ -43,7 +49,7 @@ export default function Home({data :staticData}:{data:any}) {
       <WhatsApp/>
       <ProductCollection data={data} setQuickView={setQuickView} Collectiontitle='Latest Products '/>      
       <FullscreenPoster img='https://contentgrid.thdstatic.com/hdus/en_US/DTCCOMNEW/fetch/NexGen/ContentPage/SBS22-ASP-Hero-DSK-A.png'/>
-      <ProductCollection data={data.slice(3)} setQuickView={setQuickView} Collectiontitle='Top Sellers'/>      
+      <ProductCollection data={data && data.slice(3)} setQuickView={setQuickView} Collectiontitle='Top Sellers'/>      
       <CategoryList/>
       <ProductCollection data={data} setQuickView={setQuickView} Collectiontitle='Recommended Products '/>      
       <ProductCollection data={data} setQuickView={setQuickView} Collectiontitle='Best Of The Best'/>      
@@ -63,9 +69,10 @@ export const getAll = async (endpoint?:string,limit?:number) => {
     const req = await fetch(`${server}/api/${endpoint ? endpoint : 'home' }?limit=${limit || 100}`)
     const res = await req.json()
   
-    if (res?.length > 0) {
+    if (res) {
       return res
     }
+    return null
   }
   catch(er) {
     console.log('er getAll: ', er);
@@ -78,9 +85,9 @@ export async function  getStaticProps() {
   try {
 
  
-  const data = await getAll()
+  const res = await getAll()
 
-  if (!data) {
+  if (!res || !res?.data) {
     return {
       props: {
         data: null,
@@ -89,7 +96,8 @@ export async function  getStaticProps() {
   }
   return {
     props: {
-      data,
+        data : res.data,
+        category : res.category
     },
     // Next.js will attempt to re-generate the page:
     // - When a request comes in

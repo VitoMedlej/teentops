@@ -65,7 +65,7 @@ const CartProduct = ({onChange,_id,price,category,title,remove,qty,img}:ICartIte
                         margin: 0,
                         cursor:'pointer',
                         fontWeight: '400',
-                        fontSize:'1.3em'
+                        fontSize:{sm:'1.1em',md:'1.3em'}
                     }}>
                        {title}
                     </Typography>

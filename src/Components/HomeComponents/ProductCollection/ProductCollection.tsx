@@ -79,7 +79,7 @@ const ProductCollection = ({sx,Collectiontitle,data,setQuickView} : {
 
             <Btn v2={true}
 
-                sx={{border:'none',fontSize:'11px',margin:'2em auto'}}>View All</Btn>
+                sx={{border:'none',fontSize:'11px',margin:'2em auto',':hover':{background:'white'}}}>View All</Btn>
                 </Link>
         </Box>
     )

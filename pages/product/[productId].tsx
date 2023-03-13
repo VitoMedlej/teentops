@@ -32,6 +32,8 @@ const btnStyle = {
 const Index = ({data,collection}:any) => {
   const {addToCart} = useCart()
   const router = useRouter()
+  console.log('router: ', router.query);
+  const item = router.query?.title || router.query?.productId|| 'Item'
   return (
   <>
      <Head>
@@ -42,9 +44,9 @@ const Index = ({data,collection}:any) => {
         
     </Head>
     <Navbar/>
-    <CategoryMenu/>
+    <CategoryMenu category={undefined}/>
 
-    <Breadcrumb sx={{mt:'2em'}} />
+    <Breadcrumb  params={[`${data.category}`,`${item}`]} sx={{mt:'2em'}} />
     <Divider/>
     <Box sx={{justifyContent:'space-between',margin:'0 auto',maxWidth:'lg',display:'flex',px:'1em',pt:'1em',gap:'2em',flexWrap:'wrap'}}>
       <Box sx={{width:{xs:'100%',md:'45%'},maxWidth:'600px'}}>
@@ -56,9 +58,9 @@ const Index = ({data,collection}:any) => {
         
         <Typography sx={{fontSize:'1.25em',py:'.25em',fontWeight:'600'}} className='clr'>${data.price}</Typography>
         {/* <SelectOneForm/> */}
-        <SelectOneForm/>
+        {/* <SelectOneForm/> */}
       <Box className='flexed wrap' sx={{my:'2em'}}>
-        <QuantityPicker min={1} max={10} value={1}/>
+        <QuantityPicker min={1} max={20} value={1}/>
       <Btn
       onClick={()=>{addToCart(data?._id,{_id:data._id,price:data.price,img:data.img,title:data.title}),router.push('/cart'),false}}
                             sx={{...btnStyle,mx:'.25em',minWidth:'150px'}}>Add To Cart
@@ -83,7 +85,13 @@ const Index = ({data,collection}:any) => {
 
       </Box>
       <Typography className='gray' sx={{textAlign:'center'}}>or</Typography>
-<Link href='/' style={{width:'max-content',margin: '0 auto',color:'green',display: 'flex'}}>
+      <a href='https://wa.me/+96170873045' target='_blank'   rel="noreferrer"
+      
+
+    
+
+style={{width:'max-content',margin: '0 auto',color:'green',display: 'flex'}}
+      >
      <Box
      className='flexed'
      sx={{width:'max-content',gap:'.5em',
@@ -91,7 +99,7 @@ const Index = ({data,collection}:any) => {
      border:'none'}}>Order On WhatsApp
                     <WhatsAppIcon/>
                     </Box> 
-     </Link>                            
+                    </a>                          
       {/* <>
       <Typography color='gray' sx={{pt:'1em'}}>Description:</Typography>
       <Typography className='gray2' sx={{fontSize:'1em',pt:'.5em',pb:"1.5em",color:'#5c5c5c',fontWeight:'500'}}>

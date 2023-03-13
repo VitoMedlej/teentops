@@ -106,6 +106,7 @@ export default function TemporaryDrawer() {
                             Checkout
                        </Btn>
                         <Btn 
+                        sx={{':hover':{background:'#c57540',color:'white'}}}
                         onClick={()=>{setCartOpen(false),router.push('/category/products')}}
                         v2={true} >
                         Continue Shopping

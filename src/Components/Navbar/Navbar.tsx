@@ -16,6 +16,7 @@ import { Badge, Typography } from '@mui/material';
 import { loadState } from '../../Utils/LocalstorageFn';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import { useRouter } from 'next/router';
+import SideBar from '../Drawer/SideBar';
 
 
 export default function Navbar() {
@@ -27,12 +28,12 @@ export default function Navbar() {
     
     // const localCart = [1]
     useEffect(() => {
-        const localCart = loadState('usercart') || []
-        if (localCart) {
+        const cart = loadState('usercart') || []
+        if (cart) {
 
-            setLocalCart(localCart)
+            setLocalCart(cart)
         }
-    }, [])
+    }, [cartOpen])
     
     const router = useRouter()
     const handleSearch = (e: React.FormEvent<HTMLFormElement> ) => {
