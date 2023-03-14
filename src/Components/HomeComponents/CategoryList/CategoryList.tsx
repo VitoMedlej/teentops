@@ -37,7 +37,7 @@ const CategoryList = () => {
                 }
             }}>
 {/* https://www.ishtari.com/image/data/system_banner/10000/1800/1675/shoes-web.png */}
-                {[`https://cf.shopee.sg/file/sg-11134210-23030-py7f1w12t6nv92`, 'https://d1pjg4o0tbonat.cloudfront.net/content/dam/midea-aem/us/holiday-campaign-2022-/Range%20Banner.jpg'].map(i => {
+                {[`https://ucarecdn.com/23ec6ddc-322b-43b2-a292-3adb4f24b4d3/sg1113421023030py7f1w12t6nv92.jpg`, 'https://d1pjg4o0tbonat.cloudfront.net/content/dam/midea-aem/us/holiday-campaign-2022-/Range%20Banner.jpg'].map(i => {
             
                     return  <Box key={i} className='pointer' sx={{height:'300px',width:{xs:'49%'}}}>
                                 <>

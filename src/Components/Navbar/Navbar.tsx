@@ -73,7 +73,7 @@ export default function Navbar() {
                         <Link href='/' color='inherit'>
                             <img
                             className='img'
-                            src="https://ucarecdn.com/811a2290-2fb1-434e-b3a4-07428e96ee98/001.png"
+                            src="https://ucarecdn.com/9f4b2f35-24a5-4728-8e8b-d4498da54fd8/001.png"
                             alt="Powerhouse electronics eshop logo"/>
                         </Link>
                     </Box>

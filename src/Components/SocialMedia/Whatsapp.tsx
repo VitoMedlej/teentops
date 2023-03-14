@@ -3,6 +3,7 @@ import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 
 const WhatsApp = () => {
     return (
+        <a href='https://wa.me/+96170873045' target='_blank'   rel="noreferrer">
         <div
             style={{
             display: 'flex',
@@ -25,7 +26,7 @@ const WhatsApp = () => {
             }}>
                 +961 70873045
             </div>
-            <a href='https://wa.me/+96170873045' target='_blank'   rel="noreferrer">
+     
 
 
             <IconButton
@@ -38,7 +39,6 @@ const WhatsApp = () => {
             }}>
                 <WhatsAppIcon fontSize='large'/>
             </IconButton>
-                </a>
             {/* <div style={{width:'60px',height:'60px'}}>
                
                <a href='https://wa.me/+96171283853' target='_blank'   rel="noreferrer">
@@ -47,6 +47,8 @@ const WhatsApp = () => {
                </a>
             </div> */}
         </div>
+        </a>
+
     )
 }
 

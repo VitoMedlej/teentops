@@ -24,9 +24,9 @@ const CategoryImages = () => {
         // gap:{xs:'.5em',sm:'.35em'}
 
     }}>
-        <Item img={"https://ucarecdn.com/c5254b11-11ee-4c2e-bd32-572db4e1527b/slide002.jpg"} contain/>
-        <Item img={"https://ucarecdn.com/992063ac-167b-4c5c-8b97-054d528b80c2/slide003.png"} />
-        <Item img={"https://ucarecdn.com/f15ac9e0-0e74-4f56-bb4d-441c81cf9edc/slide001.jpeg"}/>
+        <Item img={"https://ucarecdn.com/3502895c-910c-4441-a042-f1c96592a1c2/slide002.jpg"} contain/>
+        <Item img={"https://ucarecdn.com/5b188c8d-f471-43e2-9d64-6c1a00fa0a43/slide003.png"} />
+        <Item img={"https://ucarecdn.com/165bb13d-66d3-4dd9-9faa-edd4fbe27488/slide001.jpg"}/>
 
         
     </Box>

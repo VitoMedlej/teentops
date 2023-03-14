@@ -35,9 +35,9 @@ const Perks = () => {
                 }}>Reach out to us through any of these support channels</span>
             </Box>
             <Box sx={{display:'flex',flexWrap:'wrap',justifyContent: 'center',gap:'1em'}}>
-                {[1, 2, 3].map(i => {
+                {[{title:'Phone Number',value:"70464748",isLink:false}, {isLink:true,title:'Instagram',value:'https://www.instagram.com/power_house_european/'}, {isLink:true,title:'Facebook',value:'https://www.facebook.com/online.european.outlet/'}].map(i => {
                     return <Box 
-                    key={i}
+                    key={i.title}
                         sx={{
                         display: 'flex',
                         gap:'.5em',
@@ -49,13 +49,28 @@ const Perks = () => {
                         <Box
                             sx={{
                             display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
                             flexDirection: 'column'
                         }}>
+                            {i.isLink? <a className='white' target={`_blank`} rel='noreferrer' href={i.value}>
+                                
+                            
                             <Typography
-                                sx={{
+                            sx={{
+                                fontSize: '1.1em'
+                            }}>{i.title}</Typography>
+                            </a> 
+                        :
+                        <>
+                        <Typography
+                            sx={{
                                 fontSize: '.75em'
-                            }}>Phone Support</Typography>
-                            <Typography fontSize='1.1em' fontWeight='600'>70464748</Typography>
+                            }}>{i.title}</Typography>
+                        
+                        <Typography fontSize='1.1em' fontWeight='600'>{i.value}</Typography>
+                            </>
+                        }
                         </Box>
 
                     </Box>

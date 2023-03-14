@@ -25,7 +25,7 @@ const ProductCarousel = ({images,mw} : {images: string[],mw ?: string}) => {
 
                 return <SwiperSlide key={product}>
                             <Box sx={{display:'flex',margin:'0 auto',maxWidth:`${mw || '300px'}`}}>
-                                <img className='img' src={product.length > 4 ? product :'https://img.kpopmap.com/2019/07/unnamed83.jpg' }alt="" />
+                                <img className='img' src={product.length > 4 ? product :'https://img.kpopmap.com/2019/07/unnamed83.jpg' }alt=" product carousel img" />
                             </Box>
                 </SwiperSlide>
 
