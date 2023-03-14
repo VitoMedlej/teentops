@@ -4,7 +4,6 @@ import {useRef} from 'react'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-// import { Router } from '@mui/icons-material';
 import { useRouter } from 'next/router';
 // import Link from 'next/link';
 // import {loadState, pushState, saveState} from '../../../Utils/LocalstorageFn';
