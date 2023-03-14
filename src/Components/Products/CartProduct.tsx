@@ -1,5 +1,6 @@
 import { Box, IconButton, Typography } from '@mui/material'
-import {RemoveRedEye,DeleteForever} from '@mui/icons-material';
+import DeleteForever from '@mui/icons-material/DeleteForever';
+import RemoveRedEye from '@mui/icons-material/RemoveRedEye';
 // import { QuantityPicker } from 'react-qty-picker';
 // import { QuantityPicker } from '';
 import Btn from '../Btn/Btn';
