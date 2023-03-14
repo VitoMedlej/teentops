@@ -54,14 +54,17 @@ const Index = ({data,collection}:any) => {
       <Box sx={{width:{xs:'100%',md:'50%'}}}>
         <Typography sx={{fontSize:{xs:'1.8em',sm:'2.1em'},pb:'.5em',fontWeight:'500'}}>{data.title}</Typography>
         <Typography className='gray' sx={{fontSize:'.85em',pb:'.5em',fontWeight:'400'}}>Model Id : {data._id}</Typography>
-        
+        {
+          data?.weight &&
+        <Typography sx={{fontSize:'1em',py:'.25em',fontWeight:'500'}} >Product weight: {data.weight}</Typography>
+        }
         <Typography sx={{fontSize:'1.25em',py:'.25em',fontWeight:'600'}} className='clr'>${data.price}</Typography>
         {/* <SelectOneForm/> */}
         {/* <SelectOneForm/> */}
       <Box className='flexed wrap' sx={{my:'2em'}}>
         <QuantityPicker min={1} max={20} value={1}/>
       <Btn
-      onClick={()=>{addToCart(data?._id,{_id:data._id,price:data.price,img:data.img,title:data.title}),router.push('/cart'),false}}
+      onClick={()=>{addToCart(data?._id,{_id:data._id,price:data.price,img:data.images[0],title:data.title},false);router.push('/cart')}}
                             sx={{...btnStyle,mx:'.25em',minWidth:'150px'}}>Add To Cart
                         <ShoppingCartOutlinedIcon/>
                            </Btn>

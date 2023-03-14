@@ -29,9 +29,9 @@ const Footer = () => (
         </div>
 
         <div className="site-footer__links">
-        <div>
+        {/* <div>
         <iframe style={{height:'100%',width:'100%',border:0}} frameBorder="0" src="https://www.google.com/maps/embed/v1/place?q=Beirut,+Lebanon&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe>
-        </div>
+        </div> */}
           <ul>
             <li className='link-title'>Shopping online</li>
             <li><a href="#">Order Status</a></li>
@@ -44,8 +44,8 @@ const Footer = () => (
           <ul>
             <li className='link-title'>Contact</li>
             <li><a href="#"> Lebanon/Beirut Online</a></li>
-            <li><a href="https://www.instagram.com/power_house_european/" target="_blank" rel="noopener">Insta: @power_house_european</a></li>
-            <li><a href={'https://wa.me/96171330473'}>Phone/Whatsapp:{` +961 71330473`}</a></li>
+            <li><a href="https://www.instagram.com/power_house_european/" target="_blank" rel="noopener">@power_house_european</a></li>
+            <li><a href={'https://wa.me/96171330473'}>{` +961 71330473`}</a></li>
           </ul>
         </div>
       </div>

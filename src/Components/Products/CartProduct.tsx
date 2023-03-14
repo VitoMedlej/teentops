@@ -60,7 +60,7 @@ const CartProduct = ({onChange,_id,price,category,title,remove,qty,img}:ICartIte
             <Box sx={{display:'flex',width:'100%'}}>
 
                 <Box>
-                    <Link href={`/product/${_id}`} >
+                    <Link className='decor-none black' href={`/product/${_id}`} >
 
                     <Typography
                     component='h4'
