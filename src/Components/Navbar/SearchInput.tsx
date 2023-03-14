@@ -5,9 +5,11 @@ import InputBase from '@mui/material/InputBase';
 import IconButton from '@mui/material/IconButton';
 // import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
+import { useRouter } from 'next/router';
 // import DirectionsIcon from '@mui/icons-material/Directions';
 
 export default function CustomizedInputBase({sx,onSubmit,value,setValue}:{onSubmit:(e: React.FormEvent<HTMLFormElement> )=>void,value:string,setValue:any,sx?:any}) {
+  const router = useRouter()
   return (
     <Paper
     onSubmit={(e)=>onSubmit(e)}
@@ -34,7 +36,8 @@ export default function CustomizedInputBase({sx,onSubmit,value,setValue}:{onSubm
         inputProps={{ 'aria-label': 'search products' }}
       />
       <IconButton
-        // onClick={()=>handleSearch()}
+        onClick={()=>        router.push(`/category/products?limit=10&search=${value}`)
+      }
       type="submit" className='searchIcon bg white trans' sx={{borderRadius:0,p: '10px' }} aria-label="search">
         <SearchIcon />
       </IconButton>

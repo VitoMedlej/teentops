@@ -169,7 +169,7 @@ const ProductCard = ({title,_id,price,images,category,sx, handleQuickView,classN
                 <Btn
                 v2={true}
                 onClick={()=>addToCart(_id,{price,img,title,_id})}
-                sx={{':hover':{background:'#c57540',color:'white',border:'1px solid #c57540'}}}>
+                sx={{':hover':{background:'#935525',color:'white',border:'1px solid #935525'}}}>
                        <Typography
                    className='flex items-center'
                    sx={{fontSize:'.75em',gap:'.3em'}}>

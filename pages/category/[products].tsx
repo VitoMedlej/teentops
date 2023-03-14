@@ -72,12 +72,13 @@ export default Index
 export async function  getServerSideProps(context:any) {
   // console.log('context: ', );
   let category = context.query?.products || 'products'
+  let search = context.query?.search 
   // const res = await fetch('https://.../posts')
   // const posts = await res.json()
   try {
 
  
-  const data =  await getAll('getdata',12,category)
+  const data =  await getAll('getdata',12,category,search)
 
   if (!data) {
     return {

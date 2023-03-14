@@ -10,11 +10,11 @@ h1, h2, h3, h4, p {
 }
 
 .clr {
-  color: #c57540;
+  color: #935525;
 }
 
 .bg {
-  background: #c57540;
+  background: #935525;
 }
 
 .trans {
@@ -26,7 +26,7 @@ h1, h2, h3, h4, p {
 }
 
 .searchinput .searchIcon:hover {
-  background: #c57540;
+  background: #935525;
   border-radius: 50%;
 }
 

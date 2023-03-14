@@ -23,8 +23,10 @@ export default async (_req: NextApiRequest, res: NextApiResponse) => {
     // if (!product) return res.status(400).json({success:false})
        const ProductsCollection = await client.db("Power").collection("Products")
       //  let docs = category ? await ProductsCollection.find({category}).limit(limit ) : await ProductsCollection.find({}).limit(limit )
+      console.log('search: ', search);
        let docs = search ?
-       await ProductsCollection.find({ $text: {$search: `${search}` }}).limit(limit ) :
+      //  await ProductsCollection.find({ $text: {$search: `${search}` }}).limit(limit ) :
+       await ProductsCollection.find({ $or : [{title: {$regex: `${search}`,'$options' : 'i' }},{description: {$regex: `${search}`,'$options' : 'i' }},{category: {$regex: `${search}` }}  ]    }).limit(limit ) :
        category ? await ProductsCollection.find({category}).limit(limit ) :
        await ProductsCollection.find({}).limit(limit )
         // const quer =async () => {

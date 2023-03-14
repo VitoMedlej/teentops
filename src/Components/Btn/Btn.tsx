@@ -3,9 +3,9 @@ import React from 'react'
 
 let style1 = {
     color: 'white',
-    background: '#c57540',
+    background: '#935525',
     ':hover': {
-        background: '#c57540'
+        background: '#935525'
     },
     display: 'flex',
     borderRadius: '6px',
@@ -14,16 +14,16 @@ let style1 = {
     fontSize: '10px'
 }
 let style2 = {
-    color: '#c57540',
+    color: '#935525',
     borderRadius: '6px',
     display: 'flex',
 
     ml: 1,
     py: .9,
     px: 2,
-    ':hover':{  borderColor: ' #c57540',background:'#cf3030',color:'white'},
+    ':hover':{  borderColor: ' #935525',background:'#cf3030',color:'white'},
     fontSize: '10px',
-    border:'1px solid #c57540'
+    border:'1px solid #935525'
 }
 
 const Btn = ({v2,disabled,onClick,children,sx}:{disabled?:boolean,onClick?:()=>void,sx?:any,v2?:boolean,children?:any}) => {
