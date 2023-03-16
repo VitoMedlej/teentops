@@ -1,5 +1,5 @@
-import main from "../database/connection";
-import UserModel from "../database/schema";
+import main from "../../src/database/connection";
+import UserModel from "../../src/database/schema";
 
 
 export default async function get_ProductId(req, res){
