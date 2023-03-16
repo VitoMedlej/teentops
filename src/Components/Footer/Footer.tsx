@@ -13,7 +13,7 @@ const Footer = () => (
               {/* <a><h1 className="site-logo"><Logo />E-Shop</h1></a> */}
               {/* https://res.cloudinary.com/dwxm8f25f/image/upload/v1675357773/logo_ghli5e.jpg */}
               {/* https://res.cloudinary.com/dwxm8f25f/image/upload/v1675713948/logo_sktnut_1_jwy2hk.png */}
-              <img className='img' src='https://res.cloudinary.com/dwxm8f25f/image/upload/v1675713948/logo_sktnut_1_jwy2hk.png' alt="" />
+              <img className='img' src='https://ucarecdn.com/9f4b2f35-24a5-4728-8e8b-d4498da54fd8/001.png' alt="Powerhouse-lb Logo" />
             </Link>
           </div>
           <Typography component='h1' sx={{ fontSize: '.9em' }} className='footer-p'>
@@ -29,6 +29,9 @@ const Footer = () => (
         </div>
 
         <div className="site-footer__links">
+        {/* <div>
+        <iframe style={{height:'100%',width:'100%',border:0}} frameBorder="0" src="https://www.google.com/maps/embed/v1/place?q=Beirut,+Lebanon&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe>
+        </div> */}
           <ul>
             <li className='link-title'>Shopping online</li>
             <li><a href="#">Order Status</a></li>
@@ -37,20 +40,12 @@ const Footer = () => (
             <li><a href="#">Payment options</a></li>
             <li><a href="#">Contact Us</a></li>
           </ul>
-          <ul>
-            <li className='link-title'>Information</li>
-            <li><a href="#">Gift Cards</a></li>
-            <li><a href="#">Find a store</a></li>
-            <li><a href="#">Newsletter</a></li>
-            <li><a href="#">Bacome a member</a></li>
-            <li><a href="#">Site feedback</a></li>
-          </ul>
+     
           <ul>
             <li className='link-title'>Contact</li>
-
-            <li><a href="#">البازورية , Tyre, Lebanon</a></li>
-            <li><a href="#">onbeirut@gmail.com</a></li>
-            <li><a href={'https://wa.me/96171330473'}>Phone/Whatsapp:{` +961 71330473`}</a></li>
+            <li><a href="#"> Lebanon/Beirut Online</a></li>
+            <li><a href="https://www.instagram.com/power_house_european/" target="_blank" rel="noreferrer" >@power_house_european</a></li>
+            <li><a href={'https://wa.me/96171330473'} rel="noreferrer" target='_blank' >{` +961 71330473`}</a></li>
           </ul>
         </div>
       </div>

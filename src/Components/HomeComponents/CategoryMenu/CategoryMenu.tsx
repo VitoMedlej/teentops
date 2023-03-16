@@ -1,13 +1,9 @@
 import {Box, Button, Typography} from '@mui/material'
 import Link from 'next/link'
-import {useRouter} from 'next/router'
 import React from 'react'
 
-const CategoryMenu = () => {
-    const router = useRouter()
-    const handleClick = () => {
-        router.push('/shoes/products')
-    }
+const CategoryMenu = ({category}:{category:string[] | undefined}) => {
+   
     return (
         <Box
             className='bb CategoryMenu'
@@ -19,11 +15,13 @@ const CategoryMenu = () => {
             px: '1.25em',
             maxWidth: 'xl'
         }}>
-            {[1, 2, 3, 4, 5].map((item) => {
-                return <Box onClick={handleClick} key={item}>
-                    <Link key={item} href='/'>
-                        <Typography sx={{color:"#4b4b4b"}} component='h5'>
-                        Home Applicants
+            {category && category.length > 0 && category.slice(0,5).map((item) => {
+                return <Box  key={item}>
+                    <Link key={item} href={`/category/${item.replace(/\s+/g, '-')}`}>
+                        <Typography sx={{color:"#4b4b4b",
+                        textTransform: 'capitalize'
+                    }} component='h5'>
+                        {item}
                         </Typography>
 
                     </Link>

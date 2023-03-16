@@ -1,35 +1,46 @@
 import * as React from 'react';
 import Breadcrumbs from '@mui/material/Breadcrumbs';
 import Link from '@mui/material/Link';
+import { useRouter } from 'next/router';
+import { Typography } from '@mui/material';
 
 
 function handleClick(event: React.MouseEvent<HTMLDivElement, MouseEvent>) {
   event.preventDefault();
-  console.info('You clicked a breadcrumb.');
 }
 
-export default function ActiveLastBreadcrumb({sx}:{sx?:any}) {
+export default function ActiveLastBreadcrumb({sx,params}:{sx?:any,params:string[]}) {
+const router = useRouter();
+const query =  router?.query?.products;
+
   return (
     <div role="presentation" onClick={handleClick}>
       <Breadcrumbs sx={{mx:'1em',pb:'.5em',...sx}} aria-label="breadcrumb">
         <Link underline="hover" color="inherit" href="/">
-          MUI
+          <Typography>
+          Home
+
+          </Typography>
         </Link>
         <Link
           underline="hover"
           color="inherit"
-          href="/material-ui/getting-started/installation/"
+          href={params && params[0] || '/'}
+
         >
-          Core
+          <Typography>
+
+          {params && params[0]}
+          </Typography>
         </Link>
-        <Link
-          underline="hover"
-          color="text.primary"
-          href="/material-ui/react-breadcrumbs/"
-          aria-current="page"
-        >
-          Breadcrumbs
-        </Link>
+   {
+    params &&
+          params[1]
+   &&
+   <Typography>
+
+        {!query ?   params[1] : query} 
+        </Typography>}
       </Breadcrumbs>
     </div>
   );

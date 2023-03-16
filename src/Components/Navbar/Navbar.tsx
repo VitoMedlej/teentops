@@ -7,7 +7,7 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import LocalMallOutlinedIcon from '@mui/icons-material/LocalMallOutlined';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { CartContext, DrawerContext } from '../../../pages/_app';
 import SearchModal from './SearchModal';
 import Link from 'next/link';
@@ -16,20 +16,30 @@ import { Badge, Typography } from '@mui/material';
 import { loadState } from '../../Utils/LocalstorageFn';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import { useRouter } from 'next/router';
+import SideBar from '../Drawer/SideBar';
 
 
 export default function Navbar() {
     const [open, setOpen] = useContext(DrawerContext);
     const [openModal, setOpenModal] = useState(false);
+    const [localCart, setLocalCart] = useState([]);
     const [q,setQ] = useState('')
     const [cartOpen, setCartOpen] = useContext(CartContext);
-    // const localCart = loadState('usercart') || []
-    const localCart = [1]
+    
+    // const localCart = [1]
+    useEffect(() => {
+        const cart = loadState('usercart') || []
+        if (cart) {
+
+            setLocalCart(cart)
+        }
+    }, [cartOpen])
+    
     const router = useRouter()
     const handleSearch = (e: React.FormEvent<HTMLFormElement> ) => {
       e.preventDefault()
       if (q.length > 2) {
-        router.push(`/category/products?q=${q}`)
+        router.push(`/category/products?limit=10&search=${q}`)
       }
     }
    
@@ -58,12 +68,12 @@ export default function Navbar() {
                         // right: '50%',
                         // transform: 'translateX(50%)'
                         // ,
-                        width:'75px',height:'40px'
+                        width:'75px'
                     }}>
                         <Link href='/' color='inherit'>
                             <img
                             className='img'
-                            src="https://ucarecdn.com/eb515ead-7f14-439e-b071-65b98433b4f8/312182473_6421594114522894_2354893828509446990_n.jpg"
+                            src="https://ucarecdn.com/9f4b2f35-24a5-4728-8e8b-d4498da54fd8/001.png"
                             alt="Powerhouse electronics eshop logo"/>
                         </Link>
                     </Box>
@@ -100,9 +110,9 @@ export default function Navbar() {
                         onClick={()=>setCartOpen(!cartOpen)}
 
                         color='inherit'>
-                        <Badge badgeContent={`${localCart.length || '0'}`} color="error">
+                        <Badge color='warning' badgeContent={`${localCart.length || '0'}`} >
 
-                            <LocalMallOutlinedIcon/>
+                            <LocalMallOutlinedIcon sx={{color:'black'}} />
                             </Badge>
                             <Typography sx={{display:{xs:'none',sm:'flex'}}} component='p'>
                             cart
@@ -114,9 +124,9 @@ export default function Navbar() {
                         onClick={()=>setCartOpen(!cartOpen)}
                         sx={{display:{xs:'none',sm:'flex'}}}
                         color='inherit'>
-                        <Badge badgeContent={`0`} color="error">
+                        <Badge color='warning' badgeContent={`0`} >
 
-                            <FavoriteBorderIcon/>
+                            <FavoriteBorderIcon sx={{color:'black'}} />
                             </Badge>
                             <Typography sx={{display:{xs:'none',sm:'flex'}}} component='p'>
                             favourites

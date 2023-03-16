@@ -4,7 +4,7 @@ import 'swiper/css';
 import { Box } from '@mui/material';
 
 
-const ProductCarousel = ({mw} : {mw ?: string}) => {
+const ProductCarousel = ({images,mw} : {images: string[],mw ?: string}) => {
    
     return (
         <Swiper
@@ -21,11 +21,11 @@ const ProductCarousel = ({mw} : {mw ?: string}) => {
             modules={[FreeMode,Autoplay, Pagination]}
          >
 
-            {[1,2,3,4].map(product => {
+            {images && images.length>0 && images.map(product => {
 
                 return <SwiperSlide key={product}>
                             <Box sx={{display:'flex',margin:'0 auto',maxWidth:`${mw || '300px'}`}}>
-                                <img className='img' src="https://piecesnmore.com/wp-content/uploads/2023/01/Wild-Primrose.png" alt="" />
+                                <img className='img' src={product.length > 4 ? product :'https://img.kpopmap.com/2019/07/unnamed83.jpg' }alt=" product carousel img" />
                             </Box>
                 </SwiperSlide>
 

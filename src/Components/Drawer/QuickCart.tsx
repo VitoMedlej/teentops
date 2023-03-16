@@ -41,8 +41,8 @@ export default function TemporaryDrawer() {
 
         setCartOpen(open);
     };
-    const remove = (id:string) => {
-       let state = cartItems.filter(x => `${x.id}` !== id);
+    const remove = (_id:string) => {
+       let state = cartItems.filter(x => `${x._id}` !== _id);
         saveState('usercart', state);
         // console.log('state: ', state);
         setCartItems(state);
@@ -87,9 +87,9 @@ export default function TemporaryDrawer() {
                         {
                            cartItems && cartItems.length > 0 ? cartItems.map((item:ICartItem, index) =>{
 
-                        return <CartProduct id={item.id} qty={item.qty} price={item.price} img={item.img}
+                        return <CartProduct _id={item._id} qty={item.qty} price={item.price} img={item.img}
                         remove={remove}
-                        name={item.name} key={index}/>
+                        title={item.title} key={index}/>
                             })
                         : <Typography sx={{fontSize:'1.5em',textAlign:'center',py:5}}> Your Cart Is Empty!</Typography>
                         }
@@ -106,6 +106,7 @@ export default function TemporaryDrawer() {
                             Checkout
                        </Btn>
                         <Btn 
+                        sx={{':hover':{background:'#935525',color:'white'}}}
                         onClick={()=>{setCartOpen(false),router.push('/category/products')}}
                         v2={true} >
                         Continue Shopping

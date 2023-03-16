@@ -4,14 +4,15 @@ import HeadphonesIcon from '@mui/icons-material/Headphones';
 const Perks = () => {
     return (
         <Box
-        className='flexed'
+        className='flexed bg'
         sx={{
             my:'3em',
             flexWrap:'wrap',
-            background:'#f0f0f0',
+            // background:'#f0f0f0',
             py:'1em',
             justifyContent: 'space-evenly',
             width: '100%',
+            color:'white'
         }}>
             <Box
             className='flexed'
@@ -22,20 +23,21 @@ const Perks = () => {
                 pb:{xs:'1em',sm:0}
             }}>
                 <span style={{
+                    fontWeight:'600',
                     fontSize: '1.1em'
                 }}>
                     We are Always Here To Help
                 </span>
                 <span
-                    className='gray'
+                    className='white'
                     style={{
                     fontSize: '.8em'
                 }}>Reach out to us through any of these support channels</span>
             </Box>
             <Box sx={{display:'flex',flexWrap:'wrap',justifyContent: 'center',gap:'1em'}}>
-                {[1, 2, 3].map(i => {
+                {[{title:'Phone Number',value:"70464748",isLink:false}, {isLink:true,title:'Instagram',value:'https://www.instagram.com/power_house_european/'}, {isLink:true,title:'Facebook',value:'https://www.facebook.com/online.european.outlet/'}].map(i => {
                     return <Box 
-                    key={i}
+                    key={i.title}
                         sx={{
                         display: 'flex',
                         gap:'.5em',
@@ -47,13 +49,28 @@ const Perks = () => {
                         <Box
                             sx={{
                             display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
                             flexDirection: 'column'
                         }}>
+                            {i.isLink? <a className='white' target={`_blank`} rel='noreferrer' href={i.value}>
+                                
+                            
                             <Typography
-                                sx={{
+                            sx={{
+                                fontSize: '1.1em'
+                            }}>{i.title}</Typography>
+                            </a> 
+                        :
+                        <>
+                        <Typography
+                            sx={{
                                 fontSize: '.75em'
-                            }}>Phone Support</Typography>
-                            <Typography fontSize='1.1em' fontWeight='600'>70464748</Typography>
+                            }}>{i.title}</Typography>
+                        
+                        <Typography fontSize='1.1em' fontWeight='600'>{i.value}</Typography>
+                            </>
+                        }
                         </Box>
 
                     </Box>

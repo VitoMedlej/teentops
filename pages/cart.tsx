@@ -72,9 +72,8 @@ const Cart = () => {
         
     }
     const remove = (id:string) => {
-        let state = cartItems.filter(x => `${x.id}` !== id);
+        let state = cartItems.filter(x => `${x._id}` !== id);
          saveState('usercart', state);
-         // console.log('state: ', state);
          setCartItems(state);
      }
     return (
@@ -106,8 +105,8 @@ const Cart = () => {
                         return <CartProduct 
                         
                         onChange={refetchState}
-                        key={item.id}
-                        img={item.img} qty={item.qty} remove={remove} name={item.name} id={item.id} price={item.price}/>
+                        key={item._id}
+                        img={item.img} qty={item.qty} remove={remove} title={item.title} _id={item._id} price={item.price}/>
                     }) :
                     <EmptyCartAlert/>     
                 }
@@ -177,7 +176,7 @@ const Cart = () => {
 
                     <Btn
                     
-                    v2={true} sx={{mx:0,width:'100%',mt:1}}>Continue Shopping</Btn>
+                    v2={true} sx={{mx:0,':hover':{background:'white',color:'black'},width:'100%',mt:1}}>Continue Shopping</Btn>
                     </Link>
                 </Box>
             </Box>
@@ -188,12 +187,14 @@ const Cart = () => {
 const Index = () => {
     return ( <>
      <Head>
-        <NextSeo
-            title="Simple Usage Example"
-            description="A short description goes here."/>
+
+     <title>Powerhouse electronics | Cart</title>
+        <meta name="description" content={`
+        Powerhouse electronics is your destination to buy european electronics and home appliances online in Lebanon. Best online shopping store for the latest electronics and home appliances from all brands. We Deliver anywhere in Lebanon
+        `} />
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <link rel="icon" href="/favicon.ico"/>
-    </Head> < TopAd /> <Navbar/> < CategoryMenu /> {
+    </Head> < TopAd /> <Navbar/> < CategoryMenu category={undefined}/> {
         false
             ? <EmptyCartAlert/>
             : <Cart/>

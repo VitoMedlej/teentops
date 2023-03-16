@@ -10,11 +10,15 @@ h1, h2, h3, h4, p {
 }
 
 .clr {
-  color: red;
+  color: #935525;
+}
+
+.black {
+  color: black;
 }
 
 .bg {
-  background: red;
+  background: #935525;
 }
 
 .trans {
@@ -26,7 +30,7 @@ h1, h2, h3, h4, p {
 }
 
 .searchinput .searchIcon:hover {
-  background: red;
+  background: #935525;
   border-radius: 50%;
 }
 
@@ -117,6 +121,15 @@ h1, h2, h3, h4, p {
   height: 100%;
 }
 
+.cover {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.shop-data-items display:flex li {
+  width: 25%;
+}
+
 .shadow {
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.215);
 }
@@ -130,6 +143,10 @@ h1, h2, h3, h4, p {
 }
 .scale:hover img {
   transform: scale(1.05);
+}
+
+.items-center {
+  align-items: center;
 }
 
 .img2 img {

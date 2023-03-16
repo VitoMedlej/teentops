@@ -1,19 +1,24 @@
 import * as React from 'react';
-import Grid from '@mui/material/Grid';
+import {Grid,Box} from '@mui/material';
 import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
+import { useState } from 'react';
 
-export default function AddressForm() {
+export default function AddressForm({info,setInfo,handleChange}:{handleChange:any,setInfo:any,info:any}) {
+ 
   return (
-    <React.Fragment>
+          <Box component='form' >
       <Typography variant="h6" gutterBottom>
         Shipping address
       </Typography>
       <Grid container spacing={3}>
         <Grid item xs={12} sm={6}>
+
           <TextField
+          value={info.firstName}
+          onChange={handleChange}
             required
             id="firstName"
             name="firstName"
@@ -25,6 +30,8 @@ export default function AddressForm() {
         </Grid>
         <Grid item xs={12} sm={6}>
           <TextField
+          value={info.lastName}
+          onChange={handleChange}
             required
             id="lastName"
             name="lastName"
@@ -39,9 +46,11 @@ export default function AddressForm() {
           <TextField
             required
             id="email1"
-            name="email1"
+            name="email"
             label="Email "
             fullWidth
+            value={info.email}
+          onChange={handleChange}
             autoComplete="email"
             variant="standard"
           />
@@ -53,6 +62,8 @@ export default function AddressForm() {
             name="phone"
             label="Phone Number"
             fullWidth
+            value={info.phone}
+          onChange={handleChange}
             autoComplete="phone-number phone" 
             variant="standard"
           />
@@ -61,6 +72,8 @@ export default function AddressForm() {
           <TextField
             required
             id="address1"
+            value={info.address1}
+          onChange={handleChange}
             name="address1"
             label="Address line 1"
             fullWidth
@@ -71,6 +84,8 @@ export default function AddressForm() {
         <Grid item xs={12}>
           <TextField
             id="address2"
+            value={info.address2}
+          onChange={handleChange}
             name="address2"
             label="Any extra information"
             fullWidth
@@ -83,6 +98,8 @@ export default function AddressForm() {
           <TextField
             id="city"
             name="city"
+            value={info.city}
+          onChange={handleChange}
             label="City"
             fullWidth
             autoComplete="shipping address-level2"
@@ -90,9 +107,9 @@ export default function AddressForm() {
           />
         </Grid>
      
-        
+
         
       </Grid>
-    </React.Fragment>
+        </Box>
   );
 }

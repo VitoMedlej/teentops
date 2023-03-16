@@ -36,17 +36,27 @@ const addresses = ['1 MUI Drive', 'Reactville', 'Anytown', '99999', 'USA'];
 
 export const totalCal = (products:ICartItem[]) => {
   if (!products) return 0 
-      for (let i = 0; i < products.length; i++) {
-          const total = products[i].price * products[i].qty 
-          // console.log('total: ', total);
-              return total || 0;
-      }
-      return 0
+  // for (let i = 0; i < products.length; i++) {
+  //       console.log('products: ', products[i]);
+  //         const total = products[i].price * products[i].qty 
+  //         // console.log('total: ', total);
+  //             return total || 0;
+  //     }
+  // return products.reduce((total, item) => item.qty + total, 0) || 0
+  return products.reduce((sum, i) => {
+    return sum + (i.price * i.qty)
+  }, 0)
+      // return 0
 }  
-export default function Review() {
-  
+export default function Review({setActiveStep}:{setActiveStep:any}) {
+
   const products = loadState('usercart')
+  const info = loadState('info')
+
   const total = totalCal(products) 
+  if (!info) {
+    setActiveStep(0)
+  }
   return (
     <React.Fragment>
       <Typography variant="h6" gutterBottom>
@@ -54,8 +64,8 @@ export default function Review() {
       </Typography>
       <List disablePadding>
         {products?.length > 0 && products.map((product:ICartItem) => (
-          <ListItem key={product.name} sx={{ py: 1, px: 0 }}>
-            {`${product.qty}x `} <ListItemText primary={product.name}  />
+          <ListItem key={product.title} sx={{ py: 1, px: 0 }}>
+            {`${product.qty}x `} <ListItemText primary={product.title}  />
             <Typography variant="body2">${product.price}</Typography>
           </ListItem>
         ))}
@@ -80,8 +90,15 @@ export default function Review() {
           <Typography variant="h6" gutterBottom sx={{ mt: 2 }}>
           Order Summary
           </Typography>
-          <Typography gutterBottom>John Smith</Typography>
-          <Typography gutterBottom>{addresses.join(', ')}</Typography>
+                <Typography gutterBottom>{info.firstName}</Typography>
+                <Typography gutterBottom>{info.lastName}</Typography>
+                <Typography gutterBottom>{info.email}</Typography>
+                <Typography gutterBottom>{info.phone}</Typography>
+                <Typography gutterBottom>{info.address1}</Typography>
+                <Typography gutterBottom>{info.address2}</Typography>
+                <Typography gutterBottom>{info.city}</Typography>
+        
+        
         </Grid>
    
       </Grid>
