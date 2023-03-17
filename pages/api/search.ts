@@ -8,7 +8,6 @@ export default async (_req: NextApiRequest, res: NextApiResponse) => {
     let limit = typeof Number(_req.query.limit) === 'number' ? Number(_req.query.limit) : 50; 
        const ProductsCollection = await client.db("Power").collection("Products")
        const docs = await ProductsCollection.find({}).limit(limit )
-       console.log('docs: ', docs); 
       const products : any[] = [];
        await docs.forEach((prod:any) =>{ 
               products.push(prod);

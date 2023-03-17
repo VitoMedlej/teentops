@@ -13,14 +13,17 @@ import { useRouter } from 'next/router'
 
 const Index = ({data}:any) => {
   const [quickView, setQuickView] = useState<{isOpen:boolean,productId:null | string}>({isOpen:false,productId:null})
-  const [products,setProducts] = useState([]);
+  const [products,setProducts] = useState(data);
   const handleQuickView = (id: string) => {
     if (setQuickView) {
         setQuickView({isOpen:true,productId: id})
     } 
  }
- if (data) {
+ if (data && !products) {
   setProducts(data)
+ }
+ const handleReset = () => {
+    setProducts(data)
  }
  const  router= useRouter() 
   return (
@@ -57,13 +60,13 @@ const Index = ({data}:any) => {
     </AccordionSummary>
     <AccordionDetails>
 
-    <FilterSection/>
+    <FilterSection handleReset={handleReset} setProducts={setProducts} />
     </AccordionDetails>
     </Accordion>
     <Box sx={{display:{xs:'none',md:'block'},width:'20%'}}>
-    <FilterSection sx={{width:'100%'}}/>
+    <FilterSection handleReset={handleReset} setProducts={setProducts} sx={{width:'100%'}}/>
     </Box>
-    <ProductSection data={products} setQuickView={handleQuickView}/>
+    <ProductSection  data={products} setQuickView={handleQuickView}/>
     <Divider/>
   </Box>
     </Box>

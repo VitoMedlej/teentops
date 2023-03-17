@@ -5,13 +5,10 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import SliderForm from './Filter/Forms/SliderForm';
-import RadioGroupForm from './Filter/Forms/RadioGroupForm';
 import SelectOneForm from './Filter/Forms/SelectOneForm';
-import { useState } from 'react';
 
 export default function SimpleAccordion({options,setOptions}:any) {
    
-    console.log('options: ', options);
     // const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     //     // setValue(();
     //     let val = (event.target as HTMLInputElement).value;

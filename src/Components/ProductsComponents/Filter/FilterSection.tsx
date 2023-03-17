@@ -5,7 +5,7 @@ import FilterAccordion from '../FilterAccordion'
 import Btn from '../../Btn/Btn';
 import { server } from '../../../Utils/Server';
 
-const FilterSection = ({sx}:any) => {
+const FilterSection = ({handleReset,sx,setProducts}:any) => {
     const [options,setOptions] = useState({
         price : [1,100000],
         sort : 'products',
@@ -15,8 +15,12 @@ const FilterSection = ({sx}:any) => {
     })
     const handleSubmit = async () => {
         const url =  `/api/sort?min=${options.price[0]}&max=${options.price[1]}&order=${options.sort}`  ;
-        const req = await fetch(`${server}`)
-        
+        const req = await fetch(`${server}${url}`)
+        const res = await req.json()
+        if (res) [
+
+            setProducts(res)
+        ]
     }
     return (
         <Box
@@ -56,8 +60,14 @@ right: '2%',
                 setOptions={setOptions}
                 />
                 <Box sx={{pt:'1.5em',display:'flex',gap:'.5em'}}>
-                <Btn v2={true} sx={{':hover':{background:'transparent'},margin:0}} >Confirm</Btn>
-                <Btn v2={true} sx={{margin:0,border:'none',color:'red'}}>Reset</Btn>
+                <Btn
+                onClick={()=>handleSubmit()}
+                v2={true} sx={{':hover':{background:'transparent'},margin:0}} >Confirm</Btn>
+                <Btn
+                
+                onClick={()=>handleReset()}
+                
+                 v2={true} sx={{margin:0,border:'none',color:'red'}}>Reset</Btn>
                 </Box>
         </Box>
     )
