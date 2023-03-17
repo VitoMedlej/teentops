@@ -5,12 +5,10 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
 
-export default function ControlledRadioButtonsGroup() {
-  const [value, setValue] = React.useState('female');
+export default function ControlledRadioButtonsGroup({handleChange,value}:any) {
+  // const [value, setValue] = React.useState(value || 'All');
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setValue((event.target as HTMLInputElement).value);
-  };
+
 
   return (
     <FormControl >
@@ -21,7 +19,7 @@ export default function ControlledRadioButtonsGroup() {
         value={value}
         onChange={handleChange}
       >
-        <FormControlLabel value="female" control={<Radio />} label="Female" />
+        <FormControlLabel value="products" control={<Radio />} label="All" />
         <FormControlLabel value="male" control={<Radio />} label="Male" />
       </RadioGroup>
     </FormControl>

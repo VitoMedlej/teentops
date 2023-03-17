@@ -9,7 +9,7 @@ function valuetext(value: number) {
 
 const minDistance = 0;
 
-export default function MinimumDistanceSlider({sx}:{sx?:any}) {
+export default function MinimumDistanceSlider({sx,value,onChange}:{onChange?:any,value?:number[],sx?:any}) {
   const [value1, setValue1] = React.useState<number[]>([20, 37]);
 
   const handleChange1 = (
@@ -26,10 +26,8 @@ export default function MinimumDistanceSlider({sx}:{sx?:any}) {
     } else {
       setValue1([value1[0], Math.max(newValue[1], value1[0] + minDistance)]);
     }
+    onChange(value1)
   };
-
-
- 
 
   return (
     <Box sx={{...sx}}>

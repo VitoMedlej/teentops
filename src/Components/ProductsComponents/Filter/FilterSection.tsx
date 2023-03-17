@@ -1,9 +1,23 @@
 import {Box, Button,  TextField, Typography} from '@mui/material'
-import React from 'react'
+import React, { useState } from 'react'
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import FilterAccordion from '../FilterAccordion'
+import Btn from '../../Btn/Btn';
+import { server } from '../../../Utils/Server';
 
 const FilterSection = ({sx}:any) => {
+    const [options,setOptions] = useState({
+        price : [1,100000],
+        sort : 'products',
+        // category : 'products',
+        // query : '',
+        
+    })
+    const handleSubmit = async () => {
+        const url =  `/api/sort?min=${options.price[0]}&max=${options.price[1]}&order=${options.sort}`  ;
+        const req = await fetch(`${server}`)
+        
+    }
     return (
         <Box
             sx={{
@@ -28,17 +42,22 @@ const FilterSection = ({sx}:any) => {
           
            <Box className="flexed" sx={{position:'relative',mt:1,width:'100%'}}>
 
-<TextField size='small' placeholder='Search By Name' sx={{width:'100%'}}/>
+<TextField
+onChange={(e)=>{console.log(e.target.value)}}
+size='small' placeholder='Search By Name' sx={{width:'100%'}}/>
 <SearchOutlinedIcon sx={{
 
 position: 'absolute',
 right: '2%',
 }}/>
 </Box>
-                <FilterAccordion/>
-                <Box sx={{pt:'1.5em'}}>
-                <Button sx={{color:'black'}}>Confirm</Button>
-                <Button sx={{color:'red'}}>Reset</Button>
+                <FilterAccordion
+                options={options}
+                setOptions={setOptions}
+                />
+                <Box sx={{pt:'1.5em',display:'flex',gap:'.5em'}}>
+                <Btn v2={true} sx={{':hover':{background:'transparent'},margin:0}} >Confirm</Btn>
+                <Btn v2={true} sx={{margin:0,border:'none',color:'red'}}>Reset</Btn>
                 </Box>
         </Box>
     )

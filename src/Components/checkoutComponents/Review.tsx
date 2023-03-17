@@ -70,13 +70,13 @@ export default function Review({setActiveStep}:{setActiveStep:any}) {
           </ListItem>
         ))}
         <Divider/>
-        <ListItem sx={{px: 0 }}>
+        {/* <ListItem sx={{px: 0 }}>
 
 <ListItemText primary="Delivery" />
 <Typography variant="subtitle1" sx={{ fontWeight: 700 }}>
   $3
 </Typography>
-</ListItem>
+</ListItem> */}
         <ListItem sx={{ px: 0 }}>
 
           <ListItemText primary="Total" />

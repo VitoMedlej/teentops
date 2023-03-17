@@ -7,7 +7,7 @@ const Item = ({img,contain,href}:{contain?:boolean,img:string,href?:any}) => {
     return (
         <Box className='auto' sx={{height:'100%',maxHeight:'400px',width:{xs:'95%',sm:'31%',md:'32%'}}}>
 
-        <Link href='/'>
+        <Link href={'/category/products'}>
         <Box className='auto '  sx={{height:'250px',width:'100%'}}>
             <img src={img} alt="Category Image" className={`${contain ? 'contain' : '' } img` } />
         </Box>

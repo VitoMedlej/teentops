@@ -137,7 +137,7 @@ const Cart = () => {
                         <Typography sx={textStyle}>Subtotal</Typography>
                         <Typography sx={textStyle}>${total}</Typography>
                     </Box>
-                    <Box
+                    {/* <Box
                         className='flexed'
                         sx={{
                         mt: '.25em',
@@ -147,7 +147,7 @@ const Cart = () => {
 
                         <Typography sx={textStyle}>Delivery fee</Typography>
                         <Typography sx={textStyle}>${process.env.NEXT_PUBLIC_FEE || 0}</Typography>
-                    </Box>
+                    </Box> */}
                     <Divider></Divider>
                     <Box 
                     sx={{

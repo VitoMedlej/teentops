@@ -4,30 +4,28 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 
-export default function SelectSmall({sx}:any) {
-  const [size, setSize] = React.useState('');
+export default function SelectSmall({value,setValue,sx}:any) {
+  // const [value, setValue] = React.useState('');
 
-  const handleChange = (event: SelectChangeEvent) => {
-    setSize(event.target.value);
-  };
+
 
   return (
     <FormControl   variant="outlined" sx={{ my:0.5,  width : '100%',...sx }} size="small">
-      <InputLabel id="demo-select-small">Select Size</InputLabel>
+      <InputLabel id="demo-select-small">Sort by</InputLabel>
       <Select
        
         labelId="demo-select-small"
         id="demo-select-small"
-        value={size}
+        value={value}
         label="Size"
-        onChange={handleChange}
+        onChange={(e)=>setValue(e.target.value)}
       >
-        <MenuItem value="">
-          <em>None</em>
+        <MenuItem value="products">
+          <em>All</em>
         </MenuItem>
-        <MenuItem value={10}>Ten</MenuItem>
-        <MenuItem value={20}>Twenty</MenuItem>
-        <MenuItem value={30}>Thirty</MenuItem>
+        <MenuItem value={'newest'}>Newest</MenuItem>
+        <MenuItem value={'highest'}>High to low</MenuItem>
+        <MenuItem value={'lowest'}>Low to high</MenuItem>
       </Select>
     </FormControl>
   );

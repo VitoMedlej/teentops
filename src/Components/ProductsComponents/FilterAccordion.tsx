@@ -7,21 +7,49 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import SliderForm from './Filter/Forms/SliderForm';
 import RadioGroupForm from './Filter/Forms/RadioGroupForm';
 import SelectOneForm from './Filter/Forms/SelectOneForm';
+import { useState } from 'react';
 
-export default function SimpleAccordion() {
+export default function SimpleAccordion({options,setOptions}:any) {
+   
+    console.log('options: ', options);
+    // const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    //     // setValue(();
+    //     let val = (event.target as HTMLInputElement).value;
+    //     setOptions({...options,category:val})
+    //   };
+    const handlePrice = (value:number[]) => {
+        // let price = ;
+        setOptions({...options,price:value})
+    }
+    const handleSort = (val:string) => {
+        setOptions({...options,sort:val})
 
+    }
     const filters = [
         {
             title: 'Price',
-            comp: <SliderForm sx={{
+            comp: <SliderForm
+            value={options.price}
+            onChange={handlePrice}
+            sx={{
                     my: '1em'
                 }}/>
-        }, {
-            title: 'Size',
-            comp: <RadioGroupForm/>
-        }, {
+        },
+        //  {
+        //     title: 'Category',
+        //     comp: <RadioGroupForm
+        //     value={options.category}
+        //     setValue={
+        //         handleChange
+        //         }
+        //     />
+        // },
+         {
             title: 'Sort By',
-            comp: <SelectOneForm sx={{
+            comp: <SelectOneForm
+            value={options.sort}
+            setValue={handleSort}
+            sx={{
                     // my: '1em'
                 }}/>
         }
