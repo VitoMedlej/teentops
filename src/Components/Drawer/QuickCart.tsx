@@ -103,7 +103,7 @@ export default function TemporaryDrawer() {
                         display:'flex'
                     }}>
                        <Btn 
-                       onClick={()=>{setCartOpen(false),router.push('/category/products')}}
+                       onClick={()=>{setCartOpen(false),router.push('/checkout')}}
                        disabled={cartItems.length < 1}>
                             Checkout
                        </Btn>

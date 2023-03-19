@@ -33,10 +33,36 @@ export default function Home({data :staticData,category}:{category:any,data:any}
     <>
       <Head>
         <title>Powerhouse electronics | Buy European electronics and home appliances in Lebanon</title>
-        <meta name="description" content={`
+        <meta name="robots" content="index,follow"/>
+{/* <meta name="description" content="Power house provide a wide range of European electronics (stock and new)" /> */}
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
+<meta name="distribution" content="Global"/>
+<meta name="keywords" content="e, electronic stores, lebanon, electronics store near me,  electronics, electronic, tv, tvs, electronic components,
+ electrical, kitchens,  supply,  Engineering, washer, dryer, kneading, fridge, refrigerator, standing steam, pancake maker, Cotton candy machine, Electric kettle,
+  Thermoelectric cool box, Ice Cube Machine,  Hot Air Fryer, stand mixer, Juicer, carpet cleaner , Espresso, cyclonic vacuum cleaner, vacuum, cleaner, steam iron
+  , gas grill, gas, grill, cooker,Electric Pot, Electric fryer, Freezer, Inverter  "/>
+<meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
+<meta httpEquiv="content-language" content="en" />
+<meta name="theme-color" content="#935525" />
+<meta content="powerhouse-lb.com" name="author" />
+
+<link rel="canonical" href="https://powerhouse-lb.com/" />
+<link rel="alternate" href="https://powerhouse-lb.com/" hrefLang="en"/>
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Powerhouse electronics | Buy European electronics and home appliances in Lebanon" />
+<meta property="og:url" content="https://powerhouse-lb.com/" />
+<meta property="og:site_name" content="Power house" />
+<meta property="og:image" content="https://ucarecdn.com/efe1f0cd-cded-4213-a0b2-6daed82bd506/001.png" />
+{/* <meta property="og:description" content="Power house provide a wide range of European electronics (stock and new)" /> */}
+     
+<meta name="og:description" content={`
         Powerhouse electronics is your destination to buy european electronics and home appliances online in Lebanon. Best online shopping store for the latest electronics and home appliances from all brands. We Deliver anywhere in Lebanon
         `} />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+       <meta name="description" content={`
+        Powerhouse electronics is your destination to buy european electronics and home appliances online in Lebanon. Best online shopping store for the latest electronics and home appliances from all brands. We Deliver anywhere in Lebanon
+        `} />
+        <meta name="viewport" content="width=device-width, initial-scale=1" /> 
       </Head>
       
       <TopAd/>

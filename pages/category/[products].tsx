@@ -29,10 +29,34 @@ const Index = ({data}:any) => {
   return (
     <>
     <Head>
-      <title>Powerhouse-lb electronics | Shop Online Today</title>
-      <meta name="description" content="Powerhouse-lb electronics | Shop Online Today | European products | We deliver everywhere in lebanon" />
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <link rel="icon" href="/favicon.ico" />
+    <title>Powerhouse lb Electronics | Shop By Category </title>
+        <meta name="robots" content="index,follow"/>
+{/* <meta name="description" content="Power house provide a wide range of European electronics (stock and new)" /> */}
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
+<meta name="distribution" content="Global"/>
+<meta name="keywords" content="e, electronic stores, lebanon, electronics store near me,  electronics, electronic, tv, tvs, electronic components,
+ electrical, kitchens,  supply,  Engineering, washer, dryer, kneading, fridge, refrigerator, standing steam, pancake maker, Cotton candy machine, Electric kettle,
+  Thermoelectric cool box, Ice Cube Machine,  Hot Air Fryer, stand mixer, Juicer, carpet cleaner , Espresso, cyclonic vacuum cleaner, vacuum, cleaner, steam iron
+  , gas grill, gas, grill, cooker,Electric Pot, Electric fryer, Freezer, Inverter  "/>
+<meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
+<meta httpEquiv="content-language" content="en" />
+<meta name="theme-color" content="#935525" />
+<meta content="powerhouse-lb.com" name="author" />
+
+<link rel="canonical" href="https://powerhouse-lb.com/" />
+<link rel="alternate" href="https://powerhouse-lb.com/" hrefLang="en"/>
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Powerhouse electronics | Buy European electronics and home appliances in Lebanon" />
+<meta property="og:url" content="https://powerhouse-lb.com/" />
+<meta property="og:site_name" content="Power house" />
+<meta property="og:image" content="https://ucarecdn.com/efe1f0cd-cded-4213-a0b2-6daed82bd506/001.png" />
+{/* <meta property="og:description" content="Power house provide a wide range of European electronics (stock and new)" /> */}
+     
+<meta name="og:description" content={`
+        Shop different ${router?.query?.products} from Powerhouse-lb for the best european house appliances. We deliver anywhere in lebanon | Best online shop in lebanon.`} />
+       <meta name="description" content={` Shop different ${router?.query?.products} from Powerhouse-lb for the best european house appliances. We deliver anywhere in lebanon | Best online shop in lebanon.`} />
+        <meta name="viewport" content="width=device-width, initial-scale=1" /> 
 
     </Head>
     <TopAd/>
@@ -78,7 +102,7 @@ export default Index
 
 export async function  getServerSideProps(context:any) {
   // console.log('context: ', );
-  let category = context.query?.products || 'products'
+  let category = context.query?.products.replace(/-/g, ' ') || 'products'
   let search = context.query?.search 
   // const res = await fetch('https://.../posts')
   // const posts = await res.json()

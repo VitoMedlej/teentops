@@ -14,11 +14,12 @@ import { Categories, DrawerContext } from '../../../pages/_app';
 import CancelPresentationIcon from '@mui/icons-material/CancelPresentation';
 import CoffeeMakerIcon from '@mui/icons-material/CoffeeMaker';
 import { IconButton } from '@mui/material';import BlenderIcon from '@mui/icons-material/Blender';
+import { useRouter } from 'next/router';
 
 // {setOpen,open} : {open: boolean, setOpen: any}
 export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
   const [open, setOpen] = useContext(DrawerContext);
-
+  const router =useRouter()
   const toggleDrawer =
     ( open: boolean) =>
     (event: React.KeyboardEvent | React.MouseEvent) => {
@@ -58,7 +59,9 @@ export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
                                 </Box>
       <List>
         {cates&&cates.map((text, index) => (
-          <ListItem key={text} disablePadding>
+          <ListItem
+          onClick={()=>router.push(`/category/${text}`)}
+          key={text} disablePadding>
             <ListItemButton>
               <ListItemIcon>
                 {index % 2 === 0 ? <CoffeeMakerIcon /> : <BlenderIcon />}

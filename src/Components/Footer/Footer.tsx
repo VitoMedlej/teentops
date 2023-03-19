@@ -44,8 +44,11 @@ const Footer = () => (
           <ul>
             <li className='link-title'>Contact</li>
             <li><a href="#"> Lebanon/Beirut Online</a></li>
+            
+            <li><a href="https://www.facebook.com/online.european.outlet/" target="_blank" rel="noreferrer" >Facebook</a></li>
+
             <li><a href="https://www.instagram.com/power_house_european/" target="_blank" rel="noreferrer" >@power_house_european</a></li>
-            <li><a href={'https://wa.me/96171330473'} rel="noreferrer" target='_blank' >{` +961 71330473`}</a></li>
+            <li><a href={'https://wa.me/70873045'} rel="noreferrer" target='_blank' >{` +961 70873045`}</a></li>
           </ul>
         </div>
       </div>
