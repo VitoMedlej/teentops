@@ -53,7 +53,8 @@ export default function Navbar() {
                 sx={{
                     maxWidth:'xl',
                     margin:'0 auto',
-                background: 'white',
+                // background: 'white',
+                background: 'black',
                 color: 'black',
                 boxShadow: 'none'
             }}position="static">
@@ -68,12 +69,12 @@ export default function Navbar() {
                         // right: '50%',
                         // transform: 'translateX(50%)'
                         // ,
-                        width:'75px'
+                        width:'95px'
                     }}>
                         <Link href='/' color='inherit'>
                             <img
                             className='img'
-                            src="https://ucarecdn.com/9f4b2f35-24a5-4728-8e8b-d4498da54fd8/001.png"
+                            src="https://ucarecdn.com/1a583360-d59b-465b-b237-bcd749db05d4/d5115caa07cd46c18b86b85f7f0d263a.jpeg"
                             alt="Powerhouse electronics eshop logo"/>
                         </Link>
                     </Box>
@@ -108,11 +109,13 @@ export default function Navbar() {
 
                         <IconButton 
                         onClick={()=>setCartOpen(!cartOpen)}
-
-                        color='inherit'>
+                        sx={{color:'white'}}
+                        >
                         <Badge color='warning' badgeContent={`${localCart.length || '0'}`} >
 
-                            <LocalMallOutlinedIcon sx={{color:'black'}} />
+                            <LocalMallOutlinedIcon
+                            
+                             sx={{color:'white'}} />
                             </Badge>
                             <Typography sx={{display:{xs:'none',sm:'flex'}}} component='p'>
                             cart
@@ -123,12 +126,12 @@ export default function Navbar() {
                         <IconButton 
                         onClick={()=>setCartOpen(!cartOpen)}
                         sx={{display:{xs:'none',sm:'flex'}}}
-                        color='inherit'>
+                        >
                         <Badge color='warning' badgeContent={`0`} >
 
-                            <FavoriteBorderIcon sx={{color:'black'}} />
+                            <FavoriteBorderIcon sx={{color:'white'}} />
                             </Badge>
-                            <Typography sx={{display:{xs:'none',sm:'flex'}}} component='p'>
+                            <Typography sx={{color:'white',display:{xs:'none',sm:'flex'}}} component='p'>
                             favourites
                             </Typography>
                         </IconButton>
@@ -137,9 +140,10 @@ export default function Navbar() {
                         onClick={()=>setOpen(!open)}
                         size="large"
                         edge="start"
-                        color="inherit"
+                        // color="inherit"
                         aria-label="menu"
                         sx={{
+                            color:'white',
                             margin:'0.1em',
                             display:{sm:'none'},
                     }}>

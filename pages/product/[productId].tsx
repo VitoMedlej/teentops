@@ -71,7 +71,7 @@ const Index = ({data,collection}:any) => {
     <Navbar/>
     <CategoryMenu category={undefined}/>
 
-    <Breadcrumb  params={[`${data.category}`,`${item}`]} sx={{mt:'2em'}} />
+    <Breadcrumb params={[`${data.category}`,`${item}`]} sx={{mt:'2em'}} />
     <Divider/>
     <Box sx={{justifyContent:'space-between',margin:'0 auto',maxWidth:'lg',display:'flex',px:'1em',pt:'1em',gap:'2em',flexWrap:'wrap'}}>
       <Box sx={{width:{xs:'100%',md:'45%'},maxWidth:'600px'}}>
@@ -82,7 +82,7 @@ const Index = ({data,collection}:any) => {
         <Typography className='gray' sx={{fontSize:'.85em',pb:'.5em',fontWeight:'400'}}>Model Id : {data._id}</Typography>
         {
           data?.weight &&
-        <Typography sx={{fontSize:'1em',py:'.25em',fontWeight:'500'}} >Product weight: {data.weight}</Typography>
+        <Typography sx={{fontSize:'1em',py:'.25em',fontWeight:'500'}} >Items Color: {data.weight}</Typography>
         }
         <Typography sx={{fontSize:'1.25em',py:'.25em',fontWeight:'600'}} className='clr'>${data.price}</Typography>
         {/* <SelectOneForm/> */}

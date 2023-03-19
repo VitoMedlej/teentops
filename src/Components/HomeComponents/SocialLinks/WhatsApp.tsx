@@ -3,6 +3,8 @@ import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 
 const WhatsApp = () => {
     return (
+        <a href='https://wa.me/+96170873045' target='_blank'   rel="noreferrer">
+
         <Box
             sx={{
             display: 'flex',
@@ -35,6 +37,8 @@ const WhatsApp = () => {
                 <WhatsAppIcon fontSize='large'/>
             </IconButton>
         </Box>
+        </a>
+
     )
 }
 

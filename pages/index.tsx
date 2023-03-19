@@ -28,7 +28,6 @@ export default function Home({data :staticData,category}:{category:any,data:any}
     setCates(category);
   }, [])
 
- 
     return (
     <>
       <Head>
@@ -73,13 +72,16 @@ export default function Home({data :staticData,category}:{category:any,data:any}
       <MainCarousel/>
       <CategoryImages/>
       <WhatsApp/>
-      <ProductCollection data={data} setQuickView={setQuickView} Collectiontitle='Latest Products '/>      
+      <ProductCollection data={data && data.slice(0,4)} setQuickView={setQuickView} Collectiontitle='Latest Products '/>      
+      
       <FullscreenPoster img='https://contentgrid.thdstatic.com/hdus/en_US/DTCCOMNEW/fetch/NexGen/ContentPage/SBS22-ASP-Hero-DSK-A.png'/>
-      <ProductCollection data={data && data.slice(3)} setQuickView={setQuickView} Collectiontitle='Top Sellers'/>      
+      <ProductCollection data={data && data.slice(4,8)} setQuickView={setQuickView} Collectiontitle='Top Sellers'/>      
       <CategoryList/>
-      <ProductCollection data={data} setQuickView={setQuickView} Collectiontitle='Recommended Products '/>      
-      <ProductCollection data={data} setQuickView={setQuickView} Collectiontitle='Best Of The Best'/>      
-    
+      <ProductCollection data={data && data.slice(8,12)} setQuickView={setQuickView} Collectiontitle='Recommended Products '/>      
+        { data && data?.slice(12,16)?.length > 0 &&
+
+          <ProductCollection data={data && data.slice(12,16)} setQuickView={setQuickView} Collectiontitle='Best Of The Best'/>      
+        }
 
       {/* <FullscreenPoster img='https://cdn.shopify.com/s/files/1/0317/1831/0026/files/shop_now_1800_x600_b3aa621e-b818-4478-8679-7d16e108de14_1200x.png?v=1613728741'/> */}
      
@@ -122,13 +124,13 @@ export async function  getStaticProps() {
   }
   return {
     props: {
-        data : res.data,
+        data : res.data.reverse(),
         category : res.category
     },
     // Next.js will attempt to re-generate the page:
     // - When a request comes in
     // - At most once every 10 seconds
-    revalidate: 500, // In seconds
+    revalidate: 400, // In seconds
   }
 }
 catch(errr){

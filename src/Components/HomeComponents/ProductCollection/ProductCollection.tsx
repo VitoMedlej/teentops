@@ -26,6 +26,7 @@ const ProductCollection = ({sx,Collectiontitle,data,setQuickView} : {
         <Box
             sx={{
             maxWidth: 'lg',
+            
             margin: '1em auto',
             my: '3em',
             ...sx,
@@ -46,8 +47,8 @@ const ProductCollection = ({sx,Collectiontitle,data,setQuickView} : {
                 justifyContent: 'space-between'
             }}>
             
-                {data && data.length > 0 ? data.slice(0, 4).map(item => {
-                        if (!item._id) return;
+                {data && data.length > 0 ? data.map(item => {
+                        if (!item._id || !item?.title) return;
                     return <ProductCard
                         title={item.title}
                         images={item.images}
@@ -81,8 +82,11 @@ const ProductCollection = ({sx,Collectiontitle,data,setQuickView} : {
 
                 sx={{border:'none',fontSize:'11px',margin:'2em auto',':hover':{background:'white'}}}>View All</Btn>
                 </Link>
-        </Box>
-    )
-}
+        
+                </Box>
+                
+                )
+                
+            }
 
 export default ProductCollection
