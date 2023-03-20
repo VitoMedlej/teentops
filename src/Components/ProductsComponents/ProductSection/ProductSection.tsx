@@ -1,9 +1,20 @@
 import {Box,Pagination} from '@mui/material'
-import React from 'react'
+import React, { useEffect } from 'react'
 import ProductCard from '../../HomeComponents/Cards/ProductCard'
 
-const ProductSection = ({data,setQuickView}:{data:any,setQuickView: (id: string) => void}) => {
-      
+const ProductSection = ({data,handlePagination,setQuickView}:{data:any,handlePagination:(val:number)=>void,setQuickView: (id: string) => void}) => {
+    const [page, setPage] = React.useState(1);
+    useEffect(() => {
+        let length = Number(data.length / 12 > 1 ? data.length / 12 : 2 )
+        if (length) {
+            setPage(length)
+        }
+    }, [])
+    // useEffect(() => {
+        // handlePagination
+    // }, [third])
+    
+    
     return (
         <Box sx={{width:{xs:'100%',md:'80%'}}}> 
             <Box sx={{maxWidth:'lg'}} className='productHolder'>
@@ -21,7 +32,12 @@ const ProductSection = ({data,setQuickView}:{data:any,setQuickView: (id: string)
                     : <h1>No products found</h1>
                     }
             </Box>
-    <Pagination sx={{my:3}} count={1} className='flex center ' />
+    <Pagination
+    onChange={(e,val)=>{
+        setPage(val)
+        handlePagination(val)
+    }}
+    sx={{my:3}} count={ page  } className='flex center ' />
 
         </Box>
     )

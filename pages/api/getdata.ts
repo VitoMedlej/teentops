@@ -14,6 +14,7 @@ export default async (_req: NextApiRequest, res: NextApiResponse) => {
 
     let category = _req.query?.category  === 'products' ? null : _req.query.category ;
     let search = _req.query?.search;
+    let skip = _req.query?.skip ? Number(_req.query?.skip) : 0;
     let limit = typeof Number(_req.query.limit) === 'number' ? Number(_req.query.limit) : 50;
     // maloma ma7sora
     // 5abera basera
@@ -24,9 +25,9 @@ export default async (_req: NextApiRequest, res: NextApiResponse) => {
       //  let docs = category ? await ProductsCollection.find({category}).limit(limit ) : await ProductsCollection.find({}).limit(limit )
        let docs = search ?
       //  await ProductsCollection.find({ $text: {$search: `${search}` }}).limit(limit ) :
-       await ProductsCollection.find({ $or : [{title: {$regex: `${search}`,'$options' : 'i' }},{description: {$regex: `${search}`,'$options' : 'i' }},{category: {$regex: `${search}` }}  ]    }).limit(limit ) :
-       category ? await ProductsCollection.find({category}).limit(limit ) :
-       await ProductsCollection.find({}).limit(limit )
+       await ProductsCollection.find({ $or : [{title: {$regex: `${search}`,'$options' : 'i' }},{description: {$regex: `${search}`,'$options' : 'i' }},{category: {$regex: `${search}` }}  ]    }).skip(skip).limit(limit ) :
+       category ? await ProductsCollection.find({category}).skip(skip).limit(limit) :
+       await ProductsCollection.find({}).skip(skip).limit(limit)
         // const quer =async () => {
         //   if (category) {
         //     return await ProductsCollection.find({category}).limit(limit )
