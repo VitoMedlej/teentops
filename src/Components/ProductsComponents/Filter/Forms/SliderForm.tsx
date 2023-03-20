@@ -10,7 +10,7 @@ function valuetext(value: number) {
 const minDistance = 0;
 
 export default function MinimumDistanceSlider({sx,value,onChange}:{onChange?:any,value?:number[],sx?:any}) {
-  const [value1, setValue1] = React.useState<number[]>([1, 100000]);
+  const [value1, setValue1] = React.useState<number[]>([1, 2000]);
 
   const handleChange1 = (
     event: Event,
