@@ -58,10 +58,16 @@ export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
 
                                 </Box>
       <List>
-        {cates&&cates.map((text, index) => (
+
+      
           
-          <ListItem
+
+        {cates && cates.length > 0 ? cates.map((text, index) => {
+          
+          if (!text) return;
+          return <ListItem
           onClick={()=>router.push(`/category/${text || 'products'}`)}
+
           key={text} disablePadding>
             <ListItemButton>
               <ListItemIcon>
@@ -70,7 +76,22 @@ export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
               <ListItemText primary={text} />
             </ListItemButton>
           </ListItem>
-        ))}
+         }):
+        ['products','checkout',''].map((text, index) => {
+          if (!text) return;
+          return <ListItem
+          onClick={()=>router.push(`/category/${text}`)}
+          key={text} disablePadding>
+            <ListItemButton>
+              <ListItemIcon>
+                {index % 2 === 0 ? <CoffeeMakerIcon /> : <BlenderIcon />}
+              </ListItemIcon>
+              <ListItemText primary={text} />
+            </ListItemButton>
+          </ListItem>
+        })
+        
+        }
       </List>
       <Divider />
       

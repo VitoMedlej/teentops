@@ -35,7 +35,7 @@ const Perks = () => {
                 }}>Reach out to us through any of these support channels</span>
             </Box>
             <Box sx={{display:'flex',flexWrap:'wrap',justifyContent: 'center',gap:'1em'}}>
-                {[{title:'Phone Number',value:"70464748",isLink:false}, {isLink:true,title:'Instagram',value:'https://www.instagram.com/power_house_european/'}, {isLink:true,title:'Facebook',value:'https://www.facebook.com/online.european.outlet/'}].map(i => {
+                {[{title:'Phone Number',value:"70873045",isLink:false}, {isLink:true,title:'Instagram',value:'https://www.instagram.com/power_house_european/'}, {isLink:true,title:'Facebook',value:'https://www.facebook.com/online.european.outlet/'}].map(i => {
                     return <Box 
                     key={i.title}
                         sx={{

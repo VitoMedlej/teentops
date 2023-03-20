@@ -28,15 +28,40 @@ export default function Home({data :staticData,category}:{category:any,data:any}
     setCates(category);
   }, [])
 
- 
     return (
     <>
       <Head>
         <title>Powerhouse electronics | Buy European electronics and home appliances in Lebanon</title>
-        <meta name="description" content={`
+        <meta name="robots" content="index,follow"/>
+{/* <meta name="description" content="Power house provide a wide range of European electronics (stock and new)" /> */}
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
+<meta name="distribution" content="Global"/>
+<meta name="keywords" content="e, electronic stores, lebanon, electronics store near me,  electronics, electronic, tv, tvs, electronic components,
+ electrical, kitchens,  supply,  Engineering, washer, dryer, kneading, fridge, refrigerator, standing steam, pancake maker, Cotton candy machine, Electric kettle,
+  Thermoelectric cool box, Ice Cube Machine,  Hot Air Fryer, stand mixer, Juicer, carpet cleaner , Espresso, cyclonic vacuum cleaner, vacuum, cleaner, steam iron
+  , gas grill, gas, grill, cooker,Electric Pot, Electric fryer, Freezer, Inverter  "/>
+<meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
+<meta httpEquiv="content-language" content="en" />
+<meta name="theme-color" content="#935525" />
+<meta content="powerhouse-lb.com" name="author" />
+
+<link rel="canonical" href="https://powerhouse-lb.com/" />
+<link rel="alternate" href="https://powerhouse-lb.com/" hrefLang="en"/>
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Powerhouse electronics | Buy European electronics and home appliances in Lebanon" />
+<meta property="og:url" content="https://powerhouse-lb.com/" />
+<meta property="og:site_name" content="Power house" />
+<meta property="og:image" content="https://ucarecdn.com/efe1f0cd-cded-4213-a0b2-6daed82bd506/001.png" />
+{/* <meta property="og:description" content="Power house provide a wide range of European electronics (stock and new)" /> */}
+     
+<meta name="og:description" content={`
         Powerhouse electronics is your destination to buy european electronics and home appliances online in Lebanon. Best online shopping store for the latest electronics and home appliances from all brands. We Deliver anywhere in Lebanon
         `} />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+       <meta name="description" content={`
+        Powerhouse electronics is your destination to buy european electronics and home appliances online in Lebanon. Best online shopping store for the latest electronics and home appliances from all brands. We Deliver anywhere in Lebanon
+        `} />
+        <meta name="viewport" content="width=device-width, initial-scale=1" /> 
       </Head>
       
       <TopAd/>
@@ -47,13 +72,16 @@ export default function Home({data :staticData,category}:{category:any,data:any}
       <MainCarousel/>
       <CategoryImages/>
       <WhatsApp/>
-      <ProductCollection data={data} setQuickView={setQuickView} Collectiontitle='Latest Products '/>      
+      <ProductCollection data={data && data.slice(0,4)} setQuickView={setQuickView} Collectiontitle='Latest Products '/>      
+      
       <FullscreenPoster img='https://contentgrid.thdstatic.com/hdus/en_US/DTCCOMNEW/fetch/NexGen/ContentPage/SBS22-ASP-Hero-DSK-A.png'/>
-      <ProductCollection data={data && data.slice(3)} setQuickView={setQuickView} Collectiontitle='Top Sellers'/>      
+      <ProductCollection data={data && data.slice(4,8)} setQuickView={setQuickView} Collectiontitle='Top Sellers'/>      
       <CategoryList/>
-      <ProductCollection data={data} setQuickView={setQuickView} Collectiontitle='Recommended Products '/>      
-      <ProductCollection data={data} setQuickView={setQuickView} Collectiontitle='Best Of The Best'/>      
-    
+      <ProductCollection data={data && data.slice(8,12)} setQuickView={setQuickView} Collectiontitle='Recommended Products '/>      
+        { data && data?.slice(12,16)?.length > 0 &&
+
+          <ProductCollection data={data && data.slice(12,16)} setQuickView={setQuickView} Collectiontitle='Best Of The Best'/>      
+        }
 
       {/* <FullscreenPoster img='https://cdn.shopify.com/s/files/1/0317/1831/0026/files/shop_now_1800_x600_b3aa621e-b818-4478-8679-7d16e108de14_1200x.png?v=1613728741'/> */}
      
@@ -96,13 +124,13 @@ export async function  getStaticProps() {
   }
   return {
     props: {
-        data : res.data,
+        data : res.data.reverse(),
         category : res.category
     },
     // Next.js will attempt to re-generate the page:
     // - When a request comes in
     // - At most once every 10 seconds
-    revalidate: 500, // In seconds
+    revalidate: 400, // In seconds
   }
 }
 catch(errr){
