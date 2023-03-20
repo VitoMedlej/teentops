@@ -11,7 +11,7 @@ import QuickView from '../../src/Components/Dialog/QuickView'
 import { getAll } from '..'
 import { useRouter } from 'next/router'
 
-const Index = ({data}:any) => {
+const Index = ({data,count}:any) => {
   const [quickView, setQuickView] = useState<{isOpen:boolean,productId:null | string}>({isOpen:false,productId:null})
   const [products,setProducts] = useState(data);
   const handleQuickView = (id: string) => {
@@ -20,6 +20,7 @@ const Index = ({data}:any) => {
     } 
  }
  const router= useRouter()
+ const category= router.query?.products || 'products';
  if (data && !products) {
   setProducts(data)
  }
@@ -32,12 +33,14 @@ const Index = ({data}:any) => {
   router.replace({
     query: { ...router.query, page: val },
  });
-  if ( val > 1) {
-      const data =  await getAll('getdata',12,'products',undefined,val)
+ const skip = val <= 1 ? 0 : (val - 1) * 12
+//  console.log('skip: ', skip);
+  if (val > 0) {
+      const data =  await getAll('getdata',12,`${category}`,undefined,skip,false)
       // const res = await data.json()
       // console.log('res: ', res);
       if (data) {
-        setProducts(data)
+        setProducts(data?.products)
       }
     }
   }
@@ -110,7 +113,7 @@ const Index = ({data}:any) => {
     <Box sx={{display:{xs:'none',md:'block'},width:'20%'}}>
     <FilterSection handleReset={handleReset} setProducts={setProducts} sx={{width:'100%'}}/>
     </Box>
-    <ProductSection handlePagination={handlePagination}  data={products} setQuickView={handleQuickView}/>
+    <ProductSection count={count} handlePagination={handlePagination}  data={products} setQuickView={handleQuickView}/>
     <Divider/>
   </Box>
     </Box>
@@ -133,7 +136,7 @@ export async function  getServerSideProps(context:any) {
   try {
 
  
-  const data =  await getAll('getdata',12,category,search,page)
+  const data =  await getAll('getdata',12,category,search,page,true)
 
   if (!data) {
     return {
@@ -144,7 +147,8 @@ export async function  getServerSideProps(context:any) {
   }
   return {
     props: {
-      data,
+      data : data.products
+      ,count : data?.count
     },
     // Next.js will attempt to re-generate the page:
     // - When a request comes in

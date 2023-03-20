@@ -46,7 +46,7 @@ const SwiperCarousel = ({data}:any) => {
         }}>
 
             {data && data.length>0 && data.map((item:any) => {
-
+                    if (!item.title) return
                 return <SwiperSlide className='swiper-wrapper1' style={{width:'100%',height:'100%'}} key={item._id}>
                     {/* <HouseCard
                         img={property.images[0] || property.images[1]}

@@ -2,14 +2,14 @@ import {Box,Pagination} from '@mui/material'
 import React, { useEffect } from 'react'
 import ProductCard from '../../HomeComponents/Cards/ProductCard'
 
-const ProductSection = ({data,handlePagination,setQuickView}:{data:any,handlePagination:(val:number)=>void,setQuickView: (id: string) => void}) => {
-    const [page, setPage] = React.useState(1);
-    useEffect(() => {
-        let length = Number(data.length / 12 > 1 ? data.length / 12 : 2 )
-        if (length) {
-            setPage(length)
-        }
-    }, [])
+const ProductSection = ({data,count,handlePagination,setQuickView}:{count:number,data:any,handlePagination:(val:number)=>void,setQuickView: (id: string) => void}) => {
+    // const [page, setPage] = React.useState(1);
+    // useEffect(() => {
+    //     let length = Number(data.length / 12 > 1 ? data.length / 12 : 2 )
+    //     if (length) {
+    //         setPage(length)
+    //     }
+    // }, [])
     // useEffect(() => {
         // handlePagination
     // }, [third])
@@ -19,7 +19,7 @@ const ProductSection = ({data,handlePagination,setQuickView}:{data:any,handlePag
         <Box sx={{width:{xs:'100%',md:'80%'}}}> 
             <Box sx={{maxWidth:'lg'}} className='productHolder'>
                       {data && data.length > 0 ? data.map((i:any)=>{
-
+                            if (!i?.title ) return;
                          return <ProductCard
                          _id={i._id}
                          images={i.images}
@@ -34,10 +34,10 @@ const ProductSection = ({data,handlePagination,setQuickView}:{data:any,handlePag
             </Box>
     <Pagination
     onChange={(e,val)=>{
-        setPage(val)
+        // setPage(val)
         handlePagination(val)
     }}
-    sx={{my:3}} count={ page  } className='flex center ' />
+    sx={{my:3}} count={ count / 12 < 0 ? 1 : Math.ceil(count / 12)  } className='flex center ' />
 
         </Box>
     )
