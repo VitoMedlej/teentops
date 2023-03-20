@@ -136,7 +136,7 @@ export async function  getServerSideProps(context:any) {
   try {
 
  
-  const data =  await getAll('getdata',12,category,search,true)
+  const data =  await getAll('getdata',12,category,search,page,true)
 
   if (!data) {
     return {

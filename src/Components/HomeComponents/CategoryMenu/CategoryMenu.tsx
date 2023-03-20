@@ -15,7 +15,14 @@ const CategoryMenu = ({category}:{category:string[] | undefined}) => {
             px: '1.25em',
             maxWidth: 'xl'
         }}>
-            {['electronics','kitchen appliances','small kitchen appliances','vaccum cleaners','tvs'].map((item) => {
+            {[
+
+'electronics','kitchen appliances','small kitchen appliances','vaccum cleaners','tvs'
+       ,'heaters'
+ ,      'fans'
+,       'tools'
+
+            ].map((item) => {
                 return <Box  key={item}>
                     <Link key={item} href={`/category/${item.replace(/\s+/g, '-')}`}>
                         <Typography sx={{color:"#4b4b4b",

@@ -40,7 +40,7 @@ const ProductCard = ({title,_id,price,images,category,sx, handleQuickView,classN
         }
     }
     const handleClick = () => {
-        router.push(`/product/${_id}?title=${`${title}`.replace(/\s+/g, '-')}`)
+        router.push(`/product/${_id}?title=${`${title}`.substring(0,100).replace(/\s+/g, '-')}&category=${category ? category : 'products'}`)
         
     }
    

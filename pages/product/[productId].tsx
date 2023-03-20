@@ -184,20 +184,20 @@ export const getById = async (id:string) => {
 export async function getServerSideProps(context:any) {
   try {
     const id = context.params.productId
-    
-    if (!id ) {
+    const category = context.query.category
+    if (!id) {
       throw 'Error'
     }
     const data = await getById(`${id}`)
-    const collection = await getAll('getdata',4)
-    
-  if (!data) {
-    throw 'No data'
-  }
+    let items = await getAll('getdata',4,`${category}`)
+    if (!data || !items || !items.products) {
+      throw 'No data'
+    }
+    // collection = collection.products
   return {
     props: {
       data,
-      collection
+      collection : items.products
     }, // will be passed to the page component as props
   }
 }
