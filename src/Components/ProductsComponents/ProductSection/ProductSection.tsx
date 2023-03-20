@@ -8,7 +8,7 @@ const ProductSection = ({data,setQuickView}:{data:any,setQuickView: (id: string)
         <Box sx={{width:{xs:'100%',md:'80%'}}}> 
             <Box sx={{maxWidth:'lg'}} className='productHolder'>
                       {data && data.length > 0 ? data.map((i:any)=>{
-
+                                if (!i.title || !i.price) return;
                          return <ProductCard
                          _id={i._id}
                          images={i.images}

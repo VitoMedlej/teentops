@@ -19,14 +19,12 @@ const query =  router?.query?.products;
         <Link underline="hover" color="inherit" href="/">
           <Typography>
           Home
-
           </Typography>
         </Link>
         <Link
           underline="hover"
           color="inherit"
           href={params && params[0] || '/'}
-
         >
           <Typography>
 

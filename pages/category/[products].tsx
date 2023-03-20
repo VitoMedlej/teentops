@@ -109,7 +109,7 @@ export async function  getServerSideProps(context:any) {
   try {
 
  
-  const data =  await getAll('getdata',12,category,search)
+  let data =  await getAll('getdata',12,category,search)
 
   if (!data) {
     return {
@@ -118,9 +118,11 @@ export async function  getServerSideProps(context:any) {
       },
     }    
   }
+  data = data.reverse()
+
   return {
     props: {
-      data,
+      data : data,
     },
     // Next.js will attempt to re-generate the page:
     // - When a request comes in

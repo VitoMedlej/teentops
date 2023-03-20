@@ -15,7 +15,7 @@ const CategoryMenu = ({category}:{category:string[] | undefined}) => {
             px: '1.25em',
             maxWidth: 'xl'
         }}>
-            {category && category.length > 0 && category.slice(0,5).map((item) => {
+            {['electronics','kitchen appliances','small kitchen appliances','vaccum cleaners','tvs'].map((item) => {
                 return <Box  key={item}>
                     <Link key={item} href={`/category/${item.replace(/\s+/g, '-')}`}>
                         <Typography sx={{color:"#4b4b4b",

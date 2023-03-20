@@ -98,7 +98,7 @@ export default function Navbar() {
                             className='flex right'>
 
                             <IconButton
-                             sx={{display:{xs:'flex',sm:'none'}}}
+                             sx={{display:{xs:'flex',sm:'none'},color:'white'}}
                             onClick={()=>setOpenModal(!openModal)}
                             color='inherit'>
  
