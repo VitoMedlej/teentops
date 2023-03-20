@@ -39,7 +39,7 @@ export default function Navbar() {
     const handleSearch = (e: React.FormEvent<HTMLFormElement> ) => {
       e.preventDefault()
       if (q.length > 2) {
-        router.push(`/category/products?limit=10&search=${q}`)
+        router.push(`/category/products?limit=80&search=${q}`)
       }
     }
    

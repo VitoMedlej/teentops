@@ -1,9 +1,10 @@
 import {Box, Button, Typography} from '@mui/material'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import React from 'react'
 
 const CategoryMenu = ({category}:{category:string[] | undefined}) => {
-   
+    const router = useRouter()
     return (
         <Box
             className='bb CategoryMenu'
@@ -23,15 +24,15 @@ const CategoryMenu = ({category}:{category:string[] | undefined}) => {
 ,       'tools'
 
             ].map((item) => {
-                return <Box  key={item}>
-                    <Link key={item} href={`/category/${item.replace(/\s+/g, '-')}`}>
+                return <Box  sx={{cursor:'pointer'}} key={item} onClick={()=>router.push(`/category/${item.replace(/\s+/g, '-')}`)}>
+                    {/* <Link key={item} > */}
                         <Typography sx={{color:"#4b4b4b",
                         textTransform: 'capitalize'
                     }} component='h5'>
                         {item}
                         </Typography>
 
-                    </Link>
+                    {/* </Link> */}
                 </Box>
             })
 }

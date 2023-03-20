@@ -1,6 +1,7 @@
 import {Box,Pagination} from '@mui/material'
 import React, { useEffect } from 'react'
 import ProductCard from '../../HomeComponents/Cards/ProductCard'
+import { useRouter } from 'next/router'
 
 const ProductSection = ({data,count,handlePagination,setQuickView}:{count:number,data:any,handlePagination:(val:number)=>void,setQuickView: (id: string) => void}) => {
     // const [page, setPage] = React.useState(1);
@@ -13,8 +14,9 @@ const ProductSection = ({data,count,handlePagination,setQuickView}:{count:number
     // useEffect(() => {
         // handlePagination
     // }, [third])
-    
-    
+    const router = useRouter()
+    const counter = router.query.products === 'products' 
+    const counted = counter ? count / 12 < 0 ? 1 : Math.ceil(count / 12) : Math.ceil(data?.length / 12)
     return (
         <Box sx={{width:{xs:'100%',md:'80%'}}}> 
             <Box sx={{maxWidth:'lg'}} className='productHolder'>
@@ -37,7 +39,7 @@ const ProductSection = ({data,count,handlePagination,setQuickView}:{count:number
         // setPage(val)
         handlePagination(val)
     }}
-    sx={{my:3}} count={ count / 12 < 0 ? 1 : Math.ceil(count / 12)  } className='flex center ' />
+    sx={{my:3}} count={counted > 1 ? counted : 1 } className='flex center ' />
 
         </Box>
     )

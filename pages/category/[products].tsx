@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import TopAd from '../../src/Components/HomeComponents/TopAd/TopAd'
 import Navbar from '../../src/Components/Navbar/Navbar'
 import FilterSection from '../../src/Components/ProductsComponents/Filter/FilterSection'
@@ -12,6 +12,7 @@ import { getAll } from '..'
 import { useRouter } from 'next/router'
 
 const Index = ({data,count}:any) => {
+  const [totalCount,setTotalCount] = useState(count || 0);
   const [quickView, setQuickView] = useState<{isOpen:boolean,productId:null | string}>({isOpen:false,productId:null})
   const [products,setProducts] = useState(data);
   const handleQuickView = (id: string) => {
@@ -20,27 +21,48 @@ const Index = ({data,count}:any) => {
     } 
  }
  const router= useRouter()
+ let search = router.query?.search;
+
  const category= router.query?.products || 'products';
  if (data && !products) {
   setProducts(data)
  }
+ if (!totalCount && count) {
+  setTotalCount(count)
+ }
+
  const handleReset = () => {
     setProducts(data)
  }
+ const neverUseMe = async  () => {
+  const data =  await getAll('getdata',80,`${category}`,`${search}`,0,true)
+  // const res = await data.json()
+  // console.log('res: ', res);
+  if (data) {
+    setProducts(data?.products)
+    setTotalCount(data?.count)
+  }
+}
+ useEffect(() => {
+  neverUseMe()
+ }, [category])
  const handlePagination =  async (val:number) => { 
  try {
   // router.push('/products')
   router.replace({
     query: { ...router.query, page: val },
  });
+
+ 
  const skip = val <= 1 ? 0 : (val - 1) * 12
 //  console.log('skip: ', skip);
   if (val > 0) {
-      const data =  await getAll('getdata',12,`${category}`,undefined,skip,false)
+      const data =  await getAll('getdata',12,`${category}`,undefined,skip,true)
       // const res = await data.json()
       // console.log('res: ', res);
       if (data) {
         setProducts(data?.products)
+        setTotalCount(data?.count)
       }
     }
   }
@@ -138,28 +160,41 @@ export async function  getServerSideProps(context:any) {
  
   const data =  await getAll('getdata',12,category,search,page,true)
 
-  if (!data) {
+  if (!data || data?.products?.length < 0 ) {
     return {
       props: {
         data: null,
       },
     }    
   }
-  data.products = data.products.reverse()
+  // data.products = data.products.length ? data.products.reverse()
+if (data && data.products && data.products.length > 0 && data.products !== undefined) {
 
   return {
     props: {
-      data : data.products
+      data : data.products.reverse()
       ,count : data?.count
     },
+  }
     // Next.js will attempt to re-generate the page:
     // - When a request comes in
     // - At most once every 10 seconds
     // revalidate: 500, // In seconds
   }
+  else {
+    return {
+      props: {
+        data: null,
+      },
+    }  
+  }
 }
 catch(errr){
   console.log('errr: ', errr);
-
+  return {
+    props: {
+      data : null
+      ,count : null
+    },
 }
-}
+}}
