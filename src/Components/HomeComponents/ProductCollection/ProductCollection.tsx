@@ -37,7 +37,7 @@ const ProductCollection = ({sx,Collectiontitle,data,setQuickView} : {
                 fontSize: '1.75em',
                 fontWeight: '500'
             }}>{Collectiontitle}</Box>
-            <Box
+            {/* <Box
                 sx={{
                 display: {
                     xs: "none",
@@ -66,15 +66,17 @@ const ProductCollection = ({sx,Collectiontitle,data,setQuickView} : {
     No products found!
 </Typography>
 }
-            </Box>
+            </Box> */}
             <Box
                 sx={{
                 display: {
                     xs: "flex",
-                    md: 'none'
+                    // md: 'none'
                 }
             }}>
-                <SwiperCarousel data={data && data.length >0 && data?.slice(0,4)}/>
+                <SwiperCarousel
+                      handleQuickView={handleQuickView}
+                data={data && data.length >0 && data?.slice(0,4)}/>
             </Box>
             <Link  href='/category/products' className="decor-none">
 
