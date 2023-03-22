@@ -5,7 +5,7 @@ import { Box } from '@mui/material';
 import ProductCard from '../HomeComponents/Cards/ProductCard';
 
 
-const SwiperCarousel = ({data}:any) => {
+const SwiperCarousel = ({data,      handleQuickView}:any) => {
    
     return (
         <Box
@@ -62,7 +62,7 @@ const SwiperCarousel = ({data}:any) => {
                         title={property.title}
                         location={property.location}/> */}
                          <ProductCard 
-
+                        handleQuickView={handleQuickView}
                          title={item.title}
                          images={item.images}
                          price={item.price}
