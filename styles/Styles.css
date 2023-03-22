@@ -10,15 +10,22 @@ h1, h2, h3, h4, p {
 }
 
 .clr {
-  color: #935525;
+  color: #935525 !important;
 }
 
 .black {
   color: black;
 }
 
+.ul-white li {
+  color: white !important;
+}
+.ul-white li a {
+  color: white !important;
+}
+
 .bg {
-  background: #935525;
+  background: #935525 !important;
 }
 
 .trans {
@@ -218,7 +225,7 @@ footer .site-footer__bottom div p {
 }
 
 .logos {
-  max-width: 60px;
+  max-width: 90px;
 }
 
 .auto {

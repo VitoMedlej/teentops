@@ -14,13 +14,21 @@ $clr : #935525;
 
 
 .clr {
-    color :$clr
+    color :$clr !important
 }
 .black {
     color:black ;
 }
+.ul-white {
+    li {
+        color :white !important;
+        a {
+        color :white !important;
+        }
+    }
+}
 .bg {
-    background: $clr;
+    background: $clr !important;
 }
 .trans {
     transition: 0.2s ease;
@@ -233,7 +241,7 @@ footer {
 }
 }
 .logos {
-    max-width: 60px;
+    max-width: 90px;
 }
 .auto {
     margin: 0 auto  !important;

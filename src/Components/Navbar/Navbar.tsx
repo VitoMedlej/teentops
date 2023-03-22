@@ -46,6 +46,8 @@ export default function Navbar() {
     
     return (
         <Box sx={{
+            background: 'black',
+
             flexGrow: 1
         }}>
             <AppBar
@@ -54,8 +56,9 @@ export default function Navbar() {
                     maxWidth:'xl',
                     margin:'0 auto',
                 // background: 'white',
-                background: 'black',
                 color: 'black',
+            background: 'black',
+
                 boxShadow: 'none'
             }}position="static">
                 <Toolbar sx={{

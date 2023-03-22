@@ -14,7 +14,7 @@ export default function CustomizedInputBase({sx,onSubmit,value,setValue}:{onSubm
     <Paper
     onSubmit={(e)=>onSubmit(e)}
       component="form"
-      className='searchinput'
+      className='searchinput '
       sx={{
        
         boxShadow:'none',
