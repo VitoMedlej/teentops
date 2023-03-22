@@ -95,7 +95,7 @@ const Index = ({data,count}:any) => {
 <meta property="og:title" content="Powerhouse electronics | Buy European electronics and home appliances in Lebanon" />
 <meta property="og:url" content="https://powerhouse-lb.com/" />
 <meta property="og:site_name" content="Power house" />
-<meta property="og:image" content="https://ucarecdn.com/efe1f0cd-cded-4213-a0b2-6daed82bd506/001.png" />
+<meta property="og:image" content="https://instagram.fbey22-1.fna.fbcdn.net/v/t51.2885-19/312182473_6421594114522894_2354893828509446990_n.jpg?stp=dst-jpg_s150x150&_nc_ht=instagram.fbey22-1.fna.fbcdn.net&_nc_cat=110&_nc_ohc=-zQWhgontngAX-aqrDz&edm=ANmP7GQBAAAA&ccb=7-5&oh=00_AfDgWCWFpW5Cz80QeqIw9MI6XF2RDx1myGfsyl1kg4wZ7g&oe=641FE23B&_nc_sid=276363" />
 {/* <meta property="og:description" content="Power house provide a wide range of European electronics (stock and new)" /> */}
      
 <meta name="og:description" content={`
