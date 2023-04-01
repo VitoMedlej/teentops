@@ -14,6 +14,7 @@ const MainCarousel = () => {
             py: {xs:'.75em',sm:'2em',md:'3em'},
             width: '100%',
             maxWidth: 'lg',
+            maxHeight:'400px',
             borderRadius:{sm:'6px'},
             margin: '0 auto',
             display: {
@@ -33,8 +34,10 @@ const MainCarousel = () => {
                 modules={[Autoplay, Navigation]}
                 className="mySwiper swiper">
 
-                {[{img:`https://ucarecdn.com/cb04f440-c3b4-4943-9650-343d079f8667/49da7d1c9283e95770851ecada351a029f037a57_HMDWebsiteBanner01.png`},{img:'https://ucarecdn.com/a021bc32-1e3a-418d-905d-37c8236dd0dd/Banner.png',className:'contain'},
-                // {img:'https://cdn.shopify.com/s/files/1/0549/1385/9821/files/Christmas_2022_Banner_1.jpg?v=1671886210'}
+                {[{img:`https://scontent.fbey22-1.fna.fbcdn.net/v/t39.30808-6/270147816_137918238674675_4888293326194399102_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=e3f864&_nc_ohc=6xlgBG4h6-MAX9qLiRR&_nc_ht=scontent.fbey22-1.fna&oh=00_AfCmjDHQb4LzgmTusCA_g-JSKFJbB7z8BFZVTEKWu4U18g&oe=642D4A7B`}
+                ,
+                {img:`https://ucarecdn.com/7d1ad969-6fd1-4010-b54f-905a25a5e4c7/WhiteElegantKitchenSuppliesAndToolsBanner1.png`},
+                {img:'https://ucarecdn.com/7e0cff24-4faa-44b5-9e5f-94eb78b5db6e/BlackYellowBoldBagFashionSaleBanner2.jpg'}
             ].map((item) => {
 
                     return <SwiperSlide 
@@ -50,7 +53,9 @@ const MainCarousel = () => {
 
                             <img
             
-                                className={`img pointer ${item?.className}`}
+                                className={`img pointer 
+                                `}
+                                // ${item?.className}
                                 src={`${item.img}`}
                                 alt="Main Carousel Image"/>
                         </Box>

@@ -47,7 +47,7 @@ export default function Navbar() {
             flexGrow: 1
         }}>
             <AppBar
-                className='bb bg'
+            className='bb bg'
                 sx={{
                     maxWidth:'xl',
                     margin:'0 auto',
@@ -73,7 +73,7 @@ export default function Navbar() {
                         <Link href='/' color='inherit'>
                             <img
                             className='img'
-                            src="https://ucarecdn.com/2d5f1822-0735-4ec9-9024-f68bad6e39db/269840025_452152916535842_4269873123222669231_n.jpg"
+                            src="https://scontent.fbey22-1.fna.fbcdn.net/v/t39.30808-6/332283481_557200736388103_8455728849948258771_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=GenbSrn9aNEAX_Kq0Dy&_nc_ht=scontent.fbey22-1.fna&oh=00_AfBTbHltR6y0ifLPlgDazEAaHOYenFmdN1w1BxlMTcHD6w&oe=642D2EFF"
                             alt="Powerhouse electronics eshop logo"/>
                         </Link>
                     </Box>
@@ -102,9 +102,9 @@ export default function Navbar() {
                             color='inherit'>
  
                              <AiOutlineSearch/>
-                             <Typography sx={{display:{xs:'none',sm:'flex'}}} component='p'>
+                             {/* <Typography sx={{display:{xs:'none',sm:'flex'}}} component='p'>
                             Search
-                            </Typography>
+                            </Typography> */}
                          </IconButton> 
 
 
@@ -119,9 +119,9 @@ export default function Navbar() {
                             //  sx={{}}
                               />
                             </Badge>
-                            <Typography sx={{display:{xs:'none',sm:'flex'}}} component='p'>
+                            {/* <Typography sx={{display:{xs:'none',sm:'flex'}}} component='p'>
                             Cart
-                            </Typography>
+                            </Typography> */}
                         </IconButton>
 
                         {/* <IconButton 

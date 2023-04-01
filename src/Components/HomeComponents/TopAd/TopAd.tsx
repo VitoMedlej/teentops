@@ -8,7 +8,7 @@ const TopAd = () => {
     // className='bg '
 
     sx={{textAlign:'center',fontSize:'.7em',py:'.5em',
-    background:'#1a4671',
+    background:'#3d4859',
     color:"white"}}>    
     🚛التوصيل مؤمن الى جميع المناطق اللبنانية عبر خدمة الديلفري
   |  📲whatsapp:76600541

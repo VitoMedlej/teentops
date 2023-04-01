@@ -39,7 +39,7 @@ const WhatsApp = () => {
                 color: 'white'
             }}>
                 <AiOutlineWhatsApp 
-                // fontSize='large'
+                fontSize='2em'
                 />
             </IconButton>
             {/* <div style={{width:'60px',height:'60px'}}>

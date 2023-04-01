@@ -28,13 +28,13 @@ const Perks = () => {
                     fontWeight: '600',
                     fontSize: '1.1em'
                 }}>
-                    We are Always Here To Help
+                   Reach Us Today   
                 </span>
                 <span
                     className='white'
                     style={{
                         fontSize: '.8em'
-                    }}>Reach out to us through any of these support channels</span>
+                    }}>Follow us on social media to never miss any new sales and offers</span>
             </Box>
             <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '1em' }}>
                 {/* {[{title:'Phone Number',value:"76600541",isLink:false}, {isLink:true,title:'Instagram',value:'https://www.instagram.com/power_house_european/'}, {isLink:true,title:'Facebook',value:'https://www.facebook.com/online.european.outlet/'}].map(i => {
@@ -105,9 +105,6 @@ const Perks = () => {
                     </Box>
 
                 </Box>
-
-
-
 
 
 

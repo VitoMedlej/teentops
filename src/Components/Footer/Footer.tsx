@@ -13,11 +13,11 @@ const Footer = () => (
               {/* <a><h1 className="site-logo"><Logo />E-Shop</h1></a> */}
               {/* https://res.cloudinary.com/dwxm8f25f/image/upload/v1675357773/logo_ghli5e.jpg */}
               {/* https://res.cloudinary.com/dwxm8f25f/image/upload/v1675713948/logo_sktnut_1_jwy2hk.png */}
-              <img className='img' src='https://ucarecdn.com/2d5f1822-0735-4ec9-9024-f68bad6e39db/269840025_452152916535842_4269873123222669231_n.jpg' alt="Powerhouse-lb Logo" />
+              <img className='img' src='https://scontent.fbey22-1.fna.fbcdn.net/v/t39.30808-6/332283481_557200736388103_8455728849948258771_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=GenbSrn9aNEAX_Kq0Dy&_nc_ht=scontent.fbey22-1.fna&oh=00_AfBTbHltR6y0ifLPlgDazEAaHOYenFmdN1w1BxlMTcHD6w&oe=642D2EFF' alt="Powerhouse-lb Logo" />
             </Link>
           </div>
           <Typography component='h1' sx={{ fontSize: '.9em' }}  className='footer-p white'>
-            We are Powerhouse european electronics supplier based in Lebanon, we sell various products of any house product you can think of, we deliver to all lebanon
+            We are Teen Tops. Best electronics supplier based in Lebanon, we sell various products of any house product you can think of, we deliver to all lebanon.
           </Typography>
           {/* <ul className="site-footer__social-networks">
           <li><a href="https://www.facebook.com/profile.php?id=100063581229923" rel="noreferrer" target='_blank'><i className="icon-facebook"></i></a></li>
@@ -45,19 +45,19 @@ const Footer = () => (
             <li className='link-title'>Contact</li>
             <li><a href="#"> Lebanon/Beirut Online</a></li>
             
-            <li><a href="https://www.facebook.com/online.european.outlet/" target="_blank" rel="noreferrer" >Facebook</a></li>
+            <li><a href="https://www.facebook.com/profile.php?id=100076163602459/" target="_blank" rel="noreferrer" >Facebook</a></li>
 
-            <li><a href="https://www.instagram.com/power_house_european/" target="_blank" rel="noreferrer" >@power_house_european</a></li>
+            <li><a href="https://www.instagram.com/teen__tops___electronic/" target="_blank" rel="noreferrer" >@teen__tops___electronic</a></li>
             <li><a href={'https://wa.me/76600541'} rel="noreferrer" target='_blank' >{` +961 76600541`}</a></li>
           </ul>
         </div>
       </div>
     </div>
 
-    <div className="site-footer__bottom bg" style={{color:'white'}}>
+    <div className="site-footer__bottom bg" style={{color:'white',borderTop:"1px solid white"}}>
       <div className="container bg" style={{color:'white'}}>
         <p>Website Developed By{' '}
-          <a style={{ color: 'blue' }} href={`${process.env.NEXT_PUBLIC_US || 'https://www.onbeirut.com'}`}>OnBeirut Web Agency </a></p>
+          <a style={{ color: 'white' }} href={`${process.env.NEXT_PUBLIC_US || 'https://www.onbeirut.com'}`}>OnBeirut Web Agency </a></p>
       </div>
     </div>
   </footer>

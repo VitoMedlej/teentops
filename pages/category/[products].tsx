@@ -74,7 +74,7 @@ const Index = ({data,count}:any) => {
   return (
     <>
     <Head>
-    <title>Powerhouse lb Electronics | Shop By Category </title>
+    <title>Teentops lb Electronics | Shop By Category </title>
         <meta name="robots" content="index,follow"/>
 {/* <meta name="description" content="Power house provide a wide range of European electronics (stock and new)" /> */}
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />

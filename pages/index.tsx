@@ -31,7 +31,7 @@ export default function Home({data :staticData,category}:{category:any,data:any}
     return (
     <>
       <Head>
-        <title>Powerhouse electronics | Buy European electronics and home appliances in Lebanon</title>
+        <title>TeenTops electronics | Buy Best Electronics and home appliances in Lebanon</title>
         <meta name="robots" content="index,follow"/>
 {/* <meta name="description" content="Power house provide a wide range of European electronics (stock and new)" /> */}
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
@@ -56,10 +56,10 @@ export default function Home({data :staticData,category}:{category:any,data:any}
 {/* <meta property="og:description" content="Power house provide a wide range of European electronics (stock and new)" /> */}
      
 <meta name="og:description" content={`
-        Powerhouse electronics is your destination to buy european electronics and home appliances online in Lebanon. Best online shopping store for the latest electronics and home appliances from all brands. We Deliver anywhere in Lebanon
+        Teen Tops electronics is your destination to buy european electronics and home appliances online in Lebanon. Best online shopping store for the latest electronics and home appliances from all brands. We Deliver anywhere in Lebanon
         `} />
        <meta name="description" content={`
-        Powerhouse electronics is your destination to buy european electronics and home appliances online in Lebanon. Best online shopping store for the latest electronics and home appliances from all brands. We Deliver anywhere in Lebanon
+        Teen Tops electronics is your destination to buy european electronics and home appliances online in Lebanon. Best online shopping store for the latest electronics and home appliances from all brands. We Deliver anywhere in Lebanon
         `} />
         <meta name="viewport" content="width=device-width, initial-scale=1" /> 
       </Head>
@@ -70,20 +70,20 @@ export default function Home({data :staticData,category}:{category:any,data:any}
       <main>
       
       <MainCarousel/>
-      <CategoryImages/>
-      <WhatsApp/>
-      <ProductCollection data={data && data.slice(0,6)} setQuickView={setQuickView} Collectiontitle='Latest Products '/>      
-      
-      <FullscreenPoster img='https://contentgrid.thdstatic.com/hdus/en_US/DTCCOMNEW/fetch/NexGen/ContentPage/SBS22-ASP-Hero-DSK-A.png'/>
-      <ProductCollection data={data && data.slice(6,23)} setQuickView={setQuickView} Collectiontitle='Top Sellers'/>      
       <CategoryList/>
-      <ProductCollection data={data && data.slice(12,18)} setQuickView={setQuickView} Collectiontitle='Recommended Products '/>      
-        { data && data?.slice(12,16)?.length > 0 &&
+      {/* <CategoryImages/> */}
+      <WhatsApp/>
+      <ProductCollection data={data && data.slice(0,10)} setQuickView={setQuickView} Collectiontitle='Latest Products '/>      
+      
+      <ProductCollection data={data && data.slice(10,23)} setQuickView={setQuickView} Collectiontitle='Top Sellers'/>      
+      <ProductCollection data={data && data.slice(23,40)} setQuickView={setQuickView} Collectiontitle='Recommended Products '/>      
+        { data && data?.slice(40,55)?.length > 0 &&
 
-          <ProductCollection data={data && data.slice(18,30)} setQuickView={setQuickView} Collectiontitle='Best Of The Best'/>      
+          <ProductCollection data={data && data.slice(40,55)} setQuickView={setQuickView} Collectiontitle='Best Of The Best'/>      
         }
 
       {/* <FullscreenPoster img='https://cdn.shopify.com/s/files/1/0317/1831/0026/files/shop_now_1800_x600_b3aa621e-b818-4478-8679-7d16e108de14_1200x.png?v=1613728741'/> */}
+<FullscreenPoster img='https://ucarecdn.com/7e0cff24-4faa-44b5-9e5f-94eb78b5db6e/BlackYellowBoldBagFashionSaleBanner2.jpg'/>
      
         <QuickView setQuickView={setQuickView} productId={quickView.productId} isOpen={quickView.isOpen}/>
         </main>

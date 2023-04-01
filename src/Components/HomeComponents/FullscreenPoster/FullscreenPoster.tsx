@@ -4,8 +4,8 @@ const FullscreenPoster = ({img} : {
     img: string
 }) => {
     return (
-        <Box className='pointer' sx={{margin:'0 auto',py:'1em',width:'100%',maxWidth:'lg'}}>
-            <img className='img 'src={img} alt="" />
+        <Box className='pointer' sx={{margin:'0 auto',py:'1em',width:'100%',maxHeight:'450px',maxWidth:'lg'}}>
+            <img className='img 'src={img} alt="Fullscreen post teentops electornics sale" style={{maxHeight:'450px'}} />
         </Box>
         // <Box
         //     sx={{

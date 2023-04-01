@@ -1,6 +1,6 @@
 import {Box} from '@mui/material'
 import React from 'react'
-import ResponsiveImage from '../../ResponsiveImage/ResponsiveImage'
+// import ResponsiveImage from '../../ResponsiveImage/ResponsiveImage'
 import { useRouter } from 'next/router'
 
 // https://www.azadea.com/dw/image/v2/BGHW_PRD/on/demandware.static/-/Library-Si
@@ -37,7 +37,7 @@ const CategoryList = () => {
                 }
             }}>
 {/* https://www.ishtari.com/image/data/system_banner/10000/1800/1675/shoes-web.png */}
-                {[`https://ucarecdn.com/23ec6ddc-322b-43b2-a292-3adb4f24b4d3/sg1113421023030py7f1w12t6nv92.jpg`, 'https://d1pjg4o0tbonat.cloudfront.net/content/dam/midea-aem/us/holiday-campaign-2022-/Range%20Banner.jpg'].map(i => {
+                {[`https://ucarecdn.com/7d1ad969-6fd1-4010-b54f-905a25a5e4c7/WhiteElegantKitchenSuppliesAndToolsBanner1.png`, 'https://ucarecdn.com/d67cbaac-3ab5-4126-a0e6-7b2d85c1b566/GreenMinimalistModernOnlineShopBanner1.jpg'].map(i => {
             
                     return  <Box key={i} className='pointer' sx={{height:'300px',width:{xs:'49%'}}}>
                                 <>

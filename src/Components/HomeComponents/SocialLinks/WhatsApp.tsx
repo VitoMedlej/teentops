@@ -35,7 +35,7 @@ const WhatsApp = () => {
                 background: 'green',
                 color: 'white'
             }}>
-                <AiOutlineWhatsApp fontSize='large'/>
+                <AiOutlineWhatsApp fontSize='1.75em'/>
             </IconButton>
         </Box>
         </a>
