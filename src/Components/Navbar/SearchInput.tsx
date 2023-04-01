@@ -1,12 +1,9 @@
 import * as React from 'react';
 import Paper from '@mui/material/Paper';
 import InputBase from '@mui/material/InputBase';
-// import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
-// import MenuIcon from '@mui/icons-material/Menu';
-import SearchIcon from '@mui/icons-material/Search';
+import {AiOutlineSearch} from 'react-icons/ai';
 import { useRouter } from 'next/router';
-// import DirectionsIcon from '@mui/icons-material/Directions';
 
 export default function CustomizedInputBase({sx,onSubmit,value,setValue}:{onSubmit:(e: React.FormEvent<HTMLFormElement> )=>void,value:string,setValue:any,sx?:any}) {
   const router = useRouter()
@@ -39,7 +36,7 @@ export default function CustomizedInputBase({sx,onSubmit,value,setValue}:{onSubm
         onClick={()=>        router.push(`/category/products?limit=10&search=${value}`)
       }
       type="submit" className='searchIcon bg white trans' sx={{borderRadius:0,p: '10px' }} aria-label="search">
-        <SearchIcon />
+        <AiOutlineSearch />
       </IconButton>
      
     </Paper>

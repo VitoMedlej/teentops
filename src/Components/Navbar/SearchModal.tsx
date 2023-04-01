@@ -4,7 +4,8 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import { IconButton, TextField } from '@mui/material';
-import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
+import {AiOutlineSearch} from 'react-icons/ai';
+
 import SearchInput from './SearchInput';
 import { useRouter } from 'next/router';
 

@@ -10,8 +10,8 @@ h1, h2 , h3 , h4,p {
 }
 // $clr : #b98d70;
 // $clr : #c57540;
-$clr : #935525;
-
+$clr : #ea1d1d;
+$clr2 : #0a0a0a;
 
 .clr {
     color :$clr !important
@@ -28,7 +28,12 @@ $clr : #935525;
     }
 }
 .bg {
-    background: $clr !important;
+    background: $clr2 !important;
+}
+.icon-css {
+    position: absolute;
+right: 2%;
+
 }
 .trans {
     transition: 0.2s ease;

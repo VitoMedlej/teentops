@@ -6,12 +6,11 @@ import { Box, Button, Divider, IconButton, Tooltip, Typography } from '@mui/mate
 import ProductCarousel from '../../src/Components/ProductCarousel/ProductCarousel'
 import SelectOneForm from '../../src/Components/ProductsComponents/Filter/Forms/SelectOneForm'
 // import { QuantityPicker } from 'react-qty-picker';
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import {MdFavoriteBorder} from 'react-icons/md';
 import ProductCollection from '../../src/Components/HomeComponents/ProductCollection/ProductCollection'
 import CategoryMenu from '../../src/Components/HomeComponents/CategoryMenu/CategoryMenu'
 import Perks from '../../src/Components/HomeComponents/Perks/Perks'
-import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
-import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import {AiOutlineShoppingCart,AiOutlineWhatsApp} from 'react-icons/ai';
 import ItemTabs from '../../src/Components/ItemComponents/ItemTabs'
 import Link from 'next/link'
 import Btn from '../../src/Components/Btn/Btn'
@@ -92,7 +91,7 @@ const Index = ({data,collection}:any) => {
       <Btn
       onClick={()=>{addToCart(data?._id,{_id:data._id,price:data.price,img:data.images[0],title:data.title},false);router.push('/cart')}}
                             sx={{...btnStyle,mx:'.25em',minWidth:'150px'}}>Add To Cart
-                        <ShoppingCartOutlinedIcon/>
+                        <AiOutlineShoppingCart/>
                            </Btn>
                               
                         <Tooltip title='Add to favourites'>
@@ -100,20 +99,21 @@ const Index = ({data,collection}:any) => {
                         <IconButton
                             sx={{
                             border: 'none',
-                            ml:'.45em'
+                            ml:'.45em',
+                            mr:".1em"
                         }}>
-                            <FavoriteBorderIcon
-                                sx={{
-                                mr: '.1em',
-                                color: 'red'
-                            }}
+                            <MdFavoriteBorder
+                                  color= 'red'
+                            //     sx={{
+                            //     mr: '.1em',
+                            // }}
                                 fontSize={'small'}/>
                         </IconButton>
                         </Tooltip>
 
       </Box>
       <Typography className='gray' sx={{textAlign:'center'}}>or</Typography>
-      <a href='https://wa.me/+96170873045' target='_blank'   rel="noreferrer"
+      <a href='https://wa.me/+96176600541' target='_blank'   rel="noreferrer"
       
 
     
@@ -125,7 +125,7 @@ style={{width:'max-content',margin: '0 auto',color:'green',display: 'flex'}}
      sx={{width:'max-content',gap:'.5em',
      justifyContent:'center', mx:0,padding: '.65em 1.63em',margin:'0 auto',background:'transparent',
      border:'none'}}>Order On WhatsApp
-                    <WhatsAppIcon/>
+                    <AiOutlineWhatsApp/>
                     </Box> 
                     </a>                          
       {/* <>

@@ -1,23 +1,17 @@
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
-// import Typography from '@mui/material/Typography';
-// import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
-import LocalMallOutlinedIcon from '@mui/icons-material/LocalMallOutlined';
-import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import { useContext, useEffect, useState } from 'react';
 import { CartContext, DrawerContext } from '../../../pages/_app';
 import SearchModal from './SearchModal';
 import Link from 'next/link';
-import SearchInput from './SearchInput';
+// import SearchInput from './SearchInput';
 import { Badge, Typography } from '@mui/material';
 import { loadState } from '../../Utils/LocalstorageFn';
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import { useRouter } from 'next/router';
-import SideBar from '../Drawer/SideBar';
-
+// import SideBar from '../Drawer/SideBar';
+import {AiOutlineShoppingCart,AiOutlineSearch,AiOutlineMenu} from 'react-icons/ai'
 
 export default function Navbar() {
     const [open, setOpen] = useContext(DrawerContext);
@@ -45,19 +39,21 @@ export default function Navbar() {
    
     
     return (
-        <Box sx={{
-            background: 'black',
+        <Box 
+        className='bg'
+        sx={{
+            // background: '#232323',
 
             flexGrow: 1
         }}>
             <AppBar
-                className='bb'
+                className='bb bg'
                 sx={{
                     maxWidth:'xl',
                     margin:'0 auto',
                 // background: 'white',
-                color: 'black',
-            background: 'black',
+                // color: '#232323',
+            // background: '#232323',
 
                 boxShadow: 'none'
             }}position="static">
@@ -77,7 +73,7 @@ export default function Navbar() {
                         <Link href='/' color='inherit'>
                             <img
                             className='img'
-                            src="https://ucarecdn.com/1a583360-d59b-465b-b237-bcd749db05d4/d5115caa07cd46c18b86b85f7f0d263a.jpeg"
+                            src="https://ucarecdn.com/2d5f1822-0735-4ec9-9024-f68bad6e39db/269840025_452152916535842_4269873123222669231_n.jpg"
                             alt="Powerhouse electronics eshop logo"/>
                         </Link>
                     </Box>
@@ -89,11 +85,11 @@ export default function Navbar() {
                         display: 'flex',
                     }}>
                         <Box >
-                            <SearchInput
+                            {/* <SearchInput
                             onSubmit={handleSearch}
                             value={q}
                             setValue={setQ}
-                            sx={{display:{xs:'none',sm:'flex'}}}/>
+                            sx={{display:{xs:'none',sm:'flex'}}}/> */}
                             </Box>
                             <Box 
                             sx={{    width: '100%',
@@ -101,12 +97,14 @@ export default function Navbar() {
                             className='flex right'>
 
                             <IconButton
-                             sx={{display:{xs:'flex',sm:'none'},color:'white'}}
+                             sx={{display:{xs:'flex'},color:'white'}}
                             onClick={()=>setOpenModal(!openModal)}
                             color='inherit'>
  
-                             <SearchOutlinedIcon/>
- 
+                             <AiOutlineSearch/>
+                             <Typography sx={{display:{xs:'none',sm:'flex'}}} component='p'>
+                            Search
+                            </Typography>
                          </IconButton> 
 
 
@@ -116,17 +114,17 @@ export default function Navbar() {
                         >
                         <Badge color='warning' badgeContent={`${localCart.length || '0'}`} >
 
-                            <LocalMallOutlinedIcon
-                            
-                             sx={{color:'white'}} />
+                            <AiOutlineShoppingCart
+                            color='white'
+                            //  sx={{}}
+                              />
                             </Badge>
                             <Typography sx={{display:{xs:'none',sm:'flex'}}} component='p'>
-                            cart
+                            Cart
                             </Typography>
                         </IconButton>
 
-
-                        <IconButton 
+                        {/* <IconButton 
                         onClick={()=>setCartOpen(!cartOpen)}
                         sx={{display:{xs:'none',sm:'flex'}}}
                         >
@@ -137,7 +135,7 @@ export default function Navbar() {
                             <Typography sx={{color:'white',display:{xs:'none',sm:'flex'}}} component='p'>
                             favourites
                             </Typography>
-                        </IconButton>
+                        </IconButton> */}
                         <IconButton
                         
                         onClick={()=>setOpen(!open)}
@@ -150,7 +148,7 @@ export default function Navbar() {
                             margin:'0.1em',
                             display:{sm:'none'},
                     }}>
-                        <MenuIcon/>
+                        <AiOutlineMenu/>
                     </IconButton>
                     </Box>
 

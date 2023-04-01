@@ -1,8 +1,6 @@
 import { Box, IconButton, Typography } from '@mui/material'
-import DeleteForever from '@mui/icons-material/DeleteForever';
-import RemoveRedEye from '@mui/icons-material/RemoveRedEye';
-// import { QuantityPicker } from 'react-qty-picker';
-// import { QuantityPicker } from '';
+import {ImCancelCircle} from 'react-icons/im';
+import {AiOutlineDelete,AiOutlineEye} from 'react-icons/ai';
 import Btn from '../Btn/Btn';
 import { QuantityPicker } from '../QuantityPicker/QuantityPicker';
 // import { loadState, saveState } from '../../Utils/LocalstorageFn';
@@ -109,7 +107,9 @@ const CartProduct = ({onChange,_id,price,category,title,remove,qty,img}:ICartIte
                             
                         Remove
                         </Typography>
-                        <DeleteForever sx={{fontSize:'1.5em'}}/> 
+                        <AiOutlineDelete 
+                        // sx={{fontSize:'1.5em'}}
+                        /> 
                     </Btn>
                     
                 </Box>

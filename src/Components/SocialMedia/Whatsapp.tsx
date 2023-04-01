@@ -1,9 +1,9 @@
 import { Box, IconButton } from "@mui/material"
-import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import {AiOutlineWhatsApp} from 'react-icons/ai';
 
 const WhatsApp = () => {
     return (
-        <a href='https://wa.me/+96170873045' target='_blank'   rel="noreferrer">
+        <a href='https://wa.me/+96176600541' target='_blank'   rel="noreferrer">
         <div
             style={{
             display: 'flex',
@@ -24,7 +24,8 @@ const WhatsApp = () => {
                 padding: '1em.75em',
                 borderRadius: '6px'
             }}>
-                +961 70873045
+                
+                +961 76600541 
             </div>
      
 
@@ -37,7 +38,9 @@ const WhatsApp = () => {
                 background: 'green',
                 color: 'white'
             }}>
-                <WhatsAppIcon fontSize='large'/>
+                <AiOutlineWhatsApp 
+                // fontSize='large'
+                />
             </IconButton>
             {/* <div style={{width:'60px',height:'60px'}}>
                

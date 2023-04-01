@@ -6,7 +6,7 @@ import CategoryMenu from '../src/Components/HomeComponents/CategoryMenu/Category
 import {Box, Divider, Typography} from '@mui/material'
 import {NextSeo} from 'next-seo';
 import Link from 'next/link'
-import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
+import {AiOutlineShoppingCart} from 'react-icons/ai';
 import Btn from '../src/Components/Btn/Btn'
 import CartProduct from '../src/Components/Products/CartProduct'
 import Perks from '../src/Components/HomeComponents/Perks/Perks'
@@ -46,7 +46,7 @@ const EmptyCartAlert = () => {
                         mt: 3
                     }}>
                         Shop Products
-                        <ShoppingBasketIcon/>
+                        <AiOutlineShoppingCart/>
                     </Btn>
                 </Link>
             </Box>

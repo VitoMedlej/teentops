@@ -7,8 +7,9 @@ import Typography from '@mui/material/Typography';
 import {Dispatch, SetStateAction, useEffect} from 'react';
 import {Box,CircularProgress} from '@mui/material';
 import ProductCarousel from '../ProductCarousel/ProductCarousel';
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import CloseIcon from '@mui/icons-material/Close';
+import {MdFavoriteBorder} from 'react-icons/md';
+import {AiOutlineCloseCircle} from 'react-icons/ai';
+
 import useCart from '../../Hooks/useCart';
 import Btn from '../Btn/Btn';
 import { getById } from '../../../pages/product/[productId]';
@@ -145,14 +146,12 @@ productId && <>
                         <IconButton
                             sx={{
                             border: 'none',
-                            mt: '.25em'
+                            mt: '.25em',
+                            mr:'.1em'
                         }}>
-                            <FavoriteBorderIcon
-                                sx={{
-                                mr: '.1em',
-                                color: 'red'
-                            }}
-                                fontSize={'small'}/>
+                            <MdFavoriteBorder
+                                color= 'red'
+                                />
                             <Typography color='black' fontSize='.5em'>Add To Favorites</Typography>
                         </IconButton>
 
@@ -171,7 +170,7 @@ productId && <>
             right: 0,
             color: 'red'
         }}>
-            <CloseIcon/>
+            <AiOutlineCloseCircle/>
         </IconButton>
 </>
 }
