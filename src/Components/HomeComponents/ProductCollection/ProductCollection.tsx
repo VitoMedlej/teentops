@@ -35,6 +35,8 @@ const ProductCollection = ({sx,Collectiontitle,data,setQuickView} : {
                 sx={{
                 padding: '.5em',
                 fontSize: '1.75em',
+                textAlign:'center',
+                borderBottom:'1px solid #00000026',
                 fontWeight: '500'
             }}>{Collectiontitle}</Box>
             {/* <Box
@@ -80,9 +82,9 @@ const ProductCollection = ({sx,Collectiontitle,data,setQuickView} : {
             </Box>
             <Link  href='/category/products' className="decor-none">
 
-            <Btn v2={true}
+            <Btn
 
-                sx={{border:'none',fontSize:'11px',margin:'2em auto',':hover':{background:'white'}}}>View All</Btn>
+                sx={{border:'none',fontSize:'11px',padding:'.75em 3.5em',margin:'2em auto',':hover':{color:'black !important'}}}>View All</Btn>
                 </Link>
         
                 </Box>

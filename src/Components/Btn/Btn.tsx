@@ -8,14 +8,14 @@ let style1 = {
         background: '#1a4671'
     },
     display: 'flex',
-    borderRadius: '6px',
+    borderRadius: '0',
     py: 1,
     px: 2,
     fontSize: '10px'
 }
 let style2 = {
     color: '#1a4671',
-    borderRadius: '6px',
+    borderRadius: '0',
     display: 'flex',
 
     ml: 1,

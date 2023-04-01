@@ -1,5 +1,5 @@
 import { Box, IconButton, Typography } from '@mui/material'
-import {ImCancelCircle} from 'react-icons/im';
+// import {ImCancelCircle} from 'react-icons/im';
 import {AiOutlineDelete,AiOutlineEye} from 'react-icons/ai';
 import Btn from '../Btn/Btn';
 import { QuantityPicker } from '../QuantityPicker/QuantityPicker';
@@ -103,13 +103,14 @@ const CartProduct = ({onChange,_id,price,category,title,remove,qty,img}:ICartIte
                     <Btn 
                     onClick={()=>remove(_id)}
                     v2={true} sx={{border:'none',padding:0,mx:0,mt:1,':hover':{background:'white'},fontSize:'.6em'}}>
-                        <Typography sx={{pt:'.1em',fontWeight:'600',fontSize:'1em'}}>
+                        <AiOutlineDelete 
+                        color='red'
+                       size='1.25em'
+                        /> 
+                        <Typography sx={{pt:'.1em',color:'red',fontWeight:'600',fontSize:'1em'}}>
                             
                         Remove
                         </Typography>
-                        <AiOutlineDelete 
-                        // sx={{fontSize:'1.5em'}}
-                        /> 
                     </Btn>
                     
                 </Box>

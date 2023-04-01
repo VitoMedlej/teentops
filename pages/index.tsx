@@ -66,7 +66,7 @@ export default function Home({data :staticData,category}:{category:any,data:any}
       
       <TopAd/>
       <Navbar />
-      <CategoryMenu category={category}/>
+      {/* <CategoryMenu category={category}/> */}
       <main>
       
       <MainCarousel/>

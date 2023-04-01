@@ -3,8 +3,8 @@ import {Typography } from '@mui/material'
 // import Logo from '../../assets/icons/logo';
 
 const Footer = () => (
-  <footer className="site-footer bg" style={{color:'white',background:'#232323'}}>
-    <div className="container bg" style={{color:'white',background:'#232323'}}>
+  <footer className="site-footer bg" style={{color:'white',background:'#172029'}}>
+    <div className="container bg" style={{color:'white',background:'#172029'}}>
       <div className="site-footer__top bg">
         <div className="site-footer__description">
           <div className='logos cursor'>

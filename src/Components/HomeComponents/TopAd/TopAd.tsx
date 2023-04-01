@@ -6,9 +6,11 @@ const TopAd = () => {
 
     <Box
     // className='bg '
-
-    sx={{textAlign:'center',fontSize:'.7em',py:'.5em',
-    background:'#3d4859',
+     
+    sx={{
+      borderBottom:'1px solid #404040',
+      textAlign:'center',fontSize:'.7em',py:'.65em',
+    background:'#172029',
     color:"white"}}>    
     🚛التوصيل مؤمن الى جميع المناطق اللبنانية عبر خدمة الديلفري
   |  📲whatsapp:76600541

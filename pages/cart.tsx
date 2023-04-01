@@ -57,7 +57,7 @@ const EmptyCartAlert = () => {
 const Cart = () => {
     const [cartItems,setCartItems] = useState<ICartItem[]>([])
     const total= totalCal(cartItems) || 0; 
-    let localCart : ICartItem[] = loadState('usercart') || []
+    let localCart : ICartItem[] = loadState('usercart2') || []
     useEffect(() => {
         if (localCart) {
             
@@ -73,7 +73,7 @@ const Cart = () => {
     }
     const remove = (id:string) => {
         let state = cartItems.filter(x => `${x._id}` !== id);
-         saveState('usercart', state);
+         saveState('usercart2', state);
          setCartItems(state);
      }
     return (

@@ -22,7 +22,7 @@ export default function Navbar() {
     
     // const localCart = [1]
     useEffect(() => {
-        const cart = loadState('usercart') || []
+        const cart = loadState('usercart2') || []
         if (cart) {
 
             setLocalCart(cart)
@@ -68,7 +68,7 @@ export default function Navbar() {
                         // right: '50%',
                         // transform: 'translateX(50%)'
                         // ,
-                        width:'95px'
+                        width:'75px'
                     }}>
                         <Link href='/' color='inherit'>
                             <img
@@ -77,6 +77,7 @@ export default function Navbar() {
                             alt="Powerhouse electronics eshop logo"/>
                         </Link>
                     </Box>
+                  
                     <Box
                         sx={{
                         width: '100%',
@@ -84,6 +85,7 @@ export default function Navbar() {
                         justifyContent: {xs:'right',sm:'left'},
                         display: 'flex',
                     }}>
+                        
                         <Box >
                             {/* <SearchInput
                             onSubmit={handleSearch}
@@ -91,8 +93,41 @@ export default function Navbar() {
                             setValue={setQ}
                             sx={{display:{xs:'none',sm:'flex'}}}/> */}
                             </Box>
+                            <Box sx={{display:{xs:'none',sm:'flex'},justifyContent:'center',alignItems:'center',color:'white',flex:1,gap:'1.25em'}}>
+                            <Box  sx={{cursor:'pointer'}}  onClick={()=>router.push(`/`)}>
+                        <Typography sx={{
+                            fontWeight: '600',
+                            color:"white",
+                        textTransform: 'capitalize'
+                    }} component='h4'>
+                        Home
+                        </Typography>
+
+                </Box>
+                <Box  sx={{cursor:'pointer'}}  onClick={()=>router.push(`/category/products`)}>
+                        <Typography sx={{
+                            fontWeight: '600',
+                            color:"white",
+                        textTransform: 'capitalize'
+                    }} component='h4'>
+                        Products
+                        </Typography>
+
+                </Box>
+                <Box  sx={{cursor:'pointer'}}  onClick={()=>router.push(`/checkout`)}>
+                        <Typography sx={{
+                            fontWeight: '600',
+                            color:"white",
+                        textTransform: 'capitalize'
+                    }} component='h4'>
+                        Checkout
+                        </Typography>
+
+                </Box>
+                    </Box>
                             <Box 
-                            sx={{    width: '100%',
+                            sx={{    
+                                // width: '100%',
                                 justifyContent: 'end',}}
                             className='flex right'>
 
@@ -112,7 +147,7 @@ export default function Navbar() {
                         onClick={()=>setCartOpen(!cartOpen)}
                         sx={{color:'white'}}
                         >
-                        <Badge color='warning' badgeContent={`${localCart.length || '0'}`} >
+                        <Badge color='primary' badgeContent={`${localCart.length || '0'}`} >
 
                             <AiOutlineShoppingCart
                             color='white'

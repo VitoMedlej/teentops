@@ -70,7 +70,7 @@ export default function Checkout() {
     };
     const saved = activeStep === steps.length
     const saveOrder = async () => {
-  const products = loadState('usercart')
+  const products = loadState('usercart2')
 
       const total = totalCal(products) 
       if (products && info && total) {

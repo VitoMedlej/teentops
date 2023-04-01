@@ -11,7 +11,7 @@ const MainCarousel = () => {
     return (
         <Box
             sx={{
-            py: {xs:'.75em',sm:'2em',md:'3em'},
+            // py: {xs:'.75em',sm:'2em',md:'3em'},
             width: '100%',
             maxWidth: 'lg',
             maxHeight:'400px',

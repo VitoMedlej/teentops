@@ -50,7 +50,7 @@ export const totalCal = (products:ICartItem[]) => {
 }  
 export default function Review({setActiveStep}:{setActiveStep:any}) {
 
-  const products = loadState('usercart')
+  const products = loadState('usercart2')
   const info = loadState('info')
 
   const total = totalCal(products) 
