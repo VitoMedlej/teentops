@@ -27,7 +27,8 @@ const CategoryMenu = ({category}:{category:string[] | undefined}) => {
                 return <Box  sx={{cursor:'pointer'}} key={item} onClick={()=>router.push(`/category/${item.replace(/\s+/g, '-')}`)}>
                     {/* <Link key={item} > */}
                         <Typography sx={{
-                            fontWeight: '600',
+                            fontWeight: '300',
+                            fontSize:'.9em',
                             color:"black",
                         textTransform: 'capitalize'
                     }} component='h4'>

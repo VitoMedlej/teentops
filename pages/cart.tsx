@@ -68,7 +68,7 @@ const Cart = () => {
     const refetchState = () => {
         // let localCart : ICartItem[] = loadState('usercart') || []
 
-        setCartItems(loadState('usercart'))
+        setCartItems(loadState('usercart2'))
         
     }
     const remove = (id:string) => {
@@ -161,7 +161,7 @@ const Cart = () => {
                     }}>Order Total</Typography>
                     <Typography sx={{
                       fontWeight: '600'
-                    }}>${cartItems?.length > 0 ? total + Number(process.env.NEXT_PUBLIC_FEE) : 0}</Typography>
+                    }}>${cartItems?.length > 0 ? total + Number(process.env.NEXT_PUBLIC_FEE || 0) : 0}</Typography>
                     
                     </Box>
                     <Link href='/checkout'
@@ -188,9 +188,9 @@ const Index = () => {
     return ( <>
      <Head>
 
-     <title>Powerhouse electronics | Cart</title>
+     <title>Teentops electronics | Cart</title>
         <meta name="description" content={`
-        Powerhouse electronics is your destination to buy european electronics and home appliances online in Lebanon. Best online shopping store for the latest electronics and home appliances from all brands. We Deliver anywhere in Lebanon
+        Teentops electronics is your destination to buy european electronics and home appliances online in Lebanon. Best online shopping store for the latest electronics and home appliances from all brands. We Deliver anywhere in Lebanon
         `} />
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         {/* <link rel="icon" href="/favicon.ico"/> */}

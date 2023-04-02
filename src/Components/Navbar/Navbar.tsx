@@ -40,18 +40,20 @@ export default function Navbar() {
     
     return (
         <Box 
-        className='bg'
+        className=''
         sx={{
-            // background: '#232323',
-
+            background: 'white',
+border:'none',
             flexGrow: 1
         }}>
             <AppBar
-            className='bb bg'
+            // className='bb '
                 sx={{
+            background: 'white',
+
                     maxWidth:'xl',
                     margin:'0 auto',
-                // background: 'white',
+                // background: 'black',
                 // color: '#232323',
             // background: '#232323',
 
@@ -73,8 +75,8 @@ export default function Navbar() {
                         <Link href='/' color='inherit'>
                             <img
                             className='img'
-                            src="https://scontent.fbey22-1.fna.fbcdn.net/v/t39.30808-6/332283481_557200736388103_8455728849948258771_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=GenbSrn9aNEAX_Kq0Dy&_nc_ht=scontent.fbey22-1.fna&oh=00_AfBTbHltR6y0ifLPlgDazEAaHOYenFmdN1w1BxlMTcHD6w&oe=642D2EFF"
-                            alt="Powerhouse electronics eshop logo"/>
+                            src={`https://ucarecdn.com/6e360177-750f-4671-8b74-edbc38f20c90/337875439_610147264297606_3941855933110310434_nremovebgpreview.png`}
+                            alt="Teen Tops electronics eshop logo"/>
                         </Link>
                     </Box>
                   
@@ -93,11 +95,11 @@ export default function Navbar() {
                             setValue={setQ}
                             sx={{display:{xs:'none',sm:'flex'}}}/> */}
                             </Box>
-                            <Box sx={{display:{xs:'none',sm:'flex'},justifyContent:'center',alignItems:'center',color:'white',flex:1,gap:'1.25em'}}>
+                            <Box sx={{display:{xs:'none',sm:'flex'},justifyContent:'center',alignItems:'center',color:'black',flex:1,gap:'1.25em'}}>
                             <Box  sx={{cursor:'pointer'}}  onClick={()=>router.push(`/`)}>
                         <Typography sx={{
                             fontWeight: '600',
-                            color:"white",
+                            color:"black",
                         textTransform: 'capitalize'
                     }} component='h4'>
                         Home
@@ -107,7 +109,7 @@ export default function Navbar() {
                 <Box  sx={{cursor:'pointer'}}  onClick={()=>router.push(`/category/products`)}>
                         <Typography sx={{
                             fontWeight: '600',
-                            color:"white",
+                            color:"black",
                         textTransform: 'capitalize'
                     }} component='h4'>
                         Products
@@ -117,7 +119,7 @@ export default function Navbar() {
                 <Box  sx={{cursor:'pointer'}}  onClick={()=>router.push(`/checkout`)}>
                         <Typography sx={{
                             fontWeight: '600',
-                            color:"white",
+                            color:"black",
                         textTransform: 'capitalize'
                     }} component='h4'>
                         Checkout
@@ -132,7 +134,7 @@ export default function Navbar() {
                             className='flex right'>
 
                             <IconButton
-                             sx={{display:{xs:'flex'},color:'white'}}
+                             sx={{display:{xs:'flex'},color:'black'}}
                             onClick={()=>setOpenModal(!openModal)}
                             color='inherit'>
  
@@ -145,12 +147,12 @@ export default function Navbar() {
 
                         <IconButton 
                         onClick={()=>setCartOpen(!cartOpen)}
-                        sx={{color:'white'}}
+                        sx={{color:'black'}}
                         >
                         <Badge color='primary' badgeContent={`${localCart.length || '0'}`} >
 
                             <AiOutlineShoppingCart
-                            color='white'
+                            color='black'
                             //  sx={{}}
                               />
                             </Badge>
@@ -165,9 +167,9 @@ export default function Navbar() {
                         >
                         <Badge color='warning' badgeContent={`0`} >
 
-                            <FavoriteBorderIcon sx={{color:'white'}} />
+                            <FavoriteBorderIcon sx={{color:'black'}} />
                             </Badge>
-                            <Typography sx={{color:'white',display:{xs:'none',sm:'flex'}}} component='p'>
+                            <Typography sx={{color:'black',display:{xs:'none',sm:'flex'}}} component='p'>
                             favourites
                             </Typography>
                         </IconButton> */}
@@ -179,7 +181,7 @@ export default function Navbar() {
                         // color="inherit"
                         aria-label="menu"
                         sx={{
-                            color:'white',
+                            color:'black',
                             margin:'0.1em',
                             display:{sm:'none'},
                     }}>

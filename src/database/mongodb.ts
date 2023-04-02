@@ -7,8 +7,10 @@ const { MongoClient, ServerApiVersion } = require('mongodb');
 // const uri = process.env.MONGODB_URI
 
 // const uri = `mongodb+srv://adminuser:p4FMNdyLPgU7QjdG@cluster0.pukzncm.mongodb.net/?retryWrites=true&w=majority`
-const uri = `mongodb+srv://onbeirut:8YhEHFAroTdGk6Es@cluster0.lw7l0kc.mongodb.net/?retryWrites=true&w=majority
-`
+// const uri = `mongodb+srv://onbeirut:8YhEHFAroTdGk6Es@cluster0.lw7l0kc.mongodb.net/?retryWrites=true&w=majority
+// `
+const uri = `mongodb+srv://onbeirut:8YhEHFAroTdGk6Es@cluster0.lw7l0kc.mongodb.net/?retryWrites=true&w=majority`
+
 
 
 // const uri = "mongodb+srv://adminuser:<password>@cluster0.pukzncm.mongodb.net/?retryWrites=true&w=majority";

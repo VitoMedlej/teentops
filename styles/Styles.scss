@@ -16,14 +16,19 @@ $clr2 :#172029;
 .clr {
     color :$clr !important
 }
+.clr2 {
+    color : $clr2 !important
+}
 .black {
     color:black ;
 }
-.ul-white {
+.ul-white {font-weight: 300;
     li {
+        font-weight: 300;
         color :white !important;
         a {
-        color :white !important;
+            font-weight: 300;
+            color :white !important;
         }
     }
 }
@@ -224,6 +229,7 @@ footer {
                 padding: .14em 0;
             }
             .link-title {
+                font-weight: 300;
                 padding: 0 0 .65em 0;
                 color:black;font-weight: 600 !important;
             }

@@ -9,7 +9,8 @@ const TopAd = () => {
      
     sx={{
       borderBottom:'1px solid #404040',
-      textAlign:'center',fontSize:'.7em',py:'.65em',
+      fontWeight:'300',
+      textAlign:'center',fontSize:'.7em',py:'1em',
     background:'#172029',
     color:"white"}}>    
     🚛التوصيل مؤمن الى جميع المناطق اللبنانية عبر خدمة الديلفري

@@ -2,7 +2,7 @@ import {Box, IconButton, Tooltip, Typography} from '@mui/material'
 import {useContext, useState} from 'react'
 import {useRef} from 'react'
 import {MdFavoriteBorder} from 'react-icons/md';
-import {CiCircleRemove} from 'react-icons/ci';
+import {AiOutlineEye} from 'react-icons/ai';
 import {AiOutlineShoppingCart} from 'react-icons/ai';
 import { useRouter } from 'next/router';
 // import Link from 'next/link';
@@ -92,6 +92,10 @@ const ProductCard = ({title,_id,price,images,category,sx, handleQuickView,classN
                         transform: {
                             sm: 'translateY(50%)'
                         },
+                        top : {
+                            xs:'8%',
+                            sm:'auto'
+                        },
                         display: {
                             xs: 'flex',
                             sm: ' none'
@@ -109,14 +113,16 @@ const ProductCard = ({title,_id,price,images,category,sx, handleQuickView,classN
                                 },
                                 background: 'white',
                                 color: '#333',
+                                width:'40px',
+                                height:'40px',
                                 display: {
-                                    xs: 'none',
+                                    // xs: 'none',
                                     sm: 'flex'
                                 },
                                 boxShadow: '1px 1px 3px grey'
 
                             }}>
-                                <CiCircleRemove fontSize={'small'}/>
+                                <AiOutlineEye fontSize={'.8em'}/>
                             </IconButton>
                         </Tooltip>
 
@@ -126,49 +132,60 @@ const ProductCard = ({title,_id,price,images,category,sx, handleQuickView,classN
                                 ':hover': {
                                     background: 'white'
                                 },
+                                width:'40px',
+                                height:'40px',
                                 background: 'white',
                                 color: '#333',
                                 boxShadow: '1px 1px 3px grey'
                             }}>
-                                <MdFavoriteBorder fontSize={'small'}/>
+                                <MdFavoriteBorder fontSize={'.8em'}/>
                             </IconButton>
                         </Tooltip>
 
                     </Box>
                 </Box>
-                
+                <Box sx={{width:'100%',textAlign:'center'}}>
+
+                <span className='gray' style={{fontSize:'.76em'}}>
+                    {category}
+                    </span>
+                </Box>
                 <Typography
                 className='titleMax'
                 onClick={()=>handleClick()}
                     sx={{
                     
                     pt: '.25em',
+                    textAlign:'center',
                     cursor:'pointer',
                     width:'100%',
+                    fontWeight:'600',
                     mt: '.25em',
-                    fontSize: '1em'
-                }}>{title}</Typography>
+                    fontSize: '.9em'
+                }}>{title ? title : 'Product' }</Typography>
 
-                <span className='gray' style={{fontSize:'.76em'}}>
-                    {category}
-                    </span>
-            <Box sx={{mx:'.15em',justifyContent:'space-between'}} className='flexed'>
+                
+            <Box sx={{mx:'.15em',display:'flex',justifyContent:'space-between'}} className='flexed col'>
                 <Typography
-                    className='clr'
+                    className={'clr2'}
                     sx={{
+                    textAlign:'center',
+                        pb:1,
+                        fontWeight:'600',
+                        width:'100%',
                     fontSize: '1em'
-                }}>${price}</Typography>
+                }}>{price ? `$${price}` : 'Whatsapp for price'} </Typography>
              
                 <Tooltip title='Add To Cart' placement='left'>
                 <Btn
                 v2={true}
                 onClick={()=>addToCart(_id,{price,img,title,_id})}
-                sx={{':hover':{background:'#935525',color:'white',border:'1px solid #935525'}}}>
+                sx={{width:'90%',mt:'.5em',':hover':{background:'#1a4671',color:'white',border:'1px solid #1a4671'}}}>
                        <Typography
                    className='flex items-center'
                    sx={{fontSize:'.75em',gap:'.3em'}}>
 
-                   add to cart <AiOutlineShoppingCart  />
+                   add to cart <AiOutlineShoppingCart fontSize='2em'  />
                    </Typography>
                 </Btn>
                 </Tooltip>

@@ -5,7 +5,7 @@ import { Dispatch, SetStateAction } from 'react'
 import Btn from '../../Btn/Btn'
 import Link from 'next/link'
 import { IProduct } from '../../../Types/Types'
-
+import {BsArrowUpRight} from 'react-icons/bs'
 const ProductCollection = ({sx,Collectiontitle,data,setQuickView} : {
     Collectiontitle: string,
     data: IProduct[] | null,
@@ -36,9 +36,19 @@ const ProductCollection = ({sx,Collectiontitle,data,setQuickView} : {
                 padding: '.5em',
                 fontSize: '1.75em',
                 textAlign:'center',
-                borderBottom:'1px solid #00000026',
-                fontWeight: '500'
+            
+                fontWeight: '300'
             }}>{Collectiontitle}</Box>
+                  <Link  href='/category/products' className="decor-none">
+<Btn
+className='clr2'
+    sx={{
+        backgroundColor:'white',
+        
+        borderBottom:'1px solid #00000026',gap:'.5em',fontSize:'11px',padding:'.75em 3.5em',margin:'0em auto',':hover':{color:'black !important'}}}>View All
+    <BsArrowUpRight/>
+    </Btn>
+    </Link>
             {/* <Box
                 sx={{
                 display: {
@@ -80,12 +90,7 @@ const ProductCollection = ({sx,Collectiontitle,data,setQuickView} : {
                       handleQuickView={handleQuickView}
                 data={data && data.length >0 && data?.slice(0,4)}/>
             </Box>
-            <Link  href='/category/products' className="decor-none">
-
-            <Btn
-
-                sx={{border:'none',fontSize:'11px',padding:'.75em 3.5em',margin:'2em auto',':hover':{color:'black !important'}}}>View All</Btn>
-                </Link>
+      
         
                 </Box>
                 
