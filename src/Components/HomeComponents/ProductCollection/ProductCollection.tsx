@@ -44,7 +44,7 @@ const ProductCollection = ({sx,Collectiontitle,data,setQuickView} : {
 className='clr2'
     sx={{
         backgroundColor:'white',
-        
+        color:'black !important',
         borderBottom:'1px solid #00000026',gap:'.5em',fontSize:'11px',padding:'.75em 3.5em',margin:'0em auto',':hover':{color:'black !important'}}}>View All
     <BsArrowUpRight/>
     </Btn>

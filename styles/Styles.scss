@@ -263,6 +263,9 @@ footer {
 .wrap {
     flex-wrap: wrap !important;
 }
+.invert {
+    filter : invert(1) !important;
+}
 .pointer {
     cursor: pointer !important;
 }

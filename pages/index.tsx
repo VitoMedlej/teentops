@@ -71,13 +71,20 @@ export default function Home({data :staticData,category}:{category:any,data:any}
       <CategoryList/>
       {/* <CategoryImages/> */}
       <WhatsApp/>
-      <ProductCollection data={data && data.slice(0,10)} setQuickView={setQuickView} Collectiontitle='Latest Products '/>      
+      <ProductCollection data={data && data.slice(0,6)} setQuickView={setQuickView} Collectiontitle='Latest Products '/>      
       
-      <ProductCollection data={data && data.slice(10,23)} setQuickView={setQuickView} Collectiontitle='Top Sellers'/>      
-      <ProductCollection data={data && data.slice(23,40)} setQuickView={setQuickView} Collectiontitle='Recommended Products '/>      
-        { data && data?.slice(40,55)?.length > 0 &&
+     
+      <ProductCollection data={data && data.slice(6,15)} setQuickView={setQuickView} Collectiontitle='Top Sellers'/>      
+    
+    
+      { data && data?.slice(15,22)?.length > 0 &&
+      <ProductCollection data={data && data.slice(15,22) } setQuickView={setQuickView} Collectiontitle='Recommended Products '/>      
+}
 
-          <ProductCollection data={data && data.slice(40,55)} setQuickView={setQuickView} Collectiontitle='Best Of The Best'/>      
+
+        { data && data?.slice(22,35)?.length > 0 &&
+
+          <ProductCollection data={data && data.slice(22,35)} setQuickView={setQuickView} Collectiontitle='Best Of The Best'/>      
         }
 
       {/* <FullscreenPoster img='https://cdn.shopify.com/s/files/1/0317/1831/0026/files/shop_now_1800_x600_b3aa621e-b818-4478-8679-7d16e108de14_1200x.png?v=1613728741'/> */}

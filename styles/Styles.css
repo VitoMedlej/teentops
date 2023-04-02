@@ -255,6 +255,10 @@ footer .site-footer__bottom div p {
   flex-wrap: wrap !important;
 }
 
+.invert {
+  filter: invert(1) !important;
+}
+
 .pointer {
   cursor: pointer !important;
 }
