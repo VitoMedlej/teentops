@@ -64,7 +64,7 @@ export default function Home({data :staticData,category}:{category:any,data:any}
       
       <TopAd/>
       <Navbar />
-      {/* <CategoryMenu category={category}/> */}
+      <CategoryMenu category={category}/>
       <main>
       
       <MainCarousel/>
@@ -88,7 +88,7 @@ export default function Home({data :staticData,category}:{category:any,data:any}
         }
 
       {/* <FullscreenPoster img='https://cdn.shopify.com/s/files/1/0317/1831/0026/files/shop_now_1800_x600_b3aa621e-b818-4478-8679-7d16e108de14_1200x.png?v=1613728741'/> */}
-<FullscreenPoster img='https://ucarecdn.com/7e0cff24-4faa-44b5-9e5f-94eb78b5db6e/BlackYellowBoldBagFashionSaleBanner2.jpg'/>
+<FullscreenPoster img='https://ucarecdn.com/96f3a42e-18bd-4871-92a5-4cb0ca861560/Capture.JPG'/>
      
         <QuickView setQuickView={setQuickView} productId={quickView.productId} isOpen={quickView.isOpen}/>
         </main>

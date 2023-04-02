@@ -17,7 +17,7 @@ const CategoryList = () => {
             margin: '0 auto',
              my: '4em',
         }}>
-            <h1 style={{marginBottom:'1em',marginLeft:'.25em',fontWeight:'400'}}>Shop By Category</h1>
+            {/* <h1 style={{marginBottom:'1em',marginLeft:'.25em',fontWeight:'400'}}>Shop By Category</h1> */}
             <Box
                 sx={{
                 display: 'flex',
@@ -37,9 +37,11 @@ const CategoryList = () => {
                 }
             }}>
 {/* https://www.ishtari.com/image/data/system_banner/10000/1800/1675/shoes-web.png */}
-                {[`https://ucarecdn.com/7d1ad969-6fd1-4010-b54f-905a25a5e4c7/WhiteElegantKitchenSuppliesAndToolsBanner1.png`, 'https://ucarecdn.com/d67cbaac-3ab5-4126-a0e6-7b2d85c1b566/GreenMinimalistModernOnlineShopBanner1.jpg'].map(i => {
+                {[`https://ucarecdn.com/756a342f-effb-4a3f-b020-218b15df453f/Capture.jpg`, 'https://ucarecdn.com/551becf7-769d-4c74-8ae5-f37bbf337996/Capture.JPG'].map((i,index) => {
             
-                    return  <Box key={i} className='pointer' sx={{height:'300px',width:{xs:'49%'}}}>
+                    return  <Box key={i} className='pointer' sx={{
+                        display : {xs: index == 0 ? 'none' : 'flex',sm:'flex'},
+                        height:'300px',width:{sm:'49%'}}}>
                                 <>
                                     {/* <img className='img' src="" alt="" /> */}
                                     <img
