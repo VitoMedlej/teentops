@@ -21,7 +21,7 @@ const ProductSection = ({data,count,handlePagination,setQuickView}:{count:number
         <Box sx={{width:{xs:'100%',md:'80%'}}}> 
             <Box sx={{maxWidth:'lg'}} className='productHolder'>
                       {data && data.length > 0 ? data.map((i:any)=>{
-   if (!i.title || !i.price) return;
+   if (!i._id) return;
                          return <ProductCard
                          _id={i._id}
                          images={i.images}

@@ -14,7 +14,7 @@ const MainCarousel = () => {
             // py: {xs:'.75em',sm:'2em',md:'3em'},
             width: '100%',
             maxWidth: 'lg',
-            maxHeight:'400px',
+            maxHeight:'450px',
             borderRadius:{sm:'6px'},
             margin: '0 auto',
             display: {
@@ -34,10 +34,10 @@ const MainCarousel = () => {
                 modules={[Autoplay, Navigation]}
                 className="mySwiper swiper">
 
-                {[{img:`https://ucarecdn.com/50c157b2-c1b4-42f8-b766-03c6f424c42b/Capture1.jpg`}
+                {[{img:`https://ucarecdn.com/96f3a42e-18bd-4871-92a5-4cb0ca861560/Capture.JPG`}
                 ,
-                {img:`https://ucarecdn.com/7d1ad969-6fd1-4010-b54f-905a25a5e4c7/WhiteElegantKitchenSuppliesAndToolsBanner1.png`},
-                {img:'https://ucarecdn.com/7e0cff24-4faa-44b5-9e5f-94eb78b5db6e/BlackYellowBoldBagFashionSaleBanner2.jpg'}
+                {img:`https://ucarecdn.com/756a342f-effb-4a3f-b020-218b15df453f/Capture.jpg`},
+                {img:'https://ucarecdn.com/50c157b2-c1b4-42f8-b766-03c6f424c42b/Capture1.jpg'}
             ].map((item) => {
 
                     return <SwiperSlide 
