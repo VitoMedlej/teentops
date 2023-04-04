@@ -65,8 +65,8 @@ export default function Review({setActiveStep}:{setActiveStep:any}) {
       <List disablePadding>
         {products?.length > 0 && products.map((product:ICartItem) => (
           <ListItem key={product.title} sx={{ py: 1, px: 0 }}>
-            {`${product.qty}x `} <ListItemText primary={product.title}  />
-            <Typography variant="body2">${product.price}</Typography>
+            {`${product.qty}x `} <ListItemText primary={product.title || 'Product '}  />
+            <Typography variant="body2">${product.price || 'price'}</Typography>
           </ListItem>
         ))}
         <Divider/>
@@ -81,7 +81,7 @@ export default function Review({setActiveStep}:{setActiveStep:any}) {
 
           <ListItemText primary="Total" />
           <Typography variant="subtitle1" sx={{ fontWeight: 700 }}>
-            ${total + Number(process?.env?.NEXT_PUBLIC_FEE)}
+            ${total}
           </Typography>
         </ListItem>
       </List>

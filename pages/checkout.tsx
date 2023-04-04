@@ -1,23 +1,18 @@
 import * as React from 'react';
 import CssBaseline from '@mui/material/CssBaseline';
-import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
-import Toolbar from '@mui/material/Toolbar';
 import Paper from '@mui/material/Paper';
 import Stepper from '@mui/material/Stepper';
 import Step from '@mui/material/Step';
 import StepLabel from '@mui/material/StepLabel';
 import Button from '@mui/material/Button';
-import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import AddressForm from '../src/Components/checkoutComponents/AddressForm';
 // import PaymentForm from './PaymentForm';
 import Review, { totalCal } from '../src/Components/checkoutComponents/Review';
-import Footer from '../src/Components/Footer/Footer';
 import Navbar from '../src/Components/Navbar/Navbar';
-import Btn from '../src/Components/Btn/Btn';
 import { useEffect, useState } from 'react';
 import { loadState, saveState } from '../src/Utils/LocalstorageFn';
 import { server } from '../src/Utils/Server';
@@ -118,7 +113,7 @@ export default function Checkout() {
 <meta property="og:title" content="Teen tops electronics | Buy Best electronics and home appliances in Lebanon" />
 <meta property="og:url" content="https://teen-tops.com/" />
 <meta property="og:site_name" content="Teen Tops electronics" />
-<meta property="og:image" content="https://instagram.fbey22-1.fna.fbcdn.net/v/t51.2885-19/312182473_6421594114522894_2354893828509446990_n.jpg?stp=dst-jpg_s150x150&_nc_ht=instagram.fbey22-1.fna.fbcdn.net&_nc_cat=110&_nc_ohc=-zQWhgontngAX-aqrDz&edm=ANmP7GQBAAAA&ccb=7-5&oh=00_AfDgWCWFpW5Cz80QeqIw9MI6XF2RDx1myGfsyl1kg4wZ7g&oe=641FE23B&_nc_sid=276363" />
+<meta property="og:image" content="https://ucarecdn.com/6e360177-750f-4671-8b74-edbc38f20c90/337875439_610147264297606_3941855933110310434_nremovebgpreview.png" />
      
 <meta name="og:description" content={`
         Teentops electronics is your destination to buy european electronics and home appliances online in Lebanon. Best online shopping store for the latest electronics and home appliances from all brands. We Deliver anywhere in Lebanon

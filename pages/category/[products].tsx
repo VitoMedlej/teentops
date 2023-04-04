@@ -94,7 +94,7 @@ const Index = ({data,count}:any) => {
 <meta property="og:title" content="Teen Tops electronics | Buy European electronics and home appliances in Lebanon" />
 <meta property="og:url" content="https://teen-tops.com/" />
 <meta property="og:site_name" content="Teen tops" />
-<meta property="og:image" content="https://instagram.fbey22-1.fna.fbcdn.net/v/t51.2885-19/312182473_6421594114522894_2354893828509446990_n.jpg?stp=dst-jpg_s150x150&_nc_ht=instagram.fbey22-1.fna.fbcdn.net&_nc_cat=110&_nc_ohc=-zQWhgontngAX-aqrDz&edm=ANmP7GQBAAAA&ccb=7-5&oh=00_AfDgWCWFpW5Cz80QeqIw9MI6XF2RDx1myGfsyl1kg4wZ7g&oe=641FE23B&_nc_sid=276363" />
+<meta property="og:image" content="https://ucarecdn.com/6e360177-750f-4671-8b74-edbc38f20c90/337875439_610147264297606_3941855933110310434_nremovebgpreview.png" />
      
 <meta name="og:description" content={`
         Shop different ${router?.query?.products} from teen tops for the best european house appliances. We deliver anywhere in lebanon | Best online shop in lebanon.`} />

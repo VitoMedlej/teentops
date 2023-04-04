@@ -5,7 +5,7 @@ import { Box } from '@mui/material';
 import ProductCard from '../HomeComponents/Cards/ProductCard';
 
 
-const SwiperCarousel = ({data,      handleQuickView}:any) => {
+const SwiperCarousel = ({data, delay,     handleQuickView}:any) => {
    
     return (
         <Box
@@ -25,7 +25,7 @@ const SwiperCarousel = ({data,      handleQuickView}:any) => {
                 clickable: true,
               }}
               autoplay={{
-                delay:  1000,
+                delay:  delay || 1000,
                 disableOnInteraction: true,
               }}
               navigation={false}

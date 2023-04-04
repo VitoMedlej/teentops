@@ -6,8 +6,9 @@ import Btn from '../../Btn/Btn'
 import Link from 'next/link'
 import { IProduct } from '../../../Types/Types'
 import {BsArrowUpRight} from 'react-icons/bs'
-const ProductCollection = ({sx,Collectiontitle,data,setQuickView} : {
+const ProductCollection = ({sx,delay,Collectiontitle,data,setQuickView} : {
     Collectiontitle: string,
+    delay : number,
     data: IProduct[] | null,
     sx ?: any;
     setQuickView ?: Dispatch<SetStateAction<{
@@ -87,6 +88,7 @@ className='clr2'
                 }
             }}>
                 <SwiperCarousel
+                delay={delay}
                       handleQuickView={handleQuickView}
                 data={data && data.length >0 && data?.slice(0,4)}/>
             </Box>

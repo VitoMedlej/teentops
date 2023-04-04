@@ -55,7 +55,7 @@ const Index = ({data,collection}:any) => {
 <meta property="og:title" content="Teentops electronics | Buy Best electronics and home appliances in Lebanon" />
 <meta property="og:url" content="https://teen-tops.com/" />
 <meta property="og:site_name" content="Teen-tops" />
-<meta property="og:image" content="https://ucarecdn.com/efe1f0cd-cded-4213-a0b2-6daed82bd506/001.png" />
+<meta property="og:image" content="https://ucarecdn.com/6e360177-750f-4671-8b74-edbc38f20c90/337875439_610147264297606_3941855933110310434_nremovebgpreview.png" />
      
 <meta name="og:description" content={`
         Teen Tops electronics is your destination to buy european electronics and home appliances online in Lebanon. Best online shopping store for the latest electronics and home appliances from all brands. We Deliver anywhere in Lebanon
