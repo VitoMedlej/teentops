@@ -51,7 +51,7 @@ export default function Home({data :staticData,category}:{category:any,data:any}
 <meta property="og:title" content="Teen Tops electronics | Buy European electronics and home appliances in Lebanon" />
 <meta property="og:url" content="https://teen-tops.com/" />
 <meta property="og:site_name" content="Teen tops" />
-<meta property="og:image" content="https://ucarecdn.com/40091a81-e9c2-4931-9192-2613a81bbf09/" />
+<meta property="og:image" content="https://ucarecdn.com/6e360177-750f-4671-8b74-edbc38f20c90/337875439_610147264297606_3941855933110310434_nremovebgpreview.png" />
      
 <meta name="og:description" content={`
         Teen Tops electronics is your destination to buy european electronics and home appliances online in Lebanon. Best online shopping store for the latest electronics and home appliances from all brands. We Deliver anywhere in Lebanon
