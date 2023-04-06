@@ -133,8 +133,7 @@ export async function  getStaticProps() {
   try {
 
  
-  // const res = await getAll()
-  const res : any = {data:null}
+  const res = await getAll()
 
   if (!res || !res?.data) {
     return {

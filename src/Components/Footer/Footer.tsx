@@ -37,11 +37,11 @@ const Footer = () => (
         <iframe style={{height:'100%',width:'100%',border:0}} frameBorder="0" src="https://www.google.com/maps/embed/v1/place?q=Beirut,+Lebanon&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe>
         </div> */}
           <ul className=' ul-white'>
-            <li className='link-title'>Shopping online</li>
-            <li><a href="#">Order Status</a></li>
-            <li><a href="#">Shipping and Delivery</a></li>
-            <li><a href="#">Returns</a></li>
-            <li><a href="#">Payment options</a></li> 
+            <li className='link-title'>Site links</li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/category/products">All Products</a></li> 
+            <li><a href="/cart">Cart</a></li>
+            <li><a href="/checkout">checkout</a></li>
             <li><a href="#">Contact Us</a></li>
           </ul>
      

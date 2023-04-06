@@ -431,11 +431,11 @@ button[disabled] {
 }
 @media (min-width: 767px) {
   .site-footer .site-footer__bottom {
-    padding: 23px 0;
+    padding: 16px 0;
   }
 }
 .site-footer .site-footer__bottom .container {
-  font-size: 11px;
+  font-size: 15px;
   text-align: center;
 }
 @media (min-width: 767px) {

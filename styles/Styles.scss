@@ -244,7 +244,6 @@ footer {
     .site-footer__bottom {
         div {
             p{
-
             
         align-items: center;
         text-align: center;
@@ -463,10 +462,10 @@ $breakpoints: (
       padding: 10px 0;
       border-top: 1px solid #EBEBEB;
       @include breakpoint(phone) {
-        padding: 23px 0;
+        padding: 16px 0;
       }
       .container {
-        font-size: 11px;
+        font-size: 15px;
         text-align: center;
         @include breakpoint(phone) {
           font-size: 16px;

@@ -20,7 +20,40 @@ const CategoryList = () => {
             {/* <h1 style={{marginBottom:'1em',marginLeft:'.25em',fontWeight:'400'}}>Shop By Category</h1> */}
             <Box
                 sx={{
-                display: 'flex',
+                display: {xs:'flex',sm:'none'},
+               
+                flexDirection: {
+                    xs: 'row',
+                    // md: 'row'
+                },
+                alignItems: {
+                    xs: 'center',
+                    md: 'initial'
+                },
+                flexWrap:'wrap',
+                justifyContent: {
+                    // xs: 'center',
+                    xs: 'space-between'
+                }
+            }}>
+ <Box  className='pointer' sx={{
+                        // display : {xs: index == 0 ? 'none' : 'flex',sm:'flex'},
+                        height:'300px',width:{sm:'49%'}}}>
+                                <>
+                                    {/* <img className='img' src="" alt="" /> */}
+                                    <img
+                                    onClick={()=>handleClick()}
+                                        src={'https://ucarecdn.com/551becf7-769d-4c74-8ae5-f37bbf337996/Capture.JPG'}
+                                        className='img contain'
+                                        alt='Category Image'
+                                        // img2={'https://www.ishtari.com/image/data/system_banner/10000/1800/1699/faucet-tools-app.png'}
+                                    />
+                                </>
+                    </Box>
+            </Box>
+            <Box
+                sx={{
+                display: {xs:'none',sm:'flex'},
                
                 flexDirection: {
                     xs: 'row',
