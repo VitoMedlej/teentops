@@ -38,16 +38,16 @@ const Footer = () => (
         </div> */}
           <ul className=' ul-white'>
             <li className='link-title'>Site links</li>
-            <li><a href="/">Home</a></li>
-            <li><a href="/category/products">All Products</a></li> 
-            <li><a href="/cart">Cart</a></li>
-            <li><a href="/checkout">checkout</a></li>
-            <li><a href="#">Contact Us</a></li>
+            <li><Link  href="/">Home</Link></li>
+            <li><Link href="/category/products">All Products</Link></li> 
+            <li><Link href="/cart">Cart</Link></li>
+            <li><Link href="/checkout">checkout</Link></li>
+            <li><Link href="#">Contact Us</Link></li>
           </ul>
      
           <ul  className='ul-white' style={{color:'black'}}>
             <li className='link-title'>Contact</li>
-            <li><a href="#"> Lebanon/Beirut Online</a></li>
+            <li><Link href="#"> Lebanon/Beirut Online</Link></li>
             
             <li><a href="https://www.facebook.com/profile.php?id=100076163602459/" target="_blank" rel="noreferrer" >Facebook</a></li>
 
