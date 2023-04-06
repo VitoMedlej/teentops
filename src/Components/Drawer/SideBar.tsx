@@ -1,18 +1,18 @@
-import {useContext, useState} from 'react';
+import {useContext} from 'react';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
-import Button from '@mui/material/Button';
 import List from '@mui/material/List';
 import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import { Categories, DrawerContext } from '../../../pages/_app';
-import {MdOutlineBlender,MdPrecisionManufacturing,MdOutlineCoffeeMaker,MdOutlineCancel} from 'react-icons/md';
+import { DrawerContext } from '../../../pages/_app';
+import {MdPrecisionManufacturing,MdOutlineCancel} from 'react-icons/md';
 import { IconButton } from '@mui/material';
 import { useRouter } from 'next/router';
 import {BiCategoryAlt} from 'react-icons/bi';
+import SMicons from '../Footer/SMicons';
 
 
 export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
@@ -96,6 +96,7 @@ export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
         })
         
         }
+      <SMicons/>
       </List>
       <Divider />
       

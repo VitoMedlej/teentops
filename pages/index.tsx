@@ -16,8 +16,9 @@ import {server} from '../src/Utils/Server'
 import CategoryImages from '../src/Components/HomeComponents/CategoryImages/CategoryImages';
 import Btn from '../src/Components/Btn/Btn';
 import { IProduct } from '../src/Types/Types';
-import { Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import { Categories } from './_app';
+import { Container } from 'semantic-ui-react';
 
 export default function Home({data :staticData,category}:{category:any,data:any}) {
   
@@ -31,7 +32,7 @@ export default function Home({data :staticData,category}:{category:any,data:any}
     return (
     <>
       <Head>
-        <title>TeenTops electronics | Buy Best Electronics and home appliances in Lebanon</title>
+        <title>Teentops Electronics | Shop Applicances & Tech Accessories</title>
         <meta name="robots" content="index,follow"/>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
 <meta name="distribution" content="Global"/>
@@ -42,19 +43,19 @@ export default function Home({data :staticData,category}:{category:any,data:any}
 <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
 <meta httpEquiv="content-language" content="en" />
 <meta name="theme-color" content="#935525" />
-<meta content="teen-tops.com" name="author" />
+<meta content="teentops-lb.com" name="author" />
 
-<link rel="canonical" href="https://teen-tops.com/" />
-<link rel="alternate" href="https://teen-tops.com/" hrefLang="en"/>
+<link rel="canonical" href="https://teentops-lb.com/" />
+<link rel="alternate" href="https://teentops-lb.com/" hrefLang="en"/>
 
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Teen Tops electronics | Buy European electronics and home appliances in Lebanon" />
-<meta property="og:url" content="https://teen-tops.com/" />
+<meta property="og:title" content="Teentops Electronics | Shop Applicances & Tech Accessories" />
+<meta property="og:url" content="https://teentops-lb.com/" />
 <meta property="og:site_name" content="Teen tops" />
 <meta property="og:image" content="https://ucarecdn.com/6e360177-750f-4671-8b74-edbc38f20c90/337875439_610147264297606_3941855933110310434_nremovebgpreview.png" />
      
 <meta name="og:description" content={`
-        Teen Tops electronics is your destination to buy european electronics and home appliances online in Lebanon. Best online shopping store for the latest electronics and home appliances from all brands. We Deliver anywhere in Lebanon
+        Teen Tops electronics is your destination to buy the best electronics and home appliances online in Lebanon. Best online shopping store for the latest electronics and home appliances from all brands. We Deliver anywhere in Lebanon
         `} />
        <meta name="description" content={`
         Teen Tops electronics is your destination to buy european electronics and home appliances online in Lebanon. Best online shopping store for the latest electronics and home appliances from all brands. We Deliver anywhere in Lebanon
@@ -71,28 +72,42 @@ export default function Home({data :staticData,category}:{category:any,data:any}
       <CategoryList/>
       {/* <CategoryImages/> */}
       <WhatsApp/>
-      <ProductCollection delay={1000} data={data && data.slice(0,6)} setQuickView={setQuickView} Collectiontitle='Latest Products '/>      
+      <ProductCollection delay={1200} data={data && data.slice(0,6)} setQuickView={setQuickView} Collectiontitle='Latest Products '/>      
       
      
-      <ProductCollection delay={1200} data={data && data.slice(6,15)} setQuickView={setQuickView} Collectiontitle='Top Sellers'/>      
+      <ProductCollection delay={1400} data={data && data.slice(6,15)} setQuickView={setQuickView} Collectiontitle='Top Sellers'/>      
     
+
     
       { data && data?.slice(15,22)?.length > 0 &&
-      <ProductCollection delay={1400} data={data && data.slice(15,22) } setQuickView={setQuickView} Collectiontitle='Recommended Products '/>      
+      <ProductCollection delay={1600} data={data && data.slice(15,22) } setQuickView={setQuickView} Collectiontitle='Recommended Products '/>      
 }
 
 
         { data && data?.slice(22,35)?.length > 0 &&
 
-          <ProductCollection delay={1500} data={data && data.slice(22,35)} setQuickView={setQuickView} Collectiontitle='Best Of The Best'/>      
-        }
-
+          <ProductCollection delay={1700} data={data && data.slice(22,35)} setQuickView={setQuickView} Collectiontitle='Best Of The Best'/>      
+        } 
+  
       {/* <FullscreenPoster img='https://cdn.shopify.com/s/files/1/0317/1831/0026/files/shop_now_1800_x600_b3aa621e-b818-4478-8679-7d16e108de14_1200x.png?v=1613728741'/> */}
 <FullscreenPoster img='https://ucarecdn.com/96f3a42e-18bd-4871-92a5-4cb0ca861560/Capture.JPG'/>
      
         <QuickView setQuickView={setQuickView} productId={quickView.productId} isOpen={quickView.isOpen}/>
         </main>
       <Perks/>
+            <Container className='bg py2' sx={{textAlign:"center",margin:'0 auto',width:'100%'}}>
+        <Typography component='h1' sx={{textAlign:"center",margin:'0 auto',maxWidth:'600px',fontSize:{xs:'1.75em',sm:'2em',md:'2.4em'},fontWeight:'900'}} className='white auto'>
+        About Us. The Ultimate Online Destination for Electronics in Lebanon
+        </Typography>
+        <Typography  sx={{maxWidth:'md',fontWeight:'300',textAlign:"center",my:1}} component='p' className='white auto'>
+          
+
+ In today's fast-paced world, technology and electronics are an integral part of our lives. As the demand for the latest gadgets continues to grow,
+  finding a reliable online store that offers a wide range of high-quality electronics at competitive prices becomes crucial. 
+  Enter Teentops, a Lebanon-based online store specializing in electronics.
+       
+        </Typography>
+        </Container>
     </>
   )
 }
@@ -118,7 +133,8 @@ export async function  getStaticProps() {
   try {
 
  
-  const res = await getAll()
+  // const res = await getAll()
+  const res : any = {data:null}
 
   if (!res || !res?.data) {
     return {
@@ -130,7 +146,7 @@ export async function  getStaticProps() {
   return {
     props: {
         data : res.data.reverse(),
-        category : res.category
+        category : res?.category
     },
     // Next.js will attempt to re-generate the page:
     // - When a request comes in

@@ -104,14 +104,14 @@ export default function Checkout() {
 <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
 <meta httpEquiv="content-language" content="en" />
 <meta name="theme-color" content="#935525" />
-<meta content="teen-tops.com" name="author" />
+<meta content="teentops-lb.com" name="author" />
 
-<link rel="canonical" href="https://teen-tops.com/" />
-<link rel="alternate" href="https://teen-tops.com/" hrefLang="en"/>
+<link rel="canonical" href="https://teentops-lb.com/" />
+<link rel="alternate" href="https://teentops-lb.com/" hrefLang="en"/>
 
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Teen tops electronics | Buy Best electronics and home appliances in Lebanon" />
-<meta property="og:url" content="https://teen-tops.com/" />
+<meta property="og:url" content="https://teentops-lb.com/" />
 <meta property="og:site_name" content="Teen Tops electronics" />
 <meta property="og:image" content="https://ucarecdn.com/6e360177-750f-4671-8b74-edbc38f20c90/337875439_610147264297606_3941855933110310434_nremovebgpreview.png" />
      
