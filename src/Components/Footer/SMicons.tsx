@@ -19,7 +19,7 @@ const SMicons = () => {
     <Box className='row flex' sx={{mx:.15,mt:'.55em',maxWidth:'200px'}}>
 
     {sm.map((item)=>{
-      return <a key={item.href}  className='center flex auto rounded smIcon pointer align-center gap white' href={`${item.href}`} target='_blank' rel={'noneferrer'}>
+      return <a key={item.href} rel="noreferrer"  className='center flex auto rounded smIcon pointer align-center gap white' href={`${item.href}`} target='_blank' >
 
             <item.Icon color='black' size='1.15em'/>
          </a>

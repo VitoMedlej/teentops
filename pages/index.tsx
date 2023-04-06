@@ -102,7 +102,7 @@ export default function Home({data :staticData,category}:{category:any,data:any}
         <Typography  sx={{maxWidth:'md',fontWeight:'300',textAlign:"center",my:1}} component='p' className='white auto'>
           
 
- In today's fast-paced world, technology and electronics are an integral part of our lives. As the demand for the latest gadgets continues to grow,
+ In today&apos;s fast-paced world, technology and electronics are an integral part of our lives. As the demand for the latest gadgets continues to grow,
   finding a reliable online store that offers a wide range of high-quality electronics at competitive prices becomes crucial. 
   Enter Teentops, a Lebanon-based online store specializing in electronics.
        
