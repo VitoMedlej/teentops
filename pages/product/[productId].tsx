@@ -54,7 +54,7 @@ const Index = ({data,collection}:any) => {
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Teentops electronics | Buy Best electronics and home appliances in Lebanon" />
 <meta property="og:url" content="https://teentops-lb.com/" />
-<meta property="og:site_name" content="Teen-tops" />
+<meta property="og:site_name" content="Teentops" />
 <meta property="og:image" content="https://ucarecdn.com/6e360177-750f-4671-8b74-edbc38f20c90/337875439_610147264297606_3941855933110310434_nremovebgpreview.png" />
      
 <meta name="og:description" content={`
