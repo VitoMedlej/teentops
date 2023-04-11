@@ -46,8 +46,8 @@ export default async (_req: NextApiRequest, res: NextApiResponse) => {
        const ProductsCollection = await client.db("Power").collection("Products");
 
     //    let data : any = [];
-        await ProductsCollection.find({})
-      //  const highest = await ProductsCollection.find({"price":-1}).limit(4)
+        // await ProductsCollection.find({})
+       const highest = await ProductsCollection.find({"price":-1}).limit(1)
     // const featured = await ProductsCollection.find({isFeatured:true}).limit(4)
     // const latest = await ProductsCollection.find({}).sort({_id:-1}).limit(4)
     // const category = await ProductsCollection.distinct('category')
