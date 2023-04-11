@@ -45,8 +45,8 @@ export default async (_req: NextApiRequest, res: NextApiResponse) => {
 
        const ProductsCollection = await client.db("Power").collection("Products");
 
-       let data : any = [];
-       const docs = await ProductsCollection.find({}).sort({_id: -1}).limit(55)
+    //    let data : any = [];
+        await ProductsCollection.find({})
       //  const highest = await ProductsCollection.find({"price":-1}).limit(4)
     // const featured = await ProductsCollection.find({isFeatured:true}).limit(4)
     // const latest = await ProductsCollection.find({}).sort({_id:-1}).limit(4)
@@ -56,14 +56,14 @@ export default async (_req: NextApiRequest, res: NextApiResponse) => {
     
     // const arr = [{title:'highest', data:highest} , {title: 'featured' , data :featured} ,
     // {title:  'latest',data : latest} , {title:  'category',data : category}];
-    await docs.forEach( (doc:any) =>{
-        // await data.forEach((product:any)=>{
-          // console.log('product: ', product);
-          data.push(doc)
-        // })
-        // console.log('prod: ', prod);
-        // products.push(prod);t
-      })
+    // await docs.forEach( (doc:any) =>{
+    //     // await data.forEach((product:any)=>{
+    //       // console.log('product: ', product);
+    //       data.push(doc)
+    //     // })
+    //     // console.log('prod: ', prod);
+    //     // products.push(prod);t
+    //   })
     // let limit = typeof Number(_req.query.limit) === 'number' ? Number(_req.query.limit) : 50;
     // maloma ma7sora
     // 5abera basera
@@ -78,11 +78,9 @@ export default async (_req: NextApiRequest, res: NextApiResponse) => {
     //       // console.log('products: ', products);
     //         return res.status(200).json(products);
     //       }
-    if (data.length > 0) {
 
       // return res.status(200).json({data,category});
-      return res.status(200).json({data});
-    }
+      return res.status(200).json({success:true});
 
   }
 return res.status(404).json({success:false});

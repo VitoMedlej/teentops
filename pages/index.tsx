@@ -24,9 +24,14 @@ export default function Home({data :staticData,category}:{category:any,data:any}
   
   const [quickView, setQuickView] = useState<{isOpen:boolean,productId:null | string}>({isOpen:false,productId:null})
   const [data,setData] = useState<IProduct[]>(staticData)
-  const [cates,setCates] = useContext(Categories);
-  useEffect(() => {
-    setCates(category);
+  // const [cates,setCates] = useContext(Categories);
+  const coldStart = async () => {
+    const req = await fetch(`${server}/api/cold`)
+    const res = await req.json();
+    console.log('res: ', res);
+}
+useEffect(() => {
+  coldStart()
   }, [])
 
     return (
@@ -144,8 +149,8 @@ export async function  getStaticProps() {
   }
   return {
     props: {
-        data : res.data.reverse(),
-        category : res?.category
+        data : res.data.reverse()
+        // category : res?.category
     },
     // Next.js will attempt to re-generate the page:
     // - When a request comes in
