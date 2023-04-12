@@ -13,11 +13,11 @@ import Navbar from '../src/Components/Navbar/Navbar';
 import QuickView from '../src/Components/Dialog/QuickView';
 import { useContext, useEffect, useState } from 'react';
 import {server} from '../src/Utils/Server' 
-import CategoryImages from '../src/Components/HomeComponents/CategoryImages/CategoryImages';
-import Btn from '../src/Components/Btn/Btn';
+// import CategoryImages from '../src/Components/HomeComponents/CategoryImages/CategoryImages';
+// import Btn from '../src/Components/Btn/Btn';
 import { IProduct } from '../src/Types/Types';
-import { Box, Typography } from '@mui/material';
-import { Categories } from './_app';
+import { Typography } from '@mui/material';
+// import { Categories } from './_app';
 import { Container } from 'semantic-ui-react';
 
 export default function Home({data :staticData,category}:{category:any,data:any}) {
