@@ -77,21 +77,21 @@ useEffect(() => {
       <CategoryList/>
       {/* <CategoryImages/> */}
       <WhatsApp/>
-      <ProductCollection delay={1200} data={data && data.slice(0,6)} setQuickView={setQuickView} Collectiontitle='Latest Products '/>      
       
-     
-      <ProductCollection delay={1400} data={data && data.slice(6,15)} setQuickView={setQuickView} Collectiontitle='Top Sellers'/>      
-    
-
-    
       { data && data?.slice(15,22)?.length > 0 &&
-      <ProductCollection delay={1600} data={data && data.slice(15,22) } setQuickView={setQuickView} Collectiontitle='Recommended Products '/>      
+      <ProductCollection delay={2000} data={data && data.slice(25,35) } setQuickView={setQuickView} Collectiontitle='Recommended Products '/>      
 }
+      <ProductCollection delay={1900} data={data && data.slice(15,25)} setQuickView={setQuickView} Collectiontitle='Top Sellers'/>      
+     
+      <ProductCollection delay={1600} data={data && data.slice(0,15)} setQuickView={setQuickView} Collectiontitle='Latest Products '/>      
+    
+
+    
 
 
-        { data && data?.slice(22,35)?.length > 0 &&
+        { data && data?.slice(35,55)?.length > 0 &&
 
-          <ProductCollection delay={1700} data={data && data.slice(22,35)} setQuickView={setQuickView} Collectiontitle='Best Of The Best'/>      
+          <ProductCollection delay={2100} data={data && data.slice(35,55)} setQuickView={setQuickView} Collectiontitle='Best Of The Best'/>      
         } 
   
       {/* <FullscreenPoster img='https://cdn.shopify.com/s/files/1/0317/1831/0026/files/shop_now_1800_x600_b3aa621e-b818-4478-8679-7d16e108de14_1200x.png?v=1613728741'/> */}
