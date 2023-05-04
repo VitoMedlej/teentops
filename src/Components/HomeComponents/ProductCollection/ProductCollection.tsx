@@ -90,7 +90,7 @@ className='clr2'
                 <SwiperCarousel
                 delay={delay}
                       handleQuickView={handleQuickView}
-                data={data && data.length >0 && data?.slice(0,20)}/>
+                data={data && data.length >0 && data?.slice(0,25)}/>
             </Box>
       
         

@@ -78,16 +78,14 @@ useEffect(() => {
       {/* <CategoryImages/> */}
       <WhatsApp/>
       
+      <ProductCollection delay={1600} data={data && data.slice(0,15)} setQuickView={setQuickView} Collectiontitle='Latest Products '/>      
       { data && data?.slice(15,22)?.length > 0 &&
       <ProductCollection delay={2000} data={data && data.slice(25,35) } setQuickView={setQuickView} Collectiontitle='Recommended Products '/>      
 }
       <ProductCollection delay={1900} data={data && data.slice(15,25)} setQuickView={setQuickView} Collectiontitle='Top Sellers'/>      
      
-      <ProductCollection delay={1600} data={data && data.slice(0,15)} setQuickView={setQuickView} Collectiontitle='Latest Products '/>      
     
-
-    
-
+<FullscreenPoster img='https://ucarecdn.com/96f3a42e-18bd-4871-92a5-4cb0ca861560/Capture.JPG'/>
 
         { data && data?.slice(35,55)?.length > 0 &&
 
@@ -95,7 +93,6 @@ useEffect(() => {
         } 
   
       {/* <FullscreenPoster img='https://cdn.shopify.com/s/files/1/0317/1831/0026/files/shop_now_1800_x600_b3aa621e-b818-4478-8679-7d16e108de14_1200x.png?v=1613728741'/> */}
-<FullscreenPoster img='https://ucarecdn.com/96f3a42e-18bd-4871-92a5-4cb0ca861560/Capture.JPG'/>
      
         <QuickView setQuickView={setQuickView} productId={quickView.productId} isOpen={quickView.isOpen}/>
         </main>
@@ -104,7 +101,7 @@ useEffect(() => {
         <Typography component='h1' sx={{textAlign:"center",margin:'0 auto',maxWidth:'600px',fontSize:{xs:'1.75em',sm:'2em',md:'2.4em'},fontWeight:'900'}} className='white auto'>
         About Us. The Ultimate Online Destination for Electronics in Lebanon
         </Typography>
-        <Typography  sx={{maxWidth:'md',fontWeight:'300',textAlign:"center",my:1}} component='p' className='white auto'>
+        <Typography  sx={{maxWidth:'md',fontWeight:'300',textAlign:"center",margin:1}} component='p' className='white auto'>
           
 
  In today&apos;s fast-paced world, technology and electronics are an integral part of our lives. As the demand for the latest gadgets continues to grow,
@@ -149,7 +146,7 @@ export async function  getStaticProps() {
   }
   return {
     props: {
-        data : res.data.reverse()
+        data : res.data
         // category : res?.category
     },
     // Next.js will attempt to re-generate the page:

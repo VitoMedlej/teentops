@@ -27,7 +27,7 @@ export default async (_req: NextApiRequest, res: NextApiResponse) => {
        let docs = search ?
       //  await ProductsCollection.find({ $text: {$search: `${search}` }}).limit(limit ) :
  await ProductsCollection.find({ $or : [{title: {$regex: `${search}`,'$options' : 'i' }},{description: {$regex: `${search}`,'$options' : 'i' }},{category: {$regex: `${search}` }}  ]    }).sort({_id: -1}).skip(skip).limit(limit ) :
-       category ? await ProductsCollection.find({category}).sort({_id: -1}).skip(skip).limit(limit) :
+       category ? await ProductsCollection.find({category}).sort({_id: -1}).skip(skip).limit(50) :
        await ProductsCollection.find({}).sort({_id: -1}).skip(skip).limit(limit)
        let count;
        if (totalCount) count =  await ProductsCollection.count()

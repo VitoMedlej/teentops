@@ -15,7 +15,7 @@ const CategoryList = () => {
         <Box sx={{
             maxWidth: 'lg',
             margin: '0 auto',
-             my: '4em',
+            py:{md:4}
         }}>
             {/* <h1 style={{marginBottom:'1em',marginLeft:'.25em',fontWeight:'400'}}>Shop By Category</h1> */}
             <Box
@@ -43,7 +43,7 @@ const CategoryList = () => {
                                     {/* <img className='img' src="" alt="" /> */}
                                     <img
                                     onClick={()=>handleClick()}
-                                        src={'https://ucarecdn.com/551becf7-769d-4c74-8ae5-f37bbf337996/Capture.JPG'}
+                                        src={'https://ucarecdn.com/b577fefb-135c-450a-9a4e-f344d686fdd8/teenad3.JPG'}
                                         className='img contain'
                                         alt='Category Image'
                                         // img2={'https://www.ishtari.com/image/data/system_banner/10000/1800/1699/faucet-tools-app.png'}
@@ -70,7 +70,7 @@ const CategoryList = () => {
                 }
             }}>
 {/* https://www.ishtari.com/image/data/system_banner/10000/1800/1675/shoes-web.png */}
-                {[`https://ucarecdn.com/756a342f-effb-4a3f-b020-218b15df453f/Capture.jpg`, 'https://ucarecdn.com/551becf7-769d-4c74-8ae5-f37bbf337996/Capture.JPG'].map((i,index) => {
+                {[`https://ucarecdn.com/756a342f-effb-4a3f-b020-218b15df453f/Capture.jpg`, 'https://ucarecdn.com/b577fefb-135c-450a-9a4e-f344d686fdd8/teenad3.JPG'].map((i,index) => {
             
                     return  <Box key={i} className='pointer' sx={{
                         display : {xs: index == 0 ? 'none' : 'flex',sm:'flex'},
