@@ -55,7 +55,7 @@ const SwiperCarousel = ({data, delay,     handleQuickView}:any) => {
 
             {data && data.length>0 && data.map((item:any) => {
                     if (!item._id) return
-                        return <SwiperSlide>
+                        return <SwiperSlide key={item._id}>
                             {/* <Box sx={{background:'blue',height:'300px',width:'100%'}}>hello</Box> */}
                             <ProductCard 
                         handleQuickView={handleQuickView}
