@@ -46,9 +46,10 @@ export default async (_req: NextApiRequest, res: NextApiResponse) => {
        const ProductsCollection = await client.db("Power").collection("Products");
 
        let data : any = [];
+       let data2 : any =[]
        const docs = await ProductsCollection.find({}).sort({_id: -1}).limit(55)
       //  const highest = await ProductsCollection.find({"price":-1}).limit(4)
-    // const featured = await ProductsCollection.find({isFeatured:true}).limit(4)
+    const kitchenProducts = await ProductsCollection.find({category:'kitchen appliances'}).limit(20)
     // const latest = await ProductsCollection.find({}).sort({_id:-1}).limit(4)
     // const category = await ProductsCollection.distinct('category')
     // console.log('category: ', category);
@@ -56,6 +57,14 @@ export default async (_req: NextApiRequest, res: NextApiResponse) => {
     
     // const arr = [{title:'highest', data:highest} , {title: 'featured' , data :featured} ,
     // {title:  'latest',data : latest} , {title:  'category',data : category}];
+    await kitchenProducts.forEach( (doc:any) =>{
+      // await data.forEach((product:any)=>{
+        // console.log('product: ', product);
+        data2.push(doc)
+      // })
+      // console.log('prod: ', prod);
+      // products.push(prod);t
+    });
     await docs.forEach( (doc:any) =>{
         // await data.forEach((product:any)=>{
           // console.log('product: ', product);
@@ -81,7 +90,7 @@ export default async (_req: NextApiRequest, res: NextApiResponse) => {
     if (data.length > 0) {
 
       // return res.status(200).json({data,category});
-      return res.status(200).json({data});
+      return res.status(200).json({data,data2});
     }
 
   }

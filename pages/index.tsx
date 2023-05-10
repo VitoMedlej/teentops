@@ -20,15 +20,15 @@ import { Typography } from '@mui/material';
 // import { Categories } from './_app';
 import { Container } from 'semantic-ui-react';
 
-export default function Home({data :staticData,category}:{category:any,data:any}) {
+export default function Home({data :staticData,data2,category}:{data2:any,category:any,data:any}) {
   
   const [quickView, setQuickView] = useState<{isOpen:boolean,productId:null | string}>({isOpen:false,productId:null})
-  const [data,setData] = useState<IProduct[]>(staticData)
+  const [data,setData] = useState<{staticData:IProduct[],data2:IProduct[]}>({staticData,data2})
   // const [cates,setCates] = useContext(Categories);
   const coldStart = async () => {
     const req = await fetch(`${server}/api/cold`)
     const res = await req.json();
-    console.log('res: ', res);
+
 }
 useEffect(() => {
   coldStart()
@@ -78,19 +78,19 @@ useEffect(() => {
       {/* <CategoryImages/> */}
       <WhatsApp/>
       
-      <ProductCollection delay={1600} data={data && data.slice(0,15)} setQuickView={setQuickView} Collectiontitle='Latest Products '/>      
-      { data && data?.slice(15,22)?.length > 0 &&
-      <ProductCollection delay={2000} data={data && data.slice(25,35) } setQuickView={setQuickView} Collectiontitle='Recommended Products '/>      
+      <ProductCollection delay={1600} data={data && data.staticData.slice(0,25)} setQuickView={setQuickView} Collectiontitle='Latest Products - أحدث المنتجات'/>      
+      { data && data?.staticData.slice(15,22)?.length > 0 &&
+      <ProductCollection delay={2000} data={data && data.staticData.slice(25,35) } setQuickView={setQuickView} Collectiontitle='Best Products - أفضل المنتجات '/>      
 }
-      <ProductCollection delay={1900} data={data && data.slice(15,25)} setQuickView={setQuickView} Collectiontitle='Top Sellers'/>      
+        { data && data?.data2?.length > 0 &&
+
+          <ProductCollection delay={2100} data={data.data2} setQuickView={setQuickView} Collectiontitle='Kitchen Appliances - أدوات المطبخ'/>      
+        } 
+      <ProductCollection delay={1900} data={data && data.staticData.slice(15,25)} setQuickView={setQuickView} Collectiontitle='More Deals - المزيد من العروضات'/>      
      
     
 <FullscreenPoster img='https://ucarecdn.com/96f3a42e-18bd-4871-92a5-4cb0ca861560/Capture.JPG'/>
 
-        { data && data?.slice(35,55)?.length > 0 &&
-
-          <ProductCollection delay={2100} data={data && data.slice(35,55)} setQuickView={setQuickView} Collectiontitle='Best Of The Best'/>      
-        } 
   
       {/* <FullscreenPoster img='https://cdn.shopify.com/s/files/1/0317/1831/0026/files/shop_now_1800_x600_b3aa621e-b818-4478-8679-7d16e108de14_1200x.png?v=1613728741'/> */}
      
@@ -136,8 +136,8 @@ export async function  getStaticProps() {
 
  
   const res = await getAll()
-
-  if (!res || !res?.data) {
+    // const res = require('../dummy.json')
+    if (!res || !res?.data || !res.data2) {
     return {
       props: {
         data: null,
@@ -146,7 +146,9 @@ export async function  getStaticProps() {
   }
   return {
     props: {
-        data : res.data
+        // data : res.data
+        data :res.data,
+        data2 : res.data2
         // category : res?.category
     },
     // Next.js will attempt to re-generate the page:

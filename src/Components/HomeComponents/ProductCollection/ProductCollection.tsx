@@ -1,5 +1,4 @@
-import {Box, Button, Typography} from '@mui/material'
-import ProductCard from '../Cards/ProductCard'
+import {Box} from '@mui/material'
 import SwiperCarousel from '../../SwiperCarousel/SwiperCarousel'
 import { Dispatch, SetStateAction } from 'react'
 import Btn from '../../Btn/Btn'

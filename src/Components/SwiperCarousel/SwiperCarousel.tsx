@@ -29,39 +29,35 @@ const SwiperCarousel = ({data, delay,     handleQuickView}:any) => {
                 disableOnInteraction: true,
               }}
               navigation={false}
-            spaceBetween={8}
+            spaceBetween={10}
+            slidesPerView={1}
+            slidesPerGroup={1}
             modules={[FreeMode,Autoplay, Pagination]}
             breakpoints={{
+                200 : {
+                    slidesPerView:1,
+                },
+                540: {
+                    slidesPerView: 2,
+                  },
+                  
+                  1024: {
+                    slidesPerView: 3,
+                  },
+                  1240: {
+                    slidesPerView: 4,
+                  },
                 
-                200: {
-                    width: 310,
-                    slidesPerView: 1
-                },
-                768: {
-                    width: 768,
-                    slidesPerView: 2
-                },
-             
                
-        }}>
+        }}
+        
+        >
 
             {data && data.length>0 && data.map((item:any) => {
                     if (!item._id) return
-                return <SwiperSlide className='swiper-wrapper1' style={{width:'100%',height:'100%'}} key={item._id}>
-                    {/* <HouseCard
-                        img={property.images[0] || property.images[1]}
-                        width='95%'
-                        id={property.id}
-                        isFeatured={isFeatured !== undefined ? isFeatured : true}
-                        propertySize={property.propertySize}
-                        type={property.type}
-                        baths={property.bathrooms}
-                        rooms={property.rooms}
-                        currency={property.currency}
-                        price={property.price}
-                        title={property.title}
-                        location={property.location}/> */}
-                         <ProductCard 
+                        return <SwiperSlide>
+                            {/* <Box sx={{background:'blue',height:'300px',width:'100%'}}>hello</Box> */}
+                            <ProductCard 
                         handleQuickView={handleQuickView}
                          title={item.title}
                          images={item.images}
@@ -69,7 +65,30 @@ const SwiperCarousel = ({data, delay,     handleQuickView}:any) => {
                          _id={item._id}
                          category={item.category}
                          />
-                </SwiperSlide>
+                        </SwiperSlide>
+                    // return <SwiperSlide className='swiper-wrapper1' style={{width:'100%',height:'100%'}} key={item._id}>
+                //     {/* <HouseCard
+                //         img={property.images[0] || property.images[1]}
+                //         width='95%'
+                //         id={property.id}
+                //         isFeatured={isFeatured !== undefined ? isFeatured : true}
+                //         propertySize={property.propertySize}
+                //         type={property.type}
+                //         baths={property.bathrooms}
+                //         rooms={property.rooms}
+                //         currency={property.currency}
+                //         price={property.price}
+                //         title={property.title}
+                //         location={property.location}/> */}
+                //          <ProductCard 
+                //         handleQuickView={handleQuickView}
+                //          title={item.title}
+                //          images={item.images}
+                //          price={item.price}
+                //          _id={item._id}
+                //          category={item.category}
+                //          />
+                // </SwiperSlide>
 
             })
 }

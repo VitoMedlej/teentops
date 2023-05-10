@@ -1,0 +1,569 @@
+  [
+    {
+      "_id": "64557063d85e02599df001cf",
+      "title": "مروحة طاقة شمسية",
+      "price": "65",
+      "weight": "",
+      "description": "مروحةتعمل على الطاقة الشمسية تخدم وقت ٥ساعات ",
+      "isFeatured": false,
+      "category": "electronics",
+      "images": [ "https://ucarecdn.com/12ddf711-4d84-41f6-b7ca-0f6c451d6cb3/" ]
+    },
+    {
+      "_id": "64556ff0d85e02599df001ce",
+      "title": "T5",
+      "price": "4",
+      "weight": "",
+      "description": "T5\n120سم",
+      "isFeatured": false,
+      "category": "electronics",
+      "images": [ "https://ucarecdn.com/b898369d-2144-4ac7-8bad-b53d847bcd57/" ]
+    },
+    {
+      "_id": "64556fa8d85e02599df001cd",
+      "title": "T5",
+      "price": "3",
+      "weight": "",
+      "description": "T5\n٩٠سم",
+      "isFeatured": false,
+      "category": "electronics",
+      "images": [ "https://ucarecdn.com/d1462e48-fe88-4bee-90df-e743a79b9989/" ]
+    },
+    {
+      "_id": "64556f05d85e02599df001cc",
+      "title": "T5",
+      "price": "2.75",
+      "weight": "",
+      "description": "T5\n٦٠سم",
+      "isFeatured": false,
+      "category": "electronics",
+      "images": [ "https://ucarecdn.com/51b3d9e8-94cb-4d0b-b357-dd9cbfc6ecf7/" ]
+    },
+    {
+      "_id": "64556eb9d85e02599df001cb",
+      "title": "T5. ",
+      "price": "2",
+      "weight": "",
+      "description": "T5\n٣٠سم ",
+      "isFeatured": "false",
+      "category": "electronics",
+      "images": [ "https://ucarecdn.com/ae0fdfca-e783-458d-b201-dd1efb628f68/" ]
+    },
+    {
+      "_id": "645437957fc8c18a03bf6058",
+      "title": "ابليك حائط ",
+      "price": "12",
+      "weight": "",
+      "description": "ابليك حائط ",
+      "isFeatured": "false",
+      "category": "electronics",
+      "images": [ "https://ucarecdn.com/5978ba71-03c8-4a2c-9810-a15ce24a1789/" ]
+    },
+    {
+      "_id": "645437167fc8c18a03bf6057",
+      "title": "لمبة 12وات ليد باندا ",
+      "price": "1",
+      "weight": "",
+      "description": "لمبة ١٢وات ليد باندا ",
+      "isFeatured": "false",
+      "category": "electronics",
+      "images": [ "https://ucarecdn.com/fc1d79a5-cc1c-4214-ba2c-1e2227cfcc27/" ]
+    },
+    {
+      "_id": "645436c77fc8c18a03bf6056",
+      "title": "لمبة 9وات ليد باندا ",
+      "price": "1",
+      "weight": "",
+      "description": "لمبة ٩وات ليد باندا ",
+      "isFeatured": "false",
+      "category": "electronics",
+      "images": [ "https://ucarecdn.com/a7c6187c-2d65-4440-914c-8527231be1fa/" ]
+    },
+    {
+      "_id": "645436907fc8c18a03bf6055",
+      "title": "لمبة 7وات ليد باندا",
+      "price": "1",
+      "weight": "",
+      "description": "لمبة ليد ٧وات باندا",
+      "isFeatured": "false",
+      "category": "electronics",
+      "images": [ "https://ucarecdn.com/bd0d1343-c1e6-4274-a52d-f076c852fce3/" ]
+    },
+    {
+      "_id": "645436187fc8c18a03bf6054",
+      "title": "لمبة ليد 5وات باندا ",
+      "price": "1",
+      "weight": "",
+      "description": "لمبة ليد باندا ",
+      "isFeatured": "false",
+      "category": "electronics",
+      "images": [ "https://ucarecdn.com/4c19af8a-aee8-4925-8ddf-7b6e79ab52be/" ]
+    },
+    {
+      "_id": "645435277fc8c18a03bf6053",
+      "title": "لمبدير الماني ",
+      "price": "25",
+      "weight": "",
+      "description": "لمبدير الماني ستالس ستيل ضو اصفر ",
+      "isFeatured": "false",
+      "category": "electronics",
+      "images": [ "https://ucarecdn.com/93773770-1f8a-4034-8440-83ae68da22d2/" ]
+    },
+    {
+      "_id": "645434dc7fc8c18a03bf6052",
+      "title": "لمبدير الماني ",
+      "price": "25",
+      "weight": "",
+      "description": "لمبدير الماني ستالس ستيل ضو اصفر ",
+      "isFeatured": "false",
+      "category": "electronics",
+      "images": [ "https://ucarecdn.com/6acf5879-868d-4b85-b745-da62095b0dd7/" ]
+    },
+    {
+      "_id": "64543482e22f1e2d6506e701",
+      "title": "مروحةAC.  &.  DC",
+      "price": "25",
+      "weight": "",
+      "description": "مروحة تعمل كهرباء و بطارية ",
+      "isFeatured": "false",
+      "category": "electronics",
+      "images": [ "https://ucarecdn.com/53f100e7-4736-4e62-89a0-f3bea48cf9c4/" ]
+    },
+    {
+      "_id": "64543438e22f1e2d6506e700",
+      "title": "كاميرا مرقبة صغير ",
+      "price": "15",
+      "weight": "",
+      "description": "كاميرا مرقبة صغير  تعمل على الهاتف ",
+      "isFeatured": "false",
+      "category": "electronics",
+      "images": [ "https://ucarecdn.com/0f5f9fd3-681f-43fb-87ad-8b92f1dde961/" ]
+    },
+    {
+      "_id": "645433cee22f1e2d6506e6ff",
+      "title": "مساج رقبة",
+      "price": "18",
+      "weight": "",
+      "description": "مساج رقبة و اكتاف مع حرارة ",
+      "isFeatured": "false",
+      "category": "electronics",
+      "images": [ "https://ucarecdn.com/8a3f4840-2802-4306-9f08-f6a3bcafebe7/" ]
+    },
+    {
+      "_id": "6454339de22f1e2d6506e6fe",
+      "title": "فرد مساج ",
+      "price": "18",
+      "weight": "",
+      "description": "فرد  مساج قابل اعدة الشحن  امكنية اتحكم بسرعة سهل الاستخدام ",
+      "isFeatured": "false",
+      "category": "electronics",
+      "images": [
+        "https://ucarecdn.com/0c0bdb89-2f39-40d5-8fe0-fe5ec6bbab48/",
+        "https://ucarecdn.com/6fd219be-10ff-47c4-8d73-f26ef267071c/"
+      ]
+    },
+    {
+      "_id": "64500215c6709d7d93906b9d",
+      "title": "طقم طاولات ",
+      "price": "65",
+      "weight": "",
+      "description": "طقم طاولات طاولة كبير ",
+      "isFeatured": "false",
+      "category": "small kitchen appliances",
+      "images": [
+        "https://ucarecdn.com/728e31ad-993d-4a5a-a132-5d6543da653e/",
+        "https://ucarecdn.com/a752c073-d842-4ff8-a48a-294b9b2914b1/",
+        "https://ucarecdn.com/f9473f7b-b031-4d7e-a3ce-7cd5ea64c424/"
+      ]
+    },
+    {
+      "_id": "645001cfc6709d7d93906b9c",
+      "title": "طقم طاولات ",
+      "price": "40",
+      "weight": "",
+      "description": "كبير وسط صغير ",
+      "isFeatured": "false",
+      "category": "small kitchen appliances",
+      "images": [
+        "https://ucarecdn.com/99054dfd-cf85-4e50-a6ff-4abed39fc4fe/",
+        "https://ucarecdn.com/bdf6552b-ef89-4149-92f2-e0bbc4e43452/",
+        "https://ucarecdn.com/7f00905f-6300-4cdc-9c93-a9bc083c92e3/"
+      ]
+    },
+    {
+      "_id": "644c189e62934900eb8dd195",
+      "title": "زاوية ",
+      "price": "30",
+      "weight": "",
+      "description": "زاوية ",
+      "isFeatured": "false",
+      "category": "vaccum cleaners",
+      "images": [ "https://ucarecdn.com/22107ed4-999e-4c38-9d52-364a2c00e9bd/" ]
+    },
+    {
+      "_id": "644c186562934900eb8dd194",
+      "title": "طقم طاولات ",
+      "price": "40",
+      "weight": "دهبي",
+      "description": "طقم طاولات *2",
+      "isFeatured": "false",
+      "category": "vaccum cleaners",
+      "images": [ "https://ucarecdn.com/b7bd6fb5-7aa8-4015-b181-5ad6f32b7177/" ]
+    },
+    {
+      "_id": "644c181a62934900eb8dd193",
+      "title": "طقم طاولات ",
+      "price": "65",
+      "weight": "دهبي",
+      "description": "طقم طاولات *3كبير وسط صغير ",
+      "isFeatured": "false",
+      "category": "vaccum cleaners",
+      "images": [ "https://ucarecdn.com/f69def5d-3a22-4d83-8a6e-39dd83a5036a/" ]
+    },
+    {
+      "_id": "643dcb269931d7d79101ae23",
+      "title": "JTC",
+      "price": "70",
+      "weight": "",
+      "description": "مروحة \nJTC\nتعمل اكثر من ٨ساعات ",
+      "isFeatured": "false",
+      "category": "electronics",
+      "images": [ "https://ucarecdn.com/5c279bd9-f075-4dd4-b7c4-a1809bb9e4b8/" ]
+    },
+    {
+      "_id": "643dca989931d7d79101ae22",
+      "title": "JTC ",
+      "price": "55",
+      "weight": "",
+      "description": "مروحة JTC \nتعمل اكثر من ٨ساعات",
+      "isFeatured": "false",
+      "category": "electronics",
+      "images": [ "https://ucarecdn.com/a3c4ee09-71c7-488e-bca0-bfed654fb78f/" ]
+    },
+    {
+      "_id": "643dc9ce0bb0295672bc6350",
+      "title": "مروحة JTC",
+      "price": "40",
+      "weight": "",
+      "description": "مروحة JTCتشريج تعمل اكسر من 8ساعات ",
+      "isFeatured": "false",
+      "category": "electronics",
+      "images": [ "https://ucarecdn.com/ffcb55b0-480d-41da-9ff5-0c016fae5529/" ]
+    },
+    {
+      "_id": "643db69ca0b6ea9319263e31",
+      "title": "لمبة بلدية 200وات ",
+      "price": "35",
+      "weight": "",
+      "description": "لمبة بلدية تعمل اكثر من 12ساعة بطارية ليثيوم ",
+      "isFeatured": "false",
+      "category": "electronics",
+      "images": [ "https://ucarecdn.com/1ec6f3c4-041d-4483-bacc-e47885b3a17e/" ]
+    },
+    {
+      "_id": "643db4d050e08be01034187b",
+      "title": "مكنة قهوة ",
+      "price": "22",
+      "weight": "",
+      "description": "تعمل على الكهرباء",
+      "isFeatured": "false",
+      "category": "electronics",
+      "images": [ "https://ucarecdn.com/52566a33-8541-4b00-a9f4-041d2349cd69/" ]
+    },
+    {
+      "_id": "643dacdc79accbf25e08ec98",
+      "title": "بورجكتير 300وات ",
+      "price": "45",
+      "weight": "ابيض",
+      "description": "بورجكتير 200وات يعمل اكثر من 14ساعة ",
+      "isFeatured": "false",
+      "category": "electronics",
+      "images": [ "https://ucarecdn.com/9df7d0f5-1101-4f71-8a10-e318d968f8e3/" ]
+    },
+    {
+      "_id": "643daca379accbf25e08ec97",
+      "title": "لمبة بلدية 300وات ",
+      "price": "65",
+      "weight": "ابيض ",
+      "description": "لمبة بلدية 300وات تعمل اكثر من 12ساعة ",
+      "isFeatured": "false",
+      "category": "electronics",
+      "images": [ "https://ucarecdn.com/12921dea-af99-484b-b96a-2ae12ddf1d5c/" ]
+    },
+    {
+      "_id": "643dac6679accbf25e08ec96",
+      "title": "لمبة بلدية 200وات ",
+      "price": "60",
+      "weight": "ابيض",
+      "description": "لمبة بلدية 200وات تعمل اكثر من12ساعة ",
+      "isFeatured": "false",
+      "category": "electronics",
+      "images": [ "https://ucarecdn.com/b9a32900-d540-43c4-8358-9ed1d3786c91/" ]
+    },
+    {
+      "_id": "643dac0479accbf25e08ec95",
+      "title": "لمبة بلدية 100وات ",
+      "price": "50",
+      "weight": "ابيض",
+      "description": "لمبة بلدية 100وات تعمل اكثر من 12ساعة ",
+      "isFeatured": "false",
+      "category": "electronics",
+      "images": [ "https://ucarecdn.com/5da6ff88-156f-42d0-88f9-96979f6205f1/" ]
+    },
+    {
+      "_id": "6435fccb6707e44ce2c93664",
+      "title": "لمبة تريا ",
+      "price": "1.10",
+      "weight": "",
+      "description": "لمبة تريا 220فولت ",
+      "isFeatured": "false",
+      "category": "electronics",
+      "images": [ "https://ucarecdn.com/3f3ef413-c208-4871-a473-c5cc7f416a9c/" ]
+    },
+    {
+      "_id": "6435fc8b6707e44ce2c93663",
+      "title": "لمبة بلدية 200وات ",
+      "price": "35",
+      "weight": "",
+      "description": "لمبة بلدية 200وات مودي تعمل اكثر من 12ساعة تحكم عن بعد ",
+      "isFeatured": "false",
+      "category": "electronics",
+      "images": [ "https://ucarecdn.com/c6460e05-dd0d-46ac-ae43-638a603ea281/" ]
+    },
+    {
+      "_id": "6435fc426707e44ce2c93662",
+      "title": "سرج ارستر منع الصواعق",
+      "price": "15",
+      "weight": "",
+      "description": "سرج ارستر يعمل سرج ارستر منع الصواعق ",
+      "isFeatured": "false",
+      "category": "electronics",
+      "images": [ "https://ucarecdn.com/ecc6e08a-2e21-449f-8b72-784c208a558f/" ]
+    },
+    {
+      "_id": "6435fbfd6707e44ce2c93661",
+      "title": "ديجنتير 16امبير مفرد ",
+      "price": "1.5",
+      "weight": "",
+      "description": "ديجنتير 16امبير مفرد ",
+      "isFeatured": "false",
+      "category": "electronics",
+      "images": [ "https://ucarecdn.com/c5d88855-e85a-4395-9c61-8205cd57f103/" ]
+    },
+    {
+      "_id": "6435fbc66707e44ce2c93660",
+      "title": "ساعة فولت امبير ",
+      "price": "12",
+      "weight": "",
+      "description": "ساعة فولت امبير تعمل على فعالية سحب الكهرباء ",
+      "isFeatured": "false",
+      "category": "electronics",
+      "images": [ "https://ucarecdn.com/91851471-12b6-4814-89d1-77b386a08981/" ]
+    },
+    {
+      "_id": "6435fb7a6707e44ce2c9365f",
+      "title": "ساعة حماية 63امبير ",
+      "price": "12",
+      "weight": "",
+      "description": "ساعة حماية تعمل على تنظيم الكهرباء ",
+      "isFeatured": "false",
+      "category": "electronics",
+      "images": [ "https://ucarecdn.com/aac334c0-7634-49a2-90f8-237678a14024/" ]
+    },
+    {
+      "_id": "6435fb3b6707e44ce2c9365e",
+      "title": "كوند كتير موديلير ",
+      "price": "12",
+      "weight": "",
+      "description": "كوند كتير موديلير 63امبير ",
+      "isFeatured": "false",
+      "category": "electronics",
+      "images": [ "https://ucarecdn.com/a1242905-0085-4a50-b1f3-bbe57ec396d5/" ]
+    },
+    {
+      "_id": "6435fae16707e44ce2c9365d",
+      "title": "ريلاي مع قاعدة ",
+      "price": "4",
+      "weight": "",
+      "description": "",
+      "isFeatured": "false",
+      "category": "electronics",
+      "images": [ "https://ucarecdn.com/0a087a13-4d92-430b-8d87-c3e38848e15d/" ]
+    },
+    {
+      "_id": "6435fab26707e44ce2c9365c",
+      "title": "ديجنتير DC16امبيرمجوز ",
+      "price": "4.75",
+      "weight": "",
+      "description": " ديجنتير طاقة شمسية ",
+      "isFeatured": "false",
+      "category": "electronics",
+      "images": [ "https://ucarecdn.com/870adfdd-a461-4247-baf8-829ccf97c68b/" ]
+    },
+    {
+      "_id": "6435fa326707e44ce2c9365b",
+      "title": "بارت فيوز طاقة شمسية ",
+      "price": "1.5",
+      "weight": "",
+      "description": "يعمل بارت فيوز على الحماية من صواعق ",
+      "isFeatured": "false",
+      "category": "electronics",
+      "images": [ "https://ucarecdn.com/617d46ce-8801-4b85-b33d-7df7cedb6da2/" ]
+    },
+    {
+      "_id": "6435f9b06707e44ce2c9365a",
+      "title": "ستند TV ",
+      "price": "6",
+      "weight": "",
+      "description": "ستند tv يوجد مقاسين ",
+      "isFeatured": "false",
+      "category": "electronics",
+      "images": [
+        "https://ucarecdn.com/2403f3f1-ae78-4962-8a27-ec4cba55b0b9/",
+        "https://ucarecdn.com/78ff773a-995d-42f8-89cd-ddacf72a5b7c/"
+      ]
+    },
+    {
+      "_id": "6435f90e6707e44ce2c93659",
+      "title": "سبوت 24وات مخفي ",
+      "price": "6",
+      "weight": "اييض اصفر ",
+      "description": "سبوت 24وات القطر 30*30",
+      "isFeatured": "false",
+      "category": "electronics",
+      "images": [ "https://ucarecdn.com/c3c39a1d-9d47-408f-9e29-4958cebb2e37/" ]
+    },
+    {
+      "_id": "6435f8956707e44ce2c93658",
+      "title": "فواشة خزان ",
+      "price": "7",
+      "weight": "",
+      "description": "فواشة خزان تعمل على الكهرباء. ",
+      "isFeatured": "false",
+      "category": "electronics",
+      "images": [
+        "https://ucarecdn.com/52468ec8-e4f7-4ec7-ac56-4e9c2ea46adb/",
+        "https://ucarecdn.com/ffa3b652-6139-4a41-a87e-e44badfc6d25/"
+      ]
+    },
+    {
+      "_id": "6435f8536707e44ce2c93657",
+      "title": "ليد RGB ",
+      "price": "10",
+      "weight": "",
+      "description": "ليد RGB جميع الالوان مع امكنية تحكم بلون ",
+      "isFeatured": "false",
+      "category": "electronics",
+      "images": [ "https://ucarecdn.com/b3e8f448-7277-4753-9e02-fe7199341ef3/" ]
+    },
+    {
+      "_id": "6435f7f96707e44ce2c93656",
+      "title": "TV BOX ",
+      "price": "30",
+      "weight": "",
+      "description": "TV BOX يعمل على شاشة يحول شاشة الا smart يوتيوب وجميع الموقع ",
+      "isFeatured": "false",
+      "category": "electronics",
+      "images": [ "https://ucarecdn.com/5b2bdb72-8793-4cd7-9d70-cc921f3d86c9/" ]
+    },
+    {
+      "_id": "6435f6ecf489aec646c732c5",
+      "title": "شارج 50امبير ",
+      "price": "50",
+      "weight": "",
+      "description": "شارج بطارية 50امبير ",
+      "isFeatured": "false",
+      "category": "electronics",
+      "images": [ "https://ucarecdn.com/a774d2b8-0f51-433a-8586-d93e1e9cf191/" ]
+    },
+    {
+      "_id": "6435f4facae3288d83c3fb4d",
+      "title": "شارج 30امبير ",
+      "price": "25",
+      "weight": "",
+      "description": "شارج بطارية 30امبير ",
+      "isFeatured": "false",
+      "category": "electronics",
+      "images": [ "https://ucarecdn.com/2f67bf83-48b4-47bd-9c52-0cf3a12a48f9/" ]
+    },
+    {
+      "_id": "6435f4c9cae3288d83c3fb4c",
+      "title": "شارج 20امبير ",
+      "price": "30",
+      "weight": "",
+      "description": "شارج بطارية 20امبير دجتال ",
+      "isFeatured": "false",
+      "category": "electronics",
+      "images": [ "https://ucarecdn.com/2fded1c6-2953-4cf7-8928-8ddadfe81ec3/" ]
+    },
+    {
+      "_id": "6435f49acae3288d83c3fb4b",
+      "title": "شارج 20امبير ",
+      "price": "20",
+      "weight": "",
+      "description": "شارج بطارية 20امبير ",
+      "isFeatured": "false",
+      "category": "electronics",
+      "images": [ "https://ucarecdn.com/ac892c4e-1d9f-44f5-a15a-90f25af93866/" ]
+    },
+    {
+      "_id": "6435f455cae3288d83c3fb4a",
+      "title": "شارج 5امبير ",
+      "price": "15",
+      "weight": "",
+      "description": "شارج بطارية دجتال 5امبير ",
+      "isFeatured": "false",
+      "category": "electronics",
+      "images": [ "https://ucarecdn.com/5d3366c8-68d4-480a-875b-6a8a9049193f/" ]
+    },
+    {
+      "_id": "6435f41ecae3288d83c3fb49",
+      "title": "شارج 10امبير ",
+      "price": "15",
+      "weight": "",
+      "description": "شارج بطارية 10امبير ",
+      "isFeatured": "false",
+      "category": "electronics",
+      "images": [ "https://ucarecdn.com/5753f0f3-dc6b-4fd6-acee-654398e93b01/" ]
+    },
+    {
+      "_id": "6435f3d9cae3288d83c3fb48",
+      "title": "مقدح بطارية ",
+      "price": "30",
+      "weight": "",
+      "description": "مقداح بطارية قابل شحن مع 2بطارية ",
+      "isFeatured": "false",
+      "category": "electronics",
+      "images": [ "https://ucarecdn.com/1fc389e4-3b0a-4336-b9e5-16a9113ce861/" ]
+    },
+    {
+      "_id": "6435f379cae3288d83c3fb47",
+      "title": "مقدح اس دي اس ",
+      "price": "40",
+      "weight": "",
+      "description": "مقداح اس دي اس يعمل على الكهرباء ",
+      "isFeatured": "false",
+      "category": "electronics",
+      "images": [ "https://ucarecdn.com/11359bfc-e1aa-42d4-9d78-c0f95cc9da4c/" ]
+    },
+    {
+      "_id": "6435f2d2cae3288d83c3fb46",
+      "title": "فرد سلكون اسلكي ",
+      "price": "25",
+      "weight": "",
+      "description": "فرد سلكون مع 3اصبع سلكون يعمل على الكهرباء. ",
+      "isFeatured": "false",
+      "category": "electronics",
+      "images": [ "https://ucarecdn.com/3116a3a3-71c5-4f41-b222-2a62d047447e/" ]
+    },
+    {
+      "_id": "6435f1fecae3288d83c3fb45",
+      "title": "فرامة قزاز 3لتر ",
+      "price": "17",
+      "weight": "",
+      "description": "فرامة قزاز تعمل على الكهرباء. سعة 3لتر بقوة 3000وات ",
+      "isFeatured": "false",
+      "category": "kitchen appliances",
+      "images": [ "https://ucarecdn.com/5f16f86a-457e-4039-a332-cc1739ccf6fc/" ]
+    }
+  ]
