@@ -16,16 +16,14 @@ import {server} from '../src/Utils/Server'
 // import CategoryImages from '../src/Components/HomeComponents/CategoryImages/CategoryImages';
 // import Btn from '../src/Components/Btn/Btn';
 import { IProduct } from '../src/Types/Types';
-import { Typography } from '@mui/material';
+import { Typography ,Container } from '@mui/material';
 // import { Categories } from './_app';
-import { Container } from 'semantic-ui-react';
 
 export default function Home({data :staticData,data2,category}:{data2:any,category:any,data:any}) {
   
   const [quickView, setQuickView] = useState<{isOpen:boolean,productId:null | string}>({isOpen:false,productId:null})
   const [data,setData] = useState<{staticData:IProduct[],data2:IProduct[]}>({staticData,data2})
-  // const [cates,setCates] = useContext(Categories);
-  const coldStart = async () => {
+    const coldStart = async () => {
     const req = await fetch(`${server}/api/cold`)
     const res = await req.json();
 
@@ -78,15 +76,15 @@ useEffect(() => {
       {/* <CategoryImages/> */}
       <WhatsApp/>
       
-      <ProductCollection delay={1600} data={data && data.staticData.slice(0,25)} setQuickView={setQuickView} Collectiontitle='Latest Products - أحدث المنتجات'/>      
-      { data && data?.staticData.slice(15,22)?.length > 0 &&
-      <ProductCollection delay={2000} data={data && data.staticData.slice(25,35) } setQuickView={setQuickView} Collectiontitle='Best Products - أفضل المنتجات '/>      
+      <ProductCollection delay={1600} data={data && data.staticData?.slice(0,25)} setQuickView={setQuickView} Collectiontitle='Latest Products - أحدث المنتجات'/>      
+      { data && data?.staticData?.slice(15,22)?.length > 0 &&
+      <ProductCollection delay={2000} data={data && data.staticData?.slice(25,35) } setQuickView={setQuickView} Collectiontitle='Best Products - أفضل المنتجات '/>      
 }
         { data && data?.data2?.length > 0 &&
 
           <ProductCollection delay={2100} data={data.data2} setQuickView={setQuickView} Collectiontitle='Kitchen Appliances - أدوات المطبخ'/>      
         } 
-      <ProductCollection delay={1900} data={data && data.staticData.slice(15,25)} setQuickView={setQuickView} Collectiontitle='More Deals - المزيد من العروضات'/>      
+      <ProductCollection delay={1900} data={data?.staticData && data.staticData?.slice(15,25)} setQuickView={setQuickView} Collectiontitle='More Deals - المزيد من العروضات'/>      
      
     
 <FullscreenPoster img='https://ucarecdn.com/96f3a42e-18bd-4871-92a5-4cb0ca861560/Capture.JPG'/>

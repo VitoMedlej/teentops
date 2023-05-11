@@ -70,7 +70,7 @@ const CategoryList = () => {
                 }
             }}>
 {/* https://www.ishtari.com/image/data/system_banner/10000/1800/1675/shoes-web.png */}
-                {[`https://ucarecdn.com/756a342f-effb-4a3f-b020-218b15df453f/Capture.jpg`, 'https://ucarecdn.com/b577fefb-135c-450a-9a4e-f344d686fdd8/teenad3.JPG'].map((i,index) => {
+                {[`https://ucarecdn.com/20089da1-ef72-4847-a525-1d622518e600/BlueandTealHeadsetGamingInStreamAd.jpg`, 'https://ucarecdn.com/b577fefb-135c-450a-9a4e-f344d686fdd8/teenad3.JPG'].map((i,index) => {
             
                     return  <Box key={i} className='pointer' sx={{
                         display : {xs: index == 0 ? 'none' : 'flex',sm:'flex'},
