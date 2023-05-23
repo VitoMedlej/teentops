@@ -95,7 +95,7 @@ useEffect(() => {
         <QuickView setQuickView={setQuickView} productId={quickView.productId} isOpen={quickView.isOpen}/>
         </main>
       <Perks/>
-            <Container className='bg py2' sx={{textAlign:"center",margin:'0 auto',width:'100%'}}>
+            <Container className='bg py2' sx={{textAlign:"center",margin:'0 auto',maxWidth:'100vw !important',width:'100%'}}>
         <Typography component='h1' sx={{textAlign:"center",margin:'0 auto',maxWidth:'600px',fontSize:{xs:'1.75em',sm:'2em',md:'2.4em'},fontWeight:'900'}} className='white auto'>
         About Us. The Ultimate Online Destination for Electronics in Lebanon
         </Typography>

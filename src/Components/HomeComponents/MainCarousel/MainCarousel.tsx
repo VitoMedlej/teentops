@@ -35,10 +35,12 @@ const MainCarousel = () => {
                 className="mySwiper swiper">
 
                 {[{img:`https://ucarecdn.com/96f3a42e-18bd-4871-92a5-4cb0ca861560/Capture.JPG`}
-                ,{img:`https://ucarecdn.com/31b86d26-4306-43c4-88fb-931e581d2452/teenad2.JPG`}
+                ,
+                {img:`https://ucarecdn.com/bd4333ac-e788-487f-b948-cddb3b76075f/fan.JPG`},
+                {img:`https://ucarecdn.com/31b86d26-4306-43c4-88fb-931e581d2452/teenad2.JPG`}
                 ,
                 {img:`https://ucarecdn.com/9bab3ea9-88c5-4799-bbc4-476a8281ae7b/teenad.JPG`},
-                {img:`https://ucarecdn.com/756a342f-effb-4a3f-b020-218b15df453f/Capture.jpg`},
+                {img:`https://ucarecdn.com/41daa33c-89a7-46f5-bef6-fc32122d3258/solar.JPG`},
                 
             ].map((item) => {
 
