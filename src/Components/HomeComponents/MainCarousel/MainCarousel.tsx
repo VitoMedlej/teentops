@@ -36,6 +36,7 @@ const MainCarousel = () => {
 
                 {[{img:`https://ucarecdn.com/96f3a42e-18bd-4871-92a5-4cb0ca861560/Capture.JPG`}
                 ,
+                  {img:`https://ucarecdn.com/a59f0de3-9255-44cd-b18c-c2347b684754/GrayandGreenElectronicAdvertisementBannerFacebookAds111.png`},
                 {img:`https://ucarecdn.com/bd4333ac-e788-487f-b948-cddb3b76075f/fan.JPG`},
                 {img:`https://ucarecdn.com/31b86d26-4306-43c4-88fb-931e581d2452/teenad2.JPG`}
                 ,
