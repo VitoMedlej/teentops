@@ -13,6 +13,7 @@ const MainCarousel = () => {
             sx={{
             // py: {xs:'.75em',sm:'2em',md:'3em'},
             width: '100%',
+           
             maxWidth: 'lg',
             maxHeight:'450px',
             borderRadius:{sm:'6px'},
@@ -40,6 +41,7 @@ const MainCarousel = () => {
                 {img:`https://ucarecdn.com/bd4333ac-e788-487f-b948-cddb3b76075f/fan.JPG`},
                 {img:`https://ucarecdn.com/31b86d26-4306-43c4-88fb-931e581d2452/teenad2.JPG`}
                 ,
+                {img:`https://ucarecdn.com/20089da1-ef72-4847-a525-1d622518e600/BlueandTealHeadsetGamingInStreamAd.jpg`},
                 {img:`https://ucarecdn.com/9bab3ea9-88c5-4799-bbc4-476a8281ae7b/teenad.JPG`},
                 {img:`https://ucarecdn.com/41daa33c-89a7-46f5-bef6-fc32122d3258/solar.JPG`},
                 
@@ -62,6 +64,7 @@ const MainCarousel = () => {
                                 `}
                                 // ${item?.className}
                                 src={`${item.img}`}
+                                style={{borderRadius:'20px'}}
                                 alt="Main Carousel Image"/>
                         </Box>
                     </SwiperSlide>

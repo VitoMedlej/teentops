@@ -26,10 +26,12 @@ const CategoryList = () => {
                     xs: 'row',
                     // md: 'row'
                 },
+                my:1,
                 alignItems: {
                     xs: 'center',
                     md: 'initial'
                 },
+                borderRadius:'20px',
                 flexWrap:'wrap',
                 justifyContent: {
                     // xs: 'center',
@@ -37,11 +39,14 @@ const CategoryList = () => {
                 }
             }}>
  <Box  className='pointer' sx={{
+    // minWidth:'200px',
                         // display : {xs: index == 0 ? 'none' : 'flex',sm:'flex'},
-                        height:'300px',width:{sm:'49%'}}}>
+                        // height:'300px'
+                        width:{xs:'99%',md:'49%'}}}>
                                 <>
                                     {/* <img className='img' src="" alt="" /> */}
                                     <img
+                                      style={{borderRadius:'10px'}}
                                     onClick={()=>handleClick()}
                                         src={'https://ucarecdn.com/b577fefb-135c-450a-9a4e-f344d686fdd8/teenad3.JPG'}
                                         className='img contain'
@@ -59,6 +64,7 @@ const CategoryList = () => {
                     xs: 'row',
                     // md: 'row'
                 },
+                mx : {sm:1},
                 alignItems: {
                     xs: 'center',
                     md: 'initial'
@@ -74,10 +80,11 @@ const CategoryList = () => {
             
                     return  <Box key={i} className='pointer' sx={{
                         display : {xs: index == 0 ? 'none' : 'flex',sm:'flex'},
-                        height:'300px',width:{sm:'49%'}}}>
+                        height:'300px',minWidth:'200px', width:{xs:'99%',md:'49%'}}}>
                                 <>
                                     {/* <img className='img' src="" alt="" /> */}
                                     <img
+                                      style={{borderRadius:'20px'}}
                                     onClick={()=>handleClick()}
                                         src={i}
                                         className='img cover'
