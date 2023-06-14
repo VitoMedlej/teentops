@@ -18,13 +18,33 @@ import {server} from '../src/Utils/Server'
 import { IProduct } from '../src/Types/Types';
 import { Typography ,Container } from '@mui/material';
 // import { Categories } from './_app';
+export const getAll = async (endpoint?:string,limit?:number,category?:string,search?:string,skip?:number,totalCount?:boolean) => {
+  try {
 
+    const req = await fetch(`${server}/api/${endpoint ? endpoint : 'home' }?limit=${limit || 100}&category=${category ? category : ''}&search=${search ? search : ''}&skip=${skip}&totalCount=${totalCount === true ? 'true' : 'false' }`)
+    const res = await req.json()
+  
+    if (res) {
+      return res
+    }
+    return null
+  }
+  catch(er) {
+    console.log('er getAll: ', er);
+
+  }
+}
 export default function Home({data :staticData,data2,category}:{data2:any,category:any,data:any}) {
   
   const [quickView, setQuickView] = useState<{isOpen:boolean,productId:null | string}>({isOpen:false,productId:null})
   const [data,setData] = useState<{staticData:IProduct[],data2:IProduct[]}>({staticData,data2})
     const coldStart = async () => {
-    const req = await fetch(`${server}/api/cold`)
+      if (!data || data2) {
+           const fetchedData : any = await getAll()
+           setData({staticData: fetchedData?.data,data2:fetchedData?.data2})
+          return
+          }
+    const req = await fetch(`${server}/api/cold`);
     const res = await req.json();
 
 }
@@ -111,22 +131,7 @@ useEffect(() => {
     </>
   )
 }
-export const getAll = async (endpoint?:string,limit?:number,category?:string,search?:string,skip?:number,totalCount?:boolean) => {
-  try {
 
-    const req = await fetch(`${server}/api/${endpoint ? endpoint : 'home' }?limit=${limit || 100}&category=${category ? category : ''}&search=${search ? search : ''}&skip=${skip}&totalCount=${totalCount === true ? 'true' : 'false' }`)
-    const res = await req.json()
-  
-    if (res) {
-      return res
-    }
-    return null
-  }
-  catch(er) {
-    console.log('er getAll: ', er);
-
-  }
-}
 export async function  getStaticProps() {
   // const res = await fetch('https://.../posts')
   // const posts = await res.json()
