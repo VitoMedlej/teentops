@@ -154,7 +154,7 @@ style={{width:'max-content',margin: '0 auto',color:'green',display: 'flex'}}
   </Box> */}
       </Box>
       </Box>
-  <ItemTabs description={data?.description?.length> 0 ? data?.title : data?.description}/>
+  <ItemTabs description={data?.description?.length> 0 ? data?.descriptionn : data?.title}/>
     </Box>
       <ProductCollection delay={1100} data={collection} sx={{my:'6em'}}  Collectiontitle={'Shop Similar Products'}/>
       <Perks/>
