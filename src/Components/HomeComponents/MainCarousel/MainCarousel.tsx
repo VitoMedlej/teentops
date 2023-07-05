@@ -35,7 +35,7 @@ const MainCarousel = () => {
                 modules={[Autoplay, Navigation]}
                 className="mySwiper swiper">
 
-                {[{img:`https://ucarecdn.com/96f3a42e-18bd-4871-92a5-4cb0ca861560/Capture.JPG`}
+                {[{img:`https://ucarecdn.com/462ad62c-137f-41e2-8a1d-ccada165f454/GreenandWhiteIllustrationMinimalistFastDeliveryFacebookCoverS4971.png`}
                 ,
                   {img:`https://ucarecdn.com/66b8154e-a03e-4b9f-a161-5695638874ec/GrayandGreenElectronicAdvertisementBannerFacebookAds21.png`},
                   {img:`https://ucarecdn.com/a59f0de3-9255-44cd-b18c-c2347b684754/GrayandGreenElectronicAdvertisementBannerFacebookAds111.png`},
