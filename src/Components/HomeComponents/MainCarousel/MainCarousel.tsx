@@ -62,11 +62,11 @@ const MainCarousel = () => {
 
                             <img
             
-                                className={`img pointer 
+                                className={`img pointer contain
                                 `}
                                 // ${item?.className}
                                 src={`${item.img}`}
-                                style={{borderRadius:'20px'}}
+                                style={{borderRadius:'20px',objectFit:'contain'}}
                                 alt="Main Carousel Image"/>
                         </Box>
                     </SwiperSlide>
