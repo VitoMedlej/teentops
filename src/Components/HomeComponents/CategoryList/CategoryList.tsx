@@ -8,9 +8,9 @@ import { useRouter } from 'next/router'
 // 4 50&sm=fit
 const CategoryList = () => {
     const router = useRouter()
-    // const handleClick = () => {
-    //     router.push('/category/products')
-    // }
+    const handleClick = () => {
+        router.push('/category/products')
+    }
     return (
         <Box sx={{
             maxWidth: 'lg',
@@ -47,7 +47,7 @@ const CategoryList = () => {
                                     {/* <img className='img' src="" alt="" /> */}
                                     <img
                                       style={{borderRadius:'10px'}}
-                                    onClick={()=>handleClick()}
+{/*                                     onClick={()=>handleClick()} */}
                                         src={'https://ucarecdn.com/b577fefb-135c-450a-9a4e-f344d686fdd8/teenad3.JPG'}
                                         className='img contain'
                                         alt='Category Image'
