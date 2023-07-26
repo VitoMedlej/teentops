@@ -8,9 +8,9 @@ import { useRouter } from 'next/router'
 // 4 50&sm=fit
 const CategoryList = () => {
     const router = useRouter()
-    const handleClick = () => {
-        router.push('/category/products')
-    }
+    // const handleClick = () => {
+    //     router.push('/category/products')
+    // }
     return (
         <Box sx={{
             maxWidth: 'lg',
@@ -43,7 +43,7 @@ const CategoryList = () => {
                         // display : {xs: index == 0 ? 'none' : 'flex',sm:'flex'},
                         // height:'300px'
                         width:{xs:'99%',md:'49%'}}}>
-                                <>
+                                <a style={{width:'100%',height:'100%'}} href={`https://play.google.com/store/apps/details?id=com.teentops&pli=1`} target='_blank' rel='noreferrer' >
                                     {/* <img className='img' src="" alt="" /> */}
                                     <img
                                       style={{borderRadius:'10px'}}
@@ -53,7 +53,7 @@ const CategoryList = () => {
                                         alt='Category Image'
                                         // img2={'https://www.ishtari.com/image/data/system_banner/10000/1800/1699/faucet-tools-app.png'}
                                     />
-                                </>
+                                </a>
                     </Box>
             </Box>
             <Box
