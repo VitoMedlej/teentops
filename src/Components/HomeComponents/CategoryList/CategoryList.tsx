@@ -46,8 +46,7 @@ const CategoryList = () => {
                                 <a style={{width:'100%',height:'100%'}} href={`https://play.google.com/store/apps/details?id=com.teentops&pli=1`} target='_blank' rel='noreferrer' >
                                     {/* <img className='img' src="" alt="" /> */}
                                     <img
-                                      style={{borderRadius:'10px'}}
-{/*                                     onClick={()=>handleClick()} */}
+                                      style={{borderRadius:'10px'}}                                
                                         src={'https://ucarecdn.com/b577fefb-135c-450a-9a4e-f344d686fdd8/teenad3.JPG'}
                                         className='img contain'
                                         alt='Category Image'
