@@ -24,6 +24,7 @@ const ProductSection = ({data,count,handlePagination,setQuickView}:{count:number
    if (!i._id) return;
                          return <ProductCard
                          _id={i._id}
+                         newPrice={Number(i?.newPrice) || undefined}
                          images={i.images}
                          title={i.title}
                         price={i.price}

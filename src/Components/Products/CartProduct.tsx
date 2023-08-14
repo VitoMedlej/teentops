@@ -102,12 +102,12 @@ const CartProduct = ({onChange,_id,price,category,title,remove,qty,img}:ICartIte
                    
                     <Btn 
                     onClick={()=>remove(_id)}
-                    v2={true} sx={{border:'none',padding:0,mx:0,mt:1,':hover':{background:'white'},fontSize:'.6em'}}>
+                    v2={true} sx={{background:'red',color:'white', border:'none',padding:0,mx:0,mt:1,':hover':{background:'white'},fontSize:'.6em'}}>
                         <AiOutlineDelete 
-                        color='red'
+                        color='white'
                        size='1.25em'
                         /> 
-                        <Typography sx={{pt:'.1em',color:'red',fontWeight:'600',fontSize:'1em'}}>
+                        <Typography sx={{pt:'.1em',color:'white',fontWeight:'600',fontSize:'1em'}}>
                             
                         Remove
                         </Typography>

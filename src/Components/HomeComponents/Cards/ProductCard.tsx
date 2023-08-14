@@ -11,13 +11,14 @@ import { useRouter } from 'next/router';
 import useCart from '../../../Hooks/useCart';
 import Btn from '../../Btn/Btn';
 const defaultImages = ['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQTvTcD234f-GRtvhN-xdfrqckgfNZbgS6fRdIeAQ-vBdHlkvqjmM6MZQfmFBHpjxoc1Q&usqp=CAU']
-const ProductCard = ({title,_id,price,images,category,sx, handleQuickView,className} : {
+const ProductCard = ({title,_id,price,images,newPrice,category,sx, handleQuickView,className} : {
     className?: string,
     handleQuickView ?: (id: string)=> void;
     sx?: any,
     title: string;
     price: number;
     _id: string;
+    newPrice ?: number;
     images: string[] | any[];
     category: string;
 }) => {
@@ -43,7 +44,16 @@ const ProductCard = ({title,_id,price,images,category,sx, handleQuickView,classN
         router.push(`/product/${_id}?title=${`${title}`.substring(0,100).replace(/\s+/g, '-')}&category=${category ? category : 'products'}`)
         
     }
-   
+
+    function getDiscountPercentage(oldPrice: number, newPrice?: number): number | undefined {
+        if (!oldPrice || !newPrice || !Number(oldPrice) || !Number(newPrice)) {
+          return undefined;
+        }
+        const discount = Number(oldPrice) - Number(newPrice);
+        const discountPercentage = (discount / oldPrice) * 100;
+        return Number(discountPercentage.toFixed(1)) || undefined;
+      }
+      
     return (
         <Box
         // onClick={()=>router.push('/product/product-name')}
@@ -81,6 +91,12 @@ const ProductCard = ({title,_id,price,images,category,sx, handleQuickView,classN
                     style={{maxHeight:'400px'}}
                     ref={ref} src={ currentImg} className='img contain pointer' alt="Product Image"/>
                     </Box>
+                  {getDiscountPercentage(price,newPrice) &&  <Box sx={{position:'absolute',borderRadius:'50%',top:'0%',left:'1%',zIndex:3123, width:'50px',height:'50px',background:'red'}}>
+                  <Typography className='flex center items-center' sx={{fontSize:'.75em',alignItems:'center',justifyContent:'center',height:'100%',color:'white'}}>
+
+                      -{getDiscountPercentage(price,newPrice) }%
+                  </Typography>
+                    </Box>}
                     <Box
                         className='productOptions'
                         sx={{
@@ -161,12 +177,12 @@ const ProductCard = ({title,_id,price,images,category,sx, handleQuickView,classN
                     width:'100%',
                     fontWeight:'600',
                     mt: '.25em',
-                    fontSize: '.9em'
+                    fontSize: '.98em'
                 }}>{title ? title : 'Product' }</Typography>
 
                 
             <Box sx={{mx:'.15em',display:'flex',justifyContent:'space-between'}} className='flexed col'>
-                <Typography
+       {newPrice ? <Typography
                     className={'clr2'}
                     sx={{
                     textAlign:'center',
@@ -174,16 +190,47 @@ const ProductCard = ({title,_id,price,images,category,sx, handleQuickView,classN
                         fontWeight:'600',
                         width:'100%',
                     fontSize: '1em'
-                }}>{price ? `$${price}` : 'Whatsapp for price'} </Typography>
+                }}>
+                    <s>
+                    ${price}
+                    </s>
+                    {' '}
+                    <span style={{color:'red'}}>${newPrice}</span>
+                    
+                     </Typography>
+                     
+                    : 
+
+                    <Typography
+                    className={'clr2'}
+                    sx={{
+                    textAlign:'center',
+                        pb:1,
+                        fontWeight:'600',
+                        width:'100%',
+                    fontSize: '1em'
+                }}>
+                 
+                   ${price || 0}
+                   
+                    
+                     </Typography>
+                    }
              
+            
+
+
                 <Tooltip title='Add To Cart' placement='left'>
                 <Btn
-                v2={true}
                 onClick={()=>addToCart(_id,{price,img,title,_id})}
-                sx={{width:'90%',mt:'.5em',':hover':{background:'#1a4671',color:'white',border:'1px solid #1a4671'}}}>
+                sx={{
+                    background:'#0068db',
+                    border:'1px solid #0068db',
+                    borderRadius:2,
+                    width:'90%',mt:'.5em',':hover':{background:'#0068db',color:'white',border:'1px solid #0068db'}}}>
                        <Typography
                    className='flex items-center'
-                   sx={{fontSize:'.75em',gap:'.3em'}}>
+                   sx={{fontSize:'.85em',gap:'.3em'}}>
 
                    add to cart <AiOutlineShoppingCart fontSize='2em'  />
                    </Typography>

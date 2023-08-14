@@ -76,12 +76,44 @@ const Index = ({data,collection}:any) => {
       </Box>
       <Box sx={{width:{xs:'100%',md:'50%'}}}>
         <Typography sx={{fontSize:{xs:'1.8em',sm:'2.1em'},pb:'.5em',fontWeight:'500'}}>{data.title}</Typography>
-        <Typography className='gray' sx={{fontSize:'.85em',pb:'.5em',fontWeight:'400'}}>Model Id : {data._id}</Typography>
+        <Typography className='gray' sx={{fontSize:'.85em',pb:'.5em',fontWeight:'400'}}>Product Id : {data._id}</Typography>
         {
           data?.weight &&
         <Typography sx={{fontSize:'1em',py:'.25em',fontWeight:'500'}} >Items Color: {data.weight}</Typography>
         }
-        <Typography sx={{fontSize:'1.25em',py:'.25em',fontWeight:'600'}} className='clr'>${data.price}</Typography>
+       {data?.newPrice ? <Typography
+                    className={'clr2'}
+                    sx={{
+                  
+                        pb:1,
+                        fontWeight:'600',
+                    fontSize: '2em'
+                }}>
+                    <s>
+                    ${data?.price}
+                    </s>
+                    {' '} {' '}
+                    <span style={{color:'red'}}>${data?.newPrice}</span>
+                    
+                     </Typography>
+                     
+                    : 
+
+                    <Typography
+                    className={'clr2'}
+                    sx={{
+               
+                        pb:1,
+                        fontWeight:'600',
+                    fontSize: '2em'
+                }}>
+                 
+                   ${data?.price || 0}
+                   
+                    
+                     </Typography>
+                    }
+             
         {/* <SelectOneForm/> */}
         {/* <SelectOneForm/> */}
       <Box className='flexed wrap' sx={{my:'2em'}}>

@@ -69,7 +69,7 @@ className='icon-css'
                 
                 onClick={()=>handleReset()}
                 
-                 v2={true} sx={{margin:0,border:'none',color:'red'}}>Reset</Btn>
+                 v2={true} sx={{margin:0,background:'red',border:'none',color:'white'}}>Reset</Btn>
                 </Box>
         </Box>
     )

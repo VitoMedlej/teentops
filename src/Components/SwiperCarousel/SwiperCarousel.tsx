@@ -58,6 +58,7 @@ const SwiperCarousel = ({data, delay,     handleQuickView}:any) => {
                         return <SwiperSlide key={item._id}>
                             {/* <Box sx={{background:'blue',height:'300px',width:'100%'}}>hello</Box> */}
                             <ProductCard 
+                              newPrice={Number(item?.newPrice) || undefined}
                         handleQuickView={handleQuickView}
                          title={item.title}
                          images={item.images}

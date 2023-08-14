@@ -9,13 +9,14 @@ const ProductCollection = ({sx,delay,Collectiontitle,data,setQuickView} : {
     Collectiontitle: string,
     delay : number,
     data: IProduct[] | null,
+    
     sx ?: any;
     setQuickView ?: Dispatch<SetStateAction<{
         isOpen: boolean;
         productId: null | string;
     }>>
 }) => {
-    
+   
     
     const handleQuickView = (id: string) => {
        if (setQuickView) {
