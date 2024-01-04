@@ -107,6 +107,20 @@ h1, h2, h3, h4, p {
   color: #262626;
 }
 
+.bg2 {
+  background: #42a369 !important;
+}
+
+.fixedComp {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #42a369 !important;
+  text-align: center;
+  z-index: 5125125125;
+  padding: 10px 0;
+}
+
 .flexed {
   display: flex;
   align-items: center;
