@@ -210,10 +210,10 @@ style={{width:'max-content',margin: '0 auto',color:'green',display: 'flex'}}
       {data?.description}
           </Typography>
       </Box>}
-     {data?.imagesArray && <Box sx={{px:1}}>
+     {data?.imagesArray && <Box sx={{py:1,px:1}}>
         {
           data?.imagesArray?.map((image:string)=>{
-            return <Box key={`${image}`}>
+            return <Box sx={{py:1}} key={`${image}`}>
               <img src={image} alt="" className="img" />
             </Box>
           })
@@ -257,7 +257,7 @@ style={{width:'max-content',margin: '0 auto',color:'green',display: 'flex'}}
       </Box>
       <Box sx={{border:'1px solid rgb(254, 231, 93)',maxWidth:'700px',justifyContent:'space-around'}} className="fixedComp gap justify-between gap1 flex auto">
     
-      <Btn sx={{fontSize:'1.5em',width:'25%',color:'rgb(254, 231, 93)',background:'transparent',border:'1px solid rgb(254, 231, 93) !important',borderRadius:'5px'}}>
+      <Btn sx={{fontSize:'1.5em',':hover':{background:'transparent'},width:'25%',color:'rgb(254, 231, 93)',background:'transparent',border:'1px solid rgb(254, 231, 93) !important',borderRadius:'5px'}}>
           <RiCustomerService2Fill fontSize={'1.5em'} color='rgb(254, 231, 93)'/>
         </Btn>
 
