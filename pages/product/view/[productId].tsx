@@ -93,6 +93,7 @@ const Index = ({data,collection}:any) => {
 
           {data?.product?.images?.map((i:any,index:number)=>{
             return <Box
+            
             onClick={()=>goToSlide(Number(index))}
             className='cursor pointer' key={i} sx={{width:`${95 / data?.product?.images?.length}%` ,
             minHeight:'20%',
@@ -212,7 +213,7 @@ style={{width:'max-content',margin: '0 auto',color:'green',display: 'flex'}}
      {data?.imagesArray && <Box sx={{px:1}}>
         {
           data?.imagesArray?.map((image:string)=>{
-            return <Box>
+            return <Box key={`${image}`}>
               <img src={image} alt="" className="img" />
             </Box>
           })
