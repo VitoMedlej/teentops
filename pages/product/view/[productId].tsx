@@ -260,7 +260,7 @@ style={{width:'max-content',margin: '0 auto',color:'green',display: 'flex'}}
       </Box>
       <Box className="auto">
 
-      <Box sx={{border:'1px solid rgb(254, 231, 93)',maxWidth:'700px',justifyContent:'space-around'}} className="fixedComp gap justify-between gap1 flex auto">
+      <Box sx={{border:'1px solid rgb(254, 231, 93)',justifyContent:'space-around'}} className="fixedComp gap justify-between gap1 flex auto">
       <a href='https://wa.me/+96176600541' target='_blank'   rel="noreferrer"
       style={{display:'contents'}}
 >
