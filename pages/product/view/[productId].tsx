@@ -92,7 +92,7 @@ const Index = ({data,collection}:any) => {
         <ProductImageCarousel setSwiper={setSwiper} images={data?.images}/>
         <Box className="flex wrap justify-between between space-around" sx={{mt:1}}>
 
-          {data?.images?.map((i:any,index:number)=>{
+          {data?.images?.length >0  && data?.images?.map((i:any,index:number)=>{
             return <Box
             
             onClick={()=>goToSlide(Number(index))}
@@ -209,11 +209,13 @@ style={{width:'max-content',margin: '0 auto',color:'green',display: 'flex'}}
         </Box>
       </Box>
       {data?.description && <Box sx={{px:1}}>
-      <Typography    sx={{pt:2,flexDirection:'row-reverse',textAlign:'justify',color:'#5a5a5a',fontSize:'.9em',fontWeight:'400'}}>
+      <Typography    
+      className='pre'
+      sx={{pt:2,flexDirection:'row-reverse',textAlign:'center',whiteSpace:'pre',color:'#5a5a5a',fontSize:'.9em',fontWeight:'400'}}>
       {data?.description}
           </Typography>
       </Box>}
-     {data?.secondImages && <Box sx={{py:1,px:1}}>
+     {data?.secondImages?.length > 0 && data?.secondImages[0]?.length > 0  && data?.secondImages && <Box sx={{py:1,px:1}}>
         {
           data?.secondImages?.map((image:string)=>{
             return <Box sx={{py:1}} key={`${image}`}>
@@ -259,12 +261,18 @@ style={{width:'max-content',margin: '0 auto',color:'green',display: 'flex'}}
       <Box className="auto">
 
       <Box sx={{border:'1px solid rgb(254, 231, 93)',maxWidth:'700px',justifyContent:'space-around'}} className="fixedComp gap justify-between gap1 flex auto">
-    
+      <a href='https://wa.me/+96176600541' target='_blank'   rel="noreferrer"
+      style={{display:'contents'}}
+>
+
       <Btn sx={{fontSize:'1.5em',':hover':{background:'transparent'},width:'25%',color:'rgb(254, 231, 93)',background:'transparent',border:'1px solid rgb(254, 231, 93) !important',borderRadius:'5px'}}>
           <RiCustomerService2Fill fontSize={'1.5em'} color='rgb(254, 231, 93)'/>
         </Btn>
+            </a>
 
-      <Btn sx={{gap:1,py:0,':hover':{background:'transparent'},fontWeight:600,fontSize:'1.5em',width:'68%',color:'rgb(254, 231, 93)',background:'transparent',border:'1px solid rgb(254, 231, 93) !important',borderRadius:'5000px'}}>
+      <Btn 
+      onClick={()=>{addToCart(data?._id,{_id:data._id,price:data.price,img:data.images[0],title:data.title},false);router.push('/cart')}}
+      sx={{gap:1,py:0,':hover':{background:'transparent'},fontWeight:600,fontSize:'1.5em',width:'68%',color:'rgb(254, 231, 93)',background:'transparent',border:'1px solid rgb(254, 231, 93) !important',borderRadius:'5000px'}}>
           اشتري الآن
           {' '}
           <IoBagOutline color='rgb(254, 231, 93)'/>

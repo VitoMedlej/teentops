@@ -111,6 +111,10 @@ h1, h2, h3, h4, p {
   background: #42a369 !important;
 }
 
+.pre {
+  white-space: pre-wrap;
+}
+
 .fixedComp {
   position: fixed;
   bottom: 0;

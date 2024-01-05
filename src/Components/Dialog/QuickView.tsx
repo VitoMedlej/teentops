@@ -12,7 +12,7 @@ import {AiOutlineCloseCircle} from 'react-icons/ai';
 
 import useCart from '../../Hooks/useCart';
 import Btn from '../Btn/Btn';
-import { getById } from '../../../pages/product/[productId]';
+import { getById } from '../../../pages/product/view/[productId]';
 
 
 export interface DialogTitleProps {

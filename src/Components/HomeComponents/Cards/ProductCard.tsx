@@ -41,7 +41,7 @@ const ProductCard = ({title,_id,price,images,newPrice,category,sx, handleQuickVi
         }
     }
     const handleClick = () => {
-        router.push(`/product/${_id}?title=${`${title}`.substring(0,100).replace(/\s+/g, '-')}&category=${category ? category : 'products'}`)
+        router.push(`/product/view/${_id}?title=${`${title}`.substring(0,100).replace(/\s+/g, '-')}&category=${category ? category : 'products'}`)
         
     }
 
@@ -56,7 +56,7 @@ const ProductCard = ({title,_id,price,images,newPrice,category,sx, handleQuickVi
       
     return (
         <Box
-        // onClick={()=>router.push('/product/product-name')}
+        // onClick={()=>router.push('/product/view/product-name')}
             onMouseOver={() => handleonMouseIn()}
             onMouseOut={() => handleonMouseOut()}
             sx={{
