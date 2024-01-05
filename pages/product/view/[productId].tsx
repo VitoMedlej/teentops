@@ -50,7 +50,8 @@ const Index = ({data,collection}:any) => {
      <Head>
      <title>Teentops electronics | View Product</title>
         <meta name="robots" content="index,follow"/>
-<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
+{/* <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' /> */}
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0"></meta>
 <meta name="distribution" content="Global"/>
 <meta name="keywords" content="e, electronic stores, lebanon, electronics store near me,  electronics, electronic, tv, tvs, electronic components,
  electrical, kitchens,  supply,  Engineering, washer, dryer, kneading, fridge, refrigerator, standing steam, pancake maker, Cotton candy machine, Electric kettle,
@@ -211,7 +212,7 @@ style={{width:'max-content',margin: '0 auto',color:'green',display: 'flex'}}
       {data?.description && <Box sx={{px:1}}>
       <Typography    
       className='pre'
-      sx={{pt:2,flexDirection:'row-reverse',textAlign:'center',whiteSpace:'pre',color:'#5a5a5a',fontSize:'.9em',fontWeight:'400'}}>
+      sx={{pt:2,maxWidth:'100%',flexDirection:'row-reverse',textAlign:'center',color:'#5a5a5a',fontSize:'.9em',fontWeight:'400'}}>
       {data?.description}
           </Typography>
       </Box>}
