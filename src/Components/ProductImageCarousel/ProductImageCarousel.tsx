@@ -34,9 +34,9 @@ export default function App({images,index,setSwiper}:{setSwiper?:any,index?:numb
 {
           images && images.map(img=>{
             return    <SwiperSlide key={img}>
-              <Box sx={{height:{xs:'400px',md:'500px'}}}>
+              <Box sx={{maxHeight:'700px',height:{xs:'400px',md:'100%'}}}>
 
-            <img className='img' src={`${img}`} alt={'Product Image'} />
+            <img className='img contain' src={`${img}`} alt={'Product Image'} />
               </Box>
           </SwiperSlide>
           })

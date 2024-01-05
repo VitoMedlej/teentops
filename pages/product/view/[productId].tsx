@@ -33,6 +33,7 @@ const btnStyle = {
 
 
 const Index = ({data,collection}:any) => {
+  console.log('data: ', data);
   const {addToCart} = useCart()
   const router = useRouter()
   const item = router.query?.title || router.query?.productId|| 'Item'
@@ -91,20 +92,22 @@ const Index = ({data,collection}:any) => {
         <ProductImageCarousel setSwiper={setSwiper} images={data?.images}/>
         <Box className="flex wrap justify-between between space-around" sx={{mt:1}}>
 
-          {data?.product?.images?.map((i:any,index:number)=>{
+          {data?.images?.map((i:any,index:number)=>{
             return <Box
             
             onClick={()=>goToSlide(Number(index))}
-            className='cursor pointer' key={i} sx={{width:`${95 / data?.product?.images?.length}%` ,
+            className='cursor pointer' key={i} sx={{width:`${95 / data?.images?.length}%` ,
             minHeight:'20%',
             minWidth:'20%',
-         height: `${95 / data?.product?.images?.length}%` }}>
-                <img src={i} alt="" className="img" />
+        //  height: `${95 / data?.images?.length}%` 
+            height:'fit-content',
+         }}>
+                <img src={i} alt="" className="img contain" />
               </Box>
           })}
         
                 </Box>
-      <Box className='bg2' sx={{px:1,width:{xs:'100%',md:'50%'}}}>
+      <Box className='bg2' sx={{px:1,width:{xs:'100%',md:'100%'}}}>
         <Typography sx={{pt:2,fontSize:{xs:'1.09em',sm:'1.1em'},
         pb:'.5em',color:'white',fontWeight:'500'}}>{data?.title}</Typography>
         {/* <Typography className='gray' sx={{fontSize:'.85em',pb:'.5em',fontWeight:'400'}}>
@@ -210,22 +213,20 @@ style={{width:'max-content',margin: '0 auto',color:'green',display: 'flex'}}
       {data?.description}
           </Typography>
       </Box>}
-     {data?.imagesArray && <Box sx={{py:1,px:1}}>
+     {data?.secondImages && <Box sx={{py:1,px:1}}>
         {
-          data?.imagesArray?.map((image:string)=>{
+          data?.secondImages?.map((image:string)=>{
             return <Box sx={{py:1}} key={`${image}`}>
               <img src={image} alt="" className="img" />
             </Box>
           })
         }
       </Box>}
-  {/* <ItemTabs description={data?.description?.length> 0 ? data?.descriptionn : data?.title}/> */}
     </Box>
 
       {/* <ProductCollection delay={1100} data={collection} sx={{my:'6em'}}  Collectiontitle={'Shop Similar Products'}/> */}
-      {/* <Perks/> */}
-      <Box className='auto' sx={{maxWidth:'700px',pt:4,px:.5}}>
-        <Box sx={{mt:4}}>
+      <Box className='auto' sx={{maxWidth:'700px',pt:3,px:.5}}>
+        <Box sx={{mt:3}}>
 
         <img src="https://see.saileeshop.com/osy/image/newEnOrder.jpg" alt="" className="img" />
         </Box>
@@ -241,13 +242,13 @@ style={{width:'max-content',margin: '0 auto',color:'green',display: 'flex'}}
         <Box sx={{py:4}}>
           <img src="https://see.saileeshop.com/osy/image/check.jpg" alt="" className="img" />
         </Box>
-        <Box  sx={{mt:.5,flexDirection:'row-reverse',textAlign:'end'}} className='flex center gap items-center'>
+        <Box  sx={{mt:.5,flexDirection:'row-reverse',textAlign:'end'}} className='flex  gap items-center'>
         <GiStarShuriken color='#42a369' fontSize={'2em'}/>
           <Typography sx={{color:'#5a5a5a'}}>
           يرجى تقديم رقم الطلب / رقم الشحن والاسم ورقم الهاتف المحمول وسبب الخدمة
           </Typography>
         </Box>
-        <Box sx={{pt:.5,px:.5,flexDirection:'row-reverse',textAlign:'end'}} className='flex center gap items-center'>
+        <Box sx={{pt:.5,px:.5,flexDirection:'row-reverse',textAlign:'end'}} className='flex  gap items-center'>
         <GiStarShuriken color='#42a369' fontSize={'2em'}/>
           <Typography sx={{color:'#5a5a5a'}}>
           يتحمل البائع أجرة النقل بسبب جودة المنتج: يتحمل المشتري أجرة النقل لأسباب شخصية
@@ -255,6 +256,8 @@ style={{width:'max-content',margin: '0 auto',color:'green',display: 'flex'}}
         </Box>
 
       </Box>
+      <Box className="auto">
+
       <Box sx={{border:'1px solid rgb(254, 231, 93)',maxWidth:'700px',justifyContent:'space-around'}} className="fixedComp gap justify-between gap1 flex auto">
     
       <Btn sx={{fontSize:'1.5em',':hover':{background:'transparent'},width:'25%',color:'rgb(254, 231, 93)',background:'transparent',border:'1px solid rgb(254, 231, 93) !important',borderRadius:'5px'}}>
@@ -269,6 +272,8 @@ style={{width:'max-content',margin: '0 auto',color:'green',display: 'flex'}}
 
        
       </Box>
+      </Box>
+
   </>
   )
 }
