@@ -133,7 +133,7 @@ useEffect(() => {
   )
 }
 
-export async function  getServerSideProps() {
+export async function  getStaticProps() {
   // const res = await fetch('https://.../posts')
   // const posts = await res.json()
   try {
@@ -158,7 +158,7 @@ export async function  getServerSideProps() {
     // Next.js will attempt to re-generate the page:
     // - When a request comes in
     // - At most once every 10 seconds
-    revalidate: 400, // In seconds
+    revalidate: 40, // In seconds
   }
 }
 catch(errr){
