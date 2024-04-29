@@ -203,7 +203,35 @@ import client from '../../src/database/mongodb';
 //   ]
 
 let backup =[
-   
+   {
+    sectionTitle:'MainCarousel',
+    images : [
+      {
+                  img: "https://ucarecdn.com/66b8154e-a03e-4b9f-a161-5695638874ec/GrayandGreenElectronicAdvertisementBannerFacebookAds21.png",
+                  category: ""
+                  , subCategory: ""
+                
+                },
+                {
+                    img: "https://ucarecdn.com/bd4333ac-e788-487f-b948-cddb3b76075f/fan.JPG",
+                    category: ""
+                    , subCategory: ""
+                
+                },
+                {
+                  img: "https://ucarecdn.com/31b86d26-4306-43c4-88fb-931e581d2452/teenad2.JPG",
+                  category: ""
+                  , subCategory: ""
+                
+                },
+                {
+                    img: "https://ucarecdn.com/9bab3ea9-88c5-4799-bbc4-476a8281ae7b/teenad.JPG",
+                    category: ""
+                    , subCategory: ""
+                
+                }
+    ],
+   },
   {
     SectionTitle: 'Category Section',
     type:'categorySection',

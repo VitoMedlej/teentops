@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 // import client from '../mongodb';
-import { ObjectId } from 'mongodb';
-import client from '../../src/database/mongodb';
+// import { ObjectId } from 'mongodb';
+// import client from '../../src/database/mongodb';
 
 
 let backup =
