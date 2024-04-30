@@ -4,90 +4,91 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 // import client from '../../src/database/mongodb';
 
 
-let backup =
+const categories =
 [
     {
         category: "electronics",
         subCategory: ['']
+        ,img : ``,
     },
     {
-        category: "kitchen appliances",
+        category: "kitchen appliances",img : ``,
         subCategory: ['']
     },
     {
-        category: "furniture",
+        category: "furniture",img : ``,
         subCategory: ['']
     },
     {
-        category: "toys",
+        category: "toys",img : ``,
         subCategory: ['']
     },
     {
-        category: "cameras",
+        category: "cameras",img : ``,
         subCategory: ['']
     },
     {
-        category: "beauty",
+        category: "beauty",img : ``,
         subCategory: ['']
     },
     {
-        category: "luggage",
+        category: "luggage",img : ``,
         subCategory: ['']
     },
     {
-        category: "kitchen",
+        category: "kitchen",img : ``,
         subCategory: ['']
     },
     {
-        category: "tools",
+        category: "tools",img : ``,
         subCategory: ['']
     },
     {
-        category: "camping",
+        category: "camping",img : ``,
         subCategory: ['']
     },
     {
-        category: "faucets",
+        category: "faucets",img : ``,
         subCategory: ['']
     },
     {
-        category: "forbaby",
+        category: "forbaby",img : ``,
         subCategory: ['']
     },
     {
-        category: "inflatable",
+        category: "inflatable",img : ``,
         subCategory: ['']
     },
     {
-        category: "massager",
+        category: "massager",img : ``,
         subCategory: ['']
     },
     {
-        category: "office_furniture",
+        category: "office_furniture",img : ``,
         subCategory: ['']
     },
     {
-        category: "power_banks",
+        category: "power_banks",img : ``,
         subCategory: ['']
     },
     {
-        category: "safe_boxes",
+        category: "safe_boxes",img : ``,
         subCategory: ['']
     },
     {
-        category: "shoes",
+        category: "shoes",img : ``,
         subCategory: ['']
     },
     {
-        category: "storage",
+        category: "storage",img : ``,
         subCategory: ['']
     },
     {
-        category: "water_sports",
+        category: "water_sports",img : ``,
         subCategory: ['']
     },
     {
-        category: "cloth",
+        category: "cloth",img : ``,
         subCategory: ['']
     }
 ]
@@ -107,7 +108,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 //   }
     // const product = await client.db("Power").collection("Products").findOne({_id:new ObjectId(`${id}`)});
     //    if (product) {         
-         return res.status(200).json(backup);
+         return res.status(200).json(categories);
     //     }
 }
 return res.status(404).json({success:false});
