@@ -207,25 +207,25 @@ let backup =[
     sectionTitle:'MainCarousel',
     images : [
       {
-                  img: "https://ucarecdn.com/66b8154e-a03e-4b9f-a161-5695638874ec/GrayandGreenElectronicAdvertisementBannerFacebookAds21.png",
+                  img: "https://ucarecdn.com/66b8154e-a03e-4b9f-a161-5695638874ec/-/resize/600/",
                   category: ""
                   , subCategory: ""
                 
                 },
                 {
-                    img: "https://ucarecdn.com/bd4333ac-e788-487f-b948-cddb3b76075f/fan.JPG",
+                    img: "https://ucarecdn.com/bd4333ac-e788-487f-b948-cddb3b76075f/-/resize/600/",
                     category: ""
                     , subCategory: ""
                 
                 },
                 {
-                  img: "https://ucarecdn.com/31b86d26-4306-43c4-88fb-931e581d2452/teenad2.JPG",
+                  img: "https://ucarecdn.com/31b86d26-4306-43c4-88fb-931e581d2452/-/resize/600/",
                   category: ""
                   , subCategory: ""
                 
                 },
                 {
-                    img: "https://ucarecdn.com/9bab3ea9-88c5-4799-bbc4-476a8281ae7b/teenad.JPG",
+                    img: "https://ucarecdn.com/9bab3ea9-88c5-4799-bbc4-476a8281ae7b/-/resize/600/",
                     category: ""
                     , subCategory: ""
                 
@@ -289,7 +289,7 @@ let backup =[
 
   {
     
-    sectionTitle: 'Latest Products',
+    sectionTitle: 'Browse Products - تصفح المنتجات',
     type:'ProductsSection',
     category : `products`,
   }
@@ -324,7 +324,7 @@ let backup =[
     ]
   },
   {
-    sectionTitle: "Six",
+    sectionTitle: "Tools - أدوات",
     type: "FullScreenCarousel",
     category : `tools`,
 
@@ -348,19 +348,19 @@ let backup =[
 
     images: [
       {
-        img: "https://cdn.jiostore.online/v2/jmd-asp/jdprod/wrkr/jioretailer/company/5/applications/6316f3d9c334522a29606e1d/theme/pictures/free/original/theme-image-1669353430549.jpeg",
+        img: "https://ucarecdn.com/6eafad08-6b68-48e6-a640-c63bb433212c/-/resize/600/",
         category: "",
         subCategory: ""
       }
     ]
   },
   {
-    sectionTitle: "House & Kitchen",
+    sectionTitle: "Kitchen - ادوات المطبخ",
     category : `kitchen appliances`,
     type: "FullSection",
     images: [
       {
-        img: "https://ucarecdn.com/c9ceeb73-cce7-4189-9370-4ffaf38742fa/washing.jpeg",
+        img: "https://ucarecdn.com/c9ceeb73-cce7-4189-9370-4ffaf38742fa/-/resize/600/",
         category: "",
         subCategory: ""
       },
@@ -435,7 +435,7 @@ let backup =[
 ,
 {
     
-sectionTitle: 'Home & Kitchen',
+sectionTitle: 'Home & Kitchen - المنزل والمطبخ',
 type:'ProductsSection',
 category : `kitchen appliances`,
 }
