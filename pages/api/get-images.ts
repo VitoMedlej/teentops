@@ -298,7 +298,7 @@ let backup =[
   {
     sectionTitle: "Electronics",
     type: "FourImageSection",
-    category : ``,
+    category : `electronics`,
 
     images: [
       {
@@ -326,7 +326,7 @@ let backup =[
   {
     sectionTitle: "Six",
     type: "FullScreenCarousel",
-    category : ``,
+    category : `tools`,
 
     images: [
       {
@@ -344,7 +344,7 @@ let backup =[
   {
     sectionTitle: "Individual Image",
     type: "individualImage",
-    category : ``,
+    category : `kitchen appliances`,
 
     images: [
       {
@@ -356,7 +356,7 @@ let backup =[
   },
   {
     sectionTitle: "House & Kitchen",
-    category : ``,
+    category : `kitchen appliances`,
     type: "FullSection",
     images: [
       {
@@ -385,7 +385,7 @@ let backup =[
   {
     sectionTitle: "Individual Image",
     type: "individualImage",
-    category : ``,
+    category : `kitchen appliances`,
 
     images: [
      {img: "https://www.ishtari.com/image/data/system_banner/10000/3400/3379/home-kitchen.png",}
@@ -437,7 +437,7 @@ let backup =[
     
 sectionTitle: 'Home & Kitchen',
 type:'ProductsSection',
-category : `products`,
+category : `kitchen appliances`,
 }
 
 ]
