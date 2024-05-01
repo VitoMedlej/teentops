@@ -9,26 +9,26 @@ const categories =
     {
         category: "electronics",
         subCategory: ['']
-        ,img : ``,
+        ,img : `https://www.ishtari.com/image/data/system_banner/10000/200/750/chargers2.png`,
     },
     {
-        category: "kitchen appliances",img : ``,
+        category: "kitchen appliances",img : `https://www.ishtari.com/image/data/system_banner/10000/3600/3436/appliances.png`,
         subCategory: ['']
     },
     {
-        category: "furniture",img : ``,
+        category: "furniture",img : `https://www.ishtari.com/image/cache/data/system_category/10000/3800/3664/sofaaaaaad-160x160.png?3`,
         subCategory: ['']
     },
     {
-        category: "toys",img : ``,
+        category: "toys",img : `https://www.ishtari.com/image/cache/data/system_category/10000/4600/4413/toyyyy-160x160.png?3`,
         subCategory: ['']
     },
     {
-        category: "cameras",img : ``,
+        category: "cameras",img : `https://www.ishtari.com/image/data/system_banner/10000/3600/3436/camera.png`,
         subCategory: ['']
     },
     {
-        category: "beauty",img : ``,
+        category: "beauty",img : `https://www.ishtari.com/image/data/system_banner/10000/3600/3436/beauty.png`,
         subCategory: ['']
     },
     {
@@ -36,11 +36,11 @@ const categories =
         subCategory: ['']
     },
     {
-        category: "kitchen",img : ``,
+        category: "kitchen",img : `https://www.ishtari.com/image/data/system_banner/10000/3600/3436/kitchen.png`,
         subCategory: ['']
     },
     {
-        category: "tools",img : ``,
+        category: "tools",img : `https://www.ishtari.com/image/cache/data/system_product/110000/104600/104482/3-192x264.jpg?3`,
         subCategory: ['']
     },
     {
@@ -52,7 +52,7 @@ const categories =
         subCategory: ['']
     },
     {
-        category: "forbaby",img : ``,
+        category: "forbaby",img : `https://www.ishtari.com/image/data/system_banner/10000/3600/3436/baby.png`,
         subCategory: ['']
     },
     {
@@ -60,31 +60,31 @@ const categories =
         subCategory: ['']
     },
     {
-        category: "massager",img : ``,
+        category: "massager",img : `https://www.ishtari.com/image/data/system_banner/10000/3600/3436/massager.png`,
         subCategory: ['']
     },
     {
-        category: "office_furniture",img : ``,
+        category: "office_furniture",img : `https://www.ishtari.com/image/data/system_banner/10000/3600/3436/office.png`,
         subCategory: ['']
     },
     {
-        category: "power_banks",img : ``,
+        category: "power_banks",img : `https://www.ishtari.com/image/data/system_banner/10000/3600/3436/powerbank.png`,
         subCategory: ['']
     },
     {
-        category: "safe_boxes",img : ``,
+        category: "safe_boxes",img : `https://www.ishtari.com/image/data/system_banner/10000/3600/3436/safebox.png`,
         subCategory: ['']
     },
     {
-        category: "shoes",img : ``,
+        category: "shoes",img : `https://www.ishtari.com/image/data/system_banner/10000/3600/3436/shoes.png`,
         subCategory: ['']
     },
     {
-        category: "storage",img : ``,
+        category: "storage",img : `https://www.ishtari.com/image/data/system_banner/10000/3600/3436/storage.png`,
         subCategory: ['']
     },
     {
-        category: "water_sports",img : ``,
+        category: "water_sports",img : `https://www.ishtari.com/image/data/system_banner/10000/3600/3436/water-sport.png`,
         subCategory: ['']
     },
     {
