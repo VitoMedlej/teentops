@@ -202,243 +202,254 @@ import client from '../../src/database/mongodb';
 //     }
 //   ]
 
-let backup =[
-   {
-    sectionTitle:'MainCarousel',
-    images : [
-      {
-                  img: "https://ucarecdn.com/66b8154e-a03e-4b9f-a161-5695638874ec/-/resize/600/",
-                  category: ""
-                  , subCategory: ""
+// let backup =[
+//    {
+//     sectionTitle:'MainCarousel',
+//     images : [
+//       {
+//                   img: "https://ucarecdn.com/66b8154e-a03e-4b9f-a161-5695638874ec/-/resize/600/",
+//                   category: ""
+//                   , subCategory: ""
                 
-                },
-                {
-                    img: "https://ucarecdn.com/bd4333ac-e788-487f-b948-cddb3b76075f/-/resize/600/",
-                    category: ""
-                    , subCategory: ""
+//                 },
+//                 {
+//                     img: "https://ucarecdn.com/bd4333ac-e788-487f-b948-cddb3b76075f/-/resize/600/",
+//                     category: ""
+//                     , subCategory: ""
                 
-                },
-                {
-                  img: "https://ucarecdn.com/31b86d26-4306-43c4-88fb-931e581d2452/-/resize/600/",
-                  category: ""
-                  , subCategory: ""
+//                 },
+//                 {
+//                   img: "https://ucarecdn.com/31b86d26-4306-43c4-88fb-931e581d2452/-/resize/600/",
+//                   category: ""
+//                   , subCategory: ""
                 
-                },
-                {
-                    img: "https://ucarecdn.com/9bab3ea9-88c5-4799-bbc4-476a8281ae7b/-/resize/600/",
-                    category: ""
-                    , subCategory: ""
+//                 },
+//                 {
+//                     img: "https://ucarecdn.com/9bab3ea9-88c5-4799-bbc4-476a8281ae7b/-/resize/600/",
+//                     category: ""
+//                     , subCategory: ""
                 
-                }
-    ],
-   },
-  {
-    SectionTitle: 'Category Section',
-    type:'categorySection',
-    category : ``,
+//                 }
+//     ],
+//    },
+//   {
+//     SectionTitle: 'Category Section',
+//     type:'categorySection',
+//     category : ``,
 
-    images:  [
-      {
-          img: "https://www.ishtari.com/image/data/system_banner/10000/3400/3376/power-banks.png",
-          category: "electronics"
-          , subCategory: ""
-      }, {
-          img: `https://www.ishtari.com/image/data/system_banner/10000/3400/3376/appliances.png`,
-          category: "kitchen appliances"
-          , subCategory: ""
+//     images:  [
+//       {
+//           img: "https://www.ishtari.com/image/data/system_banner/10000/3400/3376/power-banks.png",
+//           category: "electronics"
+//           , subCategory: ""
+//       }, {
+//           img: `https://www.ishtari.com/image/data/system_banner/10000/3400/3376/appliances.png`,
+//           category: "kitchen appliances"
+//           , subCategory: ""
 
-      },
-      {
-          img: "https://www.ishtari.com/image/data/system_banner/10000/3400/3376/offices.png",
-          category: "furniture"
-          , subCategory: ""
+//       },
+//       {
+//           img: "https://www.ishtari.com/image/data/system_banner/10000/3400/3376/offices.png",
+//           category: "furniture"
+//           , subCategory: ""
 
-      }, {
-          img: "https://www.ishtari.com/image/data/system_banner/10000/3400/3376/for-baby.png",
-          category: "toys"
-          , subCategory: ""
+//       }, {
+//           img: "https://www.ishtari.com/image/data/system_banner/10000/3400/3376/for-baby.png",
+//           category: "toys"
+//           , subCategory: ""
 
-      },
-      {
-          img: `https://www.ishtari.com/image/data/system_banner/10000/3400/3376/cameras.png`,
-          category: "cameras"
-          , subCategory: ""
+//       },
+//       {
+//           img: `https://www.ishtari.com/image/data/system_banner/10000/3400/3376/cameras.png`,
+//           category: "cameras"
+//           , subCategory: ""
 
-      }, {
-          img: "https://www.ishtari.com/image/data/system_banner/10000/3400/3376/beauty.png",
+//       }, {
+//           img: "https://www.ishtari.com/image/data/system_banner/10000/3400/3376/beauty.png",
 
-          category: "beauty"
-          , subCategory: ""
+//           category: "beauty"
+//           , subCategory: ""
 
-      },
-      {
-          img: "https://www.ishtari.com/image/data/system_banner/10000/3600/3409/luggages.png",
-          category: "luggage"
-          , subCategory: ""
+//       },
+//       {
+//           img: "https://www.ishtari.com/image/data/system_banner/10000/3600/3409/luggages.png",
+//           category: "luggage"
+//           , subCategory: ""
 
-      }, {
-          img: "https://www.ishtari.com/image/data/system_banner/10000/3400/3376/kitchen.png",
+//       }, {
+//           img: "https://www.ishtari.com/image/data/system_banner/10000/3400/3376/kitchen.png",
           
-          category: "kitchen"
-          , subCategory: ""
+//           category: "kitchen"
+//           , subCategory: ""
           
-      }
-  ]
-  },
+//       }
+//   ]
+//   },
 
 
-  {
+//   {
     
-    sectionTitle: 'Browse Products - تصفح المنتجات',
-    type:'ProductsSection',
-    category : `products`,
-  }
+//     sectionTitle: 'Browse Products - تصفح المنتجات',
+//     type:'ProductsSection',
+//     category : `products`,
+//   }
 
-,
-  {
-    sectionTitle: "Electronics",
-    type: "FourImageSection",
-    category : `electronics`,
+// ,
+//   {
+//     sectionTitle: "Electronics",
+//     type: "FourImageSection",
+//     category : `electronics`,
 
-    images: [
-      {
-        img: "https://www.ishtari.com/image/data/system_banner/10000/3400/3378/cameras.png",
-        category: "cameras",
-        subCategory: ""
-      },
-      {
-        img: "https://www.ishtari.com/image/data/system_banner/10000/3400/3378/smartwatches.png",
-        category: "",
-        subCategory: ""
-      },
-      {
-        img: "https://www.ishtari.com/image/data/system_banner/10000/3400/3378/power-banks.png",
-        category: "",
-        subCategory: ""
-      },
-      {
-        img: "https://www.ishtari.com/image/data/system_banner/10000/3400/3378/earphoness.png",
-        category: "",
-        subCategory: ""
-      }
-    ]
-  },
-  {
-    sectionTitle: "Tools - أدوات",
-    type: "FullScreenCarousel",
-    category : `tools`,
+//     images: [
+//       {
+//         img: "https://www.ishtari.com/image/data/system_banner/10000/3400/3378/cameras.png",
+//         category: "cameras",
+//         subCategory: ""
+//       },
+//       {
+//         img: "https://www.ishtari.com/image/data/system_banner/10000/3400/3378/smartwatches.png",
+//         category: "",
+//         subCategory: ""
+//       },
+//       {
+//         img: "https://www.ishtari.com/image/data/system_banner/10000/3400/3378/power-banks.png",
+//         category: "",
+//         subCategory: ""
+//       },
+//       {
+//         img: "https://www.ishtari.com/image/data/system_banner/10000/3400/3378/earphoness.png",
+//         category: "",
+//         subCategory: ""
+//       }
+//     ]
+//   },
+//   {
+//     sectionTitle: "Tools - أدوات",
+//     type: "FullScreenCarousel",
+//     category : `tools`,
 
-    images: [
-      {
-        img: "https://www.ishtari.com/image/data/system_banner/10000/3600/3408/sports-outdoors-web.png",
-        category: "",
-        subCategory: ""
-      },
-      {
-        img: "https://www.ishtari.com/image/data/system_banner/10000/3600/3409/luggages.png",
-        category: "",
-        subCategory: ""
-      }
-    ]
-  },
-  {
-    sectionTitle: "Individual Image",
-    type: "individualImage",
-    category : `kitchen appliances`,
+//     images: [
+//       {
+//         img: "https://www.ishtari.com/image/data/system_banner/10000/3600/3408/sports-outdoors-web.png",
+//         category: "",
+//         subCategory: ""
+//       },
+//       {
+//         img: "https://www.ishtari.com/image/data/system_banner/10000/3600/3409/luggages.png",
+//         category: "",
+//         subCategory: ""
+//       }
+//     ]
+//   },
+//   {
+//     sectionTitle: "Individual Image",
+//     type: "individualImage",
+//     category : `kitchen appliances`,
 
-    images: [
-      {
-        img: "https://ucarecdn.com/6eafad08-6b68-48e6-a640-c63bb433212c/-/resize/600/",
-        category: "",
-        subCategory: ""
-      }
-    ]
-  },
-  {
-    sectionTitle: "Kitchen - ادوات المطبخ",
-    category : `kitchen appliances`,
-    type: "FullSection",
-    images: [
-      {
-        img: "https://ucarecdn.com/c9ceeb73-cce7-4189-9370-4ffaf38742fa/-/resize/600/",
-        category: "",
-        subCategory: ""
-      },
-      {
-        img: "https://th.bing.com/th/id/OIP.G40QfbeKil8GA3cSjfF59QHaHa?pid=ImgDet&w=172&h=172&c=7&dpr=1.1",
-        category: "",
-        subCategory: ""
-      },
-      {
-        img: "https://th.bing.com/th/id/OIP.RTpAnPqYMvk7hMvKDH54KwHaHa?w=219&h=219&c=7&r=0&o=5&dpr=1.1&pid=1.7",
-        category: "",
-        subCategory: ""
-      },
-      {
-        img: "https://www.ishtari.com/image/cache/data/system_product/110000/109200/109820/1-192x264.jpg?3",
-        category: "",
-        subCategory: ""
-      }
-    ]
-  },
+//     images: [
+//       {
+//         img: "https://ucarecdn.com/6eafad08-6b68-48e6-a640-c63bb433212c/-/resize/600/",
+//         category: "",
+//         subCategory: ""
+//       }
+//     ]
+//   },
+//   {
+//     sectionTitle: "Kitchen - ادوات المطبخ",
+//     category : `kitchen appliances`,
+//     type: "FullSection",
+//     images: [
+//       {
+//         img: "https://ucarecdn.com/c9ceeb73-cce7-4189-9370-4ffaf38742fa/-/resize/600/",
+//         category: "",
+//         subCategory: ""
+//       },
+//       {
+//         img: "https://th.bing.com/th/id/OIP.G40QfbeKil8GA3cSjfF59QHaHa?pid=ImgDet&w=172&h=172&c=7&dpr=1.1",
+//         category: "",
+//         subCategory: ""
+//       },
+//       {
+//         img: "https://th.bing.com/th/id/OIP.RTpAnPqYMvk7hMvKDH54KwHaHa?w=219&h=219&c=7&r=0&o=5&dpr=1.1&pid=1.7",
+//         category: "",
+//         subCategory: ""
+//       },
+//       {
+//         img: "https://www.ishtari.com/image/cache/data/system_product/110000/109200/109820/1-192x264.jpg?3",
+//         category: "",
+//         subCategory: ""
+//       }
+//     ]
+//   },
 
-  {
-    sectionTitle: "Individual Image",
-    type: "individualImage",
-    category : `kitchen appliances`,
+//   {
+//     sectionTitle: "Individual Image",
+//     type: "individualImage",
+//     category : `kitchen appliances`,
 
-    images: [
-     {img: "https://www.ishtari.com/image/data/system_banner/10000/3400/3379/home-kitchen.png",}
+//     images: [
+//      {img: "https://www.ishtari.com/image/data/system_banner/10000/3400/3379/home-kitchen.png",}
    
-    ]
-  },
+//     ]
+//   },
 
   
-  {
-    sectionTitle: "Brands",
-    category : ``,
+//   {
+//     sectionTitle: "Brands",
+//     category : ``,
 
-    type: "Brands",
-    images: [
-      {
-        img: "https://www.ishtari.com/image/data/system_banner/10000/3600/3402/tefal.png",
-        category: "",
-        subCategory: ""
-      },
-      {
-        img: "https://www.ishtari.com/image/data/system_banner/10000/3600/3402/queen-chef.png",
-        category: "",
-        subCategory: ""
-      },
-      {
-        img: "https://www.ishtari.com/image/data/system_banner/10000/3600/3402/ingco.png",
-        category: "",
-        subCategory: ""
-      },
-      {
-        img: "https://www.ishtari.com/image/data/system_banner/10000/3600/3402/beper.png",
-        category: "",
-        subCategory: ""
-      },
-      {
-        img: "https://www.ishtari.com/image/data/system_banner/10000/3600/3402/mulinex.png",
-        category: "",
-        subCategory: ""
-      },
-      {
-        img: "https://www.ishtari.com/image/data/system_banner/10000/3600/3402/pyrex.png",
-        category: "",
-        subCategory: ""
-      }
-    ]
-  }
-,
-{
+//     type: "Brands",
+//     images: [
+//       {
+//         img: "https://www.ishtari.com/image/data/system_banner/10000/3600/3402/tefal.png",
+//         category: "",
+//         subCategory: ""
+//       },
+//       {
+//         img: "https://www.ishtari.com/image/data/system_banner/10000/3600/3402/queen-chef.png",
+//         category: "",
+//         subCategory: ""
+//       },
+//       {
+//         img: "https://www.ishtari.com/image/data/system_banner/10000/3600/3402/ingco.png",
+//         category: "",
+//         subCategory: ""
+//       },
+//       {
+//         img: "https://www.ishtari.com/image/data/system_banner/10000/3600/3402/beper.png",
+//         category: "",
+//         subCategory: ""
+//       },
+//       {
+//         img: "https://www.ishtari.com/image/data/system_banner/10000/3600/3402/mulinex.png",
+//         category: "",
+//         subCategory: ""
+//       },
+//       {
+//         img: "https://www.ishtari.com/image/data/system_banner/10000/3600/3402/pyrex.png",
+//         category: "",
+//         subCategory: ""
+//       }
+//     ]
+//   }
+// ,
+// {
     
-sectionTitle: 'Home & Kitchen - المنزل والمطبخ',
-type:'ProductsSection',
-category : `kitchen appliances`,
-}
+// sectionTitle: 'Home & Kitchen - المنزل والمطبخ',
+// type:'ProductsSection',
+// category : `kitchen appliances`,
+// }
+
+// ]
+
+let backup =[
+ {
+   
+   sectionTitle: 'Browse Products - تصفح المنتجات',
+   type:'ProductsSection',
+   category : `products`,
+ }
+
 
 ]
 
