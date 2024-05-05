@@ -202,7 +202,7 @@ import client from '../../src/database/mongodb';
 //     }
 //   ]
 
-// let backup =[
+let backup : any =[
 //    {
 //     sectionTitle:'MainCarousel',
 //     images : [
@@ -434,24 +434,14 @@ import client from '../../src/database/mongodb';
 //   }
 // ,
 // {
-    
 // sectionTitle: 'Home & Kitchen - المنزل والمطبخ',
 // type:'ProductsSection',
 // category : `kitchen appliances`,
 // }
 
-// ]
-
-let backup =[
- {
-   
-   sectionTitle: 'Browse Products - تصفح المنتجات',
-   type:'ProductsSection',
-   category : `products`,
- }
-
-
 ]
+
+
 
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
