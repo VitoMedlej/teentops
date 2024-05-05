@@ -287,12 +287,12 @@ let backup : any =[
   },
 
 
-//   {
+  {
     
-//     sectionTitle: 'Browse Products - تصفح المنتجات',
-//     type:'ProductsSection',
-//     category : `products`,
-//   }
+    sectionTitle: 'Browse Products - تصفح المنتجات',
+    type:'ProductsSection',
+    category : `products`,
+  }
 
 // ,
 //   {
