@@ -232,59 +232,59 @@ let backup : any =[
 //                 }
 //     ],
 //    },
-//   {
-//     SectionTitle: 'Category Section',
-//     type:'categorySection',
-//     category : ``,
+  {
+    SectionTitle: 'Category Section',
+    type:'categorySection',
+    category : ``,
 
-//     images:  [
-//       {
-//           img: "https://www.ishtari.com/image/data/system_banner/10000/3400/3376/power-banks.png",
-//           category: "electronics"
-//           , subCategory: ""
-//       }, {
-//           img: `https://www.ishtari.com/image/data/system_banner/10000/3400/3376/appliances.png`,
-//           category: "kitchen appliances"
-//           , subCategory: ""
+    images:  [
+      {
+          img: "https://www.ishtari.com/image/data/system_banner/10000/3400/3376/power-banks.png",
+          category: "electronics"
+          , subCategory: ""
+      }, {
+          img: `https://www.ishtari.com/image/data/system_banner/10000/3400/3376/appliances.png`,
+          category: "kitchen appliances"
+          , subCategory: ""
 
-//       },
-//       {
-//           img: "https://www.ishtari.com/image/data/system_banner/10000/3400/3376/offices.png",
-//           category: "furniture"
-//           , subCategory: ""
+      },
+      {
+          img: "https://www.ishtari.com/image/data/system_banner/10000/3400/3376/offices.png",
+          category: "furniture"
+          , subCategory: ""
 
-//       }, {
-//           img: "https://www.ishtari.com/image/data/system_banner/10000/3400/3376/for-baby.png",
-//           category: "toys"
-//           , subCategory: ""
+      }, {
+          img: "https://www.ishtari.com/image/data/system_banner/10000/3400/3376/for-baby.png",
+          category: "toys"
+          , subCategory: ""
 
-//       },
-//       {
-//           img: `https://www.ishtari.com/image/data/system_banner/10000/3400/3376/cameras.png`,
-//           category: "cameras"
-//           , subCategory: ""
+      },
+      {
+          img: `https://www.ishtari.com/image/data/system_banner/10000/3400/3376/cameras.png`,
+          category: "cameras"
+          , subCategory: ""
 
-//       }, {
-//           img: "https://www.ishtari.com/image/data/system_banner/10000/3400/3376/beauty.png",
+      }, {
+          img: "https://www.ishtari.com/image/data/system_banner/10000/3400/3376/beauty.png",
 
-//           category: "beauty"
-//           , subCategory: ""
+          category: "beauty"
+          , subCategory: ""
 
-//       },
-//       {
-//           img: "https://www.ishtari.com/image/data/system_banner/10000/3600/3409/luggages.png",
-//           category: "luggage"
-//           , subCategory: ""
+      },
+      {
+          img: "https://www.ishtari.com/image/data/system_banner/10000/3600/3409/luggages.png",
+          category: "luggage"
+          , subCategory: ""
 
-//       }, {
-//           img: "https://www.ishtari.com/image/data/system_banner/10000/3400/3376/kitchen.png",
+      }, {
+          img: "https://www.ishtari.com/image/data/system_banner/10000/3400/3376/kitchen.png",
           
-//           category: "kitchen"
-//           , subCategory: ""
+          category: "kitchen"
+          , subCategory: ""
           
-//       }
-//   ]
-//   },
+      }
+  ]
+  },
 
 
 //   {
