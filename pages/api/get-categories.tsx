@@ -90,6 +90,22 @@ const categories =
     {
         category: "cloth",img : ``,
         subCategory: ['']
+    },
+    {
+        category: "washing_machines",img : ``,
+        subCategory: ['']
+    },
+    {
+        category: "watches",img : ``,
+        subCategory: ['']
+    },
+    {
+        category: "microwaves",img : ``,
+        subCategory: ['']
+    },
+    {
+        category: "heaters",img : ``,
+        subCategory: ['']
     }
 ]
 
