@@ -18,6 +18,8 @@ import {server} from '../src/Utils/Server'
 import { IProduct } from '../src/Types/Types';
 import { Typography ,Container } from '@mui/material';
 // import { Categories } from './_app';
+
+
 export const getAll = async (endpoint?:string,limit?:number,category?:string,search?:string,skip?:number,totalCount?:boolean) => {
   try {
 
@@ -133,7 +135,8 @@ useEffect(() => {
   )
 }
 
-export async function  getStaticProps() {
+// export async function  getStaticProps() {
+  export async function  getServerSideProps() {
   // const res = await fetch('https://.../posts')
   // const posts = await res.json()
   try {
@@ -158,7 +161,7 @@ export async function  getStaticProps() {
     // Next.js will attempt to re-generate the page:
     // - When a request comes in
     // - At most once every 10 seconds
-    revalidate: 40, // In seconds
+    // revalidate: 40, // In seconds
   }
 }
 catch(errr){
